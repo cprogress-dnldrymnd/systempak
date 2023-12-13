@@ -277,8 +277,11 @@ p {
                 background-color: transparent;
                 box-shadow: none;
                 .woocommerce-loop-product__title {
-                    color: var(--white-color);
+                    a {
+                        color: var(--white-color);
+                    }
                 }
+                /*
                 .product-image {
                     position: relative;
                     padding: 50%;
@@ -292,7 +295,7 @@ p {
                         height: 100%;
                         object-fit: cover;
                     }
-                }
+                }*/
             }
         }
         &:before {
