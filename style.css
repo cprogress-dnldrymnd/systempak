@@ -301,7 +301,8 @@ strong {
 .newsletter p {
   display: flex; }
   .newsletter p .wpcf7-email {
-    border-radius: 15px 0 0 15px !important; }
+    border-radius: 15px 0 0 15px !important;
+    text-transform: none; }
   .newsletter p .wpcf7-submit {
     border-radius: 0px 15px 15px 0px;
     background-color: var(--text-color); }
