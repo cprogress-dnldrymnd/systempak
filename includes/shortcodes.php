@@ -10,7 +10,7 @@ function product_category_subcategory()
 
 ?>
     <div class="product-category-slider">
-        <div class="swiper">
+        <div class="swiper mySwiper-ProductCategory">
             <div class="swiper-wrapper">
                 <?php foreach ($terms as $term) { ?>
                     <?php
@@ -31,6 +31,36 @@ function product_category_subcategory()
             </div>
         </div>
     </div>
+
+    <script>
+        var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
+            loop: true,
+            freeMode: true,
+            centeredSlides: true,
+            speed: 5000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+
+                992: {
+                    slidesPerView: 3,
+                },
+
+
+                1200: {
+                    slidesPerView: 4,
+                },
+
+
+            },
+
+        });
+    </script>
 
 <?php
     return ob_get_clean();
