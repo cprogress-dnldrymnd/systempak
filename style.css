@@ -295,4 +295,7 @@ strong {
   background-color: var(--accent-color);
   border-color: var(--accent-color); }
 
+#secondary .widget-title, #secondary .priotech_title_filter {
+  font-size: 30px; }
+
 /*# sourceMappingURL=style.css.map */
