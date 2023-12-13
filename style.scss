@@ -182,19 +182,19 @@ p {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 0.875rem;
         text-transform: capitalize;
         letter-spacing: 0px;
         margin-bottom: 0;
         padding: 18px 36px 13.85px;
         border-radius: 100px;
         border: none;
-        color: #fff;
+        color: var(--white-color) !important;
         transition: all 0.3s ease;
         width: 100%;
         margin-top: 20px;
         background-color: var(--text-color);
         text-align: center;
+        font-size: 18px;
     }
 
     #accordion-container {
