@@ -268,6 +268,7 @@ p {
         }
     }
     .related.products {
+        margin-top: 0;
         position: relative;
         h2 {
             color: var(--white-color);
@@ -313,6 +314,16 @@ p {
     }
 }
 
+body.single-product #page .site-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    .col-full {
+        max-width: 100%;
+    }
+    .content-single-wrapper {
+        max-width: 1700px;
+    }
+}
 .product-features {
     margin-bottom: 50px;
     margin-top: 30px;

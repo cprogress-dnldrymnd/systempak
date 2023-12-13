@@ -172,6 +172,7 @@ p:last-child {
   color: var(--text-color);
   font-size: 17px; }
 .single-product.single-product .related.products {
+  margin-top: 0;
   position: relative; }
   .single-product.single-product .related.products h2 {
     color: var(--white-color); }
@@ -205,6 +206,14 @@ p:last-child {
     left: -300px;
     right: -300px;
     background-color: var(--secondary-color); }
+
+body.single-product #page .site-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+  body.single-product #page .site-content .col-full {
+    max-width: 100%; }
+  body.single-product #page .site-content .content-single-wrapper {
+    max-width: 1700px; }
 
 .product-features {
   margin-bottom: 50px;
