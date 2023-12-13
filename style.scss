@@ -398,7 +398,8 @@ strong {
             bottom: 30px;
         }
     }
-    .swiper-pagination {
-
+    .swiper-pagination.swiper-pagination {
+        position: static;
+        margin-top: 70px;
     }
 }

@@ -275,5 +275,8 @@ strong {
     position: absolute;
     right: 30px;
     bottom: 30px; }
+.product-category-slider .swiper-pagination.swiper-pagination {
+  position: static;
+  margin-top: 70px; }
 
 /*# sourceMappingURL=style.css.map */
