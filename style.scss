@@ -63,6 +63,7 @@ $century: (
 @include font-face("Century Gothic", $font-url + "CenturyGothic/", "CenturyGothic", normal, $century);
 
 :root {
+    --secondary-color: #1C4350;
     --white-color: #fff;
     --black-color: #1b1b1b;
     --text-color: #1b1b1b;
@@ -263,6 +264,19 @@ p {
         .sku_wrapper {
             color: var(--text-color);
             font-size: 17px;
+        }
+    }
+    .related.products {
+        position: relative;
+        overflow: hidden;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -300px;
+            right: -300px;
+            background-color: var(--secondary-color);
         }
     }
 }
