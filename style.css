@@ -49,6 +49,10 @@ p:last-child {
     height: 100%; }
 .priotech-swiper .elementor-posts-item .post-style-1 .post-content {
   position: static; }
+  .priotech-swiper .elementor-posts-item .post-style-1 .post-content .entry-title {
+    margin-bottom: 30px; }
+  .priotech-swiper .elementor-posts-item .post-style-1 .post-content .more-link::after {
+    content: none; }
   .priotech-swiper .elementor-posts-item .post-style-1 .post-content .post-author {
     color: #9EA8A3;
     letter-spacing: 1.03px;

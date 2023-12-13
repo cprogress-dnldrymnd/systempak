@@ -106,6 +106,14 @@ p {
             }
             .post-content {
                 position: static;
+                .entry-title {
+                    margin-bottom: 30px;
+                }
+                .more-link {
+                    &::after {
+                        content: none;
+                    }
+                }
                 .post-author {
                     color: #9EA8A3;
                     letter-spacing: 1.03px;
