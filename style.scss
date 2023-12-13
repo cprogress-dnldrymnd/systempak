@@ -430,3 +430,17 @@ strong {
         font-size: 30px;
     }
 }
+
+
+.newsletter {
+    p {
+        display: flex;
+        .wpcf7-email {
+            border-radius: 15px 0 0 15px;
+        }
+        .wpcf7-submit {
+            border-radius: 0px 15px 15px 0px;
+            background-color: var(--text-color);
+        }
+    }
+}

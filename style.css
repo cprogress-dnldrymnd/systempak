@@ -298,4 +298,12 @@ strong {
 #secondary .widget-title, #secondary .priotech_title_filter {
   font-size: 30px; }
 
+.newsletter p {
+  display: flex; }
+  .newsletter p .wpcf7-email {
+    border-radius: 15px 0 0 15px; }
+  .newsletter p .wpcf7-submit {
+    border-radius: 0px 15px 15px 0px;
+    background-color: var(--text-color); }
+
 /*# sourceMappingURL=style.css.map */
