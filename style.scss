@@ -270,6 +270,11 @@ p {
     .related.products {
         margin-top: 0;
         position: relative;
+        max-width: 1700px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--secondary-color);
+
         h2 {
             color: var(--white-color);
         }
@@ -302,15 +307,7 @@ p {
                 }*/
             }
         }
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -300px;
-            right: -300px;
-            background-color: var(--secondary-color);
-        }
+      
     }
 }
 
