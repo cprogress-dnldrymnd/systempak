@@ -67,6 +67,7 @@ $century: (
     --black-color: #1b1b1b;
     --text-color: #1b1b1b;
     --accent-color: #bdf546;
+    --boder-color: #eaeaea;
 }
 
 html {
@@ -168,6 +169,18 @@ p {
         color: var(--text-color) !important;
         &:before {
             content: none;
+        }
+    }
+
+    #accordion-container {
+        .drawer {
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid var(--border-color);
+            .description_tab {
+                font-weight: bold;
+                font-size: 18px;
+            }
         }
     }
 }
