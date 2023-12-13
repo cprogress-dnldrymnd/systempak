@@ -315,6 +315,8 @@ strong {
   font-size: inherit;
   color: inherit;
   font-weight: inherit; }
+.shortcode-inherit-style h1 {
+  margin-bottom: 0; }
 
 a:hover {
   color: var(--accent-color); }
