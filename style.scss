@@ -167,10 +167,9 @@ p {
             font-weight: 400;
             text-transform: none;
         }
-        
     }
     .woocommerce-product-gallery__image {
-        background-color: #F6F6F6;
+        background-color: #f6f6f6;
         border-radius: 22px;
     }
     div.product .single_add_to_cart_button {
@@ -208,59 +207,25 @@ p {
         line-height: 1;
     }
 
-    #accordion-container {
-        .drawer {
-            border: none;
-            border-radius: 0;
-            border-bottom: 1px solid var(--border-color);
-            .accordion-item {
-                .accordion-header {
-                    min-height: 44px;
-                    border: none;
-                    position: relative;
-                    h1 {
-                        font-weight: bold;
-                        font-size: 18px;
-                        line-height: 1;
-                    }
-                }
-                .accordion-content {
-                    border: none;
-                    h2 {
-                        display: none;
-                    }
-                }
-                .accordion-header-icon {
-                    font-size: 0;
-                    width: 16px;
-                    height: 16px;
-                    position: relative;
-                    &:before {
-                        content: "";
-                        width: 16px;
-                        height: 2px;
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        background-color: var(--text-color);
-                    }
-                    &:after {
-                        content: "";
-                        width: 2px;
-                        height: 16px;
-                        position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        background-color: var(--text-color);
-                    }
-                }
-                &.accordion-item-active {
-                    .accordion-header-icon {
-                        &:after {
-                            display: none;
-                        }
-                    }
-                }
+    #priotech-accordion-container {
+        .accordion-head.accordion-head.accordion-head.accordion-head {
+            &:before {
+                content: "";
+                width: 16px;
+                height: 2px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: var(--text-color);
+            }
+            &:after {
+                content: "";
+                width: 2px;
+                height: 16px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--text-color);
             }
         }
     }
@@ -288,7 +253,7 @@ p {
             span {
                 color: var(--accent-color);
             }
-            @media(min-width: 992px) {
+            @media (min-width: 992px) {
                 font-size: 66px;
             }
         }
