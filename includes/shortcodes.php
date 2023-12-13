@@ -46,8 +46,9 @@ function product_category_subcategory()
 add_shortcode('product_category_subcategory', 'product_category_subcategory');
 
 
-function term_name() {
-    return get_queried_object()->name;
+function term_name()
+{
+    return '<h1> ' . get_queried_object()->name . ' </h1>';
 }
 
 add_shortcode('term_name', 'term_name');
