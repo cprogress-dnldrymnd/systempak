@@ -177,9 +177,39 @@ p {
             border: none;
             border-radius: 0;
             border-bottom: 1px solid var(--border-color);
-            .description_tab {
-                font-weight: bold;
-                font-size: 18px;
+            .accordion-item {
+                .description_tab {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                .accordion-header-icon {
+                    font-size: 0;
+                    width: 16px;
+                    height: 16px;
+                    &:before {
+                        content: '';
+                        width: 16px;
+                        height: 2px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &:after {
+                        content: '';
+                        width: 2px;
+                        height: 16px;
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                &.accordion-item-active {
+                    .accordion-header-icon {
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
             }
         }
     }

@@ -102,8 +102,28 @@ p:last-child {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid var(--border-color); }
-  .single-product.single-product #accordion-container .drawer .description_tab {
+  .single-product.single-product #accordion-container .drawer .accordion-item .description_tab {
     font-weight: bold;
     font-size: 18px; }
+  .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header-icon {
+    font-size: 0;
+    width: 16px;
+    height: 16px; }
+    .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header-icon:before {
+      content: '';
+      width: 16px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+    .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header-icon:after {
+      content: '';
+      width: 2px;
+      height: 16px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); }
+  .single-product.single-product #accordion-container .drawer .accordion-item.accordion-item-active .accordion-header-icon:after {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */
