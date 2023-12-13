@@ -458,3 +458,9 @@ strong {
         font-weight: inherit;
     }
 }
+
+a {
+    &:hover {
+        color: var(--accent-color);
+    }
+}
