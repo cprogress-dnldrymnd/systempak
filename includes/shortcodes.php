@@ -25,7 +25,7 @@ add_shortcode('product_category_subcategory', 'product_category_subcategory');
 
 function term_name($term_id, $taxonomy = 'product_cat')
 {
-    $term = get_term_by('id', $term_id, 'product_cat');
+    $term = get_term_by('id', $term_id, $taxonomy);
 
     return $term->name;
 }
