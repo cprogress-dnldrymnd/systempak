@@ -396,6 +396,11 @@ strong {
             position: absolute;
             right: 30px;
             bottom: 30px;
+            background-color: var(--white-color);
+            svg {
+                width: 30px;
+                height: 30px;
+            }
         }
     }
     .swiper-pagination.swiper-pagination {

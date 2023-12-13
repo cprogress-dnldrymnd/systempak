@@ -274,7 +274,11 @@ strong {
     height: 60px;
     position: absolute;
     right: 30px;
-    bottom: 30px; }
+    bottom: 30px;
+    background-color: var(--white-color); }
+    .product-category-slider .swiper-slide .circle-icon svg {
+      width: 30px;
+      height: 30px; }
 .product-category-slider .swiper-pagination.swiper-pagination {
   position: static;
   margin-top: 70px; }
