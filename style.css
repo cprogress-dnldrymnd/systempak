@@ -98,6 +98,9 @@ p:last-child {
     font-size: 17px;
     font-weight: 400;
     text-transform: none; }
+.single-product.single-product .woocommerce-product-gallery__image {
+  background-color: #F6F6F6;
+  border-radius: 22px; }
 .single-product.single-product div.product .single_add_to_cart_button {
   background-color: var(--accent-color);
   color: var(--text-color) !important;

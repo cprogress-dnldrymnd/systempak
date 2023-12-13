@@ -167,6 +167,11 @@ p {
             font-weight: 400;
             text-transform: none;
         }
+        
+    }
+    .woocommerce-product-gallery__image {
+        background-color: #F6F6F6;
+        border-radius: 22px;
     }
     div.product .single_add_to_cart_button {
         background-color: var(--accent-color);
