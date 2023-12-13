@@ -9,8 +9,6 @@ function product_category_subcategory()
     ));
 
 ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <div class="product-category-slider">
         <div class="swiper mySwiper-ProductCategory">
             <div class="swiper-wrapper">
@@ -34,39 +32,6 @@ function product_category_subcategory()
             <div class="swiper-pagination"></div>
         </div>
     </div>
-
-
-    <script>
-        var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
-            loop: true,
-            speed: 3000,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 2,
-                },
-
-                992: {
-                    slidesPerView: 3,
-                },
-
-
-                1200: {
-                    slidesPerView: 4,
-                },
-
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                dynamicBullets: true,
-                clickable: true
-            },
-
-        });
-    </script>
 <?php
     return ob_get_clean();
 }
