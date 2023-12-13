@@ -66,6 +66,12 @@ add_shortcode('term_description', 'term_description_sc');
 
 function custom_breadcrumbs()
 {
+
+    if (is_singular()) {
+        $title = get_the_title();
+    } else if (is_tax()) {
+        $title = get_queried_object()->name;
+    }
     return '<a href="' . get_site_url() . '">Home</a> / Tamper Evident';
 }
 
