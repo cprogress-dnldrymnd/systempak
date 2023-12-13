@@ -60,7 +60,8 @@ p:last-child {
     line-height: 1.2;
     max-width: 100%; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link {
-    color: var(--text-color); }
+    color: var(--text-color);
+    font-size: 19px; }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link::after {
       content: none; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author {
