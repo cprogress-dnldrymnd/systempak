@@ -58,13 +58,7 @@ if ($related_products) :
     <?= do_shortcode("[hfe_template id='5352']") ?>
     <section class="related products elementor-element">
 
-        <?php
-        $heading = apply_filters('woocommerce_product_related_products_heading', __('Related <span>Products</span>', 'priotech'));
-
-        if ($heading) :
-        ?>
-            <h2><?php echo $heading ?></h2>
-        <?php endif; ?>
+        <h2>Related <span>Products</span></h2>
         <div class="woocommerce <?php echo esc_attr($class); ?>" data-settings="<?php echo esc_attr(wp_json_encode($settings)) ?>">
             <?php woocommerce_product_loop_start(); ?>
 
