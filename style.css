@@ -134,4 +134,15 @@ p:last-child {
   .single-product.single-product #accordion-container .drawer .accordion-item.accordion-item-active .accordion-header-icon:after {
     display: none; }
 
+.product-features {
+  margin-bottom: 50px;
+  margin-top: 50px; }
+  .product-features .product-features-box {
+    display: flex;
+    flex-wrap: wrap; }
+    .product-features .product-features-box .product-feature {
+      margin-bottom: 22px; }
+      .product-features .product-features-box .product-feature:not(:last-child) {
+        margin-right: 22px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -225,3 +225,18 @@ p {
         }
     }
 }
+
+.product-features {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    .product-features-box {
+        display: flex;
+        flex-wrap: wrap;
+        .product-feature {
+            margin-bottom: 22px;
+            &:not(:last-child) {
+                margin-right: 22px;
+            }
+        }
+    }
+}
