@@ -72,7 +72,7 @@ function custom_breadcrumbs()
     } else if (is_tax()) {
         $title = get_queried_object()->name;
     }
-    return '<a href="' . get_site_url() . '">Home</a> / Tamper Evident';
+    return '<a href="' . get_site_url() . '">Home</a> / ' . $title;
 }
 
 add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs');
