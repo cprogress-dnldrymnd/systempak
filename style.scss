@@ -1,0 +1,71 @@
+/* 
+Theme Name:		 SystemPAK child
+Theme URI:		 http://childtheme-generator.com/
+Template:		 systempak
+Version:		 1.0.0
+Text Domain:	 systempak-child
+*/
+
+/*
+    Add your custom styles here
+*/
+$font-url: "./assets/fonts/" !default;
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+@mixin font-face($fontFamily, $path, $fileName, $fontStyle: normal, $fontWeight: false) {
+    @each $name, $weight in $fontWeight {
+        @font-face {
+            font-family: $fontFamily;
+            src: url("#{$path + $fileName}-#{$name}.eot");
+            src:
+                url("#{$path + $fileName}-#{$name}.eot?#iefix") format("embedded-opentype"),
+                url("#{$path + $fileName}-#{$name}.woff2") format("woff2"),
+                url("#{$path + $fileName}-#{$name}.woff") format("woff"),
+                url("#{$path + $fileName}-#{$name}.ttf") format("truetype"),
+                url("#{$path + $fileName}-#{$name}.svg##{$fileName}-#{$name}") format("svg");
+
+            font-weight: $weight;
+            font-style: $fontStyle;
+            font-display: swap;
+        }
+    }
+}
+
+$century: (
+    "Regular": 400,
+    "Bold": 700
+);
+
+:root {
+    --primary-font: "Century Gothic", sans-serif;
+}
+
+@include font-face("Century Gothic", $font-url + "CenturyGothic/", "CenturyGothic", normal, $century);
+
+body {
+    font-family: var(--primary-font) !important;
+}

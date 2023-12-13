@@ -5,8 +5,27 @@ Template:		 systempak
 Version:		 1.0.0
 Text Domain:	 systempak-child
 */
-
-
 /*
     Add your custom styles here
 */
+:root {
+  --primary-font: "Century Gothic", sans-serif; }
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("./assets/fonts/CenturyGothic/CenturyGothic-Regular.eot");
+  src: url("./assets/fonts/CenturyGothic/CenturyGothic-Regular.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/CenturyGothic/CenturyGothic-Regular.woff2") format("woff2"), url("./assets/fonts/CenturyGothic/CenturyGothic-Regular.woff") format("woff"), url("./assets/fonts/CenturyGothic/CenturyGothic-Regular.ttf") format("truetype"), url("./assets/fonts/CenturyGothic/CenturyGothic-Regular.svg#CenturyGothic-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+@font-face {
+  font-family: "Century Gothic";
+  src: url("./assets/fonts/CenturyGothic/CenturyGothic-Bold.eot");
+  src: url("./assets/fonts/CenturyGothic/CenturyGothic-Bold.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/CenturyGothic/CenturyGothic-Bold.woff2") format("woff2"), url("./assets/fonts/CenturyGothic/CenturyGothic-Bold.woff") format("woff"), url("./assets/fonts/CenturyGothic/CenturyGothic-Bold.ttf") format("truetype"), url("./assets/fonts/CenturyGothic/CenturyGothic-Bold.svg#CenturyGothic-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+body {
+  font-family: var(--primary-font) !important; }
+
+/*# sourceMappingURL=style.css.map */
