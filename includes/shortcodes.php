@@ -9,6 +9,8 @@ function product_category_subcategory()
     ));
 
 ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <div class="product-category-slider">
         <div class="swiper mySwiper-ProductCategory">
             <div class="swiper-wrapper">
