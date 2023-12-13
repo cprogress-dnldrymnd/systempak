@@ -7,6 +7,7 @@ function product_category_subcategory()
         'taxonomy' => 'product_cat',
         'parent'   => $term->term_id
     ));
+    echo $term->term_id;
     echo 'sdsdsds';
     foreach ($terms as $subcat) {
         echo 'sdsdsds';
