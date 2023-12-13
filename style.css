@@ -55,7 +55,8 @@ p:last-child {
 .priotech-con .elementor-posts-item .post-style-1 .post-content {
   position: static; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .entry-title {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    font-size: 31px; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link {
     color: var(--text-color); }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link::after {
