@@ -36,32 +36,32 @@ html body {
 p:last-child {
   margin-bottom: 0 !important; }
 
-.priotech-swiper .elementor-posts-item .post-style-1 .post-inner {
+.priotech-con .elementor-posts-item .post-style-1 .post-inner {
   position: relative; }
-.priotech-swiper .elementor-posts-item .post-style-1 .post-thumbnail {
+.priotech-con .elementor-posts-item .post-style-1 .post-thumbnail {
   position: relative;
   padding: 55% 0; }
-  .priotech-swiper .elementor-posts-item .post-style-1 .post-thumbnail img {
+  .priotech-con .elementor-posts-item .post-style-1 .post-thumbnail img {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%; }
-.priotech-swiper .elementor-posts-item .post-style-1 .post-content {
+.priotech-con .elementor-posts-item .post-style-1 .post-content {
   position: static; }
-  .priotech-swiper .elementor-posts-item .post-style-1 .post-content .entry-title {
+  .priotech-con .elementor-posts-item .post-style-1 .post-content .entry-title {
     margin-bottom: 30px; }
-  .priotech-swiper .elementor-posts-item .post-style-1 .post-content .more-link::after {
+  .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link::after {
     content: none; }
-  .priotech-swiper .elementor-posts-item .post-style-1 .post-content .post-author {
+  .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author {
     color: #9EA8A3;
     letter-spacing: 1.03px;
     font-size: 19px; }
-    .priotech-swiper .elementor-posts-item .post-style-1 .post-content .post-author a {
+    .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author a {
       color: inherit; }
-    .priotech-swiper .elementor-posts-item .post-style-1 .post-content .post-author:before {
+    .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author:before {
       content: none; }
-  .priotech-swiper .elementor-posts-item .post-style-1 .post-content .posted-on {
+  .priotech-con .elementor-posts-item .post-style-1 .post-content .posted-on {
     position: absolute;
     top: 0;
     left: 55px;
@@ -71,7 +71,7 @@ p:last-child {
     color: #fff;
     font-size: 23px;
     font-weight: bold; }
-    .priotech-swiper .elementor-posts-item .post-style-1 .post-content .posted-on a {
+    .priotech-con .elementor-posts-item .post-style-1 .post-content .posted-on a {
       color: inherit; }
 
 /*# sourceMappingURL=style.css.map */
