@@ -36,8 +36,6 @@ function product_category_subcategory()
     <script>
         var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
             loop: true,
-            freeMode: true,
-            centeredSlides: true,
             speed: 5000,
             autoplay: {
                 delay: 0,
@@ -57,7 +55,11 @@ function product_category_subcategory()
                     slidesPerView: 4,
                 },
 
-
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+                clickable: true
             },
 
         });
