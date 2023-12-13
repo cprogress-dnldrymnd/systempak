@@ -7,7 +7,7 @@ function product_category_subcategory()
         'taxonomy' => 'product_cat',
         'parent'   => $term->term_id
     ));
-
+echo 'sdsdsds';
     foreach ($terms as $subcat) {
        echo  do_shortcode("[hfe_template id='5407']");
 ?>
