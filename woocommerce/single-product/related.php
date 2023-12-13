@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Related Products
  *
@@ -49,33 +50,31 @@ if ($related_products) :
         'orderby' => 'meta_value_num',
         'posts_per_page' => 6,
     );
-    $loop = new WP_Query( $args );
-    
-    
-    ?>
+    $loop = new WP_Query($args);
+
+
+?>
 
     <?= do_shortcode("[hfe_template id='5352']") ?>
-
     <section class="related products elementor-element">
 
         <?php
         $heading = apply_filters('woocommerce_product_related_products_heading', __('Shop Our Best Sellers', 'priotech'));
 
         if ($heading) :
-            ?>
+        ?>
             <h2><?php echo esc_html($heading); ?></h2>
         <?php endif; ?>
         <div class="woocommerce <?php echo esc_attr($class); ?>" data-settings="<?php echo esc_attr(wp_json_encode($settings)) ?>">
             <?php woocommerce_product_loop_start(); ?>
 
             <?php
-            if ( $loop->have_posts() ) {
-                while ( $loop->have_posts() ) : 
+            if ($loop->have_posts()) {
+                while ($loop->have_posts()) :
                     $loop->the_post();
-                    do_action( 'woocommerce_shop_loop' );
-                    wc_get_template_part( 'content', 'product' );
+                    do_action('woocommerce_shop_loop');
+                    wc_get_template_part('content', 'product');
                 endwhile;
-                
             }
             ?>
 
@@ -97,16 +96,17 @@ if ($related_products) :
         </div>
         <?php
         if (!priotech_is_elementor_activated()) {
-            ?>
+        ?>
             <style>
                 .related .priotech-products.products.elementor-grid {
                     display: flex;
                 }
             </style>
-            <?php
+        <?php
         }
         ?>
     </section>
+    <?= do_shortcode("  [hfe_template id='5357']") ?>
 <?php
 endif;
 
