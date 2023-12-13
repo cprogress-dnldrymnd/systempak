@@ -28,14 +28,16 @@ Text Domain:	 systempak-child
   --black-color: #1b1b1b;
   --text-color: #1b1b1b;
   --accent-color: #bdf546;
-  --boder-color: #eaeaea; }
+  --boder-color: #eaeaea;
+  --light-gray-color: #f6f6f6; }
 
 html body {
   --e-global-typography-primary-font-family: "Century Gothic", sans-serif !important;
   --e-global-typography-text-font-family: "Century Gothic", sans-serif !important;
   --e-global-typography-secondary-font-family: "Century Gothic", sans-serif !important; }
 
-.home #header, .tax-product_cat #header {
+.home #header,
+.tax-product_cat #header {
   position: absolute;
   top: 0;
   left: 0;
@@ -235,5 +237,9 @@ strong {
 
 .color-accent {
   color: var(--accent-color); }
+
+.product-category-slider .swiper-slide {
+  background-color: var(--light-gray-color);
+  padding: 50px; }
 
 /*# sourceMappingURL=style.css.map */

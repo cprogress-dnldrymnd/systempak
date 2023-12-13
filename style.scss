@@ -69,6 +69,7 @@ $century: (
     --text-color: #1b1b1b;
     --accent-color: #bdf546;
     --boder-color: #eaeaea;
+    --light-gray-color: #f6f6f6;
 }
 
 html {
@@ -79,7 +80,8 @@ html {
     }
 }
 
-.home, .tax-product_cat {
+.home,
+.tax-product_cat {
     #header {
         position: absolute;
         top: 0;
@@ -353,5 +355,8 @@ strong {
 }
 
 .product-category-slider {
-    
+    .swiper-slide {
+        background-color: var(--light-gray-color);
+        padding: 50px;
+    }
 }
