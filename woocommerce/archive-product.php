@@ -110,6 +110,5 @@ do_action( 'woocommerce_after_main_content' );
  */
 do_action( 'woocommerce_sidebar' );
 
-echo do_shortcode("[hfe_template id='5440']");
 
 get_footer( 'shop' );
