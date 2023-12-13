@@ -195,6 +195,8 @@ p:last-child {
     }*/ }
     .single-product.single-product .related.products .product .product-block .woocommerce-loop-product__title a {
       color: var(--white-color); }
+    .single-product.single-product .related.products .product .product-block .price {
+      color: var(--white-color); }
   .single-product.single-product .related.products:before {
     content: "";
     position: absolute;
