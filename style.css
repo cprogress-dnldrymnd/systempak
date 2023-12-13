@@ -22,6 +22,11 @@ Text Domain:	 systempak-child
   font-weight: 700;
   font-style: normal;
   font-display: swap; }
+:root {
+  --white-color: #fff;
+  --black-color: #1B1B1B;
+  --text-color: #1B1B1B; }
+
 html body {
   --e-global-typography-primary-font-family: "Century Gothic", sans-serif !important;
   --e-global-typography-text-font-family: "Century Gothic", sans-serif !important;
@@ -65,13 +70,14 @@ p:last-child {
     position: absolute;
     top: 0;
     left: 55px;
-    background-color: #000;
+    background-color: var(--text-color);
     padding: 10px;
     border-radius: 0px 0px 15px 15px;
     color: #fff;
     font-size: 23px;
     font-weight: bold; }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .posted-on a {
-      color: inherit; }
+      color: inherit;
+      color: var(--text-color); }
 
 /*# sourceMappingURL=style.css.map */

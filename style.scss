@@ -63,6 +63,9 @@ $century: (
 @include font-face("Century Gothic", $font-url + "CenturyGothic/", "CenturyGothic", normal, $century);
 
 :root {
+    --white-color: #fff;
+    --black-color: #1B1B1B;
+    --text-color: #1B1B1B;
 }
 
 html {
@@ -129,7 +132,7 @@ p {
                     position: absolute;
                     top: 0;
                     left: 55px;
-                    background-color: #000;
+                    background-color: var(--text-color);
                     padding: 10px;
                     border-radius: 0px 0px 15px 15px;
                     color: #fff;
@@ -137,6 +140,7 @@ p {
                     font-weight: bold;
                     a {
                         color: inherit;
+                        color: var(--text-color);
                     }
                 }
             }
