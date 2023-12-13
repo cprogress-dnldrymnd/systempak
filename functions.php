@@ -44,7 +44,6 @@ function action_wp_footer()
 			},
 			pagination: {
 				el: ".swiper-pagination",
-				dynamicBullets: true,
 				clickable: true
 			},
 
