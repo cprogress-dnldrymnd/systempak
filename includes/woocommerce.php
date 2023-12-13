@@ -29,7 +29,9 @@ add_action('wp_footer', 'woocommerce_js');
 
 
 function action_woocommerce_before_add_to_cart_form() {
-
+    ?>
+sccscscs
+    <?php
 }
 
 add_action('woocommerce_before_add_to_cart_form', 'action_woocommerce_before_add_to_cart_form');
