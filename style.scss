@@ -68,7 +68,9 @@ $century: (
 html {
     body {
         body {
+            --e-global-typography-primary-font-family: "Century Gothic", sans-serif !important;
             --e-global-typography-text-font-family: "Century Gothic", sans-serif !important;
+            --e-global-typography-secondary-font-family: "Century Gothic", sans-serif !important;
         }
     }
 }
