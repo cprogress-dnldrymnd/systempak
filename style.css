@@ -311,4 +311,9 @@ strong {
     border-radius: 0px 15px 15px 0px;
     background-color: var(--text-color); }
 
+.shortcode-inherit-style * {
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit; }
+
 /*# sourceMappingURL=style.css.map */

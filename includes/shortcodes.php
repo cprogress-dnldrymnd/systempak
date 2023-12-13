@@ -52,3 +52,15 @@ function term_name()
 }
 
 add_shortcode('term_name', 'term_name');
+
+
+
+
+function term_description()
+{
+    return get_queried_object()->description;
+}
+
+add_shortcode('term_description', 'term_description');
+
+

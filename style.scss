@@ -450,3 +450,11 @@ strong {
         }
     }
 }
+
+.shortcode-inherit-style {
+    * {
+        font-size: inherit;
+        color: inherit;
+        font-weight: inherit;
+    }
+}
