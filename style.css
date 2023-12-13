@@ -27,7 +27,7 @@ html body {
   --e-global-typography-text-font-family: "Century Gothic", sans-serif !important;
   --e-global-typography-secondary-font-family: "Century Gothic", sans-serif !important; }
 
-.home #masthead {
+.home #header {
   position: absolute;
   top: 0;
   left: 0;
