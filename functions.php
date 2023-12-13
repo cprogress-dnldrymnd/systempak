@@ -7,6 +7,8 @@ function priotech_child_enqueue_styles()
 
 require_once('includes/woocommerce.php');
 
-function priotech_get_settings_product_caroseul() {
-	
+function priotech_get_settings_product_caroseul()
+{
+	$settings = array();
+	return $settings;
 }
