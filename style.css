@@ -244,7 +244,8 @@ strong {
   height: auto;
   border-radius: 30px;
   text-align: center;
-  position: relative; }
+  position: relative;
+  padding-bottom: 150px; }
   .product-category-slider .swiper-slide a {
     position: absolute;
     left: 0;
