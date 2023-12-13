@@ -255,6 +255,15 @@ p {
             }
         }
     }
+    .rating_brands {
+        .woocommerce-product-rating {
+            display: none;
+        }
+        .sku_wrapper {
+            color: var(--text-color);
+            font-size: 17px;
+        }
+    }
 }
 
 .product-features {

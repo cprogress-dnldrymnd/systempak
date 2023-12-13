@@ -163,6 +163,11 @@ p:last-child {
       background-color: var(--text-color); }
   .single-product.single-product #accordion-container .drawer .accordion-item.accordion-item-active .accordion-header-icon:after {
     display: none; }
+.single-product.single-product .rating_brands .woocommerce-product-rating {
+  display: none; }
+.single-product.single-product .rating_brands .sku_wrapper {
+  color: var(--text-color);
+  font-size: 17px; }
 
 .product-features {
   margin-bottom: 50px;
