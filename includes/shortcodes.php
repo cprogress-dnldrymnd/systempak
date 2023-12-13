@@ -9,25 +9,11 @@ function product_category_subcategory()
     ));
     echo $term->term_id;
     echo 'sdsdsds';
-    foreach ($terms as $subcat) {
-        echo 'sdsdsds';
-        echo  do_shortcode("[hfe_template id='5407']");
-?>
+    foreach ($terms as $subcat) { ?>
 
-        <?php
-    }
+        <?php }
 
     return ob_get_clean();
 }
 
 add_shortcode('product_category_subcategory', 'product_category_subcategory');
-
-
-function term_name($term_id, $taxonomy = 'product_cat')
-{
-    $term = get_queried_object();
-
-    return $term->name;
-}
-
-add_shortcode('term_name', 'term_name');
