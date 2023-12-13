@@ -35,7 +35,7 @@ if ($related_products) :
     $settings['prevEl'] = '.related-swiper-button-prev';
     $settings['nextEl'] = '.related-swiper-button-next';
     $settings['paginationEl'] = '.related-pagination';
-    $show_dots = (in_array($settings['navigation'], ['dots', 'both']));
+    $show_dots = true;
     $show_arrows = (in_array($settings['navigation'], ['arrows', 'both']));
 
     $settings['breakpoints']['desktop']['column'] = 5;
