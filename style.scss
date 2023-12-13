@@ -116,6 +116,7 @@ p {
                     &::after {
                         content: none;
                     }
+                    color: var(--text-color);
                 }
                 .post-author {
                     color: #9EA8A3;

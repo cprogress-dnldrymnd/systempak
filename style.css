@@ -56,8 +56,10 @@ p:last-child {
   position: static; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .entry-title {
     margin-bottom: 30px; }
-  .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link::after {
-    content: none; }
+  .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link {
+    color: var(--text-color); }
+    .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link::after {
+      content: none; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author {
     color: #9EA8A3;
     letter-spacing: 1.03px;
