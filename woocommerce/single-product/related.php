@@ -59,7 +59,7 @@ if ($related_products) :
     <section class="related products elementor-element">
 
         <?php
-        $heading = apply_filters('woocommerce_product_related_products_heading', __('Shop Our Best Sellers', 'priotech'));
+        $heading = apply_filters('woocommerce_product_related_products_heading', __('Related <span>Products</span>', 'priotech'));
 
         if ($heading) :
         ?>

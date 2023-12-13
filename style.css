@@ -187,6 +187,11 @@ p:last-child {
     margin-right: auto; }
   .single-product.single-product .related.products h2 {
     color: var(--white-color); }
+    .single-product.single-product .related.products h2 span {
+      color: var(--accent-color); }
+    @media (min-width: 992px) {
+      .single-product.single-product .related.products h2 {
+        font-size: 66px; } }
   .single-product.single-product .related.products .product .product-block {
     background-color: transparent;
     box-shadow: none;
