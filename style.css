@@ -95,7 +95,8 @@ p:last-child {
   font-weight: 400; }
 .single-product.single-product div.product .single_add_to_cart_button {
   background-color: var(--accent-color);
-  color: var(--text-color) !important; }
+  color: var(--text-color) !important;
+  font-weight: bold; }
   .single-product.single-product div.product .single_add_to_cart_button:before {
     content: none; }
 .single-product.single-product #accordion-container .drawer {
@@ -136,7 +137,7 @@ p:last-child {
 
 .product-features {
   margin-bottom: 50px;
-  margin-top: 50px; }
+  margin-top: 30px; }
   .product-features .product-features-box {
     display: flex;
     flex-wrap: wrap; }
