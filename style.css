@@ -145,4 +145,7 @@ p:last-child {
       .product-features .product-features-box .product-feature:not(:last-child) {
         margin-right: 22px; }
 
+b, strong {
+  font-weight: bold !important; }
+
 /*# sourceMappingURL=style.css.map */
