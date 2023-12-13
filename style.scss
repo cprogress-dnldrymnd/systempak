@@ -72,3 +72,12 @@ html {
         --e-global-typography-secondary-font-family: "Century Gothic", sans-serif !important;
     }
 }
+
+.home {
+    #header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
