@@ -17,6 +17,7 @@ function product_category_subcategory()
                     $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
                     ?>
                     <div class="swiper-slide">
+                        <a href="<?= get_term_link($term->term_id) ?>"></a>
                         <div class="term-name">
                             <h4><?= $term->name ?></h4>
                         </div>

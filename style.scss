@@ -362,6 +362,14 @@ strong {
         border-radius: 30px;
         text-align: center;
         position: relative;
+        a {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
         .image-box {
             display: flex;
             align-items: center;
@@ -382,5 +390,15 @@ strong {
         .product-counts {
             margin-bottom: 120px;
         }
+        .circle-icon {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+        }
+    }
+    .swiper-pagination {
+
     }
 }
