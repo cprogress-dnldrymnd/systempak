@@ -26,6 +26,7 @@ function action_wp_footer()
 			loop: true,
 			speed: 3000,
 			autoplay: true,
+			spaceBetween: 30,
 			breakpoints: {
 				0: {
 					slidesPerView: 2,
