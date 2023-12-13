@@ -56,12 +56,12 @@ add_shortcode('term_name', 'term_name');
 
 
 
-function term_description()
+function term_description_sc()
 {
     return get_queried_object()->description;
 }
 
-add_shortcode('term_description', 'term_description');
+add_shortcode('term_description', 'term_description_sc');
 
 
 function custom_breadcrumbs()
