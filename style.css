@@ -25,7 +25,8 @@ Text Domain:	 systempak-child
 :root {
   --white-color: #fff;
   --black-color: #1b1b1b;
-  --text-color: #1b1b1b; }
+  --text-color: #1b1b1b;
+  --accent-color: #bdf546; }
 
 html body {
   --e-global-typography-primary-font-family: "Century Gothic", sans-serif !important;
@@ -85,5 +86,10 @@ p:last-child {
     font-weight: bold; }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .posted-on a {
       color: inherit; }
+
+.single-product.single-product .summary .inventory_status {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  font-size: 17px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -66,6 +66,7 @@ $century: (
     --white-color: #fff;
     --black-color: #1b1b1b;
     --text-color: #1b1b1b;
+    --accent-color: #bdf546;
 }
 
 html {
@@ -149,6 +150,16 @@ p {
                     }
                 }
             }
+        }
+    }
+}
+
+.single-product.single-product {
+    .summary {
+        .inventory_status {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            font-size: 17px;
         }
     }
 }
