@@ -178,16 +178,18 @@ p {
             border-radius: 0;
             border-bottom: 1px solid var(--border-color);
             .accordion-item {
-                .description_tab {
-                    font-weight: bold;
-                    font-size: 18px;
+                .accordion-header {
+                    h1 {
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
                 }
                 .accordion-header-icon {
                     font-size: 0;
                     width: 16px;
                     height: 16px;
                     &:before {
-                        content: '';
+                        content: "";
                         width: 16px;
                         height: 2px;
                         position: absolute;
@@ -195,7 +197,7 @@ p {
                         transform: translateY(-50%);
                     }
                     &:after {
-                        content: '';
+                        content: "";
                         width: 2px;
                         height: 16px;
                         position: absolute;
