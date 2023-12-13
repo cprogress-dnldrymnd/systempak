@@ -54,7 +54,7 @@ if ($related_products) :
     
     ?>
 
-    <?= do_shortcode('[hfe_template id='5352']') ?>
+    <?= do_shortcode("[hfe_template id='5352']") ?>
 
     <section class="related products elementor-element">
 
