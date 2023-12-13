@@ -2,7 +2,7 @@
 define('theme_dir', get_template_directory_uri() . '/');
 define('assets_dir', theme_dir . 'assets/');
 define('image_dir', assets_dir . 'images/');
-define('vendor_dir', assets_dir . 'coptrz_vendors/');
+define('vendor_dir', assets_dir . 'vendors/');
 
 add_action('wp_enqueue_scripts', 'priotech_child_enqueue_styles');
 function priotech_child_enqueue_styles()
