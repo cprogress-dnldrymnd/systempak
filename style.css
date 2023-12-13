@@ -90,12 +90,14 @@ p:last-child {
     .priotech-con .elementor-posts-item .post-style-1 .post-content .posted-on a {
       color: inherit; }
 
-.single-product.single-product .summary .inventory_status {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  font-size: 17px;
-  font-weight: 400;
-  text-transform: none; }
+.single-product.single-product .summary {
+  position: relative; }
+  .single-product.single-product .summary .inventory_status {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: none; }
 .single-product.single-product div.product .single_add_to_cart_button {
   background-color: var(--accent-color);
   color: var(--text-color) !important;

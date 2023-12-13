@@ -159,6 +159,7 @@ p {
 
 .single-product.single-product {
     .summary {
+        position: relative;
         .inventory_status {
             background-color: var(--accent-color);
             color: var(--text-color);
