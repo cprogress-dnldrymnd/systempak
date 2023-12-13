@@ -44,3 +44,10 @@ function product_category_subcategory()
 }
 
 add_shortcode('product_category_subcategory', 'product_category_subcategory');
+
+
+function term_name() {
+    return get_queried_object()->name;
+}
+
+add_shortcode('term_name', 'term_name');
