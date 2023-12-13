@@ -207,12 +207,12 @@ p:last-child {
     right: -300px;
     background-color: var(--secondary-color); }
 
-body.single-product #page .site-content {
+body.single-product.single-product #page .site-content {
   padding-left: 0 !important;
   padding-right: 0 !important; }
-  body.single-product #page .site-content .col-full {
+  body.single-product.single-product #page .site-content .col-full {
     max-width: 100%; }
-  body.single-product #page .site-content .content-single-wrapper {
+  body.single-product.single-product #page .site-content .content-single-wrapper {
     max-width: 1700px; }
 
 .product-features {
