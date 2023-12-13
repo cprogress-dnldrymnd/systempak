@@ -172,14 +172,25 @@ p {
         background-color: #f6f6f6;
         border-radius: 22px;
     }
-    div.product .single_add_to_cart_button {
-        background-color: var(--accent-color);
-        color: var(--text-color) !important;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 1 !important;
-        &:before {
-            content: none;
+    div.product {
+        .single_add_to_cart_button {
+            background-color: var(--accent-color);
+            color: var(--text-color) !important;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1 !important;
+            &:before {
+                content: none;
+            }
+        }
+
+        .woocommerce-product-gallery-sticky .woocommerce-product-gallery__wrapper {
+            .woocommerce-product-gallery__image {
+                margin-bottom: 20px;
+                a {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
     .quick-buy {

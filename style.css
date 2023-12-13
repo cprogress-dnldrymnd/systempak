@@ -109,6 +109,10 @@ p:last-child {
   line-height: 1 !important; }
   .single-product.single-product div.product .single_add_to_cart_button:before {
     content: none; }
+.single-product.single-product div.product .woocommerce-product-gallery-sticky .woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image {
+  margin-bottom: 20px; }
+  .single-product.single-product div.product .woocommerce-product-gallery-sticky .woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image a {
+    margin-bottom: 0; }
 .single-product.single-product .quick-buy {
   background-color: var(--accent-color);
   color: var(--text-color) !important;
