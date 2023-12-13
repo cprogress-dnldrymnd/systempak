@@ -24,8 +24,8 @@ Text Domain:	 systempak-child
   font-display: swap; }
 :root {
   --white-color: #fff;
-  --black-color: #1B1B1B;
-  --text-color: #1B1B1B; }
+  --black-color: #1b1b1b;
+  --text-color: #1b1b1b; }
 
 html body {
   --e-global-typography-primary-font-family: "Century Gothic", sans-serif !important;
@@ -56,13 +56,15 @@ p:last-child {
   position: static; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .entry-title {
     margin-bottom: 30px;
-    font-size: 31px; }
+    font-size: 31px;
+    line-height: 1.2;
+    max-width: 100%; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link {
     color: var(--text-color); }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .more-link::after {
       content: none; }
   .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author {
-    color: #9EA8A3;
+    color: #9ea8a3;
     letter-spacing: 1.03px;
     font-size: 19px;
     font-weight: 400; }
@@ -81,7 +83,6 @@ p:last-child {
     font-size: 23px;
     font-weight: bold; }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .posted-on a {
-      color: inherit;
-      color: var(--text-color); }
+      color: inherit; }
 
 /*# sourceMappingURL=style.css.map */

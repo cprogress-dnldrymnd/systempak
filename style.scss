@@ -64,8 +64,8 @@ $century: (
 
 :root {
     --white-color: #fff;
-    --black-color: #1B1B1B;
-    --text-color: #1B1B1B;
+    --black-color: #1b1b1b;
+    --text-color: #1b1b1b;
 }
 
 html {
@@ -112,15 +112,17 @@ p {
                 .entry-title {
                     margin-bottom: 30px;
                     font-size: 31px;
+                    line-height: 1.2;
+                    max-width: 100%;
                 }
                 .more-link {
+                    color: var(--text-color);
                     &::after {
                         content: none;
                     }
-                    color: var(--text-color);
                 }
                 .post-author {
-                    color: #9EA8A3;
+                    color: #9ea8a3;
                     letter-spacing: 1.03px;
                     font-size: 19px;
                     font-weight: 400;
@@ -143,7 +145,6 @@ p {
                     font-weight: bold;
                     a {
                         color: inherit;
-                        color: var(--text-color);
                     }
                 }
             }
