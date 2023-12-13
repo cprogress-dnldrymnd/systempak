@@ -289,4 +289,10 @@ strong {
   position: static;
   margin-top: 70px; }
 
+.widget_price_filter.widget_price_filter .ui-slider .ui-slider-range {
+  background-color: var(--accent-color); }
+.widget_price_filter.widget_price_filter .ui-slider .ui-slider-handle {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color); }
+
 /*# sourceMappingURL=style.css.map */

@@ -414,3 +414,13 @@ strong {
         margin-top: 70px;
     }
 }
+
+.widget_price_filter.widget_price_filter .ui-slider {
+    .ui-slider-range {
+        background-color: var(--accent-color);
+    }
+    .ui-slider-handle {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+    }
+}
