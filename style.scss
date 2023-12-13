@@ -106,6 +106,17 @@ p {
             }
             .post-content {
                 position: static;
+                .post-author {
+                    color: #9EA8A3;
+                    letter-spacing: 1.03px;
+                    font-size: 19px;
+                    a {
+                        color: inherit;
+                    }
+                    &:before {
+                        content: none;
+                    }
+                }
                 .posted-on {
                     position: absolute;
                     top: 0;
