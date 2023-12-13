@@ -61,7 +61,8 @@ p:last-child {
   .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author {
     color: #9EA8A3;
     letter-spacing: 1.03px;
-    font-size: 19px; }
+    font-size: 19px;
+    font-weight: 400; }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author a {
       color: inherit; }
     .priotech-con .elementor-posts-item .post-style-1 .post-content .post-author:before {
