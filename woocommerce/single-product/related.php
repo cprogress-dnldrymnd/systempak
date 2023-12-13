@@ -26,8 +26,6 @@ if ($related_products) :
     foreach ($related_products as $related) {
         $related_ids[] = $related->get_id();
     }
-    
-
 
     $class = 'priotech-theme-swiper priotech-swiper-wrapper swiper ';
     $items = wc_get_loop_prop('columns');
@@ -55,6 +53,8 @@ if ($related_products) :
     
     
     ?>
+
+    <?= do_shortcode('[hfe_template id='5352']') ?>
 
     <section class="related products elementor-element">
 
