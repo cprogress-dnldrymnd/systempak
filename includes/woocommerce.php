@@ -26,3 +26,10 @@ function woocommerce_js()
 }
 
 add_action('wp_footer', 'woocommerce_js');
+
+
+function action_woocommerce_before_add_to_cart_form() {
+
+}
+
+add_action('woocommerce_before_add_to_cart_form', 'action_woocommerce_before_add_to_cart_form');
