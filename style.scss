@@ -208,6 +208,7 @@ p {
                 .accordion-header {
                     min-height: 44px;
                     border: none;
+                    position: relative;
                     h1 {
                         font-weight: bold;
                         font-size: 18px;
@@ -231,6 +232,7 @@ p {
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
+                        background-color: var(--text-color);
                     }
                     &:after {
                         content: "";
@@ -239,6 +241,7 @@ p {
                         position: absolute;
                         left: 50%;
                         transform: translateX(-50%);
+                        background-color: var(--text-color);
                     }
                 }
                 &.accordion-item-active {

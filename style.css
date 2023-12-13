@@ -130,7 +130,8 @@ p:last-child {
   border-bottom: 1px solid var(--border-color); }
   .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header {
     min-height: 44px;
-    border: none; }
+    border: none;
+    position: relative; }
     .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header h1 {
       font-weight: bold;
       font-size: 18px;
@@ -149,14 +150,16 @@ p:last-child {
       height: 2px;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%); }
+      transform: translateY(-50%);
+      background-color: var(--text-color); }
     .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header-icon:after {
       content: "";
       width: 2px;
       height: 16px;
       position: absolute;
       left: 50%;
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      background-color: var(--text-color); }
   .single-product.single-product #accordion-container .drawer .accordion-item.accordion-item-active .accordion-header-icon:after {
     display: none; }
 
