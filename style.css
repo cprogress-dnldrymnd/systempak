@@ -214,6 +214,8 @@ p:last-child {
       color: var(--white-color); }
     .single-product.single-product .related.products .product .product-block .price {
       color: var(--white-color); }
+    .single-product.single-product .related.products .product .product-block .product-image {
+      background-color: var(--white-color); }
   @media (max-width: 1740px) {
     .single-product.single-product .related.products {
       padding-left: 20px;
