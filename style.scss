@@ -63,9 +63,12 @@ $century: (
 @include font-face("Century Gothic", $font-url + "CenturyGothic/", "CenturyGothic", normal, $century);
 
 :root {
-    --primary-font: "Century Gothic", sans-serif;
 }
 
-body {
-    font-family: var(--primary-font) !important;
+html {
+    body {
+        body {
+            --e-global-typography-text-font-family: "Century Gothic", sans-serif !important;
+        }
+    }
 }
