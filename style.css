@@ -43,6 +43,9 @@ html body {
   left: 0;
   right: 0; }
 
+.tax-product_cat .hide-on-product-cat {
+  display: none !important; }
+
 p:last-child {
   margin-bottom: 0 !important; }
 
@@ -295,7 +298,8 @@ strong {
   background-color: var(--accent-color);
   border-color: var(--accent-color); }
 
-#secondary .widget-title, #secondary .priotech_title_filter {
+#secondary .widget-title,
+#secondary .priotech_title_filter {
   font-size: 30px; }
 
 .newsletter p {

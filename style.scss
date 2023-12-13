@@ -90,6 +90,11 @@ html {
     }
 }
 
+.tax-product_cat {
+    .hide-on-product-cat {
+        display: none !important;
+    }
+}
 p {
     &:last-child {
         margin-bottom: 0 !important;
@@ -426,11 +431,11 @@ strong {
 }
 
 #secondary {
-    .widget-title, .priotech_title_filter {
+    .widget-title,
+    .priotech_title_filter {
         font-size: 30px;
     }
 }
-
 
 .newsletter {
     p {
