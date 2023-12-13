@@ -102,9 +102,17 @@ p:last-child {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid var(--border-color); }
-  .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header h1 {
-    font-weight: bold;
-    font-size: 18px; }
+  .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header {
+    min-height: 44px;
+    border: none; }
+    .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header h1 {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1; }
+  .single-product.single-product #accordion-container .drawer .accordion-item .accordion-content {
+    border: none; }
+    .single-product.single-product #accordion-container .drawer .accordion-item .accordion-content h2 {
+      border: none; }
   .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header-icon {
     font-size: 0;
     width: 16px;

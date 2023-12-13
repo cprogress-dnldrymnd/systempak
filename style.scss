@@ -179,9 +179,18 @@ p {
             border-bottom: 1px solid var(--border-color);
             .accordion-item {
                 .accordion-header {
+                    min-height: 44px;
+                    border: none;
                     h1 {
                         font-weight: bold;
                         font-size: 18px;
+                        line-height: 1;
+                    }
+                }
+                .accordion-content {
+                    border: none;
+                    h2 {
+                        border: none;
                     }
                 }
                 .accordion-header-icon {
