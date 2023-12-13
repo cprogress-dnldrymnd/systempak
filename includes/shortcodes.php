@@ -5,7 +5,7 @@ function product_category_subcategory()
     $current = get_queried_object();
     $terms = get_terms(array(
         'taxonomy' => 'product_cat',
-        'parent'   => $subcat->term_id
+        'parent'   => $current->term_id
     ));
 
 ?>
