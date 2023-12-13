@@ -29,6 +29,7 @@ function product_category_subcategory()
                     </div>
                 <?php } ?>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 
