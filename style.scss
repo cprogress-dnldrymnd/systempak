@@ -60,11 +60,11 @@ $century: (
     "Bold": 700
 );
 
+@include font-face("Century Gothic", $font-url + "CenturyGothic/", "CenturyGothic", normal, $century);
+
 :root {
     --primary-font: "Century Gothic", sans-serif;
 }
-
-@include font-face("Century Gothic", $font-url + "CenturyGothic/", "CenturyGothic", normal, $century);
 
 body {
     font-family: var(--primary-font) !important;
