@@ -296,6 +296,9 @@ p {
             .product-block {
                 background-color: transparent;
                 box-shadow: none;
+                &:before {
+                    content: none !important;
+                }
                 .woocommerce-loop-product__title {
                     a {
                         color: var(--white-color);

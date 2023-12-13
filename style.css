@@ -210,6 +210,8 @@ p:last-child {
             object-fit: cover;
         }
     }*/ }
+    .single-product.single-product .related.products .product .product-block:before {
+      content: none !important; }
     .single-product.single-product .related.products .product .product-block .woocommerce-loop-product__title a {
       color: var(--white-color); }
     .single-product.single-product .related.products .product .product-block .price {
