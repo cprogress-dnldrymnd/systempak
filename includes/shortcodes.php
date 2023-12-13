@@ -64,3 +64,9 @@ function term_description()
 add_shortcode('term_description', 'term_description');
 
 
+function breadcrumbs()
+{
+    return '<a href="' . get_site_url() . '">Home</a> / Tamper Evident';
+}
+
+add_shortcode('breadcrumbs', 'breadcrumbs');
