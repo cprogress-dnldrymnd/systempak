@@ -112,7 +112,7 @@ p:last-child {
   .single-product.single-product #accordion-container .drawer .accordion-item .accordion-content {
     border: none; }
     .single-product.single-product #accordion-container .drawer .accordion-item .accordion-content h2 {
-      border: none; }
+      display: none; }
   .single-product.single-product #accordion-container .drawer .accordion-item .accordion-header-icon {
     font-size: 0;
     width: 16px;
