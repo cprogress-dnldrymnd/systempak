@@ -169,6 +169,7 @@ p {
         color: var(--text-color) !important;
         font-weight: bold;
         font-size: 18px;
+        line-height: 1 !important;
         &:before {
             content: none;
         }
@@ -191,10 +192,11 @@ p {
         color: var(--white-color) !important;
         transition: all 0.3s ease;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 15px;
         background-color: var(--text-color);
         text-align: center;
         font-size: 18px;
+        line-height: 1;
     }
 
     #accordion-container {

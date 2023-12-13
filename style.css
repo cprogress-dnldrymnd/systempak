@@ -97,7 +97,8 @@ p:last-child {
   background-color: var(--accent-color);
   color: var(--text-color) !important;
   font-weight: bold;
-  font-size: 18px; }
+  font-size: 18px;
+  line-height: 1 !important; }
   .single-product.single-product div.product .single_add_to_cart_button:before {
     content: none; }
 .single-product.single-product .quick-buy {
@@ -118,10 +119,11 @@ p:last-child {
   color: var(--white-color) !important;
   transition: all 0.3s ease;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: var(--text-color);
   text-align: center;
-  font-size: 18px; }
+  font-size: 18px;
+  line-height: 1; }
 .single-product.single-product #accordion-container .drawer {
   border: none;
   border-radius: 0;
