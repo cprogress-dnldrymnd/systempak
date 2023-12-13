@@ -165,6 +165,7 @@ p {
     }
     div.product .single_add_to_cart_button {
         background-color: var(--accent-color);
+        color: var(--text-color) !important;
         &:before {
             content: none;
         }

@@ -93,7 +93,8 @@ p:last-child {
   font-size: 17px;
   font-weight: 400; }
 .single-product.single-product div.product .single_add_to_cart_button {
-  background-color: var(--accent-color); }
+  background-color: var(--accent-color);
+  color: var(--text-color) !important; }
   .single-product.single-product div.product .single_add_to_cart_button:before {
     content: none; }
 
