@@ -9,7 +9,7 @@ function product_category_subcategory()
     ));
 
     foreach ($terms as $term) {
-        do_shortcode("[hfe_template id='5407']");
+       echo  do_shortcode("[hfe_template id='5407']");
 ?>
 
         <?php
