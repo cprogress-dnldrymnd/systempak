@@ -36,7 +36,7 @@ function product_category_subcategory()
     <script>
         var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
             loop: true,
-            speed: 5000,
+            speed: 3000,
             autoplay: {
                 delay: 0,
                 disableOnInteraction: false
