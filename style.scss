@@ -270,11 +270,13 @@ p {
     .related.products {
         margin-top: 0;
         position: relative;
-        max-width: 1700px;
-        margin-left: auto;
-        margin-right: auto;
         background-color: var(--secondary-color);
         border: none;
+        .woocommerce {
+            max-width: 1700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         h2 {
             color: var(--white-color);
         }
@@ -307,7 +309,10 @@ p {
                 }*/
             }
         }
-      
+        @media (max-width: 1740px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 }
 
@@ -319,6 +324,12 @@ body.single-product.single-product #page .site-content {
     }
     .content-single-wrapper {
         max-width: 1700px;
+        margin-left: auto;
+        margin-right: auto;
+        @media (max-width: 1740px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 }
 .product-features {
