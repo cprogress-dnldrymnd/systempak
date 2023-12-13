@@ -362,6 +362,13 @@ strong {
         border-radius: 30px;
         text-align: center;
         position: relative;
+        .image-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
         &:before {
             content: "";
             width: 170px;
@@ -370,6 +377,7 @@ strong {
             background-color: var(--accent-color);
             left: 50px;
             top: 170px;
+            position: absolute;
         }
         .product-counts {
             margin-bottom: 120px;

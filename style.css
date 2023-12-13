@@ -245,6 +245,12 @@ strong {
   border-radius: 30px;
   text-align: center;
   position: relative; }
+  .product-category-slider .swiper-slide .image-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; }
   .product-category-slider .swiper-slide:before {
     content: "";
     width: 170px;
@@ -252,7 +258,8 @@ strong {
     border-radius: 50%;
     background-color: var(--accent-color);
     left: 50px;
-    top: 170px; }
+    top: 170px;
+    position: absolute; }
   .product-category-slider .swiper-slide .product-counts {
     margin-bottom: 120px; }
 
