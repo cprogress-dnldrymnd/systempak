@@ -139,7 +139,8 @@ p:last-child {
 .single-product.single-product #priotech-accordion-container .accordion-head.accordion-head.accordion-head.accordion-head:after {
   content: "";
   width: 16px;
-  height: 2px; }
+  height: 2px;
+  right: 6px; }
 .single-product.single-product #priotech-accordion-container .accordion-head.accordion-head.accordion-head.accordion-head:before, .single-product.single-product #priotech-accordion-container .accordion-head.accordion-head.accordion-head.accordion-head:after {
   position: absolute;
   top: 50%;
