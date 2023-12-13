@@ -211,21 +211,22 @@ p {
         .accordion-head.accordion-head.accordion-head.accordion-head {
             &:before {
                 content: "";
+                width: 2px;
+                height: 16px;
+            }
+            &:after {
+                content: "";
                 width: 16px;
                 height: 2px;
+            }
+            &:before,
+            &:after {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
                 background-color: var(--text-color);
-            }
-            &:after {
-                content: "";
-                width: 2px;
-                height: 16px;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: var(--text-color);
+                padding: 0;
+                border-radius: 0;
             }
         }
     }
