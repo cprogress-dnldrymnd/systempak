@@ -91,5 +91,9 @@ p:last-child {
   background-color: var(--accent-color);
   color: var(--text-color);
   font-size: 17px; }
+.single-product.single-product div.product .single_add_to_cart_button {
+  background-color: var(--accent-color); }
+  .single-product.single-product div.product .single_add_to_cart_button:before {
+    content: none; }
 
 /*# sourceMappingURL=style.css.map */

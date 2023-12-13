@@ -162,4 +162,10 @@ p {
             font-size: 17px;
         }
     }
+    div.product .single_add_to_cart_button {
+        background-color: var(--accent-color);
+        &:before {
+            content: none;
+        }
+    }
 }
