@@ -477,8 +477,11 @@ a {
 
 .woovr-variations.woovr-variations.woovr-variations-grid-2 {
     .woovr-variation {
-        padding-right: 50px;
+        padding: 30px 50px 30px 30px;
         text-align: left;
+        .woovr-variation-info{
+            width: 100%;
+        }
         .woovr-variation-name {
             label {
                 font-weight: bold;
