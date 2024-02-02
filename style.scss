@@ -502,6 +502,7 @@ a {
             right: 0;
             bottom: 0;
             width: 100%;
+            
             input {
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -515,17 +516,24 @@ a {
                 bottom: 0;
                 border-radius: 50px;
                 border: 1px solid #eaeaea;
-
+                color: pointer;
                 &:checked {
                     border: 1px solid var(--black-color);
                 }
             }
+        }
+        .woovr-variation-info {
+            padding: 10px 30px;
+            line-height: 1;
         }
         .woovr-variation-radio {
             position: relative;
             border-radius: 50px;
             margin: 0;
             margin-bottom: 1rem;
+            .woovr-variation-availability {
+                display: none !important;
+            }
             &:not(:last-child) {
                 margin-right: 1rem;
             }
