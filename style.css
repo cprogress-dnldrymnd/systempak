@@ -335,28 +335,29 @@ a:hover {
     font-size: 20px; }
 .woovr-variations.woovr-variations.woovr-variations-default {
   display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%; }
-  .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
+  flex-wrap: wrap; }
+  .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector {
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    border-radius: 50px;
-    border: 1px solid #eaeaea; }
-    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
-      border: 1px solid var(--black-color); }
+    width: 100%; }
+    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50px;
+      border: 1px solid #eaeaea; }
+      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
+        border: 1px solid var(--black-color); }
   .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
     position: relative;
     border-radius: 50px;

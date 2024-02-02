@@ -494,13 +494,14 @@ a {
     &.woovr-variations-default {
         display: flex;
         flex-wrap: wrap;
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
+    
         .woovr-variation-selector {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
             input {
                 -webkit-appearance: none;
                 -moz-appearance: none;
