@@ -334,7 +334,8 @@ a:hover {
     font-weight: bold;
     font-size: 20px; }
 .woovr-variations.woovr-variations.woovr-variations-default {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
   .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
     border-radius: 50px;
     margin: 0;

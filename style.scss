@@ -493,6 +493,7 @@ a {
     }
     &.woovr-variations-default {
         display: flex;
+        flex-wrap: wrap;
         .woovr-variation-radio {
             border-radius: 50px;
             margin: 0;
