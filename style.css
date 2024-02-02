@@ -323,4 +323,7 @@ a:hover {
 .tpt__tiered-pricing {
   margin-bottom: 1rem !important; }
 
+.entry-summary.entry-summary form.cart .clear {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */
