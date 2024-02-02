@@ -339,7 +339,8 @@ a:hover {
   .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
     border-radius: 50px;
     margin: 0;
-    border: 1px solid #EAEAEA; }
+    border: 1px solid #EAEAEA;
+    margin-bottom: 1rem; }
     .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio:not(:last-child) {
       margin-right: 1rem; }
 
