@@ -494,7 +494,7 @@ a {
     &.woovr-variations-default {
         display: flex;
         flex-wrap: wrap;
-    
+
         .woovr-variation-selector {
             position: absolute;
             left: 0;
@@ -502,7 +502,7 @@ a {
             right: 0;
             bottom: 0;
             width: 100%;
-            
+
             input {
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -516,7 +516,7 @@ a {
                 bottom: 0;
                 border-radius: 50px;
                 border: 1px solid #eaeaea;
-                color: pointer;
+                cursor: pointer;
                 &:checked {
                     border: 1px solid var(--black-color);
                 }

@@ -356,7 +356,7 @@ a:hover {
       bottom: 0;
       border-radius: 50px;
       border: 1px solid #eaeaea;
-      color: pointer; }
+      cursor: pointer; }
       .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
         border: 1px solid var(--black-color); }
   .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
