@@ -360,7 +360,7 @@ a:hover {
       .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
         border: 1px solid var(--black-color); }
   .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
-    padding: 10px 30px;
+    padding: 15px 30px;
     line-height: 1; }
   .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
     position: relative;
