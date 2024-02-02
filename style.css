@@ -320,4 +320,7 @@ strong {
 a:hover {
   color: var(--accent-color); }
 
+.tpt__tiered-pricing {
+  margin-bottom: 1rem !important; }
+
 /*# sourceMappingURL=style.css.map */
