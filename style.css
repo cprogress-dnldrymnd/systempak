@@ -333,5 +333,13 @@ a:hover {
   .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation .woovr-variation-name label {
     font-weight: bold;
     font-size: 20px; }
+.woovr-variations.woovr-variations.woovr-variations-default {
+  display: flex; }
+  .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
+    border-radius: 50px;
+    margin: 0;
+    border: 1px solid #EAEAEA; }
+    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio:not(:last-child) {
+      margin-right: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
