@@ -475,3 +475,16 @@ a {
         display: none;
     }
 }
+
+.woovr-variations.woovr-variations.woovr-variations-grid-2 {
+    .woovr-variation {
+        padding-right: 50px;
+        text-align: left;
+        .woovr-variation-name {
+            label {
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
+    }
+}

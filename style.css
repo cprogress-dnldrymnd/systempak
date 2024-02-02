@@ -326,4 +326,11 @@ a:hover {
 .entry-summary.entry-summary form.cart .clear {
   display: none; }
 
+.woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation {
+  padding-right: 50px;
+  text-align: left; }
+  .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation .woovr-variation-name label {
+    font-weight: bold;
+    font-size: 20px; }
+
 /*# sourceMappingURL=style.css.map */
