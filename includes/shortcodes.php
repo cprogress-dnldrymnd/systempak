@@ -66,6 +66,19 @@ add_shortcode('term_description', 'term_description_sc');
 
 function custom_breadcrumbs()
 {
+
+    if (is_singular()) {
+        $title = get_the_title();
+    } else if (is_tax()) {
+        $title = get_queried_object()->name;
+    }
+    return '<a href="' . get_site_url() . '">Home</a> / ' . $title;
+}
+
+add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs');
+
+function breadcrumbs()
+{
     $html = '<div class="breadcrumbs-holder">';
     $html .= '<ul>';
     $html .= '<li><a href="' . get_site_url() . '">Home</a></li>';
@@ -86,4 +99,4 @@ function custom_breadcrumbs()
     return $html;
 }
 
-add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs');
+add_shortcode('breadcrumbs', 'breadcrumbs');
