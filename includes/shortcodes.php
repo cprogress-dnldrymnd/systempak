@@ -66,13 +66,24 @@ add_shortcode('term_description', 'term_description_sc');
 
 function custom_breadcrumbs()
 {
+    $html = '<div class="breadcrumbs-holder">';
+    $html .= '<ul>';
+    $html .= '<li><a href="' . get_site_url() . '">Home</a></li>';
 
-    if (is_singular()) {
-        $title = get_the_title();
-    } else if (is_tax()) {
-        $title = get_queried_object()->name;
+    if (is_post_type_archive()) {
+        $html .= '<li><span>' . get_the_archive_title() . '</span></li>';
     }
-    return '<a href="' . get_site_url() . '">Home</a> / ' . $title;
+
+    if (is_single()) {
+        $post_type_obj = get_post_type_object(get_post_type());
+        $post_type = $post_type_obj->labels->name; //Ice Creams.
+        $html .= '<li><a href="' . get_post_type_archive_link(get_post_type())  . '">' . $post_type . '</a></li>';
+        $html .= '<li><span>' . get_the_title() . '</span></li>';
+    }
+
+    $html .= '</ul>';
+    $html .= '</div>';
+    return $html;
 }
 
 add_shortcode('custom_breadcrumbs', 'custom_breadcrumbs');
