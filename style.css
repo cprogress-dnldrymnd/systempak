@@ -382,9 +382,9 @@ a:hover {
   .breadcrumbs-holder ul li {
     display: flex;
     align-items: center; }
-    .breadcrumbs-holder ul li span {
-      font-weight: bold; }
     .breadcrumbs-holder ul li:not(:last-child)::after {
-      content: " / "; }
+      content: " / ";
+      margin-left: 5px;
+      margin-right: 5px; }
 
 /*# sourceMappingURL=style.css.map */
