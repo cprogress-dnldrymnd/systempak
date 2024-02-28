@@ -372,4 +372,21 @@ a:hover {
     .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio:not(:last-child) {
       margin-right: 1rem; }
 
+.breadcrumbs-holder ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+  align-items: center; }
+  .breadcrumbs-holder ul li {
+    display: flex;
+    align-items: center; }
+    .breadcrumbs-holder ul li span {
+      font-weight: bold; }
+    .breadcrumbs-holder ul li:not(:last-child)::after {
+      content: "/";
+      margin-left: 10px;
+      margin-right: 10px; }
+
 /*# sourceMappingURL=style.css.map */

@@ -540,3 +540,28 @@ a {
         }
     }
 }
+
+.breadcrumbs-holder {
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 18px;
+        align-items: center;
+        li {
+            display: flex;
+            align-items: center;
+            span {
+                font-weight: bold;
+            }
+            &:not(:last-child) {
+                &::after {
+                    content: "/";
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
