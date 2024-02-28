@@ -552,9 +552,7 @@ a {
         li {
             display: flex;
             align-items: center;
-            span {
-                font-weight: bold;
-            }
+           
             &:not(:last-child) {
                 &::after {
                     content: " / ";
