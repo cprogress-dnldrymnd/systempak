@@ -94,6 +94,11 @@ function breadcrumbs()
         $html .= '<li><span>' . get_the_title() . '</span></li>';
     }
 
+    if (is_page()) {
+        $html .= '<li><span>' . get_the_title() . '</span></li>';
+    }
+
+
     $html .= '</ul>';
     $html .= '</div>';
     return $html;
