@@ -378,7 +378,8 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   font-size: 18px;
-  align-items: center; }
+  align-items: center;
+  margin: 0 !important; }
   .breadcrumbs-holder ul li {
     display: flex;
     align-items: center; }
