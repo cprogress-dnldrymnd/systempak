@@ -388,4 +388,7 @@ a:hover {
       margin-left: 5px;
       margin-right: 5px; }
 
+.home .hide-on-home {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */
