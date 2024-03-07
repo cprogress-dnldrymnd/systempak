@@ -140,13 +140,14 @@ function action_woocommerce_after_add_to_cart_button()
 add_action('woocommerce_after_add_to_cart_button', 'action_woocommerce_after_add_to_cart_button');
 
 
-function gb_change_cart_string($translated_text, $text, $domain) {
+function gb_change_cart_string($translated_text, $text, $domain)
+{
 
     $translated_text = str_replace('cart', 'basket', $translated_text);
-    
+
     $translated_text = str_replace('Cart', 'Basket', $translated_text);
-    
+
     return $translated_text;
-    }
-    
-    add_filter('gettext', 'gb_change_cart_string', 100, 3);
+}
+
+add_filter('gettext', 'gb_change_cart_string', 99999, 3);
