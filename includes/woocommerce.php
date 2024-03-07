@@ -149,4 +149,4 @@ function gb_change_cart_string($translated_text, $text, $domain) {
     return $translated_text;
     }
     
-    add_filter(‘gettext’, ‘gb_change_cart_string’, 100, 3);
+    add_filter('gettext', 'gb_change_cart_string', 100, 3);
