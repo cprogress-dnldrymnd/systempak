@@ -157,7 +157,7 @@ function searchfilter($query)
     $meta_query = array(
         array(
             'key' => '_sku',
-            'value' => $_GET['s'],
+            'value' => 'XSDS323',
             'compare' => 'LIKE',
         ),
     );
