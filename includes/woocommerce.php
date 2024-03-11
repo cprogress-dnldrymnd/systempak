@@ -215,11 +215,12 @@ function searchfilter($query)
             array(
                 array(
                     'key' => '_sku',
-                    'value' => '4067',
+                    'value' => get_query_var('s'),
                     'compare' => 'LIKE'
                 )
             )
         );
+        $query->set('meta_key',   '_sku');
     }
 
     return $query;
