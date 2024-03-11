@@ -223,4 +223,4 @@ function searchfilter($query) {
     
     return $query;
     }
-add_filter('pre_get_posts', 'search_by_sku', 999, 2);
+add_filter('pre_get_posts', 'searchfilter', 999, 2);
