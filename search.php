@@ -5,12 +5,16 @@
 
 <div class="search">
     <ul>
-        <?php while (have_posts()) { ?>
-            <?php the_post(); ?>
-            <li>
-                <?php the_title() ?>
+        <?php if (have_posts()) { ?>
+            <?php while (have_posts()) { ?>
+                <?php the_post(); ?>
+                <li>
+                    <?php the_title() ?>
 
-            </li>
+                </li>
+            <?php  } ?>
+        <?php  } else { ?>
+            No Result Found
         <?php  } ?>
     </ul>
 </div>
