@@ -210,7 +210,8 @@ function searchfilter($query)
 {
 
     if ($query->is_search && !is_admin()) {
-        $query->meta_query(
+        $query->set(
+            'meta_query',
             array(
                 array(
                     'key' => '_sku',
