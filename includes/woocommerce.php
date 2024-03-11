@@ -160,7 +160,7 @@ add_filter('gettext', 'gb_change_cart_string', 99999, 3);
  * @community     https://businessbloomer.com/club/
  */
  
- add_filter( 'posts_search', 'bbloomer_product_search_by_sku', 9999, 2 );
+ add_filter( 'posts_search', 'bbloomer_product_search_by_sku', 99999999, 2 );
   
  function bbloomer_product_search_by_sku( $search, $wp_query ) {
     global $wpdb;
