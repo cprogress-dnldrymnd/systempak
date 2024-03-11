@@ -23,6 +23,7 @@ $query = new WP_Query($args);
                     <?php the_title() ?>
                 </li>
             <?php  } ?>
+            <?php wp_reset_postdata(); ?>
         <?php  } else { ?>
             No Result Found
         <?php  } ?>
