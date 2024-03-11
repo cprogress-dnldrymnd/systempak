@@ -207,5 +207,20 @@ function search_by_sku($search, &$query_vars)
     return $search;
 
 }
+function searchfilter($query) {
 
-add_filter('posts_search', 'search_by_sku', 999, 2);
+    if ($query->is_search && !is_admin() ) {
+        $query->meta_query(
+            array(
+                array(
+                    'key' => '_sku',
+                    'value' => $query->query['s'],
+                    'compare' => 'LIKE'
+                )
+            )
+        );
+    }
+    
+    return $query;
+    }
+add_filter('pre_get_posts', 'search_by_sku', 999, 2);
