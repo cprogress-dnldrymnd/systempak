@@ -215,7 +215,7 @@ function searchfilter($query)
             array(
                 array(
                     'key' => '_sku',
-                    'value' => 'XSDS323'
+                    'value' => 'XSDS323',
                     'compare' => 'LIKE'
                 )
             )
