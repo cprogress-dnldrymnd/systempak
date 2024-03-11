@@ -219,7 +219,7 @@ function searchfilter($query)
                 )
             )
         );
-        $query->set('meta_key',   '_sku');
+        $query->set('meta_key',   '=');
     }
 
     return $query;
