@@ -216,7 +216,7 @@ function searchfilter($query)
             array(
                 array(
                     'key' => '_sku',
-                    'value' => 'XSDS323',
+                    'value' => $_GET['s'],
                     'compare' => '='
                 )
             )
