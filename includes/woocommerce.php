@@ -215,11 +215,11 @@ function searchfilter($query)
                 array(
                     'key' => '_sku',
                     'value' => 'XSDS323',
-                    'compare' => 'LIKE'
+                    'compare' => '='
                 )
             )
         );
-        $query->set('meta_key',   '=');
+        $query->set('meta_key',   '_sku');
     }
 
     return $query;
