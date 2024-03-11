@@ -210,17 +210,6 @@ function searchfilter($query)
 {
     if ($query->is_search && !is_admin()) {
         $query->set('post_type',array('product'));
-        $query->set(
-            'meta_query',
-            array(
-                array(
-                    'key' => '_sku',
-                    'value' => '4067',
-                    'compare' => 'LIKE'
-                )
-            )
-        );
-        $query->set('meta_key',   '_sku');
     }
 
     return $query;
