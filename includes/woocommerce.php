@@ -208,7 +208,7 @@ function search_by_sku($search, &$query_vars)
 }
 function searchfilter($query)
 {
-    echo $_GET['s'];
+    echo get_query_var('s');
     if ($query->is_search && !is_admin()) {
         $query->set('post_type',array('product'));
         $query->set(
