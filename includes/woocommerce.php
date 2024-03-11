@@ -151,3 +151,61 @@ function gb_change_cart_string($translated_text, $text, $domain)
 }
 
 add_filter('gettext', 'gb_change_cart_string', 99999, 3);
+
+// modded for search by sku in variation to ;)
+
+function search_by_sku($search, &$query_vars)
+{
+    global $wpdb;
+    if (isset($query_vars->query['s']) && !empty($query_vars->query['s'])) {
+        // simple
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type' => 'product',
+            'meta_query' => array(
+                array(
+                    'key' => '_sku',
+                    'value' => $query_vars->query['s'],
+                    'compare' => 'LIKE'
+                )
+            )
+        );
+
+        $posts = get_posts($args);
+        $get_post_ids = array();
+
+        foreach ($posts as $post) {
+            $get_post_ids[] = $post->ID;
+        }
+
+
+        // variation
+        $args = array(
+            'posts_per_page' => -1,
+            'post_type' => 'product_variation',
+            'meta_query' => array(
+                array(
+                    'key' => '_sku',
+                    'value' => $query_vars->query['s'],
+                    'compare' => 'LIKE'
+                )
+            )
+        );
+
+        $posts_variation = get_posts($args);
+        
+        if (empty($posts_variation) && empty($posts)) return $search;
+
+        foreach ($posts_variation as $post) {
+            $get_post_ids[] = $post->post_parent;
+        }
+
+        if (sizeof($get_post_ids) > 0) {
+            $search = str_replace('AND (((', "AND ((({$wpdb->posts}.ID IN (" . implode(',', $get_post_ids) . ")) OR (", $search);
+        }
+    }
+    return $search;
+
+}
+
+add_filter('posts_search', 'search_by_sku', 999, 2);
