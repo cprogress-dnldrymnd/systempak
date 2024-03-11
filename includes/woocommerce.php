@@ -193,7 +193,7 @@ function search_by_sku($search, &$query_vars)
         );
 
         $posts_variation = get_posts($args);
-        
+
         if (empty($posts_variation) && empty($posts)) return $search;
 
         foreach ($posts_variation as $post) {
@@ -205,11 +205,11 @@ function search_by_sku($search, &$query_vars)
         }
     }
     return $search;
-
 }
-function searchfilter($query) {
+function searchfilter($query)
+{
 
-    if ($query->is_search && !is_admin() ) {
+    if ($query->is_search && !is_admin()) {
         $query->meta_query(
             array(
                 array(
@@ -219,8 +219,9 @@ function searchfilter($query) {
                 )
             )
         );
+        $query->set('meta_key',   '_sku');
     }
-    
+
     return $query;
-    }
+}
 add_filter('pre_get_posts', 'searchfilter', 999, 2);
