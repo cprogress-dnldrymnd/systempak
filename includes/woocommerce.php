@@ -214,7 +214,7 @@ function searchfilter($query) {
             array(
                 array(
                     'key' => '_sku',
-                    'value' => $query->query['s'],
+                    'value' => $_GET['s'],
                     'compare' => 'LIKE'
                 )
             )
