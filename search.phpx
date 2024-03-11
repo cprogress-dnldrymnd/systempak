@@ -1,9 +1,0 @@
-<?php get_header() ?>
-<?php
-
-?>
-
-<div class="search">
-    
-</div>
-<?php get_footer() ?>
