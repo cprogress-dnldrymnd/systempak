@@ -12,7 +12,7 @@ function search_ajax()
     if ($s) {
         $args['s'] = $s;
     }
-
+    $args['post_type'] = array('product');
     $the_query = new WP_Query($args);
 
     $found_posts = $the_query->found_posts;
