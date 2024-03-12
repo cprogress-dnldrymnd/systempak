@@ -483,4 +483,10 @@ a:hover {
   animation-iteration-count: infinite;
   animation-timing-function: linear; }
 
+body.search .site-header-search {
+  display: none !important; }
+
+.site-search-popup .search-header {
+  display: block !important; }
+
 /*# sourceMappingURL=style.css.map */
