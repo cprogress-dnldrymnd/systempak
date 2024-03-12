@@ -10,6 +10,12 @@ if (is_product_category()) {
     <div class="search-header d-none">
         <?= do_shortcode('[search]') ?>
     </div>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('.site-search-popup .site-search-popup-wrap').html('');
+            jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
+        });
+    </script>
 <?php } ?>
 
 <?php do_action('priotech_before_footer');
