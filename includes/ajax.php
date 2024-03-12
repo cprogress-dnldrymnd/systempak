@@ -92,7 +92,7 @@ function hide_load_more($count, $offset, $posts_per_page)
     ob_start();
 ?>
     <script>
-        $(document).ready(function() {
+        jQuery(document).ready(function() {
             <?php if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) { ?>
                 jQuery('#loadmore-holder').addClass('d-none');
             <?php } else { ?>
