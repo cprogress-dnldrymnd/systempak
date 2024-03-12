@@ -7,7 +7,7 @@ function ajax_form() {
     var typingTimer;
     var doneTypingInterval = 500;
 
-    jQuery('input[name="post_type"]').change(function (e) { 
+    jQuery('input[name="post_type"]').change(function (e) {
         e.preventDefault();
         ajax();
     });
@@ -69,7 +69,6 @@ function ajax($offset, $event_type = 'html') {
         $loadmore.addClass('loading');
         $loadmore.find('span').text('Loading');
     }
-
 
     jQuery.ajax({
 
