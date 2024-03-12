@@ -43,7 +43,10 @@ function search_ajax()
 
     $the_query = new WP_Query($args);
 
-
+    echo '<pre>';
+    var_dump($args);
+    echo '</pre>';
+    
     $count = $the_query->found_posts;
     echo hide_load_more($count, $offset, $posts_per_page);
 
