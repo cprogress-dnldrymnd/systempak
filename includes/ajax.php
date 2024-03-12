@@ -25,7 +25,7 @@ function search_ajax()
         $post_count_val = ($page - 1) * $posts_per_page + $post_count;
     }
 ?>
-    <div class="row gy-3 product-holder product-grid post-box-PostSlider">
+    <div class="post-item-holder">
         <?php
         if ($the_query->have_posts()) {
             while ($the_query->have_posts()) {
