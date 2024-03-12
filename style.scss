@@ -553,7 +553,7 @@ a {
         li {
             display: flex;
             align-items: center;
-           
+
             &:not(:last-child) {
                 &::after {
                     content: " / ";
@@ -568,5 +568,27 @@ a {
 .home {
     .hide-on-home {
         display: none !important;
+    }
+}
+
+.search-section {
+    .results-holder {
+        .post-item-holder {
+            .post-item {
+                .row {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid lightgray;
+                    flex-wrap: nowrap;
+                    > div {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    .col-image {
+                        flex: 0 0 200px;
+                    }
+                }
+            }
+        }
     }
 }

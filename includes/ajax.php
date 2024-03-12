@@ -33,9 +33,12 @@ function search_ajax()
         ?>
                 <div class="post-item">
                     <div class="row">
-                        <div class="col-image">
-                            <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium')  ?>" alt="<?php the_title() ?>">
-                        </div>
+
+                        <?php if (get_the_post_thumbnail_url(get_the_ID())) { ?>
+                            <div class="col-image">
+                                <img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'medium')  ?>" alt="<?php the_title() ?>">
+                            </div>
+                        <?php } ?>
                         <div class="col-content">
                             <h2><?php the_title() ?></h2>
                             <div class="excerpt">
