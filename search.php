@@ -6,20 +6,20 @@
         <div class="search-by">
 
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_product" name="post_type" value="product" checked>
+                <input type="radio" id="searchby_product" name="post_type" value="product" checked>
                 <label for="searchby_product">
                     Product
                 </label>
             </div>
 
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_blog" name="post_type" value="post">
+                <input type="radio" id="searchby_blog" name="post_type" value="post">
                 <label for="searchby_blog">
                     Blog
                 </label>
             </div>
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_page" name="post_type" value="page">
+                <input type="radio" id="searchby_page" name="post_type" value="page">
                 <label for="searchby_page">
                     Page
                 </label>
