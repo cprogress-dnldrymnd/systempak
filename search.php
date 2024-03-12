@@ -4,18 +4,20 @@
 <div class="search-section">
     <form>
         <div class="search-by">
-            <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_sku">
-                <label for="searchby_sku">
-                    Search by SKU
-                </label>
-            </div>
+
             <div class="search-by-wrapper">
                 <input type="checkbox" id="searchby_product">
                 <label for="searchby_product">
                     Product
                 </label>
+                <div class="search-by-wrapper">
+                    <input type="checkbox" id="searchby_sku">
+                    <label for="searchby_sku">
+                        Search by SKU
+                    </label>
+                </div>
             </div>
+
             <div class="search-by-wrapper">
                 <input type="checkbox" id="searchby_blog">
                 <label for="searchby_blog">
