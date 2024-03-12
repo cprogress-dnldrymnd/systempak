@@ -48,7 +48,7 @@ function search_ajax()
         $post_count_val = ($page - 1) * $posts_per_page + $post_count;
     }
     echo '<pre>';
-    var_dump($the_query);
+    var_dump($args);
     echo '</pre>';
 
     $count = $the_query->found_posts;
