@@ -34,6 +34,8 @@ function search_ajax()
 
     $args['post_type'] = $post_type;
 
+    echo 'found: '.$found_posts;
+
     if (!$found_posts && $post_type == 'product' && $s != '') {
         $args['meta_query'] = array(
             array(
@@ -45,6 +47,7 @@ function search_ajax()
     } else {
         $args['s'] = $s;
     }
+    
 
     $the_query = new WP_Query($args);
 
