@@ -5,7 +5,7 @@
         <input type="text" name="s" placeholder="search" id="search-input">
     </form>
 
-    <div id="results">
+    <div id="results" page="1">
         <div class="results-holder">
 
         </div>
