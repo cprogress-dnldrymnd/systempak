@@ -410,5 +410,7 @@ a:hover {
       padding-right: 10px; }
     .search-section .results-holder .post-item-holder .post-item .row .col-image {
       flex: 0 0 200px; }
+    .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
+      margin-bottom: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

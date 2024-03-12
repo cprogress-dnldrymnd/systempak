@@ -580,6 +580,7 @@ a {
             border-radius: 0;
         }
     }
+  
     .results-holder {
         .post-item-holder {
             .post-item {
@@ -596,6 +597,11 @@ a {
                     }
                     .col-image {
                         flex: 0 0 200px;
+                    }
+                    .col-content {
+                        h2 {
+                            margin-bottom: 1rem;
+                        }
                     }
                 }
             }
