@@ -395,7 +395,7 @@ a:hover {
   position: relative;
   padding-bottom: 150px; }
   .search-section form {
-    background-color: lightgray;
+    background-color: #f1f1f1;
     padding: 2rem; }
     .search-section form input[type="text"] {
       width: 100%;
@@ -407,7 +407,7 @@ a:hover {
         align-items: center;
         display: flex;
         padding: 10px;
-        border: 1px solid;
+        border: 1px solid #EAEAEA;
         border-radius: 5px;
         background-color: var(--white-color);
         cursor: pointer; }
