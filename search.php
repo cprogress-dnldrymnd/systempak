@@ -6,7 +6,7 @@
         <div class="search-by">
 
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_product" checked>
+                <input type="checkbox" id="searchby_product" name="post_type" checked>
                 <label for="searchby_product">
                     Product
                 </label>
@@ -19,13 +19,13 @@
             </div>
 
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_blog" checked>
+                <input type="checkbox" id="searchby_blog" name="post_type">
                 <label for="searchby_blog">
                     Blog
                 </label>
             </div>
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_page" checked>
+                <input type="checkbox" id="searchby_page" name="post_type">
                 <label for="searchby_page">
                     Page
                 </label>
