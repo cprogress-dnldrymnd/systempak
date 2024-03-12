@@ -7,6 +7,10 @@ function ajax_form() {
     var typingTimer;
     var doneTypingInterval = 500;
 
+    jQuery('input[name="post_type"]').change(function (e) { 
+        e.preventDefault();
+        ajax();
+    });
     jQuery('.search-section #search-input').on('keyup', function () {
         clearTimeout(typingTimer);
         typingTimer = setTimeout(doneTyping, doneTypingInterval);
