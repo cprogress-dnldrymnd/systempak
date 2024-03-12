@@ -70,7 +70,6 @@ function ajax($offset, $event_type = 'html') {
         $loadmore.find('span').text('Loading');
     }
 
-    console.log($offset);
 
     jQuery.ajax({
 
