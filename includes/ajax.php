@@ -71,7 +71,7 @@ function search_ajax()
                                 <?php the_excerpt() ?>
                             </div>
                             <div class="more-link-wrap">
-                                <a class="more-link" href="<?php the_permalink() ?>">View Product</a>
+                                <a class="more-link" href="<?php the_permalink() ?>">View <?= get_post_type() ?></a>
                             </div>
                         </div>
                     </div>

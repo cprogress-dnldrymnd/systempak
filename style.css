@@ -450,6 +450,8 @@ a:hover {
       .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
         margin-bottom: 1rem;
         font-size: 35px; }
+      .search-section .results-holder .post-item-holder .post-item .row .col-content .more-link-wrap {
+        text-transform: capitalize; }
   .search-section .loading-results {
     text-align: center;
     position: absolute;
