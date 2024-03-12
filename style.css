@@ -391,4 +391,15 @@ a:hover {
 .home .hide-on-home {
   display: none !important; }
 
+.search-section .results-holder .post-item-holder .post-item .row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  flex-wrap: nowrap; }
+  .search-section .results-holder .post-item-holder .post-item .row > div {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .search-section .results-holder .post-item-holder .post-item .row .col-image {
+    flex: 0 0 200px; }
+
 /*# sourceMappingURL=style.css.map */
