@@ -14,6 +14,10 @@ function search_ajax()
     }
     $args = array();
 
+    if ($s) {
+        $args['s'] = $s;
+    }
+
     $args['posts_per_page'] = $posts_per_page;
 
     $args['post_type'] = $post_type;
