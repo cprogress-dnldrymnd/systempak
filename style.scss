@@ -707,7 +707,15 @@ body.search {
 }
 
 .site-search-popup {
+    max-height: 100vh;
+    overflow: auto;
     .search-header {
         display: block !important;
+        width: 100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        .search-section {
+            padding-bottom: 0 ;
+        }
     }
 }

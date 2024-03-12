@@ -486,7 +486,15 @@ a:hover {
 body.search .site-header-search {
   display: none !important; }
 
-.site-search-popup .search-header {
-  display: block !important; }
+.site-search-popup {
+  max-height: 100vh;
+  overflow: auto; }
+  .site-search-popup .search-header {
+    display: block !important;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    .site-search-popup .search-header .search-section {
+      padding-bottom: 0; }
 
 /*# sourceMappingURL=style.css.map */
