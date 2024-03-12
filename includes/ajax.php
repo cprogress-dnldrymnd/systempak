@@ -28,17 +28,13 @@ function search_ajax()
     $found_posts = $the_query_args->found_posts;
     $post_count = $the_query_args->post_count;
 
-    echo '<pre>';
-    var_dump($args);
-    echo '</pre>';
-    $args = array();
+   
     
 
     $args['posts_per_page'] = $posts_per_page;
 
     $args['post_type'] = $post_type;
 
-    echo 'found: '.$found_posts;
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
         $args['meta_query'] = array(
@@ -55,9 +51,6 @@ function search_ajax()
 
     $the_query = new WP_Query($args);
 
-    echo '<pre>';
-    var_dump($args);
-    echo '</pre>';
     if ($page == 1) {
         $post_count_val = $post_count;
     } else {
