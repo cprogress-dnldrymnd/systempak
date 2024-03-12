@@ -397,9 +397,16 @@ a:hover {
   .search-section form {
     background-color: lightgray;
     padding: 2rem; }
-    .search-section form input {
+    .search-section form input[type="text"] {
       width: 100%;
       border-radius: 0; }
+    .search-section form .search-by {
+      display: flex; }
+      .search-section form .search-by .search-by-wrapper label {
+        align-items: center;
+        display: flex; }
+        .search-section form .search-by .search-by-wrapper label input {
+          margin-right: 1rem; }
   .search-section .results-holder .post-item-holder .post-item {
     margin-bottom: 1rem;
     padding-bottom: 1rem;

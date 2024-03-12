@@ -577,9 +577,21 @@ a {
     form {
         background-color: lightgray;
         padding: 2rem;
-        input {
+        input[type="text"] {
             width: 100%;
             border-radius: 0;
+        }
+        .search-by {
+            display: flex;
+            .search-by-wrapper {
+                label {
+                    align-items: center;
+                    display: flex;
+                    input {
+                        margin-right: 1rem;
+                    }
+                }
+            }
         }
     }
 
