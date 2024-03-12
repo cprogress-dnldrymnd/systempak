@@ -37,7 +37,7 @@ function search_ajax()
                 'compare' => 'LIKE',
             ),
         );
-        $args['meta_key'] => '_sku';
+        $args['meta_key'] = '_sku';
         unset($args['s']);
     }
 
