@@ -44,8 +44,8 @@ function search_ajax()
                             <div class="excerpt">
                                 <?php the_excerpt() ?>
                             </div>
-                            <div class="button-box">
-                                <a href="<?php the_permalink() ?>"> Read More </a>
+                            <div class="more-link-wrap">
+                                <a class="more-link" href="<?php the_permalink() ?>">View Product</a>
                             </div>
                         </div>
                     </div>

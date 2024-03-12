@@ -7,9 +7,7 @@ if (is_product_category()) {
 ?>
 
 <div class="site-search-popup">
-    <div class="site-search-popup-wrap">
-        
-    </div>
+    <div class="site-search-popup-wrap"></div>
 </div>
 
 <?php do_action('priotech_before_footer');

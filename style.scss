@@ -573,15 +573,22 @@ a {
 
 .search-section {
     form {
-        
+        background-color: lightgray;
+        padding: 2rem;
+        input {
+            width: 100%;
+            border-radius: 0;
+        }
     }
     .results-holder {
         .post-item-holder {
             .post-item {
+                margin-bottom: 1rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid lightgray;
                 .row {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid lightgray;
                     flex-wrap: nowrap;
                     > div {
                         padding-left: 10px;
