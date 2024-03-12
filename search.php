@@ -3,6 +3,13 @@
 
 <div class="search-section">
     <form>
+        <div class="search-by">
+            <div class="search-by-wrapper">
+                <label for="">
+                    <input type="checkbox" id="searchby_sku"> Search by SKU
+                </label>
+            </div>
+        </div>
         <input type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search by product name or product sku" id="search-input">
     </form>
 
