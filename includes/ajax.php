@@ -34,7 +34,7 @@ function search_ajax()
             ),
         );
     }
-
+    var_dump($args);
     if ($page == 1) {
         $post_count_val = $post_count;
     } else {
