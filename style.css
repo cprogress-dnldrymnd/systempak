@@ -392,8 +392,7 @@ a:hover {
   display: none !important; }
 
 .search-section {
-  position: relative;
-  padding-bottom: 150px; }
+  position: relative; }
   .search-section form {
     background-color: #f1f1f1;
     padding: 2rem; }
