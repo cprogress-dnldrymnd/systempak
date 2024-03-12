@@ -32,7 +32,7 @@
         <div class="results-holder">
 
         </div>
-        <div id="loadmore-holder">
+        <div id="loadmore-holder" class="d-none">
             <button id="load-more"><span>Load More</span></button>
         </div>
     </div>

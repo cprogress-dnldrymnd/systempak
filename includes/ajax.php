@@ -38,7 +38,7 @@ function search_ajax()
             ),
         );
         unset($args['s']);
-    } 
+    }
 
 
     $the_query = new WP_Query($args);
@@ -83,24 +83,23 @@ function search_ajax()
         ?>
     </div>
 
-
-    <!--
-    <script>
-        jQuery(document).ready(function() {
-            jQuery('.total-post').text('<?= $found_posts ?>');
-            jQuery('.result-post').text('<?= $post_count_val ?>');
-        });
-    </script>
-
-    -->
-
 <?php
 
     die();
 }
 function hide_load_more($count, $offset, $posts_per_page)
 {
-    if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
-        return '<style>#loadmore-holder {display: none} </style>';
-    }
+    ob_start();
+?>
+    <script>
+        $(document).ready(function() {
+            <?php if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) { ?>
+                jQuery('#loadmore-holder').addClass('d-none');
+            <?php } else { ?>
+                jQuery('#loadmore-holder').removeClass('d-none');
+            <?php } ?>
+        });
+    </script>
+<?php
+    return ob_get_clean();
 }
