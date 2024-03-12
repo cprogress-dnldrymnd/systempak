@@ -42,7 +42,7 @@ function search_ajax()
 
     $the_query = new WP_Query($args);
 
-    
+
     $count = $the_query->found_posts;
     echo hide_load_more($count, $offset, $posts_per_page);
 
@@ -55,18 +55,16 @@ function search_ajax()
         ?>
                 <div class="post-item">
                     <div class="row">
-                <?php
-                if(get_the_post_thumbnail_url(get_the_ID())) {
-                    $url = get_the_post_thumbnail_url(get_the_ID());
-                } else {
-                    $url = wc_placeholder_img_src();
-                }
-                ?>
-                        <?php if () { ?>
-                            <div class="col-image">
-                                <img src="<?= $url  ?>" alt="<?php the_title() ?>">
-                            </div>
-                        <?php } ?>
+                        <?php
+                        if (get_the_post_thumbnail_url(get_the_ID())) {
+                            $url = get_the_post_thumbnail_url(get_the_ID());
+                        } else {
+                            $url = wc_placeholder_img_src();
+                        }
+                        ?>
+                        <div class="col-image">
+                            <img src="<?= $url  ?>" alt="<?php the_title() ?>">
+                        </div>
                         <div class="col-content">
                             <h2><?php the_title() ?></h2>
                             <div class="excerpt">
