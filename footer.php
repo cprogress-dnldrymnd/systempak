@@ -4,11 +4,13 @@
 if (is_product_category()) {
     echo do_shortcode("[hfe_template id='5440']");
 }
-?>
 
-<div class="site-search-popup">
-    <div class="site-search-popup-wrap"></div>
-</div>
+?>
+<?php if (!is_search()) { ?>
+    <div class="search-header d-none">
+        <?= do_shortcode('[search]') ?>
+    </div>
+<?php } ?>
 
 <?php do_action('priotech_before_footer');
 if (priotech_is_elementor_activated() && function_exists('hfe_init') && (hfe_footer_enabled() || hfe_is_before_footer_enabled())) {
