@@ -152,20 +152,25 @@ function gb_change_cart_string($translated_text, $text, $domain)
 
 add_filter('gettext', 'gb_change_cart_string', 99999, 3);
 
-function searchfilter($query)
-{
-    $meta_query = array(
-        array(
-            'key' => '_sku',
-            'value' => 'XSDS323',
-            'compare' => 'LIKE',
-        ),
-    );
-    if ($query->is_search && !is_admin()) {
-        $query->set('meta_query', $meta_query);
+/**
+ * @snippet       Also Search by SKU @ Shop
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 7
+ * @community     https://businessbloomer.com/club/
+ */
+ 
+ add_filter( 'posts_search', 'bbloomer_product_search_by_sku', 99999999, 2 );
+  
+ function bbloomer_product_search_by_sku( $search, $wp_query ) {
+    global $wpdb;
+    if ( is_admin() || ! is_search() || ! isset( $wp_query->query_vars['s'] ) || ( ! is_array( $wp_query->query_vars['post_type'] ) && $wp_query->query_vars['post_type'] !== "product" ) || ( is_array( $wp_query->query_vars['post_type'] ) && ! in_array( "product", $wp_query->query_vars['post_type'] ) ) ) return $search; 
+    $product_id = wc_get_product_id_by_sku( $wp_query->query_vars['s'] );
+    if ( ! $product_id ) return $search;
+    $product = wc_get_product( $product_id );
+    if ( $product->is_type( 'variation' ) ) {
+       $product_id = $product->get_parent_id();
     }
-
-    return $query;
-}
-
-add_filter('pre_get_posts', 'searchfilter', 9999999);
+    $search = str_replace( 'AND (((', "AND (({$wpdb->posts}.ID IN (" . $product_id . ")) OR ((", $search );  
+    return $search;   
+ }

@@ -6,6 +6,12 @@ if (is_product_category()) {
 }
 ?>
 
+<div class="site-search-popup">
+    <div class="site-search-popup-wrap">
+        
+    </div>
+</div>
+
 <?php do_action('priotech_before_footer');
 if (priotech_is_elementor_activated() && function_exists('hfe_init') && (hfe_footer_enabled() || hfe_is_before_footer_enabled())) {
     do_action('hfe_footer_before');
