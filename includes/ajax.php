@@ -5,7 +5,6 @@ function search_ajax()
 {
     $posts_per_page_val = $_POST['posts_per_page'];
     $s = $_POST['s'];
-    $page = $_POST['page'];
     $post_type = $_POST['post_type'];
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
@@ -42,11 +41,7 @@ function search_ajax()
 
     $the_query = new WP_Query($args);
 
-    if ($page == 1) {
-        $post_count_val = $post_count;
-    } else {
-        $post_count_val = ($page - 1) * $posts_per_page + $post_count;
-    }
+ 
     echo '<pre>';
     var_dump($args);
     echo '</pre>';

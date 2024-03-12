@@ -82,8 +82,6 @@ function ajax($offset, $event_type = 'html') {
 
             posts_per_page: $posts_per_page,
 
-            page: $page,
-
             s: $s,
 
             offset: $offset,
