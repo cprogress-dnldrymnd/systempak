@@ -33,7 +33,7 @@
 
         </div>
         <div id="loadmore-holder">
-            <button id="load-more">Load More</button>
+            <button id="load-more"><span>Load More</span></button>
         </div>
     </div>
 </div>
