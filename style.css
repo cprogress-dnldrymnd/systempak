@@ -391,45 +391,53 @@ a:hover {
 .home .hide-on-home {
   display: none !important; }
 
-.search-section form {
-  background-color: lightgray;
-  padding: 2rem; }
-  .search-section form input {
-    width: 100%;
-    border-radius: 0; }
-.search-section .results-holder .post-item-holder .post-item {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid lightgray; }
-  .search-section .results-holder .post-item-holder .post-item .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap; }
-    .search-section .results-holder .post-item-holder .post-item .row > div {
-      padding-left: 10px;
-      padding-right: 10px; }
-    .search-section .results-holder .post-item-holder .post-item .row .col-image {
-      flex: 0 0 200px; }
-    .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
-      margin-bottom: 1rem;
-      font-size: 35px; }
-.search-section .loading-results {
-  text-align: center; }
-  .search-section .loading-results svg {
-    width: 100px;
-    height: 100px; }
-.search-section.loading-post {
-  pointer-events: none; }
-  .search-section.loading-post svg {
-    animation-name: spin;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; }
-.search-section #pagination .pagination {
-  display: flex; }
-  .search-section #pagination .pagination > span,
-  .search-section #pagination .pagination a {
-    justify-content: center; }
+.search-section {
+  position: relative;
+  padding-bottom: 100px; }
+  .search-section form {
+    background-color: lightgray;
+    padding: 2rem; }
+    .search-section form input {
+      width: 100%;
+      border-radius: 0; }
+  .search-section .results-holder .post-item-holder .post-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgray; }
+    .search-section .results-holder .post-item-holder .post-item .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap; }
+      .search-section .results-holder .post-item-holder .post-item .row > div {
+        padding-left: 10px;
+        padding-right: 10px; }
+      .search-section .results-holder .post-item-holder .post-item .row .col-image {
+        flex: 0 0 200px; }
+      .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
+        margin-bottom: 1rem;
+        font-size: 35px; }
+  .search-section .loading-results {
+    text-align: center; }
+    .search-section .loading-results svg {
+      width: 50px;
+      height: 50px; }
+  .search-section.loading-post {
+    pointer-events: none; }
+    .search-section.loading-post svg {
+      animation-name: spin;
+      animation-duration: 5000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear; }
+  .search-section #pagination {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+    .search-section #pagination .pagination {
+      display: flex; }
+      .search-section #pagination .pagination > span,
+      .search-section #pagination .pagination a {
+        justify-content: center; }
 
 .spin {
   animation-name: spin;

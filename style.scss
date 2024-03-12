@@ -572,6 +572,8 @@ a {
 }
 
 .search-section {
+    position: relative;
+    padding-bottom: 100px;
     form {
         background-color: lightgray;
         padding: 2rem;
@@ -612,8 +614,8 @@ a {
     .loading-results {
         text-align: center;
         svg {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
         }
     }
 
@@ -627,6 +629,10 @@ a {
         }
     }
     #pagination {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         .pagination {
             display: flex;
             > span,
