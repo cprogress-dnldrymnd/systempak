@@ -13,7 +13,7 @@
             <div class="search-by-wrapper">
                 <input type="checkbox" id="searchby_product">
                 <label for="searchby_product">
-                    Products
+                    Product
                 </label>
             </div>
             <div class="search-by-wrapper">
@@ -25,7 +25,7 @@
             <div class="search-by-wrapper">
                 <input type="checkbox" id="searchby_page">
                 <label for="searchby_page">
-                    Blog
+                    Page
                 </label>
             </div>
         </div>
