@@ -713,10 +713,12 @@ body.search {
         width: 100%;
         padding-top: 2rem;
         padding-bottom: 2rem;
-        .form {
-            position: sticky;
-            top: 0;
-            z-index: 99;
+        form {
+            @media (min-width: 992px) {
+                position: sticky;
+                top: 0;
+                z-index: 99;
+            }
         }
         .search-section {
             padding-bottom: 0;
