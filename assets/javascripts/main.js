@@ -33,15 +33,6 @@ function load_more_button_listener($) {
         ajax(offset, 'append');
     });
 
-
-    jQuery(document).on("click", '.pagination .page-numbers', function (event) {
-        event.preventDefault();
-        $page = jQuery(this).text();
-        jQuery('#results').addClass('pagination-trigger');
-        ajax($page, 'html');
-        return false;
-    });
-
 }
 
 

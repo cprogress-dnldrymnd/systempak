@@ -13,7 +13,6 @@ function search_ajax()
         $args['offset'] = $offset;
     }
     $args = array();
-
     if ($s) {
         $args['s'] = $s;
     }
@@ -28,14 +27,6 @@ function search_ajax()
     $found_posts = $the_query_args->found_posts;
     $post_count = $the_query_args->post_count;
 
-   
-    
-    $args = array();
-
-    $args['posts_per_page'] = $posts_per_page;
-
-    $args['post_type'] = $post_type;
-
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
         $args['meta_query'] = array(
@@ -45,10 +36,9 @@ function search_ajax()
                 'compare' => 'LIKE',
             ),
         );
-    } else {
-        $args['s'] = $s;
-    }
-    
+        unset($args['s']);
+    } 
+
 
     $the_query = new WP_Query($args);
 
@@ -58,8 +48,8 @@ function search_ajax()
         $post_count_val = ($page - 1) * $posts_per_page + $post_count;
     }
 
-	$count = $the_query->found_posts;
-	echo hide_load_more($count, $offset, $posts_per_page);
+    $count = $the_query->found_posts;
+    echo hide_load_more($count, $offset, $posts_per_page);
 
 ?>
     <div class="post-item-holder">
@@ -97,7 +87,7 @@ function search_ajax()
         ?>
     </div>
 
-  
+
     <!--
     <script>
         jQuery(document).ready(function() {
@@ -114,7 +104,7 @@ function search_ajax()
 }
 function hide_load_more($count, $offset, $posts_per_page)
 {
-	if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
-		return '<style>#loadmore-holder {display: none} </style>';
-	}
+    if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
+        return '<style>#loadmore-holder {display: none} </style>';
+    }
 }
