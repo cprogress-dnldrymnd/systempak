@@ -584,7 +584,8 @@ a {
         .search-by {
             display: flex;
             margin-bottom: 1rem;
-            .search-by-wrapper {
+            > .search-by-wrapper {
+                display: flex;
                 .search-by-wrapper {
                     display: none;
                     margin-left: 1rem;
