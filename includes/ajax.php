@@ -3,7 +3,7 @@ add_action('wp_ajax_nopriv_search_ajax', 'search_ajax'); // for not logged in us
 add_action('wp_ajax_search_ajax', 'search_ajax');
 function search_ajax()
 {
-    $posts_per_page_val = 10;
+    $posts_per_page_val = $_POST['posts_per_page'];
     $s = $_POST['s'];
     $page = $_POST['page'];
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');

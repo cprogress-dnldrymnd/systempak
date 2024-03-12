@@ -4,11 +4,6 @@ jQuery(document).ready(function ($) {
 });
 
 function ajax_form() {
-    jQuery("#search-input").change(function (e) {
-        e.preventDefault();
-        ajax(0);
-    });
-
     var typingTimer;
     var doneTypingInterval = 500;
 
@@ -62,10 +57,7 @@ function ajax($offset, $event_type = 'html') {
 
     var $result_holder = jQuery('#results .results-holder');
 
-    var $is_search = jQuery("input[name='is_search']").val();
-
-
-
+    var $posts_per_page = 12;
 
     $loading = jQuery('<div class="loading-results"> <svg class="spin" xmlns="http://www.w3.org/2000/svg" id="Group_27" data-name="Group 27" width="123" height="123" viewBox="0 0 123 123"> <g id="Ellipse_2" data-name="Ellipse 2" fill="none" stroke="#2DA1FF" stroke-width="2"> <circle cx="61.5" cy="61.5" r="61.5" stroke="none"></circle> <circle cx="61.5" cy="61.5" r="60.5" fill="none"></circle> </g> <circle id="Ellipse_8" data-name="Ellipse 8" cx="6.5" cy="6.5" r="6.5" transform="translate(30 55)" fill="none" stroke="#2DA1FF" stroke-width="3"></circle> <circle id="Ellipse_9" data-name="Ellipse 9" cx="6.5" cy="6.5" r="6.5" transform="translate(55 55)" fill="none" stroke="#2DA1FF" stroke-width="3"></circle> <circle id="Ellipse_10" data-name="Ellipse 10" cx="6.5" cy="6.5" r="6.5" transform="translate(80 55)" fill="none" stroke="#2DA1FF" stroke-width="3"></circle> </svg></div>');
 
@@ -105,7 +97,7 @@ function ajax($offset, $event_type = 'html') {
 
             action: 'search_ajax',
 
-            terms_category: $terms_category,
+            posts_per_page: $posts_per_page,
 
             page: $page,
 
