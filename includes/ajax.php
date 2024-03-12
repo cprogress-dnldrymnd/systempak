@@ -42,7 +42,7 @@ function search_ajax()
     } else {
         $args['s'] = $s;
     }
-
+    echo $found_posts;
 
     $the_query = new WP_Query($args);
 
