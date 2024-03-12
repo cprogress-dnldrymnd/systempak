@@ -19,10 +19,10 @@ function search_ajax()
     $args['post_type'] = $post_type;
 
 
-    $the_query = new WP_Query($args);
+    $the_query_args = new WP_Query($args);
 
-    $found_posts = $the_query->found_posts;
-    $post_count = $the_query->post_count;
+    $found_posts = $the_query_args->found_posts;
+    $post_count = $the_query_args->post_count;
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
         $args['meta_query'] = array(
@@ -36,8 +36,9 @@ function search_ajax()
         $args['s'] = $s;
     }
 
-    
+
     $the_query = new WP_Query($args);
+
     echo '<pre>';
     var_dump($args);
     echo '</pre>';
