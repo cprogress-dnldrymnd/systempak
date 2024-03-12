@@ -34,9 +34,10 @@ function search_ajax()
             array(
                 'key' => '_sku',
                 'value' => 'XSDS323',
-                'compare' => '=',
+                'compare' => 'LIKE',
             ),
         );
+        $args['meta_key'] => '_sku';
         unset($args['s']);
     }
 
