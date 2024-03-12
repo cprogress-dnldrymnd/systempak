@@ -412,5 +412,20 @@ a:hover {
       flex: 0 0 200px; }
     .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
       margin-bottom: 1rem; }
+.search-section .loading-results {
+  text-align: center; }
+.search-section.loading-post {
+  pointer-events: none; }
+  .search-section.loading-post svg {
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+
+.spin {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
 
 /*# sourceMappingURL=style.css.map */
