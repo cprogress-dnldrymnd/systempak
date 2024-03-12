@@ -3,7 +3,7 @@
 
 <div class="search-section">
     <form>
-        <input type="text" name="s" placeholder="Search by product name or product sku" id="search-input">
+        <input type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search by product name or product sku" id="search-input">
     </form>
 
     <div id="results" page="1">
