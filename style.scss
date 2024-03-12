@@ -610,6 +610,10 @@ a {
 
     .loading-results {
         text-align: center;
+        svg {
+            width: 100px;
+            height: 100px;
+        }
     }
 
     &.loading-post {

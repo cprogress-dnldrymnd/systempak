@@ -414,6 +414,9 @@ a:hover {
       margin-bottom: 1rem; }
 .search-section .loading-results {
   text-align: center; }
+  .search-section .loading-results svg {
+    width: 100px;
+    height: 100px; }
 .search-section.loading-post {
   pointer-events: none; }
   .search-section.loading-post svg {
