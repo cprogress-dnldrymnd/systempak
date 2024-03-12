@@ -13,9 +13,6 @@ function search_ajax()
         $args['offset'] = $offset;
     }
     $args = array();
-    if ($s) {
-        $args['s'] = $s;
-    }
 
     $args['posts_per_page'] = $posts_per_page;
 
@@ -35,6 +32,8 @@ function search_ajax()
                 'compare' => 'LIKE',
             ),
         );
+    } else {
+        $args['s'] = $s;
     }
     echo '<pre>';
     var_dump($args);
