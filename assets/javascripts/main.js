@@ -91,6 +91,7 @@ function ajax($offset, $event_type = 'html') {
         var $offset_val = ($page * $posts_per_page) + 1;
     }
 
+    console.log($offset_val);
 
     jQuery.ajax({
 
