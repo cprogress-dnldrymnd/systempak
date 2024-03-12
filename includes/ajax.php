@@ -47,6 +47,9 @@ function search_ajax()
     } else {
         $post_count_val = ($page - 1) * $posts_per_page + $post_count;
     }
+    echo '<pre>';
+    var_dump($the_query);
+    echo '</pre>';
 
     $count = $the_query->found_posts;
     echo hide_load_more($count, $offset, $posts_per_page);
