@@ -35,6 +35,9 @@ function search_ajax()
     } else {
         $args['s'] = $s;
     }
+
+    
+    $the_query = new WP_Query($args);
     echo '<pre>';
     var_dump($args);
     echo '</pre>';
