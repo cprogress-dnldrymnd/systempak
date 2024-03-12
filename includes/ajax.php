@@ -30,7 +30,8 @@ function search_ajax()
 
    
     
-
+    $args = array();
+    
     $args['posts_per_page'] = $posts_per_page;
 
     $args['post_type'] = $post_type;
