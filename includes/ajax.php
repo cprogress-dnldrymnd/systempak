@@ -28,12 +28,10 @@ function search_ajax()
     $post_count = $the_query->post_count;
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
-        $args['meta_query'] = array(
-            array(
-                'key' => '_sku',
-                'value' => $s,
-                'compare' => 'LIKE',
-            ),
+        $args['meta_query'][] = array(
+            'key' => '_sku',
+            'value' => array($s),
+            'compare' => 'LIKE',
         );
     }
     echo '<pre>';
