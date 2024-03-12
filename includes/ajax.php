@@ -6,8 +6,9 @@ function search_ajax()
     $posts_per_page_val = $_POST['posts_per_page'];
     $s = $_POST['s'];
     $page = $_POST['page'];
+    $post_type = $_POST['post_type'];
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
-	$offset = $_POST['offset'];
+    $offset = $_POST['offset'];
     if ($offset) {
         $args['offset'] = $offset;
     }
@@ -15,12 +16,24 @@ function search_ajax()
     if ($s) {
         $args['s'] = $s;
     }
-    $args['post_type'] = array('product');
+
+    $args['post_type'] = $post_type;
+
+
     $the_query = new WP_Query($args);
 
     $found_posts = $the_query->found_posts;
     $post_count = $the_query->post_count;
 
+    if (!$found_posts && $post_type == 'product' && $s != '') {
+        $args['meta_query'] = array(
+            array(
+                'key' => '_sku',
+                'value' => $s,
+                'compare' => 'LIKE',
+            ),
+        );
+    }
 
     if ($page == 1) {
         $post_count_val = $post_count;
