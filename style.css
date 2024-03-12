@@ -411,7 +411,8 @@ a:hover {
     .search-section .results-holder .post-item-holder .post-item .row .col-image {
       flex: 0 0 200px; }
     .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-size: 35px; }
 .search-section .loading-results {
   text-align: center; }
   .search-section .loading-results svg {
