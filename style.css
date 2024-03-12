@@ -408,15 +408,16 @@ a:hover {
         display: flex;
         padding: 10px;
         border: 1px solid;
-        border-radius: 5px; }
+        border-radius: 5px;
+        background-color: var(--white-color); }
         .search-section form .search-by .search-by-wrapper label:before {
           content: "";
           width: 20px;
           height: 20px;
           margin-right: 1rem;
-          background-color: var(--white-color);
+          background-color: lightgray;
           background-size: 15px;
-          background-repeat: none;
+          background-repeat: no-repeat;
           background-position: center; }
       .search-section form .search-by .search-by-wrapper input {
         margin-right: 1rem;

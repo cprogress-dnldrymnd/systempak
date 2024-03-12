@@ -591,14 +591,15 @@ a {
                     padding: 10px;
                     border: 1px solid;
                     border-radius: 5px;
+                    background-color: var(--white-color);
                     &:before {
                         content: "";
                         width: 20px;
                         height: 20px;
                         margin-right: 1rem;
-                        background-color: var(--white-color);
+                        background-color: lightgray;
                         background-size: 15px;
-                        background-repeat: none;
+                        background-repeat: no-repeat;
                         background-position: center;
                     }
                 }
