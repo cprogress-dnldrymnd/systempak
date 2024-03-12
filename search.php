@@ -10,12 +10,6 @@
                 <label for="searchby_product">
                     Product
                 </label>
-                <div class="search-by-wrapper">
-                    <input type="checkbox" id="searchby_sku" checked>
-                    <label for="searchby_sku">
-                        Search by SKU
-                    </label>
-                </div>
             </div>
 
             <div class="search-by-wrapper">
