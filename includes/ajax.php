@@ -24,8 +24,11 @@ function search_ajax()
     $found_posts = $the_query_args->found_posts;
     $post_count = $the_query_args->post_count;
 
-
+    echo '<pre>';
+    var_dump($args);
+    echo '</pre>';
     $args = array();
+    
 
     $args['posts_per_page'] = $posts_per_page;
 
@@ -42,7 +45,6 @@ function search_ajax()
     } else {
         $args['s'] = $s;
     }
-    echo $found_posts;
 
     $the_query = new WP_Query($args);
 
