@@ -34,7 +34,7 @@ function search_ajax()
             array(
                 'key' => '_sku',
                 'value' => 'XSDS323',
-                'compare' => 'LIKE',
+                'compare' => '=',
             ),
         );
         unset($args['s']);
