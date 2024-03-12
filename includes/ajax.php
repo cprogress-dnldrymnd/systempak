@@ -26,14 +26,13 @@ function search_ajax()
     $the_query_args = new WP_Query($args);
 
     $found_posts = $the_query_args->found_posts;
-    $post_count = $the_query_args->post_count;
 
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
         $args['meta_query'] = array(
             array(
                 'key' => '_sku',
-                'value' => 'XSDS323',
+                'value' => $s,
                 'compare' => 'LIKE',
             ),
         );
