@@ -32,8 +32,8 @@
         <div class="results-holder">
 
         </div>
-        <div id="pagination">
-
+        <div id="loadmore-holder">
+            <button id="load-more">Load More</button>
         </div>
     </div>
 </div>
