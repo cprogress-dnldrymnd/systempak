@@ -6,12 +6,12 @@
         <div class="search-by">
 
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_product">
+                <input type="checkbox" id="searchby_product" checked>
                 <label for="searchby_product">
                     Product
                 </label>
                 <div class="search-by-wrapper">
-                    <input type="checkbox" id="searchby_sku">
+                    <input type="checkbox" id="searchby_sku" checked>
                     <label for="searchby_sku">
                         Search by SKU
                     </label>
@@ -19,13 +19,13 @@
             </div>
 
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_blog">
+                <input type="checkbox" id="searchby_blog" checked>
                 <label for="searchby_blog">
                     Blog
                 </label>
             </div>
             <div class="search-by-wrapper">
-                <input type="checkbox" id="searchby_page">
+                <input type="checkbox" id="searchby_page" checked>
                 <label for="searchby_page">
                     Page
                 </label>

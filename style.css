@@ -406,8 +406,7 @@ a:hover {
       .search-section form .search-by > .search-by-wrapper {
         display: flex; }
         .search-section form .search-by > .search-by-wrapper .search-by-wrapper {
-          display: none;
-          margin-left: 1rem; }
+          display: none; }
         .search-section form .search-by > .search-by-wrapper label {
           align-items: center;
           display: flex;
