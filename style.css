@@ -406,8 +406,20 @@ a:hover {
       .search-section form .search-by .search-by-wrapper label {
         align-items: center;
         display: flex; }
-        .search-section form .search-by .search-by-wrapper label input {
+        .search-section form .search-by .search-by-wrapper label:before {
+          content: '';
+          width: 10px;
+          height: 10px;
           margin-right: 1rem; }
+        .search-section form .search-by .search-by-wrapper label input {
+          margin-right: 1rem;
+          display: none; }
+          .search-section form .search-by .search-by-wrapper label input:checked + label {
+            background-color: var(--accent-color);
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer; }
   .search-section .results-holder .post-item-holder .post-item {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
