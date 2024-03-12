@@ -65,7 +65,7 @@ function ajax($offset, $event_type = 'html') {
 
     var $s = jQuery('#search-input').val();
 
-    var $post_type = jQuery('input[name="post_type"]').val();
+    var $post_type = jQuery('input[name="post_type"]:checked').val();
 
     console.log($post_type);
 

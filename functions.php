@@ -14,7 +14,7 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_style('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.css');
 		wp_enqueue_script('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.js');
 	}
-	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', NULL, 1.4);
+	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', NULL, 1.5);
 }
 require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
