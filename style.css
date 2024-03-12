@@ -489,6 +489,8 @@ body.search .site-header-search {
 .site-search-popup {
   max-height: 100vh;
   overflow: auto; }
+  .site-search-popup .site-search-popup-close {
+    margin-left: 1rem; }
   .site-search-popup .search-header {
     display: block !important;
     width: 100%;
