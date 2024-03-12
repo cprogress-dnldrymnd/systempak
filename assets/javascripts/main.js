@@ -12,12 +12,12 @@ function ajax_form() {
     var typingTimer;
     var doneTypingInterval = 500;
 
-    jQuery('.archive-section #search-input').on('keyup', function () {
+    jQuery('.search-section #search-input').on('keyup', function () {
         clearTimeout(typingTimer);
         typingTimer = setTimeout(doneTyping, doneTypingInterval);
     });
 
-    jQuery('.archive-section #search-input').on('keydown', function () {
+    jQuery('.search-section #search-input').on('keydown', function () {
         clearTimeout(typingTimer);
     });
 
@@ -56,52 +56,13 @@ function results_height() {
 
 function ajax($offset, $event_type = 'html') {
 
-    var $sortby = jQuery('#sortpostby').val();
-
     var $loadmore = jQuery('#load-more');
 
-    var $archive_section = jQuery('.archive-section');
+    var $archive_section = jQuery('.search-section');
 
     var $result_holder = jQuery('#results .results-holder');
 
-    var $post_type = jQuery("input[name='post-type']").val();
-
-    var $taxonomy = jQuery("input[name='taxonomy']").val();
-
     var $is_search = jQuery("input[name='is_search']").val();
-
-    var $s = jQuery("input[name='s']").val();
-
-    var $terms_category = jQuery("input[name='terms-category']").val();
-
-    var $terms_value = "";
-
-    var $page = 1;
-
-    var $posts_per_page = 12;
-    if (!$offset) {
-        $page = 1;
-    } else {
-        $page = $offset;
-    }
-
-    if ($page == 1) {
-        var $offset_val = 0;
-    } else {
-        var $offset_val = ($page * $posts_per_page) + 1;
-    }
-
-    var $terms = jQuery("input[name='terms[]']:checked");
-    $terms.each(function () {
-        $terms_value += jQuery(this).val() + ",";
-    });
-
-    var $post_types_value = "";
-
-    var $post_types = jQuery("input[name='post_types[]']:checked");
-    $post_types.each(function () {
-        $post_types_value += jQuery(this).val() + ",";
-    });
 
 
 
@@ -118,39 +79,40 @@ function ajax($offset, $event_type = 'html') {
         $loadmore.find('span').text('Loading');
     }
 
+    var $page = 1;
+
+    if (!$offset) {
+        $page = 1;
+    } else {
+        $page = $offset;
+    }
+
+    if ($page == 1) {
+        var $offset_val = 0;
+    } else {
+        var $offset_val = ($page * $posts_per_page) + 1;
+    }
+
+
+
     jQuery.ajax({
 
         type: "POST",
-
-        //url: "/coptrz/wp-admin/admin-ajax.php",
 
         url: "/wp-admin/admin-ajax.php",
 
         data: {
 
-            action: 'archive_ajax',
-
-            post_type: $post_type,
-
-            taxonomy: $taxonomy,
-
-            is_search: $is_search,
-
-            terms: $terms_value,
-
-            post_types: $post_types_value,
+            action: 'search_ajax',
 
             terms_category: $terms_category,
 
             page: $page,
 
-            posts_per_page: $posts_per_page,
-
             s: $s,
 
             offset: $offset_val,
 
-            sortby: $sortby
 
         },
 

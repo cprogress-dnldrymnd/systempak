@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-<div class="search">
+<div class="search-section">
     <form>
         <input type="text" name="s" placeholder="search" id="search-input">
     </form>
