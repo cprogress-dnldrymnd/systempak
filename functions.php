@@ -13,7 +13,6 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_script('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.js');
 	}
 	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js');
-
 }
 require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
@@ -22,38 +21,40 @@ require_once('includes/ajax.php');
 
 function action_wp_footer()
 {
+	if (is_product_category()) {
 ?>
 
-	<script>
-		var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
-			loop: true,
-			speed: 3000,
-			autoplay: true,
-			spaceBetween: 30,
-			breakpoints: {
-				0: {
-					slidesPerView: 2,
+		<script>
+			var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
+				loop: true,
+				speed: 3000,
+				autoplay: true,
+				spaceBetween: 30,
+				breakpoints: {
+					0: {
+						slidesPerView: 2,
+					},
+
+					992: {
+						slidesPerView: 3,
+					},
+
+
+					1200: {
+						slidesPerView: 4,
+					},
+
+				},
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true
 				},
 
-				992: {
-					slidesPerView: 3,
-				},
-
-
-				1200: {
-					slidesPerView: 4,
-				},
-
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true
-			},
-
-		});
-	</script>
+			});
+		</script>
 
 <?php
+	}
 }
 
 add_action('wp_footer', 'action_wp_footer');
