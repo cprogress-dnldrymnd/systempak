@@ -134,7 +134,7 @@ function ajax($offset, $event_type = 'html') {
 
             $archive_section.removeClass('loading-post');
 
-            results_height();
+            //results_height();
         },
         error: function (e) {
             console.log(e);

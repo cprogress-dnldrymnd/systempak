@@ -31,7 +31,7 @@ function search_ajax()
    
     
     $args = array();
-    
+
     $args['posts_per_page'] = $posts_per_page;
 
     $args['post_type'] = $post_type;
@@ -57,6 +57,10 @@ function search_ajax()
     } else {
         $post_count_val = ($page - 1) * $posts_per_page + $post_count;
     }
+
+	$count = $the_query->found_posts;
+	echo hide_load_more($count, $offset, $posts_per_page);
+
 ?>
     <div class="post-item-holder">
         <?php
@@ -93,25 +97,8 @@ function search_ajax()
         ?>
     </div>
 
-    <div class="pagination justify-content-center align-items-center">
-        <?php
-        echo paginate_links(array(
-            'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-            'total'        => $the_query->max_num_pages,
-            'current'      => max(1, $page),
-            'format'       => '?paged=%#%',
-            'show_all'     => false,
-            'type'         => 'plain',
-            'end_size'     => 3,
-            'mid_size'     => 1,
-            'prev_next'    => true,
-            'prev_text'    => sprintf('<i></i> %1$s', __('< Previous', 'text-domain')),
-            'next_text'    => sprintf('%1$s <i></i>', __('Next >', 'text-domain')),
-            'add_args'     => false,
-            'add_fragment' => '',
-        ));
-        ?>
-    </div>
+  
+    <!--
     <script>
         jQuery(document).ready(function() {
             jQuery('.total-post').text('<?= $found_posts ?>');
@@ -119,7 +106,15 @@ function search_ajax()
         });
     </script>
 
+    -->
+
 <?php
 
     die();
+}
+function hide_load_more($count, $offset, $posts_per_page)
+{
+	if ($count == ($offset + $posts_per_page) || $count < ($offset + $posts_per_page) || $count < $posts_per_page + 1) {
+		return '<style>.load-more {display: none} </style>';
+	}
 }
