@@ -8,10 +8,12 @@ function search_ajax()
     $post_type = $_POST['post_type'];
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
+    $args = array();
+
+
     if ($offset) {
         $args['offset'] = $offset;
     }
-    $args = array();
     if ($s) {
         $args['s'] = $s;
     }
