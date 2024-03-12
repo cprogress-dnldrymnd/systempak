@@ -12,6 +12,8 @@ if (is_product_category()) {
     </div>
     <script>
         jQuery(document).ready(function () {
+            jQuery('.site-search-popup .site-search-popup-wrap .site-search').html('');
+            jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
         });
     </script>
 <?php } ?>
