@@ -625,6 +625,15 @@ a {
             animation-timing-function: linear;
         }
     }
+    #pagination {
+        .pagination {
+            display: flex;
+            > span,
+            a {
+                justify-content: center;
+            }
+        }
+    }
 }
 
 .spin {

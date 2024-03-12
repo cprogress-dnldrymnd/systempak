@@ -424,6 +424,11 @@ a:hover {
     animation-duration: 5000ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear; }
+.search-section #pagination .pagination {
+  display: flex; }
+  .search-section #pagination .pagination > span,
+  .search-section #pagination .pagination a {
+    justify-content: center; }
 
 .spin {
   animation-name: spin;
