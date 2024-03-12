@@ -699,7 +699,6 @@ a {
     animation-timing-function: linear;
 }
 
-
 body.search {
     .site-header-search {
         display: none !important;
@@ -714,8 +713,13 @@ body.search {
         width: 100%;
         padding-top: 2rem;
         padding-bottom: 2rem;
+        .form {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
         .search-section {
-            padding-bottom: 0 ;
+            padding-bottom: 0;
         }
     }
 }

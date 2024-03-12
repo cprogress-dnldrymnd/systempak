@@ -494,6 +494,10 @@ body.search .site-header-search {
     width: 100%;
     padding-top: 2rem;
     padding-bottom: 2rem; }
+    .site-search-popup .search-header .form {
+      position: sticky;
+      top: 0;
+      z-index: 99; }
     .site-search-popup .search-header .search-section {
       padding-bottom: 0; }
 
