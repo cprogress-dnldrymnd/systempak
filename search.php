@@ -5,8 +5,9 @@
     <form>
         <div class="search-by">
             <div class="search-by-wrapper">
+                <input type="checkbox" id="searchby_sku">
                 <label for="searchby_sku">
-                    <input type="checkbox" id="searchby_sku"> Search by SKU
+                    Search by SKU
                 </label>
             </div>
         </div>
