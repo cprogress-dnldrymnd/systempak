@@ -188,7 +188,7 @@ function jwd_orderby_tax_clauses($clauses, $wp_query) {
   global $wpdb;
   $orderby = isset($wp_query->query_vars['orderby']) ? $wp_query->query_vars['orderby'] : false;
 
-  if ($orderby && $orderby === 'pa_capacity') {
+  if ($orderby && $orderby === 'capacity') {
     $clauses['join'] .= <<<SQL
     LEFT OUTER JOIN {$wpdb->term_relationships} ON {$wpdb->posts}.ID={$wpdb->term_relationships}.object_id
     LEFT OUTER JOIN {$wpdb->term_taxonomy} USING (term_taxonomy_id)
