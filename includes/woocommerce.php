@@ -186,8 +186,8 @@ add_filter('woocommerce_catalog_orderby', 'bbloomer_load_custom_woocommerce_cata
 
 function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 {
-    $options['capacity-desc'] = 'Capacity: Large First';
-    $options['capacity-asc'] = 'Capacity: Small First';
+    $options['capacity-desc'] = 'Capacity: large first';
+    $options['capacity-asc'] = 'Capacity: small first';
     return $options;
 }
 
