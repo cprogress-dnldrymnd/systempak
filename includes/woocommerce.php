@@ -172,33 +172,17 @@ function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 }
 
 
-add_action( 'pre_get_posts', 'jwd_modify_product_query' );
-function jwd_modify_product_query($query) {
-  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
-    $query->set( 'orderby', 'pa_capacity' );
-  }
+function sort_products_by_brand( $q ) {
+    $terms = get_terms( array('taxonomy' => 'pa_capacity','fields' => 'ids'));
+    $tax_query = $q->get('tax_query');
+    $tax_query[] = array(
+        'taxonomy'  => 'pa_capacity',
+        'field'     => 'term_id',
+        'terms'     => $terms,
+    );
+
+    $q->set( 'tax_query', $tax_query);
+    $q->set( 'orderby', 'term_id' );
+    // $q->set( 'order', 'DESC' ); // by default is ASC so uncomment if you want DESC.
 }
-
-
-
-// https://wordpress.stackexchange.com/a/363654/94213
-// Answer by honk31
-add_filter('posts_clauses', 'jwd_orderby_tax_clauses', 10, 2 );
-function jwd_orderby_tax_clauses($clauses, $wp_query) {
-  global $wpdb;
-  $orderby = isset($wp_query->query_vars['orderby']) ? $wp_query->query_vars['orderby'] : false;
-
-  if ($orderby && $orderby === 'capacity') {
-    $clauses['join'] .= <<<SQL
-    LEFT OUTER JOIN {$wpdb->term_relationships} ON {$wpdb->posts}.ID={$wpdb->term_relationships}.object_id
-    LEFT OUTER JOIN {$wpdb->term_taxonomy} USING (term_taxonomy_id)
-    LEFT OUTER JOIN {$wpdb->terms} USING (term_id)
-    SQL;
-    $clauses['where'] .= " AND (taxonomy = '{$orderby}' OR taxonomy IS NULL)";
-    $clauses['groupby'] = "object_id";
-    $clauses['orderby'] = "{$wpdb->terms}.term_order ASC";
-    $clauses['orderby'] .= ", {$wpdb->posts}.post_name ASC";
-  }
-
-  return $clauses;
-}
+add_action( 'woocommerce_product_query', 'sort_products_by_brand' );
