@@ -214,7 +214,7 @@ function woocommerce_product_custom_fields()
         array(
             'id' => 'capacity',
             'placeholder' => 'Custom Product Number Field',
-            'label' => __('Custom Product Number Field', 'woocommerce'),
+            'label' => __('Capacity', 'woocommerce'),
             'type' => 'number',
             'custom_attributes' => array(
                 'step' => 'any',
