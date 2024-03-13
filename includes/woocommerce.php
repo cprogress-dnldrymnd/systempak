@@ -160,6 +160,21 @@ add_filter('gettext', 'gb_change_cart_string', 99999, 3);
  * @community     https://businessbloomer.com/club/
  */
 
+// 1. Create new product sorting rule
+
+add_filter('woocommerce_get_catalog_ordering_args', 'bbloomer_sort_by_capacity_woocommerce_shop');
+
+function bbloomer_sort_by_capacity_woocommerce_shop($args)
+{
+    $orderby_value = isset($_GET['orderby']) ? wc_clean($_GET['orderby']) : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
+    if ('capacity-desc' == $orderby_value) {
+        $args['order'] = 'DESC';
+        $args['meta_key'] = 'capacity';
+        $args['orderby'] = 'meta_value_num';
+       
+    }
+    return $args;
+}
 
 // 2. Add new product sorting option to Sorting dropdown
 
@@ -168,32 +183,11 @@ add_filter('woocommerce_catalog_orderby', 'bbloomer_load_custom_woocommerce_cata
 function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 {
     $options['capacity-desc'] = 'Capacity: Large First';
+    $options['capacity-asc'] = 'Capacity: Small First';
     return $options;
 }
 
 
-function sort_products_by_brand($q)
-{
-
-    $orderby = get_query_var('orderby') ? get_query_var('orderby') : false;
-
-    if ($orderby == 'capacity-desc') {
-
-
-        $terms = get_terms(array('taxonomy' => 'pa_capacity', 'fields' => 'ids'));
-        $tax_query = $q->get('tax_query');
-        $tax_query[] = array(
-            'taxonomy'  => 'pa_capacity',
-            'field'     => 'term_id',
-            'terms'     => $terms,
-        );
-
-        $q->set('tax_query', $tax_query);
-        $q->set('orderby', 'term_id');
-        // $q->set( 'order', 'DESC' ); // by default is ASC so uncomment if you want DESC.
-    }
-}
-add_action('woocommerce_product_query', 'sort_products_by_brand');
 
 function action_woocommerce_after_shop_loop_item_title()
 {
