@@ -4,7 +4,7 @@
 if (is_product_category()) {
     echo do_shortcode("[hfe_template id='5440']");
     echo '<pre>';
-    var_dump(get_post_meta(get_the_ID()));
+    var_dump(get_post_meta(8161));
     echo '</pre>';
 }
 
