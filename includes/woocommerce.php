@@ -199,3 +199,39 @@ function action_woocommerce_after_shop_loop_item_title()
 }
 
 add_action('woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item_title');
+
+
+// Display Fields
+add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
+// Save Fields
+add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_fields_save');
+function woocommerce_product_custom_fields()
+{
+    global $woocommerce, $post;
+    echo '<div class="product_custom_field">';
+    //Custom Product Number Field
+    woocommerce_wp_text_input(
+        array(
+            'id' => 'capacity',
+            'placeholder' => 'Custom Product Number Field',
+            'label' => __('Custom Product Number Field', 'woocommerce'),
+            'type' => 'number',
+            'custom_attributes' => array(
+                'step' => 'any',
+                'min' => '0'
+            )
+        )
+    );
+
+    echo '</div>';
+}
+
+function woocommerce_product_custom_fields_save($post_id)
+{
+
+    // Custom Product Number Field
+    $woocommercecapacity = $_POST['capacity'];
+    if (!empty($woocommercecapacity))
+        update_post_meta($post_id, 'capacity', esc_attr($woocommercecapacity));
+   
+}
