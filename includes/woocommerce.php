@@ -175,7 +175,7 @@ function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 add_action( 'pre_get_posts', 'jwd_modify_product_query' );
 function jwd_modify_product_query($query) {
   if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
-    $query->set( 'orderby', 'capacity' );
+    $query->set( 'orderby', 'pa_capacity' );
   }
 }
 
@@ -188,7 +188,7 @@ function jwd_orderby_tax_clauses($clauses, $wp_query) {
   global $wpdb;
   $orderby = isset($wp_query->query_vars['orderby']) ? $wp_query->query_vars['orderby'] : false;
 
-  if ($orderby && $orderby === 'capacity') {
+  if ($orderby && $orderby === 'pa_capacity') {
     $clauses['join'] .= <<<SQL
     LEFT OUTER JOIN {$wpdb->term_relationships} ON {$wpdb->posts}.ID={$wpdb->term_relationships}.object_id
     LEFT OUTER JOIN {$wpdb->term_taxonomy} USING (term_taxonomy_id)
