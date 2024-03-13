@@ -194,3 +194,16 @@ function sort_products_by_brand($q)
     }
 }
 add_action('woocommerce_product_query', 'sort_products_by_brand');
+
+function action_woocommerce_after_shop_loop_item_title()
+{
+    $product = wc_get_product(get_the_id());
+    $product_attributes = $product->get_attributes(); // Get the product attributes
+
+    // Output
+    $manufacturer_id = $product_attributes['pa_capacity']['options']['0']; // returns the ID of the term
+    $manufacturer_name = get_term($manufacturer_id)->name; // gets the term name of the term from the ID
+    echo '<p class="manufacturer">' . $manufacturer_name . '</p>'; // display the actual term name
+}
+
+add_action('woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item_title');
