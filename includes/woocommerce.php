@@ -167,11 +167,15 @@ add_filter('woocommerce_get_catalog_ordering_args', 'bbloomer_sort_by_capacity_w
 function bbloomer_sort_by_capacity_woocommerce_shop($args)
 {
     $orderby_value = isset($_GET['orderby']) ? wc_clean($_GET['orderby']) : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
-    if ('capacity-desc' == $orderby_value) {
-        $args['order'] = 'DESC';
+    if ('capacity-desc' == $orderby_value || 'capacity-asc' == $orderby_value) {
         $args['meta_key'] = 'capacity';
         $args['orderby'] = 'meta_value_num';
-       
+    }
+    if ('capacity-desc' == $orderby_value) {
+        $args['order'] = 'DESC';
+    }
+    if ('capacity-asc' == $orderby_value) {
+        $args['order'] = 'ASC';
     }
     return $args;
 }
