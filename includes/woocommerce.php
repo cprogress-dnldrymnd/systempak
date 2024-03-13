@@ -153,34 +153,39 @@ function gb_change_cart_string($translated_text, $text, $domain)
 add_filter('gettext', 'gb_change_cart_string', 99999, 3);
 
 /**
-* @snippet       Add a Custom Sorting Option @ WooCommerce Shop
-* @how-to        Get CustomizeWoo.com FREE
-* @author        Rodolfo Melogli
-* @testedwith    WooCommerce 4.0
-* @community     https://businessbloomer.com/club/
-*/
-  
+ * @snippet       Add a Custom Sorting Option @ WooCommerce Shop
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @testedwith    WooCommerce 4.0
+ * @community     https://businessbloomer.com/club/
+ */
+
 // 1. Create new product sorting rule
-  
-add_filter( 'woocommerce_get_catalog_ordering_args', 'bbloomer_sort_by_capacity_woocommerce_shop' );
-  
-function bbloomer_sort_by_capacity_woocommerce_shop( $args ) { 
-   $orderby_value = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );
-   if ( 'capacity' == $orderby_value ) {
-      $args['orderby'] = 'title';
-      $args['order'] = 'DESC';
-   } 
-   return $args;
+
+add_filter('woocommerce_get_catalog_ordering_args', 'bbloomer_sort_by_capacity_woocommerce_shop');
+
+function bbloomer_sort_by_capacity_woocommerce_shop($args)
+{
+    $orderby_value = isset($_GET['orderby']) ? wc_clean($_GET['orderby']) : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
+    if ('capacity' == $orderby_value) {
+        $args = array(
+            array(
+                'taxonomy' => 'pa_capacity',
+                'field' => 'slug',
+                'terms' => 'bob',
+            ),
+        );
+        $args['order'] = 'DESC';
+    }
+    return $args;
 }
-  
+
 // 2. Add new product sorting option to Sorting dropdown
-  
-add_filter( 'woocommerce_catalog_orderby', 'bbloomer_load_custom_woocommerce_catalog_sorting' );
-  
-function bbloomer_load_custom_woocommerce_catalog_sorting( $options ) {
-   $options['capacity'] = 'Sort by capacity';
-   return $options;
+
+add_filter('woocommerce_catalog_orderby', 'bbloomer_load_custom_woocommerce_catalog_sorting');
+
+function bbloomer_load_custom_woocommerce_catalog_sorting($options)
+{
+    $options['capacity'] = 'Sort by capacity';
+    return $options;
 }
-
-
-
