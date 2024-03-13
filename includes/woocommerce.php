@@ -225,13 +225,3 @@ function woocommerce_product_custom_fields()
 
     echo '</div>';
 }
-
-function woocommerce_product_custom_fields_save($post_id)
-{
-
-    // Custom Product Number Field
-    $woocommercecapacity = $_POST['capacity'];
-    if (!empty($woocommercecapacity))
-        update_post_meta($post_id, 'capacity', esc_attr($woocommercecapacity));
-   
-}
