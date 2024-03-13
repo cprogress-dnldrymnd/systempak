@@ -160,25 +160,6 @@ add_filter('gettext', 'gb_change_cart_string', 99999, 3);
  * @community     https://businessbloomer.com/club/
  */
 
-// 1. Create new product sorting rule
-
-add_filter('woocommerce_get_catalog_ordering_args', 'bbloomer_sort_by_capacity_woocommerce_shop');
-
-function bbloomer_sort_by_capacity_woocommerce_shop($args)
-{
-    $orderby_value = isset($_GET['orderby']) ? wc_clean($_GET['orderby']) : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
-    if ('capacity' == $orderby_value) {
-        $args = array(
-            array(
-                'taxonomy' => 'pa_capacity',
-                'field' => 'slug',
-                'terms' => 'bob',
-            ),
-        );
-        $args['order'] = 'DESC';
-    }
-    return $args;
-}
 
 // 2. Add new product sorting option to Sorting dropdown
 
