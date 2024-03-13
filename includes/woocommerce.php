@@ -170,35 +170,3 @@ function bbloomer_load_custom_woocommerce_catalog_sorting($options)
     $options['capacity'] = 'Sort by capacity';
     return $options;
 }
-
-
-add_action( 'pre_get_posts', 'jwd_modify_product_query' );
-function jwd_modify_product_query($query) {
-  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'product' ) ) {
-    $query->set( 'orderby', 'capacity' );
-  }
-}
-
-
-
-// https://wordpress.stackexchange.com/a/363654/94213
-// Answer by honk31
-add_filter('posts_clauses', 'jwd_orderby_tax_clauses', 10, 2 );
-function jwd_orderby_tax_clauses($clauses, $wp_query) {
-  global $wpdb;
-  $orderby = isset($wp_query->query_vars['orderby']) ? $wp_query->query_vars['orderby'] : false;
-
-  if ($orderby && $orderby === 'capacity') {
-    $clauses['join'] .= <<<SQL
-    LEFT OUTER JOIN {$wpdb->term_relationships} ON {$wpdb->posts}.ID={$wpdb->term_relationships}.object_id
-    LEFT OUTER JOIN {$wpdb->term_taxonomy} USING (term_taxonomy_id)
-    LEFT OUTER JOIN {$wpdb->terms} USING (term_id)
-    SQL;
-    $clauses['where'] .= " AND (taxonomy = '{$orderby}' OR taxonomy IS NULL)";
-    $clauses['groupby'] = "object_id";
-    $clauses['orderby'] = "{$wpdb->terms}.term_order ASC";
-    $clauses['orderby'] .= ", {$wpdb->posts}.post_name ASC";
-  }
-
-  return $clauses;
-}
