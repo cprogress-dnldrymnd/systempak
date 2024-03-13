@@ -167,22 +167,30 @@ add_filter('woocommerce_catalog_orderby', 'bbloomer_load_custom_woocommerce_cata
 
 function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 {
-    $options['capacity'] = 'Capacity: Large First';
+    $options['capacity-desc'] = 'Capacity: Large First';
     return $options;
 }
 
 
-function sort_products_by_brand( $q ) {
-    $terms = get_terms( array('taxonomy' => 'pa_capacity','fields' => 'ids'));
-    $tax_query = $q->get('tax_query');
-    $tax_query[] = array(
-        'taxonomy'  => 'pa_capacity',
-        'field'     => 'term_id',
-        'terms'     => $terms,
-    );
+function sort_products_by_brand($q)
+{
 
-    $q->set( 'tax_query', $tax_query);
-    $q->set( 'orderby', 'term_id' );
-    // $q->set( 'order', 'DESC' ); // by default is ASC so uncomment if you want DESC.
+    $orderby = isset(get_query_var('orderby')) ? get_query_var('orderby') : false;
+
+    if ($orderby == 'capacity-desc') {
+
+
+        $terms = get_terms(array('taxonomy' => 'pa_capacity', 'fields' => 'ids'));
+        $tax_query = $q->get('tax_query');
+        $tax_query[] = array(
+            'taxonomy'  => 'pa_capacity',
+            'field'     => 'term_id',
+            'terms'     => $terms,
+        );
+
+        $q->set('tax_query', $tax_query);
+        $q->set('orderby', 'term_id');
+        // $q->set( 'order', 'DESC' ); // by default is ASC so uncomment if you want DESC.
+    }
 }
-add_action( 'woocommerce_product_query', 'sort_products_by_brand' );
+add_action('woocommerce_product_query', 'sort_products_by_brand');
