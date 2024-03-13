@@ -175,7 +175,7 @@ function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 function sort_products_by_brand($q)
 {
 
-    $orderby = isset(get_query_var('orderby')) ? get_query_var('orderby') : false;
+    $orderby = get_query_var('orderby') ? get_query_var('orderby') : false;
 
     if ($orderby == 'capacity-desc') {
 
