@@ -231,6 +231,7 @@ p {
                 content: "";
                 width: 2px;
                 height: 16px;
+                right: 13px;
             }
             &:after {
                 content: "";
@@ -246,6 +247,12 @@ p {
                 background-color: var(--text-color);
                 padding: 0;
                 border-radius: 0;
+                opacity: 1;
+            }
+            &.active {
+                &:before {
+                    opacity: 0;
+                }
             }
         }
     }

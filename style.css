@@ -144,7 +144,8 @@ p:last-child {
 .single-product.single-product #priotech-accordion-container .accordion-head.accordion-head.accordion-head.accordion-head:before {
   content: "";
   width: 2px;
-  height: 16px; }
+  height: 16px;
+  right: 13px; }
 .single-product.single-product #priotech-accordion-container .accordion-head.accordion-head.accordion-head.accordion-head:after {
   content: "";
   width: 16px;
@@ -156,7 +157,10 @@ p:last-child {
   transform: translateY(-50%);
   background-color: var(--text-color);
   padding: 0;
-  border-radius: 0; }
+  border-radius: 0;
+  opacity: 1; }
+.single-product.single-product #priotech-accordion-container .accordion-head.accordion-head.accordion-head.accordion-head.active:before {
+  opacity: 0; }
 .single-product.single-product .rating_brands .woocommerce-product-rating {
   display: none; }
 .single-product.single-product .rating_brands .sku_wrapper {
