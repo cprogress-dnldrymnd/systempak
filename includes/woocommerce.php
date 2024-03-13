@@ -192,15 +192,6 @@ function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 }
 
 
-
-function action_woocommerce_after_shop_loop_item_title()
-{
-    echo get_post_meta(get_the_ID(), 'capacity', true);
-}
-
-add_action('woocommerce_after_shop_loop_item_title', 'action_woocommerce_after_shop_loop_item_title');
-
-
 // Display Fields
 add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
 // Save Fields
