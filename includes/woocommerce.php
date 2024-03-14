@@ -239,9 +239,7 @@ function bbloomer_single_order_meta_box()
     $custom_tab_content1 = get_post_meta($post->ID, 'custom_tab_content1', true);
 ?>
     <div>
-        <hr>
-        <label for="#Quantities"></label>
-        <?php wp_editor($custom_tab_content1, 'custom_tab_title1'); ?>
+        <?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?>
     </div>
 <?php
 }
