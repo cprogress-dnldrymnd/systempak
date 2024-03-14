@@ -268,7 +268,7 @@ function action_custom_tabs_meta_box()
         }
 
         .custom-tabs-wrapper .custom-tabs-holder:nth-child(even) {
-            background-color: gray;
+            background-color: #f0f0f0;
         }
     </style>
     <div class="custom-tabs-wrapper">
