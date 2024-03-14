@@ -274,7 +274,7 @@ function action_custom_tabs_meta_box()
     $custom_tab_content3 = get_post_meta($post->ID, 'custom_tab_content3', true);
 ?>
     <style>
-        .meta-box-fields .input-box input {
+        .meta-box-fields .input-box > input[type="text"] {
             width: 100%;
         }
 
