@@ -224,7 +224,6 @@ function woocommerce_product_custom_fields_save($post_id)
     $woocommerce_custom_product_number_field = $_POST['capacity'];
     if (!empty($woocommerce_custom_product_number_field))
         update_post_meta($post_id, 'capacity', esc_attr($woocommerce_custom_product_number_field));
-
 }
 
 add_action('add_meta_boxes', 'bbloomer_order_meta_box');
@@ -236,6 +235,11 @@ function bbloomer_order_meta_box()
 
 function bbloomer_single_order_meta_box()
 {
-    // global $post; // OPTIONALLY USE TO ACCESS ORDER POST
-    echo 'Whatever HTML content';
+
+?>
+    <div>
+        <label for="#Quantities">Quantities</label>
+        <?php wp_editor('test', 'mysecondeditor'); ?>
+    </div>
+<?php
 }
