@@ -743,8 +743,22 @@ body.search {
         max-height: 150px;
         overflow: hidden;
         transition: 500ms;
+        & + .view-more-category {
+            span {
+                &::before {
+                    content: "View More Category";
+                }
+            }
+        }
         &.active {
             max-height: 700px;
+            & + .view-more-category {
+                span {
+                    &::before {
+                        content: "Collapse Category";
+                    }
+                }
+            }
         }
     }
     .view-more-category {
@@ -756,6 +770,7 @@ body.search {
         padding-top: 10px;
         padding-bottom: 10px;
         margin-top: 1rem;
+        font-weight: bold;
+        cursor: pointer;
     }
-    
 }
