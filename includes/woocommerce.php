@@ -230,16 +230,18 @@ add_action('add_meta_boxes', 'bbloomer_order_meta_box');
 
 function bbloomer_order_meta_box()
 {
-    add_meta_box('additional_product_tabs', 'Additional Product Tabs', 'bbloomer_single_order_meta_box', 'product', 'advanced', 'high');
+    add_meta_box('quantities', 'Quantities', 'bbloomer_single_order_meta_box', 'product', 'advanced', 'high');
 }
 
 function bbloomer_single_order_meta_box()
 {
-
+    global $post;
+    $custom_tab_content1 = get_post_meta($post->ID, 'custom_tab_content1', true);
 ?>
     <div>
-        <label for="#Quantities">Quantities</label>
-        <?php wp_editor('test', 'custom_tab_title1'); ?>
+        <hr>
+        <label for="#Quantities"></label>
+        <?php wp_editor($custom_tab_content1, 'custom_tab_title1'); ?>
     </div>
 <?php
 }
