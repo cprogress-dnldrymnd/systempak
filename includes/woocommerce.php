@@ -232,27 +232,27 @@ function woocommerce_product_custom_fields_save($post_id)
         update_post_meta($post_id, 'capacity', esc_attr($capacity));
 
     $custom_tab_title1 = $_POST['custom_tab_title1'];
-    if (!empty($custom_tab_title1))
+    if ($custom_tab_title1 != '')
         update_post_meta($post_id, 'custom_tab_title1', $custom_tab_title1);
 
     $custom_tab_content1 = $_POST['custom_tab_content1'];
-    if (!empty($custom_tab_content1))
+    if ($custom_tab_content1 != '')
         update_post_meta($post_id, 'custom_tab_content1', $custom_tab_content1);
 
     $custom_tab_title2 = $_POST['custom_tab_title2'];
-    if (!empty($custom_tab_title2))
+    if ($custom_tab_title2 != '')
         update_post_meta($post_id, 'custom_tab_title2', $custom_tab_title2);
 
     $custom_tab_content2 = $_POST['custom_tab_content2'];
-    if (!empty($custom_tab_content2))
+    if ($custom_tab_content2 != '')
         update_post_meta($post_id, 'custom_tab_content2', $custom_tab_content2);
 
     $custom_tab_title3 = $_POST['custom_tab_title3'];
-    if (!empty($custom_tab_title3))
+    if ($custom_tab_title3 != '')
         update_post_meta($post_id, 'custom_tab_title3', $custom_tab_title3);
 
     $custom_tab_content3 = $_POST['custom_tab_content3'];
-    if (!empty($custom_tab_content3))
+    if ($custom_tab_content3 != '')
         update_post_meta($post_id, 'custom_tab_content3', $custom_tab_content3);
 }
 
