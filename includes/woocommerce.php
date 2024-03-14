@@ -227,4 +227,5 @@ function bbloomer_order_meta_box() {
 function bbloomer_single_order_meta_box() {
     // global $post; // OPTIONALLY USE TO ACCESS ORDER POST
     echo 'Whatever HTML content';
+    echo wp_editor( $content, 'mysecondeditor' );
 }
