@@ -259,7 +259,7 @@ function action_custom_tabs_meta_box()
             margin-top: 7px;
         }
 
-        .meta-box-fields {
+        .custom-tabs-holder .meta-box-fields:not(:last-child) {
             border-bottom: 1px solid lightgray;
             padding-bottom: 1rem;
             margin-bottom: 1rem;
@@ -269,6 +269,7 @@ function action_custom_tabs_meta_box()
 
         .custom-tabs-wrapper .custom-tabs-holder:nth-child(even) {
             background-color: #f0f0f0;
+            padding: 1rem;
         }
     </style>
     <div class="custom-tabs-wrapper">
