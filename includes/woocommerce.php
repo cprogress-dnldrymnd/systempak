@@ -274,7 +274,7 @@ function action_custom_tabs_meta_box()
     $custom_tab_content3 = get_post_meta($post->ID, 'custom_tab_content3', true);
 ?>
     <style>
-        .meta-box-fields .input-box > input[type="text"] {
+        .meta-box-fields .input-box>input[type="text"] {
             width: 100%;
         }
 
@@ -341,19 +341,65 @@ function action_custom_tabs_meta_box()
  * @compatible    WooCommerce 8
  * @community     https://businessbloomer.com/club/
  */
- 
- add_filter( 'woocommerce_product_tabs', 'bbloomer_add_product_tab', 9999 );
-   
- function bbloomer_add_product_tab( $tabs ) {
-    $tabs['custom_tab_1'] = array(
-       'title' => __( 'Docs', 'woocommerce' ), // TAB TITLE
-       'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
-       'callback' => 'bbloomer_docs_product_tab_content', // TAB CONTENT CALLBACK
-    );
+
+add_filter('woocommerce_product_tabs', 'action_woocommerce_product_tabs', 9999);
+
+function action_woocommerce_product_tabs($tabs)
+{
+    global $post;
+    $custom_tab_title1 = get_post_meta($post->ID, 'custom_tab_title1', true);
+    $custom_tab_title2 = get_post_meta($post->ID, 'custom_tab_title2', true);
+    $custom_tab_title3 = get_post_meta($post->ID, 'custom_tab_title3', true);
+
+    if ($custom_tab_title1) {
+        $tabs['custom_tab_1'] = array(
+            'title' => __($custom_tab_title1, 'woocommerce'), // TAB TITLE
+            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+            'callback' => 'custom_tab_1_content', // TAB CONTENT CALLBACK
+        );
+    }
+
+
+    if ($custom_tab_title2) {
+        $tabs['custom_tab_2'] = array(
+            'title' => __($custom_tab_title2, 'woocommerce'), // TAB TITLE
+            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+            'callback' => 'custom_tab_2_content', // TAB CONTENT CALLBACK
+        );
+    }
+
+    if ($custom_tab_title3) {
+        $tabs['custom_tab_3'] = array(
+            'title' => __($custom_tab_title3, 'woocommerce'), // TAB TITLE
+            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+            'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
+        );
+    }
     return $tabs;
- }
-  
- function bbloomer_docs_product_tab_content() {
-    global $product;
-    echo 'Whatever content for ' . $product->get_name();
- }
+}
+
+function custom_tab_1_content()
+{
+    global $post;
+    $custom_tab_content1 = get_post_meta($post->ID, 'custom_tab_content1', true);
+
+    echo wpautop($custom_tab_content1);
+}
+
+
+function custom_tab_2_content()
+{
+    global $post;
+    $custom_tab_content2 = get_post_meta($post->ID, 'custom_tab_content2', true);
+
+    echo wpautop($custom_tab_content2);
+}
+
+
+function custom_tab_3_content()
+{
+    global $post;
+    $custom_tab_content3 = get_post_meta($post->ID, 'custom_tab_content3', true);
+
+    echo wpautop($custom_tab_content3);
+}
