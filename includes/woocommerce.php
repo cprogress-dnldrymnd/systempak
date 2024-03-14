@@ -244,12 +244,15 @@ function action_custom_tab_content1_meta_box()
             width: 100%;
         }
 
+        .meta-box-fields .input-box {
+            width: 90%;
+            flex: 0 0 90%;
+        }
+
         .meta-box-fields label {
             width: 10%;
-            display: block;
             flex: 0 0 10%;
-            display: flex;
-            align-items: center;
+            margin-top: 7px;
         }
 
         .meta-box-fields {
