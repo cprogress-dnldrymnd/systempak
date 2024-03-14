@@ -3,6 +3,11 @@ jQuery(document).ready(function ($) {
     ajax_form();
 });
 
+
+function product_sidebar_category() {
+    jQuery('<div class="view-more-category"> View More </div>');
+}
+
 function ajax_form() {
     var typingTimer;
     var doneTypingInterval = 500;
