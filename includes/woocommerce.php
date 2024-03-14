@@ -221,9 +221,39 @@ add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_field
 function woocommerce_product_custom_fields_save($post_id)
 {
 
-    $woocommerce_custom_product_number_field = $_POST['capacity'];
-    if (!empty($woocommerce_custom_product_number_field))
-        update_post_meta($post_id, 'capacity', esc_attr($woocommerce_custom_product_number_field));
+    $capacity = $_POST['capacity'];
+    if (!empty($capacity))
+        update_post_meta($post_id, 'capacity', esc_attr($capacity));
+
+
+
+    $capacity = $_POST['capacity'];
+    if (!empty($capacity))
+        update_post_meta($post_id, 'capacity', esc_attr($capacity));
+
+    $custom_tab_title1 = $_POST['custom_tab_title1'];
+    if (!empty($custom_tab_title1))
+        update_post_meta($post_id, 'custom_tab_title1', esc_attr($custom_tab_title1));
+
+    $custom_tab_content1 = $_POST['custom_tab_content1'];
+    if (!empty($custom_tab_content1))
+        update_post_meta($post_id, 'custom_tab_content1', esc_attr($custom_tab_content1));
+
+    $custom_tab_title2 = $_POST['custom_tab_title2'];
+    if (!empty($custom_tab_title2))
+        update_post_meta($post_id, 'custom_tab_title2', esc_attr($custom_tab_title2));
+
+    $custom_tab_content2 = $_POST['custom_tab_content2'];
+    if (!empty($custom_tab_content2))
+        update_post_meta($post_id, 'custom_tab_content2', esc_attr($custom_tab_content2));
+
+    $custom_tab_title3 = $_POST['custom_tab_title3'];
+    if (!empty($custom_tab_title3))
+        update_post_meta($post_id, 'custom_tab_title3', esc_attr($custom_tab_title3));
+
+    $custom_tab_content3 = $_POST['custom_tab_content3'];
+    if (!empty($custom_tab_content3))
+        update_post_meta($post_id, 'custom_tab_content3', esc_attr($custom_tab_content3));
 }
 
 add_action('add_meta_boxes', 'custom_tabs_meta_box');
@@ -266,7 +296,6 @@ function action_custom_tabs_meta_box()
             border-bottom: 1px solid lightgray;
 
         }
-       
     </style>
     <div class="custom-tabs-wrapper">
         <div class="custom-tabs-holder">
