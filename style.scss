@@ -743,4 +743,9 @@ body.search {
         max-height: 150px;
         overflow: hidden;
     }
+    .view-more-category {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

@@ -512,5 +512,9 @@ body.search .site-header-search {
 .widget.widget_product_categories .product-categories {
   max-height: 150px;
   overflow: hidden; }
+.widget.widget_product_categories .view-more-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
 
 /*# sourceMappingURL=style.css.map */
