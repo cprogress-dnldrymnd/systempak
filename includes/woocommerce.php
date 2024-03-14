@@ -162,9 +162,9 @@ add_filter('gettext', 'gb_change_cart_string', 99999, 3);
 
 // 1. Create new product sorting rule
 
-add_filter('woocommerce_get_catalog_ordering_args', 'bbloomer_sort_by_capacity_woocommerce_shop');
+add_filter('woocommerce_get_catalog_ordering_args', 'quantitiessort_by_capacity_woocommerce_shop');
 
-function bbloomer_sort_by_capacity_woocommerce_shop($args)
+function quantitiessort_by_capacity_woocommerce_shop($args)
 {
     $orderby_value = isset($_GET['orderby']) ? wc_clean($_GET['orderby']) : apply_filters('woocommerce_default_catalog_orderby', get_option('woocommerce_default_catalog_orderby'));
     if ('capacity-desc' == $orderby_value || 'capacity-asc' == $orderby_value) {
@@ -182,9 +182,9 @@ function bbloomer_sort_by_capacity_woocommerce_shop($args)
 
 // 2. Add new product sorting option to Sorting dropdown
 
-add_filter('woocommerce_catalog_orderby', 'bbloomer_load_custom_woocommerce_catalog_sorting');
+add_filter('woocommerce_catalog_orderby', 'quantitiesload_custom_woocommerce_catalog_sorting');
 
-function bbloomer_load_custom_woocommerce_catalog_sorting($options)
+function quantitiesload_custom_woocommerce_catalog_sorting($options)
 {
     $options['capacity-desc'] = 'Capacity: large first';
     $options['capacity-asc'] = 'Capacity: small first';
@@ -226,19 +226,26 @@ function woocommerce_product_custom_fields_save($post_id)
         update_post_meta($post_id, 'capacity', esc_attr($woocommerce_custom_product_number_field));
 }
 
-add_action('add_meta_boxes', 'bbloomer_order_meta_box');
+add_action('add_meta_boxes', 'custom_tab_content1_meta_box');
 
-function bbloomer_order_meta_box()
+function custom_tab_content1_meta_box()
 {
-    add_meta_box('quantities', 'Quantities', 'bbloomer_single_order_meta_box', 'product', 'advanced', 'high');
+    add_meta_box('custom_tab_content1', 'Custom Tab 1', 'action_custom_tab_content1_meta_box', 'product', 'advanced', 'high');
 }
 
-function bbloomer_single_order_meta_box()
+function action_custom_tab_content1_meta_box()
 {
     global $post;
+    $custom_tab_title1 = get_post_meta($post->ID, 'custom_tab_title1', true);
     $custom_tab_content1 = get_post_meta($post->ID, 'custom_tab_content1', true);
 ?>
     <div>
+        <label><strong>Custom Tab Title 1</strong></label>
+        <?php wp_editor($custom_tab_title1, 'custom_tab_content1'); ?>
+    </div>
+    <hr>
+    <div>
+        <label><strong>Custom Tab Content 1</strong></label>
         <?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?>
     </div>
 <?php
