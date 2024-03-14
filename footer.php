@@ -3,7 +3,13 @@
 <?php
 if (is_product_category()) {
     echo do_shortcode("[hfe_template id='5440']");
-  
+
+
+    if (current_user_can('administrator')) {
+        echo '<pre>';
+        var_dump(get_post_meta(7757));
+        echo '</pre>';
+    }
 }
 
 ?>
@@ -12,7 +18,7 @@ if (is_product_category()) {
         <?= do_shortcode('[search]') ?>
     </div>
     <script>
-        jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
             jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
         });
