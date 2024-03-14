@@ -241,8 +241,8 @@ function action_custom_tab_content1_meta_box()
 ?>
     <div>
         <label><strong>Custom Tab Title 1</strong></label>
+        <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>">
     </div>
-    <hr>
     <div>
         <label><strong>Custom Tab Content 1</strong></label>
         <?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?>
