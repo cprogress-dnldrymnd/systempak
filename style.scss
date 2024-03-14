@@ -775,6 +775,7 @@ body.search {
     &.active {
         .product-categories {
             max-height: 700px;
+            overflow: auto;
         }
         .view-more-category {
             span {

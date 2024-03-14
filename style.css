@@ -535,7 +535,8 @@ body.search .site-header-search {
   .widget.widget_product_categories .view-more-category .plus {
     display: inline-block; }
 .widget.widget_product_categories.active .product-categories {
-  max-height: 700px; }
+  max-height: 700px;
+  overflow: auto; }
 .widget.widget_product_categories.active .view-more-category span:before {
   content: "Collapse Category"; }
 .widget.widget_product_categories.active .view-more-category .minus {
