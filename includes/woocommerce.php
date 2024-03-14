@@ -259,17 +259,21 @@ function action_custom_tabs_meta_box()
             margin-top: 7px;
         }
 
-        .custom-tabs-holder .meta-box-fields:not(:last-child) {
-            border-bottom: 1px solid lightgray;
+        .custom-tabs-holder .meta-box-fields {
             padding-bottom: 1rem;
             margin-bottom: 1rem;
             display: flex;
 
         }
-
+        .custom-tabs-holder .meta-box-fields:not(:last-child) {
+            border-bottom: 1px solid lightgray;
+        }
         .custom-tabs-wrapper .custom-tabs-holder:nth-child(even) {
             background-color: #f0f0f0;
             padding: 1rem;
+        }
+        custom-tabs-wrapper .custom-tabs-holder:not(:last-child) {
+            margin-bottom: 2rem;
         }
     </style>
     <div class="custom-tabs-wrapper">
