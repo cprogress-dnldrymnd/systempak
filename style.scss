@@ -757,9 +757,15 @@ body.search {
         font-weight: bold;
         cursor: pointer;
         span {
-            &::before {
+            &:before {
                 content: "View More Category";
             }
+        }
+        .minus {
+            display: none;
+        }
+        .plus {
+            display: inline-block;
         }
     }
     &.active {
@@ -768,9 +774,15 @@ body.search {
         }
         .view-more-category {
             span {
-                &::before {
+                &:before {
                     content: "Collapse Category";
                 }
+            }
+            .minus {
+                display: inline-block;
+            }
+            .plus {
+                display: none;
             }
         }
     }
