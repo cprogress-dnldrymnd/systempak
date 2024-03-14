@@ -263,8 +263,10 @@ function action_custom_tabs_meta_box()
             padding-bottom: 1rem;
             margin-bottom: 1rem;
             display: flex;
+            border-bottom: 1px solid lightgray;
 
         }
+       
     </style>
     <div class="custom-tabs-wrapper">
         <div class="custom-tabs-holder">
