@@ -230,7 +230,7 @@ add_action('add_meta_boxes', 'custom_tab_content1_meta_box');
 
 function custom_tab_content1_meta_box()
 {
-    add_meta_box('custom_tab_content1', 'Custom Tab 1', 'action_custom_tab_content1_meta_box', 'product', 'advanced', 'high');
+    add_meta_box('custom_tab_content1_meta_box', 'Custom Tab 1', 'action_custom_tab_content1_meta_box', 'product', 'advanced', 'high');
 }
 
 function action_custom_tab_content1_meta_box()
