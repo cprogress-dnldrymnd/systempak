@@ -239,7 +239,7 @@ function bbloomer_single_order_meta_box()
 ?>
     <div>
         <label for="#Quantities">Quantities</label>
-        <?php wp_editor('test', 'quantities'); ?>
+        <?php wp_editor('test', 'custom_tab_title1'); ?>
     </div>
 <?php
 }
