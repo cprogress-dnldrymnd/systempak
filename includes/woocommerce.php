@@ -221,7 +221,7 @@ add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_field
 function woocommerce_product_custom_fields_save($post_id)
 {
 
-    $woocommerce_custom_product_number_field = $_POST['_custom_product_number_field'];
+    $woocommerce_custom_product_number_field = $_POST['capacity'];
     if (!empty($woocommerce_custom_product_number_field))
         update_post_meta($post_id, 'capacity', esc_attr($woocommerce_custom_product_number_field));
 
