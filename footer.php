@@ -5,13 +5,13 @@ if (is_product_category()) {
     echo do_shortcode("[hfe_template id='5440']");
 
 
-    if (current_user_can('administrator')) {
-        echo '<pre>';
-        var_dump(get_post_meta(7757));
-        echo '</pre>';
-    }
+   
 }
-
+if (current_user_can('administrator')) {
+    echo '<pre>';
+    var_dump(get_post_meta(7757));
+    echo '</pre>';
+}
 ?>
 <?php if (!is_search()) { ?>
     <div class="search-header d-none">
