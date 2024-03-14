@@ -8,9 +8,9 @@ if (is_product_category()) {
    
 }
 if (current_user_can('administrator')) {
-    echo '<pre>';
-    var_dump(get_post_meta(7757));
-    echo '</pre>';
+    //echo '<pre>';
+    //var_dump(get_post_meta(7757));
+    //echo '</pre>';
 }
 ?>
 <?php if (!is_search()) { ?>
