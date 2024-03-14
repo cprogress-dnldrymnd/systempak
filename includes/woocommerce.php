@@ -195,7 +195,6 @@ function bbloomer_load_custom_woocommerce_catalog_sorting($options)
 // Display Fields
 add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
 // Save Fields
-add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_fields_save');
 function woocommerce_product_custom_fields()
 {
     global $woocommerce, $post;
@@ -215,4 +214,28 @@ function woocommerce_product_custom_fields()
     );
 
     echo '</div>';
+}
+
+add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_fields_save');
+
+function woocommerce_product_custom_fields_save($post_id)
+{
+
+    $woocommerce_custom_product_number_field = $_POST['_custom_product_number_field'];
+    if (!empty($woocommerce_custom_product_number_field))
+        update_post_meta($post_id, 'capacity', esc_attr($woocommerce_custom_product_number_field));
+
+}
+
+add_action('add_meta_boxes', 'bbloomer_order_meta_box');
+
+function bbloomer_order_meta_box()
+{
+    add_meta_box('additional_product_tabs', 'Additional Product Tabs', 'bbloomer_single_order_meta_box', 'product', 'advanced', 'high');
+}
+
+function bbloomer_single_order_meta_box()
+{
+    // global $post; // OPTIONALLY USE TO ACCESS ORDER POST
+    echo 'Whatever HTML content';
 }
