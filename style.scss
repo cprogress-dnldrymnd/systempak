@@ -744,25 +744,7 @@ body.search {
         overflow: hidden;
         transition: 500ms;
     }
-    &.active {
-        .product-categories {
-            max-height: 700px;
-        }
-    }
-    & + .view-more-category {
-        span {
-            &::before {
-                content: "View More Category";
-            }
-        }
-        & + .view-more-category {
-            span {
-                &::before {
-                    content: "Collapse Category";
-                }
-            }
-        }
-    }
+
     .view-more-category {
         display: flex;
         align-items: center;
@@ -774,5 +756,22 @@ body.search {
         margin-top: 1rem;
         font-weight: bold;
         cursor: pointer;
+        span {
+            &::before {
+                content: "View More Category";
+            }
+        }
+    }
+    &.active {
+        .product-categories {
+            max-height: 700px;
+        }
+        .view-more-category {
+            span {
+                &::before {
+                    content: "Collapse Category";
+                }
+            }
+        }
     }
 }
