@@ -266,38 +266,41 @@ function action_custom_tabs_meta_box()
             display: flex;
 
         }
-        .custom-tabs-holder .meta-box-fields:nth-child(even) {
+
+        .custom-tabs-wrapper .custom-tabs-holder:nth-child(even) {
             background-color: gray;
         }
     </style>
-    <div class="custom-tabs-holder">
-        <div class="meta-box-fields">
-            <label><strong>Custom Tab Title 1</strong></label>
-            <div class="input-box"> <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>"></div>
+    <div class="custom-tabs-wrapper">
+        <div class="custom-tabs-holder">
+            <div class="meta-box-fields">
+                <label><strong>Custom Tab Title 1</strong></label>
+                <div class="input-box"> <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>"></div>
+            </div>
+            <div class="meta-box-fields">
+                <label><strong>Custom Tab Content 1</strong></label>
+                <div class="input-box"><?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?></div>
+            </div>
         </div>
-        <div class="meta-box-fields">
-            <label><strong>Custom Tab Content 1</strong></label>
-            <div class="input-box"><?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?></div>
+        <div class="custom-tabs-holder">
+            <div class="meta-box-fields">
+                <label><strong>Custom Tab Title 2</strong></label>
+                <div class="input-box"> <input type="text" name="custom_tab_title2" value="<?= $custom_tab_title2 ?>"></div>
+            </div>
+            <div class="meta-box-fields">
+                <label><strong>Custom Tab Content 2</strong></label>
+                <div class="input-box"><?php wp_editor($custom_tab_content2, 'custom_tab_content2'); ?></div>
+            </div>
         </div>
-    </div>
-    <div class="custom-tabs-holder">
-        <div class="meta-box-fields">
-            <label><strong>Custom Tab Title 2</strong></label>
-            <div class="input-box"> <input type="text" name="custom_tab_title2" value="<?= $custom_tab_title2 ?>"></div>
-        </div>
-        <div class="meta-box-fields">
-            <label><strong>Custom Tab Content 2</strong></label>
-            <div class="input-box"><?php wp_editor($custom_tab_content2, 'custom_tab_content2'); ?></div>
-        </div>
-    </div>
-    <div class="custom-tabs-holder">
-        <div class="meta-box-fields">
-            <label><strong>Custom Tab Title 3</strong></label>
-            <div class="input-box"> <input type="text" name="custom_tab_title3" value="<?= $custom_tab_title3 ?>"></div>
-        </div>
-        <div class="meta-box-fields">
-            <label><strong>Custom Tab Content 3</strong></label>
-            <div class="input-box"><?php wp_editor($custom_tab_content3, 'custom_tab_content3'); ?></div>
+        <div class="custom-tabs-holder">
+            <div class="meta-box-fields">
+                <label><strong>Custom Tab Title 3</strong></label>
+                <div class="input-box"> <input type="text" name="custom_tab_title3" value="<?= $custom_tab_title3 ?>"></div>
+            </div>
+            <div class="meta-box-fields">
+                <label><strong>Custom Tab Content 3</strong></label>
+                <div class="input-box"><?php wp_editor($custom_tab_content3, 'custom_tab_content3'); ?></div>
+            </div>
         </div>
     </div>
 <?php
