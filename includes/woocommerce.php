@@ -272,7 +272,7 @@ function action_custom_tabs_meta_box()
             background-color: #f0f0f0;
             padding: 1rem;
         }
-        custom-tabs-wrapper .custom-tabs-holder:not(:last-child) {
+        .custom-tabs-wrapper .custom-tabs-holder:not(:last-child) {
             margin-bottom: 2rem;
         }
     </style>
