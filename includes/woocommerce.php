@@ -242,16 +242,31 @@ function action_custom_tab_content1_meta_box()
     <style>
         .meta-box-fields input {
             width: 100%;
+        }
+
+        .meta-box-fields label {
+            width: 10%;
+            display: block;
+            flex: 0 0 10%;
+            display: flex;
+            align-items: center;
+        }
+
+        .meta-box-fields {
             border-bottom: 1px solid lightgray;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+
         }
     </style>
     <div class="meta-box-fields">
         <label><strong>Custom Tab Title 1</strong></label>
-        <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>">
+        <div class="input-box"> <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>"></div>
     </div>
     <div class="meta-box-fields">
         <label><strong>Custom Tab Content 1</strong></label>
-        <?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?>
+        <div class="input-box"><?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?></div>
     </div>
 <?php
 }
