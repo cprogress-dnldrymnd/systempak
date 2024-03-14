@@ -226,18 +226,22 @@ function woocommerce_product_custom_fields_save($post_id)
         update_post_meta($post_id, 'capacity', esc_attr($woocommerce_custom_product_number_field));
 }
 
-add_action('add_meta_boxes', 'custom_tab_content1_meta_box');
+add_action('add_meta_boxes', 'custom_tabs_meta_box');
 
-function custom_tab_content1_meta_box()
+function custom_tabs_meta_box()
 {
-    add_meta_box('custom_tab_content1_meta_box', 'Custom Tab 1', 'action_custom_tab_content1_meta_box', 'product', 'advanced', 'high');
+    add_meta_box('custom_tabs_meta_box', 'Custom Tabs', 'action_custom_tabs_meta_box', 'product', 'advanced', 'high');
 }
 
-function action_custom_tab_content1_meta_box()
+function action_custom_tabs_meta_box()
 {
     global $post;
     $custom_tab_title1 = get_post_meta($post->ID, 'custom_tab_title1', true);
     $custom_tab_content1 = get_post_meta($post->ID, 'custom_tab_content1', true);
+    $custom_tab_title2 = get_post_meta($post->ID, 'custom_tab_title2', true);
+    $custom_tab_content2 = get_post_meta($post->ID, 'custom_tab_content2', true);
+    $custom_tab_title3 = get_post_meta($post->ID, 'custom_tab_title3', true);
+    $custom_tab_content3 = get_post_meta($post->ID, 'custom_tab_content3', true);
 ?>
     <style>
         .meta-box-fields input {
@@ -263,13 +267,35 @@ function action_custom_tab_content1_meta_box()
 
         }
     </style>
-    <div class="meta-box-fields">
-        <label><strong>Custom Tab Title 1</strong></label>
-        <div class="input-box"> <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>"></div>
+    <div class="custom-tabs-holder">
+        <div class="meta-box-fields">
+            <label><strong>Custom Tab Title 1</strong></label>
+            <div class="input-box"> <input type="text" name="custom_tab_title1" value="<?= $custom_tab_title1 ?>"></div>
+        </div>
+        <div class="meta-box-fields">
+            <label><strong>Custom Tab Content 1</strong></label>
+            <div class="input-box"><?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?></div>
+        </div>
     </div>
-    <div class="meta-box-fields">
-        <label><strong>Custom Tab Content 1</strong></label>
-        <div class="input-box"><?php wp_editor($custom_tab_content1, 'custom_tab_content1'); ?></div>
+    <div class="custom-tabs-holder">
+        <div class="meta-box-fields">
+            <label><strong>Custom Tab Title 2</strong></label>
+            <div class="input-box"> <input type="text" name="custom_tab_title2" value="<?= $custom_tab_title2 ?>"></div>
+        </div>
+        <div class="meta-box-fields">
+            <label><strong>Custom Tab Content 2</strong></label>
+            <div class="input-box"><?php wp_editor($custom_tab_content2, 'custom_tab_content2'); ?></div>
+        </div>
+    </div>
+    <div class="custom-tabs-holder">
+        <div class="meta-box-fields">
+            <label><strong>Custom Tab Title 3</strong></label>
+            <div class="input-box"> <input type="text" name="custom_tab_title3" value="<?= $custom_tab_title3 ?>"></div>
+        </div>
+        <div class="meta-box-fields">
+            <label><strong>Custom Tab Content 3</strong></label>
+            <div class="input-box"><?php wp_editor($custom_tab_content3, 'custom_tab_content3'); ?></div>
+        </div>
     </div>
 <?php
 }
