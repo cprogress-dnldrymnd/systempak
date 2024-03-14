@@ -756,6 +756,10 @@ body.search {
         margin-top: 1rem;
         font-weight: bold;
         cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 16px;
+        color: var(--secondary-color);
         span {
             &:before {
                 content: "View More Category";

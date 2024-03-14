@@ -523,7 +523,11 @@ body.search .site-header-search {
   padding-bottom: 10px;
   margin-top: 1rem;
   font-weight: bold;
-  cursor: pointer; }
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: var(--secondary-color); }
   .widget.widget_product_categories .view-more-category span:before {
     content: "View More Category"; }
   .widget.widget_product_categories .view-more-category .minus {
