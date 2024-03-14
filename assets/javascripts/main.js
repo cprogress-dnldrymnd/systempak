@@ -1,11 +1,12 @@
 jQuery(document).ready(function ($) {
     load_more_button_listener();
     ajax_form();
+    product_sidebar_category();
 });
 
 
 function product_sidebar_category() {
-    jQuery('<div class="view-more-category"> View More </div>');
+    jQuery('<div class="view-more-category"> View More </div>').appendTo('.widget.widget_product_categories');
 }
 
 function ajax_form() {

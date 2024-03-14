@@ -509,4 +509,8 @@ body.search .site-header-search {
     .site-search-popup .search-header .search-section {
       padding-bottom: 0; }
 
+.widget.widget_product_categories .product-categories {
+  max-height: 150px;
+  overflow: hidden; }
+
 /*# sourceMappingURL=style.css.map */
