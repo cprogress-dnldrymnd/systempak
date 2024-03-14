@@ -512,12 +512,17 @@ body.search .site-header-search {
 .widget.widget_product_categories .product-categories {
   max-height: 150px;
   overflow: hidden;
-  transform: 500ms; }
+  transition: 500ms; }
   .widget.widget_product_categories .product-categories.active {
     max-height: 700px; }
 .widget.widget_product_categories .view-more-category {
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
