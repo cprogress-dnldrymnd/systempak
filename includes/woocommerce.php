@@ -266,6 +266,9 @@ function action_custom_tabs_meta_box()
             display: flex;
 
         }
+        .custom-tabs-holder .meta-box-fields:nth-child(even) {
+            background-color: gray;
+        }
     </style>
     <div class="custom-tabs-holder">
         <div class="meta-box-fields">
