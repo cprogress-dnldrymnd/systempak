@@ -742,6 +742,10 @@ body.search {
     .product-categories {
         max-height: 150px;
         overflow: hidden;
+        transform: 500ms;
+        &.active {
+            max-height: 700px;
+        }
     }
     .view-more-category {
         display: flex;
