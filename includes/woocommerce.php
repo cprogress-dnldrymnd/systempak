@@ -216,16 +216,3 @@ function woocommerce_product_custom_fields()
 
     echo '</div>';
 }
-
-
-add_action( 'add_meta_boxes', 'bbloomer_order_meta_box' );
- 
-function bbloomer_order_meta_box() {
-    add_meta_box( 'additional_product_tabs', 'Additional Product Tabs', 'bbloomer_single_order_meta_box', 'product', 'advanced', 'high' );
-}
- 
-function bbloomer_single_order_meta_box() {
-    // global $post; // OPTIONALLY USE TO ACCESS ORDER POST
-    echo 'Whatever HTML content';
-    echo wp_editor( $content, 'mysecondeditor' );
-}
