@@ -306,8 +306,8 @@ function _products()
     $query = new WP_Query($args);
     echo "<pre>";
     var_dump(carbon_get_post_meta(8017, 'tech_sheets'));
-    carbon_set_post_meta(8786, 'tech_sheets[0]/tech_sheet_heading', 'Hello World!');
-    carbon_set_post_meta(8786, 'tech_sheets[0]/tech_sheet_file', 10199);
+    //carbon_set_post_meta(8786, 'tech_sheets[0]/tech_sheet_heading', 'Hello World!');
+    //carbon_set_post_meta(8786, 'tech_sheets[0]/tech_sheet_file', 10199);
     rudr_upload_file_by_url('https://systempak.net/wp-content/uploads/2016/11/TDS-2108-2000ML.pdf');
     echo "</pre>";
 
@@ -325,19 +325,19 @@ function _products()
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet' && count(extract_url($custom_tab_content1)) == 1) {
             $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", extract_url($custom_tab_content1)[0]);
             if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title());
+                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $custom_tab_title1, $custom_tab_content1);
             }
         }
         if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet' && count(extract_url($custom_tab_content2)) == 1) {
             $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", extract_url($custom_tab_content2)[0]);
             if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title());
+                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $custom_tab_title2, $custom_tab_content2);
             }
         }
         if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) == 1) {
             $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", extract_url($custom_tab_content3)[0]);
             if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title());
+                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $custom_tab_title3, $custom_tab_content3);
             }
         }
         //echo '<ol>';
@@ -356,14 +356,17 @@ function _products()
     return ob_get_clean();
 }
 
-function _file_upload($pdf_url, $title)
+function _file_upload($pdf_url, $title, $post_id, $title_id, $content_id)
 {
     ob_start();
     echo '<li>';
     echo '<a href="' . get_permalink() . '">' . $title . '</a>';
     echo "<pre>";
-
     echo $pdf_url;
+    $pdf_id =  rudr_upload_file_by_url($pdf_url);
+    carbon_set_post_meta($post_id, 'tech_sheets[0]/tech_sheet_file', $pdf_id);
+    update_post_meta($post_id, $title_id, '');
+    update_post_meta($post_id, $content_id, '');
     echo "</pre>";
     echo '</li>';
     return ob_get_clean();
