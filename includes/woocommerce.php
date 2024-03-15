@@ -247,7 +247,7 @@ function _products()
 
 function extract_url($string)
 {
-     preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', $string, $match);
+     preg_match_all('/\bhttp[\w%+\/-]+?pdf\b/', $string, $match);
      return $match[0];
 }
 
