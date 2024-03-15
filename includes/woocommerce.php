@@ -205,6 +205,7 @@ function _products()
         $product = wc_get_product(get_the_ID());
         $pa_capacity = $product->get_attribute('pa_capacity');
         echo '<div>';
+        echo get_the_title();
         var_dump($pa_capacity);
         echo '</div>';
     ?>
