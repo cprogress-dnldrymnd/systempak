@@ -195,7 +195,7 @@ function _products()
 {
     ob_start();
     $args = array(
-        'numberposts' => 10,
+        'numberposts' => 100,
         'post_type'   => 'product'
     );
 
