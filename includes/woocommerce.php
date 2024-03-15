@@ -234,7 +234,8 @@ function _products()
         if ($tech_sheet) {
             echo '<br>-Tech Sheet: ';
             echo "<pre>";
-            print_r(extract_url($tech_sheet));
+            //print_r(extract_url($tech_sheet));
+            echo $tech_sheet;
             echo "</pre>";
         }
         echo '</li>';
