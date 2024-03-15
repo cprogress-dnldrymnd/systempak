@@ -231,7 +231,7 @@ function _products()
     echo "<pre>";
     var_dump(carbon_get_post_meta(8017, 'tech_sheets'));
     carbon_set_post_meta( 8786, 'tech_sheets[0]/tech_sheet_heading', 'Hello World!' );
-    carbon_set_post_meta( 8786, 'tech_sheets[0]/tech_sheet_file', 10199 );
+    carbon_set_post_meta( 8786, 'tech_sheets[0]/tech_sheet_file', '10199' );
     echo "</pre>";
 
     echo '<ul>';
