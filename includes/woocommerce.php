@@ -369,10 +369,10 @@ function _file_upload($pdf_url, $title, $post_id, $key, $title_id, $content_id)
     echo '<td><a href="' . get_permalink() . '">' . $title . '</a></td>';
     echo "<td>";
     echo $pdf_url;
-    //$pdf_id =  rudr_upload_file_by_url($pdf_url);
-    //carbon_set_post_meta($post_id, 'tech_sheets[' . $key . ']/tech_sheet_file', $pdf_id);
-    update_post_meta($post_id, $title_id, '');
-    update_post_meta($post_id, $content_id, '');
+    $pdf_id =  rudr_upload_file_by_url($pdf_url);
+    carbon_set_post_meta($post_id, 'tech_sheets[' . $key . ']/tech_sheet_file', $pdf_id);
+    //update_post_meta($post_id, $title_id, '');
+    //update_post_meta($post_id, $content_id, '');
     echo "</td>";
     echo '</tr>';
     return ob_get_clean();
