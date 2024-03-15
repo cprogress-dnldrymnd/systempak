@@ -228,8 +228,10 @@ function _products()
 
     );
     $query = new WP_Query($args);
-
+    echo "<pre>";
     var_dump(carbon_get_post_meta(8017, 'tech_sheets'));
+    echo "</pre>";
+
     echo '<ul>';
     while ($query->have_posts()) {
         $query->the_post();
@@ -261,7 +263,7 @@ function _products()
             echo "</pre>";
             echo '</li>';
         }
-        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3))== 1) {
+        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) == 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title3;
