@@ -200,15 +200,16 @@ function _products()
     );
 
     $products = get_posts($args);
-    foreach ($products as $product) {
-        $product = wc_get_product($product->ID);
+    foreach ($products as $p) {
+        $product = wc_get_product($p->ID);
         $pa_capacity = $product->get_attribute('pa_capacity');
         var_dump($pa_capacity);
+        echo $product->get_name;
     ?>
 
     <?php
-        return ob_get_clean();
     }
+    return ob_get_clean();
 }
 
 add_shortcode('_products', '_products');
