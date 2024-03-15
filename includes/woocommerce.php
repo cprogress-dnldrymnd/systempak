@@ -322,7 +322,7 @@ function _products()
         $custom_tab_content1 = get_post_meta(get_the_ID(), 'custom_tab_content1', true);
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
-        $tech_sheets = get_post_meta(get_the_ID(), 'tech_sheets', true);
+        $tech_sheets = get_post_meta(get_the_ID(), '_tech_sheets', true);
         
         echo '<tr>';
         echo '<td><a href="' . get_permalink() . '">' . get_the_title() . '</a></td>';
