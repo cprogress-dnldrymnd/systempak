@@ -239,7 +239,7 @@ function woocommerce_product_custom_fields()
 
     woocommerce_wp_text_input(
         array(
-            'id' => 'capacity_frontend',
+            'id' => 'capacity_value',
             'placeholder' => 'Capacity value to appear on frontend',
             'label' => __('Capacity', 'woocommerce'),
             'type' => 'text',
