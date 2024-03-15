@@ -237,22 +237,22 @@ function _products()
         $query->the_post();
         echo '<li>';
         echo get_the_title();
-        if ($custom_tab_content1 && (stripos($custom_tab_title1, 'Tech') !== FALSE)) {
-            echo '<br>-Tech Sheet: ';
+        if ($custom_tab_content1) {
+            echo '<br>-' . $custom_tab_title1;
             echo "<pre>";
             //print_r(extract_url($tech_sheet));
             echo $custom_tab_content1;
             echo "</pre>";
         }
-        if ($custom_tab_content2 && (stripos($custom_tab_title1, 'Tech') !== FALSE)) {
-            echo '<br>-Tech Sheet: ';
+        if ($custom_tab_content2) {
+            echo '<br>-' . $custom_tab_title2;
             echo "<pre>";
             //print_r(extract_url($tech_sheet));
             echo $custom_tab_content2;
             echo "</pre>";
         }
-        if ($custom_tab_content3 && (stripos($custom_tab_title1, 'Tech') !== FALSE)) {
-            echo '<br>-Tech Sheet: ';
+        if ($custom_tab_content3) {
+            echo '<br>-' . $custom_tab_title3;
             echo "<pre>";
             //print_r(extract_url($tech_sheet));
             echo $custom_tab_content3;
