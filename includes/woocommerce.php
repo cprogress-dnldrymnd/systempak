@@ -238,6 +238,7 @@ function _products()
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $query->the_post();
+        echo count(extract_url($custom_tab_content1)) > 1;
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet' && count(extract_url($custom_tab_content1)) > 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
