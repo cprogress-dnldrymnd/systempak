@@ -15,14 +15,6 @@ function priotech_child_enqueue_styles()
 	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.4);
 }
 
-/*-----------------------------------------------------------------------------------*/
-/* Register Carbofields
-/*-----------------------------------------------------------------------------------*/
-add_action('carbon_fields_register_fields', 'tissue_paper_register_custom_fields');
-function tissue_paper_register_custom_fields()
-{
-	require_once('includes/post-meta.php');
-}
 
 require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
