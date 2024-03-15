@@ -229,7 +229,7 @@ function _products()
     );
     $query = new WP_Query($args);
 
-    var_dump(get_post_meta(8017, '_tech_sheets', true));
+    var_dump(carbon_get_post_meta(8017, 'tech_sheets'));
     echo '<ul>';
     while ($query->have_posts()) {
         $query->the_post();
