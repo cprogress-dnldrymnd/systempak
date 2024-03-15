@@ -237,8 +237,8 @@ function _products()
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $query->the_post();
         echo '<li>';
-        echo get_the_title();
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet') {
+            echo get_the_title();
             echo '<br>-' . $custom_tab_title1;
             echo "<pre>";
             print_r(extract_url($custom_tab_content1));
