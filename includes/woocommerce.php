@@ -222,7 +222,7 @@ function _products()
     ob_start();
     $args = array(
         'post_type' => 'product',
-        'posts_per_page' => -1,
+        'posts_per_page' => 50,
         'paged' => $_GET['page_val'],
         'post_status' => 'publish',
 
