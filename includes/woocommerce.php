@@ -238,12 +238,32 @@ function _products()
         $query->the_post();
         echo '<li>';
         echo get_the_title();
-        
-        echo '<ol>';
-        echo '<li>' . $custom_tab_title1 . '</li>';
-        echo '<li>' . $custom_tab_title2 . '</li>';
-        echo '<li>' . $custom_tab_title3 . '</li>';
-        echo '</ol>';
+        if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet') {
+            echo '<br>-' . $custom_tab_title1;
+            echo "<pre>";
+            print_r(extract_url($custom_tab_content1));
+            echo $custom_tab_content1;
+            echo "</pre>";
+        }
+        if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet') {
+            echo '<br>-' . $custom_tab_title2;
+            echo "<pre>";
+            print_r(extract_url($custom_tab_content2));
+            echo $custom_tab_content2;
+            echo "</pre>";
+        }
+        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet') {
+            echo '<br>-' . $custom_tab_title3;
+            echo "<pre>";
+            print_r(extract_url($custom_tab_content3));
+            echo $custom_tab_content3;
+            echo "</pre>";
+        }
+        //echo '<ol>';
+        //echo '<li>' . $custom_tab_title1 . '</li>';
+        //echo '<li>' . $custom_tab_title2 . '</li>';
+        //echo '<li>' . $custom_tab_title3 . '</li>';
+        //echo '</ol>';
 
         echo '</li>';
     ?>
