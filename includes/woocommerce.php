@@ -216,7 +216,7 @@ function woocommerce_product_custom_fields()
         array(
             'id' => 'capacity_frontend',
             'placeholder' => 'Capacity value to appear on frontend',
-            'label' => __('Capacity Sort By', 'woocommerce'),
+            'label' => __('Capacity', 'woocommerce'),
             'type' => 'text',
         )
     );
