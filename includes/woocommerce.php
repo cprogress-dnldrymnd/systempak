@@ -202,7 +202,7 @@ function woocommerce_product_custom_fields()
     woocommerce_wp_text_input(
         array(
             'id' => 'capacity',
-            'placeholder' => 'Custom Product Number Field',
+            'placeholder' => 'Capacity Sort By',
             'label' => __('Capacity Sort By', 'woocommerce'),
             'type' => 'number',
             'custom_attributes' => array(
@@ -215,13 +215,9 @@ function woocommerce_product_custom_fields()
     woocommerce_wp_text_input(
         array(
             'id' => 'capacity_frontend',
-            'placeholder' => 'Custom Product Number Field',
+            'placeholder' => 'Capacity value to appear on frontend',
             'label' => __('Capacity Sort By', 'woocommerce'),
-            'type' => 'number',
-            'custom_attributes' => array(
-                'step' => 'any',
-                'min' => '0'
-            )
+            'type' => 'text',
         )
     );
 
