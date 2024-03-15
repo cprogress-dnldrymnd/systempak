@@ -228,7 +228,6 @@ function _products()
 
     );
     $query = new WP_Query($args);
-    echo get_post_meta(8016, 'custom_tab_content3', true);
 
     echo '<ul>';
     while ($query->have_posts()) {
