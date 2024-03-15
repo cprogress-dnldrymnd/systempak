@@ -199,12 +199,24 @@ function woocommerce_product_custom_fields()
 {
     global $woocommerce, $post;
     echo '<div class="product_custom_field">';
-    //Custom Product Number Field
     woocommerce_wp_text_input(
         array(
             'id' => 'capacity',
             'placeholder' => 'Custom Product Number Field',
-            'label' => __('Capacity', 'woocommerce'),
+            'label' => __('Capacity Sort By', 'woocommerce'),
+            'type' => 'number',
+            'custom_attributes' => array(
+                'step' => 'any',
+                'min' => '0'
+            )
+        )
+    );
+
+    woocommerce_wp_text_input(
+        array(
+            'id' => 'capacity_frontend',
+            'placeholder' => 'Custom Product Number Field',
+            'label' => __('Capacity Sort By', 'woocommerce'),
             'type' => 'number',
             'custom_attributes' => array(
                 'step' => 'any',
