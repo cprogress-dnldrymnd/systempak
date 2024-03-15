@@ -201,7 +201,7 @@ function _products()
 
     $products = get_posts($args);
     foreach ($products as $product) {
-        global $product;
+        $product = wc_get_product($product->ID);
         $pa_capacity = $product->get_attribute('pa_capacity');
         var_dump($pa_capacity);
     ?>
