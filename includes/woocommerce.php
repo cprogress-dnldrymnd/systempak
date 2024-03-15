@@ -325,25 +325,25 @@ function _products()
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet') {
             foreach (extract_url($custom_tab_content1) as $key => $pdf) {
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
-                //if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
-                // }
+                if (_url_is_valid($pdf_url)) {
+                    echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
+                }
             }
         }
         if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet') {
             foreach (extract_url($custom_tab_content2) as $key => $pdf) {
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
-                //if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
-                //}
+                if (_url_is_valid($pdf_url)) {
+                    echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
+                }
             }
         }
         if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet') {
             foreach (extract_url($custom_tab_content3) as $key => $pdf) {
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
-                //if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
-                // }
+                if (_url_is_valid($pdf_url)) {
+                    echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
+                }
             }
         }
         //echo '<ol>';
@@ -369,8 +369,8 @@ function _file_upload($pdf_url, $title, $post_id, $key)
     echo '<td><a href="' . get_permalink() . '">' . $title . '</a></td>';
     echo "<td>";
     echo $pdf_url;
-    //$pdf_id =  rudr_upload_file_by_url($pdf_url);
-    //carbon_set_post_meta($post_id, 'tech_sheets[' . $key . ']/tech_sheet_file', $pdf_id);
+    $pdf_id =  rudr_upload_file_by_url($pdf_url);
+    carbon_set_post_meta($post_id, 'tech_sheets[' . $key . ']/tech_sheet_file', $pdf_id);
     //update_post_meta($post_id, $title_id, '');
     //update_post_meta($post_id, $content_id, '');
     echo "</td>";
