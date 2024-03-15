@@ -327,13 +327,10 @@ function _products()
             echo '<ul>';
 
             foreach (extract_url($custom_tab_content1) as $key => $pdf) {
-                echo '<li>';
-
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
                 //if (_url_is_valid($pdf_url)) {
                 echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
                 // }
-                echo '</li>';
             }
             echo '</ul>';
 
@@ -344,13 +341,10 @@ function _products()
             echo '<ul>';
 
             foreach (extract_url($custom_tab_content2) as $key => $pdf) {
-                echo '<li>';
-
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
                 //if (_url_is_valid($pdf_url)) {
                 echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
                 //}
-                echo '</li>';
             }
             echo '</ul>';
 
@@ -361,13 +355,10 @@ function _products()
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<ul>';
             foreach (extract_url($custom_tab_content3) as $key => $pdf) {
-                echo '<li>';
-
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
                 //if (_url_is_valid($pdf_url)) {
                 echo _file_upload($pdf_url, get_the_title(), get_the_ID(), $key);
                 // }
-                echo '</li>';
             }
             echo '</ul>';
             echo '</li>';
