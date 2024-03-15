@@ -334,6 +334,7 @@ function _products()
         //update_post_meta($post_id, $content_id, '');
         echo "</td>";
         echo '</tr>';
+        /*
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet') {
             foreach (extract_url($custom_tab_content1) as $key => $pdf) {
                 $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
@@ -363,7 +364,7 @@ function _products()
         //echo '<li>' . $custom_tab_title2 . '</li>';
         //echo '<li>' . $custom_tab_title3 . '</li>';
         //echo '</ol>';
-
+*/
     ?>
 
     <?php
