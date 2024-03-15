@@ -300,7 +300,6 @@ function _products()
         'post_type' => 'product',
         'posts_per_page' => -1,
         'paged' => $_GET['page_val'],
-        'post_status' => 'publish',
 
     );
     $query = new WP_Query($args);
