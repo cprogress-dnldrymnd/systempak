@@ -257,6 +257,9 @@ function woocommerce_product_custom_fields_save($post_id)
     $capacity = $_POST['capacity'];
     update_post_meta($post_id, 'capacity', esc_attr($capacity));
 
+    $capacity_value = $_POST['capacity_value'];
+    update_post_meta($post_id, 'capacity_value', esc_attr($capacity_value));
+
     $capacity = $_POST['capacity'];
     update_post_meta($post_id, 'capacity', esc_attr($capacity));
 
