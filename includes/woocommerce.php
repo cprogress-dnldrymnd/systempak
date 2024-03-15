@@ -203,8 +203,9 @@ function _products()
     foreach ($products as $p) {
         $product = wc_get_product($p->ID);
         $pa_capacity = $product->get_attribute('pa_capacity');
+        echo '<div>';
         var_dump($pa_capacity);
-        echo $product->get_name;
+        echo '</div>';
     ?>
 
     <?php
