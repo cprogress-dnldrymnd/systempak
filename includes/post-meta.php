@@ -15,9 +15,9 @@ Container::make('post_meta', 'Product Additional Information')
 	->add_fields(
 		array(
 			Field::make('complex', 'tech_sheets', __('Tech Sheet'))
-			->add_fields(array(
-			Field::make('file', 'tech_sheet_heading', __('Tech Sheet Heading')),
-			Field::make('file', 'tech_sheet_file', __('Tech Sheet File')),
-			))
+				->add_fields(array(
+					Field::make('file', 'tech_sheet_heading', __('Tech Sheet Heading')),
+					Field::make('file', 'tech_sheet_file', __('Tech Sheet File')),
+				))
 		)
 	);

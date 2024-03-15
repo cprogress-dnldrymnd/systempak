@@ -233,7 +233,9 @@ function _products()
         echo get_the_title();
         if ($tech_sheet) {
             echo '<br>-Tech Sheet: ';
-            echo $tech_sheet;
+            echo "<pre>";
+            print_r(extract_url($tech_sheet));
+            echo "</pre>";
         }
         echo '</li>';
     ?>
@@ -241,6 +243,12 @@ function _products()
     <?php
     }
     return ob_get_clean();
+}
+
+function extract_url($string)
+{
+     preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', $string, $match);
+     return $match[0];
 }
 
 add_shortcode('_products', '_products');
