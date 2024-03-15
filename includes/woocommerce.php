@@ -238,7 +238,7 @@ function _products()
         $query->the_post();
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet') {
             echo '<li>';
-            echo get_the_title();
+            echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title1;
             echo "<pre>";
             print_r(extract_url($custom_tab_content1));
@@ -248,6 +248,7 @@ function _products()
         }
         if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet') {
             echo '<li>';
+            echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title2;
             echo "<pre>";
             print_r(extract_url($custom_tab_content2));
@@ -257,7 +258,7 @@ function _products()
         }
         if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet') {
             echo '<li>';
-
+            echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title3;
             echo "<pre>";
             print_r(extract_url($custom_tab_content3));
