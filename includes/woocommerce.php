@@ -134,7 +134,7 @@ function action_woocommerce_after_add_to_cart_button()
 {
 ?>
     <a href="#" class="quick-buy">Quick Buy Option</a>
-<?php
+    <?php
 }
 
 add_action('woocommerce_after_add_to_cart_button', 'action_woocommerce_after_add_to_cart_button');
@@ -191,6 +191,27 @@ function quantitiesload_custom_woocommerce_catalog_sorting($options)
     return $options;
 }
 
+function _products()
+{
+    ob_start();
+    $args = array(
+        'numberposts' => 10,
+        'post_type'   => 'product'
+    );
+
+    $products = get_posts($args);
+    foreach ($products as $product) {
+        global $product;
+        $pa_capacity = $product->get_attribute('pa_capacity');
+        var_dump($pa_capacity);
+    ?>
+
+    <?php
+        return ob_get_clean();
+    }
+}
+
+add_shortcode('_products', '_products');
 
 // Display Fields
 add_action('woocommerce_product_options_general_product_data', 'woocommerce_product_custom_fields');
@@ -270,7 +291,7 @@ function action_custom_tabs_meta_box()
     $custom_tab_content2 = get_post_meta($post->ID, 'custom_tab_content2', true);
     $custom_tab_title3 = get_post_meta($post->ID, 'custom_tab_title3', true);
     $custom_tab_content3 = get_post_meta($post->ID, 'custom_tab_content3', true);
-?>
+    ?>
     <style>
         .meta-box-fields .input-box>input[type="text"] {
             width: 100%;
