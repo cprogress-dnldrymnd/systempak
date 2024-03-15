@@ -226,6 +226,7 @@ function _products()
         'paged' => $_GET['page_val'],
     );
     $query = new WP_Query($args);
+    echo '<ul>';
     while ($query->have_posts()) {
         $custom_tab_title1 = get_post_meta(get_the_ID(), 'custom_tab_title1', true);
         $custom_tab_title2 = get_post_meta(get_the_ID(), 'custom_tab_title2', true);
@@ -269,6 +270,8 @@ function _products()
 
     <?php
     }
+    echo '</ul>';
+
     return ob_get_clean();
 }
 
