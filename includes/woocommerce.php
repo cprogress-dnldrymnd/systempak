@@ -190,7 +190,7 @@ function quantitiesload_custom_woocommerce_catalog_sorting($options)
     $options['capacity-asc'] = 'Capacity: small first';
     return $options;
 }
-
+/*
 function _products()
 {
     ob_start();
@@ -207,6 +207,33 @@ function _products()
         echo '<li>';
         echo get_the_title() . '----' . get_post_meta(get_the_ID(), 'capacity_value', true);
         update_post_meta(get_the_ID(), 'capacity_value', $pa_capacity);
+        echo '</li>';
+    ?>
+
+    <?php
+    }
+    return ob_get_clean();
+}
+
+add_shortcode('_products', '_products');*/
+
+function _products()
+{
+    ob_start();
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => -1,
+        'paged' => $_GET['page_val'],
+    );
+    $query = new WP_Query($args);
+    while ($query->have_posts()) {
+        $query->the_post();
+        echo '<li>';
+        echo get_the_title();
+        echo '<br>-';
+        echo get_post_meta(get_the_ID(), 'custom_tab_title3', true);
+        echo '<br>-';
+        echo get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         echo '</li>';
     ?>
 
