@@ -16,8 +16,9 @@ Container::make('post_meta', 'Product Additional Information')
 		array(
 			Field::make('complex', 'tech_sheets', __('Tech Sheet'))
 				->add_fields(array(
-					Field::make('file', 'tech_sheet_heading', __('Tech Sheet Heading')),
+					Field::make('text', 'tech_sheet_heading', __('Tech Sheet Heading')),
 					Field::make('file', 'tech_sheet_file', __('Tech Sheet File')),
 				))
+				->set_layout('tabbed-horizontal')
 		)
 	);
