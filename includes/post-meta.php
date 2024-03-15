@@ -9,7 +9,7 @@ use Carbon_Fields\Field;
 /* Product Additional Information
 /*-----------------------------------------------------------------------------------*/
 
-Container::make('post_meta', 'Product Additional Information')
+Container::make('post_meta', 'Tech Sheets')
 	->where('post_type', '=', 'product')
 	->set_priority('high')
 	->add_fields(
