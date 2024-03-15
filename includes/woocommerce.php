@@ -238,7 +238,6 @@ function _products()
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $query->the_post();
-        echo count(extract_url($custom_tab_content3));
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet' && count(extract_url($custom_tab_content1)) > 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
@@ -249,7 +248,7 @@ function _products()
             echo "</pre>";
             echo '</li>';
         }
-        if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet' && count(extract_url($custom_tab_content2)) > 2) {
+        if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet' && count(extract_url($custom_tab_content2)) > 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title2;
@@ -259,7 +258,7 @@ function _products()
             echo "</pre>";
             echo '</li>';
         }
-        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) > 3) {
+        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) > 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title3;
