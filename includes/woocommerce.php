@@ -260,7 +260,7 @@ function _products()
             echo "</pre>";
             echo '</li>';
         }
-        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) > 1) {
+        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3))== 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
             echo '<br>-' . $custom_tab_title3;
