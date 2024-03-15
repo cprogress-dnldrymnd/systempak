@@ -227,15 +227,35 @@ function _products()
     );
     $query = new WP_Query($args);
     while ($query->have_posts()) {
-        $tech_sheet = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
+        $custom_tab_title1 = get_post_meta(get_the_ID(), 'custom_tab_title1', true);
+        $custom_tab_title2 = get_post_meta(get_the_ID(), 'custom_tab_title2', true);
+        $custom_tab_title3 = get_post_meta(get_the_ID(), 'custom_tab_title3', true);
+
+        $custom_tab_content1 = get_post_meta(get_the_ID(), 'custom_tab_content1', true);
+        $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
+        $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $query->the_post();
         echo '<li>';
         echo get_the_title();
-        if ($tech_sheet) {
+        if ($custom_tab_content1 && (stripos($custom_tab_title1, 'Tech') !== FALSE)) {
             echo '<br>-Tech Sheet: ';
             echo "<pre>";
             //print_r(extract_url($tech_sheet));
-            echo $tech_sheet;
+            echo $custom_tab_content1;
+            echo "</pre>";
+        }
+        if ($custom_tab_content2 && (stripos($custom_tab_title1, 'Tech') !== FALSE)) {
+            echo '<br>-Tech Sheet: ';
+            echo "<pre>";
+            //print_r(extract_url($tech_sheet));
+            echo $custom_tab_content2;
+            echo "</pre>";
+        }
+        if ($custom_tab_content3 && (stripos($custom_tab_title1, 'Tech') !== FALSE)) {
+            echo '<br>-Tech Sheet: ';
+            echo "<pre>";
+            //print_r(extract_url($tech_sheet));
+            echo $custom_tab_content3;
             echo "</pre>";
         }
         echo '</li>';
@@ -248,8 +268,8 @@ function _products()
 
 function extract_url($string)
 {
-     preg_match_all('/\bhttp\S*?pdf\b/', $string, $match);
-     return $match[0];
+    preg_match_all('/\bhttp\S*?pdf\b/', $string, $match);
+    return $match[0];
 }
 
 add_shortcode('_products', '_products');
