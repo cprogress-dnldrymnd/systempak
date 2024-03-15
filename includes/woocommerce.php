@@ -204,10 +204,10 @@ function _products()
         $query->the_post();
         $product = wc_get_product(get_the_ID());
         $pa_capacity = $product->get_attribute('pa_capacity');
-        echo '<div>';
+        echo '<li>';
         echo get_the_title();
-        var_dump($pa_capacity);
-        echo '</div>';
+        update_post_meta(get_the_ID(), 'capacity_value', $pa_capacity);
+        echo '</li>';
     ?>
 
     <?php
