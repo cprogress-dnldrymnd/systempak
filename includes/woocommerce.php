@@ -322,22 +322,28 @@ function _products()
         $custom_tab_content1 = get_post_meta(get_the_ID(), 'custom_tab_content1', true);
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
-        if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet' && count(extract_url($custom_tab_content1)) == 1) {
-            $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", extract_url($custom_tab_content1)[0]);
-            if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), 'custom_tab_title1', 'custom_tab_content1');
+        if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet' && count(extract_url($custom_tab_content1)) > 1) {
+            foreach (extract_url($custom_tab_content1) as $pdf) {
+                $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
+                if (_url_is_valid($pdf_url)) {
+                    echo _file_upload($pdf_url, get_the_title(), get_the_ID(), 'custom_tab_title2', 'custom_tab_content2');
+                }
             }
         }
-        if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet' && count(extract_url($custom_tab_content2)) == 1) {
-            $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", extract_url($custom_tab_content2)[0]);
-            if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), 'custom_tab_title2', 'custom_tab_content2');
+        if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet' && count(extract_url($custom_tab_content2)) > 1) {
+            foreach (extract_url($custom_tab_content2) as $pdf) {
+                $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
+                if (_url_is_valid($pdf_url)) {
+                    echo _file_upload($pdf_url, get_the_title(), get_the_ID(), 'custom_tab_title2', 'custom_tab_content2');
+                }
             }
         }
-        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) == 1) {
-            $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", extract_url($custom_tab_content3)[0]);
-            if (_url_is_valid($pdf_url)) {
-                echo _file_upload($pdf_url, get_the_title(), get_the_ID(), 'custom_tab_title3', 'custom_tab_content3');
+        if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet' && count(extract_url($custom_tab_content3)) > 1) {
+            foreach (extract_url($custom_tab_content3) as $pdf) {
+                $pdf_url = str_replace("spnew.theprogressteam.com", "systempak.net", $pdf);
+                if (_url_is_valid($pdf_url)) {
+                    echo _file_upload($pdf_url, get_the_title(), get_the_ID(), 'custom_tab_title2', 'custom_tab_content2');
+                }
             }
         }
         //echo '<ol>';
@@ -365,8 +371,8 @@ function _file_upload($pdf_url, $title, $post_id, $title_id, $content_id)
     echo $pdf_url;
     $pdf_id =  rudr_upload_file_by_url($pdf_url);
     carbon_set_post_meta($post_id, 'tech_sheets[0]/tech_sheet_file', $pdf_id);
-    update_post_meta($post_id, $title_id, '');
-    update_post_meta($post_id, $content_id, '');
+    //update_post_meta($post_id, $title_id, '');
+    //update_post_meta($post_id, $content_id, '');
     echo "</pre>";
     echo '</li>';
     return ob_get_clean();
