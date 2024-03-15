@@ -227,13 +227,14 @@ function _products()
     );
     $query = new WP_Query($args);
     while ($query->have_posts()) {
+        $tech_sheet = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $query->the_post();
         echo '<li>';
         echo get_the_title();
-        echo '<br>-';
-        echo get_post_meta(get_the_ID(), 'custom_tab_title3', true);
-        echo '<br>-';
-        echo get_post_meta(get_the_ID(), 'custom_tab_content3', true);
+        if ($tech_sheet) {
+            echo '<br>-Tech Sheet: ';
+            echo $tech_sheet;
+        }
         echo '</li>';
     ?>
 
