@@ -262,7 +262,7 @@ function _products()
         echo '<li>' . $custom_tab_title1 . '</li>';
         echo '<li>' . $custom_tab_title2 . '</li>';
         echo '<li>' . $custom_tab_title3 . '</li>';
-        echo '<ol>';
+        echo '</ol>';
 
         echo '</li>';
     ?>
