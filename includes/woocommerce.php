@@ -205,7 +205,7 @@ function _products()
         $product = wc_get_product(get_the_ID());
         $pa_capacity = $product->get_attribute('pa_capacity');
         echo '<li>';
-        echo get_the_title();
+        echo get_the_title() . '----' . get_post_meta(get_the_ID(), 'capacity_value', true);
         update_post_meta(get_the_ID(), 'capacity_value', $pa_capacity);
         echo '</li>';
     ?>
