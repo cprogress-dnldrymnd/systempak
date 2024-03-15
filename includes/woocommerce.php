@@ -280,6 +280,7 @@ function _products()
 
     <?php
     }
+    wp_reset_postdata();
     echo '</ul>';
 
     return ob_get_clean();
