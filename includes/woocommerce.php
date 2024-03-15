@@ -232,6 +232,8 @@ function _products()
 
     echo '<ul>';
     while ($query->have_posts()) {
+        $query->the_post();
+
         $custom_tab_title1 = get_post_meta(get_the_ID(), 'custom_tab_title1', true);
         $custom_tab_title2 = get_post_meta(get_the_ID(), 'custom_tab_title2', true);
         $custom_tab_title3 = get_post_meta(get_the_ID(), 'custom_tab_title3', true);
@@ -239,7 +241,6 @@ function _products()
         $custom_tab_content1 = get_post_meta(get_the_ID(), 'custom_tab_content1', true);
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
-        $query->the_post();
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet' && count(extract_url($custom_tab_content1)) > 1) {
             echo '<li>';
             echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
