@@ -196,8 +196,8 @@ function _products()
     ob_start();
     $args = array(
         'post_type' => 'product',
-        'posts_per_page' => 100,
-        'paged' => $_GET['page'],
+        'posts_per_page' => 50,
+        'paged' => $_GET['page_val'],
     );
     $query = new WP_Query($args);
     while ($query->have_posts()) {
