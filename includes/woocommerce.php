@@ -195,13 +195,14 @@ function _products()
 {
     ob_start();
     $args = array(
-        'numberposts' => 100,
-        'post_type'   => 'product'
+        'post_type' => 'product',
+        'posts_per_page' => 100,
+        'paged' => $_GET['page'],
     );
-
-    $products = get_posts($args);
-    foreach ($products as $p) {
-        $product = wc_get_product($p->ID);
+    $query = new WP_Query($args);
+    while ($query->have_posts()) {
+        $query->the_post();
+        $product = wc_get_product(get_the_ID());
         $pa_capacity = $product->get_attribute('pa_capacity');
         echo '<div>';
         var_dump($pa_capacity);
