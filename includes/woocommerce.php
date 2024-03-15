@@ -236,28 +236,34 @@ function _products()
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $query->the_post();
-        echo '<li>';
         if ($custom_tab_content1 && $custom_tab_title1 == 'Tech Sheet') {
+            echo '<li>';
             echo get_the_title();
             echo '<br>-' . $custom_tab_title1;
             echo "<pre>";
             print_r(extract_url($custom_tab_content1));
             echo $custom_tab_content1;
             echo "</pre>";
+            echo '</li>';
         }
         if ($custom_tab_content2 && $custom_tab_title2 == 'Tech Sheet') {
+            echo '<li>';
             echo '<br>-' . $custom_tab_title2;
             echo "<pre>";
             print_r(extract_url($custom_tab_content2));
             echo $custom_tab_content2;
             echo "</pre>";
+            echo '</li>';
         }
         if ($custom_tab_content3 && $custom_tab_title3 == 'Tech Sheet') {
+            echo '<li>';
+
             echo '<br>-' . $custom_tab_title3;
             echo "<pre>";
             print_r(extract_url($custom_tab_content3));
             echo $custom_tab_content3;
             echo "</pre>";
+            echo '</li>';
         }
         //echo '<ol>';
         //echo '<li>' . $custom_tab_title1 . '</li>';
@@ -265,7 +271,6 @@ function _products()
         //echo '<li>' . $custom_tab_title3 . '</li>';
         //echo '</ol>';
 
-        echo '</li>';
     ?>
 
     <?php
