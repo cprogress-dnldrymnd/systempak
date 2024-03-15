@@ -369,7 +369,7 @@ function _products()
                 // }
                 echo '</li>';
             }
-            echo '<ul>';
+            echo '</ul>';
             echo '</li>';
         }
         //echo '<ol>';
