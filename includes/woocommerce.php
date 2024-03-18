@@ -582,13 +582,11 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
     }
-    if ($tech_sheets) {
         $tabs['tech_sheet'] = array(
             'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
         );
-    }
     return $tabs;
 }
 
