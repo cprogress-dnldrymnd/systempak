@@ -322,7 +322,7 @@ function _products()
         $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
         $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
         $tech_sheets = carbon_get_post_meta(get_the_ID(), 'tech_sheets');
-        
+
         echo '<tr>';
         echo '<td><a href="' . get_permalink() . '">' . get_the_title() . '</a></td>';
         echo "<td>";
@@ -557,6 +557,7 @@ function action_woocommerce_product_tabs($tabs)
     $custom_tab_title1 = get_post_meta($post->ID, 'custom_tab_title1', true);
     $custom_tab_title2 = get_post_meta($post->ID, 'custom_tab_title2', true);
     $custom_tab_title3 = get_post_meta($post->ID, 'custom_tab_title3', true);
+    $tech_sheets = get_post_meta($post->ID, 'tech_sheets', true);
 
     if ($custom_tab_title1) {
         $tabs['custom_tab_1'] = array(
@@ -565,7 +566,6 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_1_content', // TAB CONTENT CALLBACK
         );
     }
-
 
     if ($custom_tab_title2) {
         $tabs['custom_tab_2'] = array(
@@ -582,7 +582,32 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
     }
+    if ($tech_sheets) {
+        $tabs['custom_tab_3'] = array(
+            'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
+            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+            'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
+        );
+    }
     return $tabs;
+}
+
+function tech_sheet_content()
+{
+    $tech_sheets = get_post_meta(get_the_ID(), 'tech_sheets', true);
+    foreach ($tech_sheets as $tech_sheet) {
+        $tech_sheet_heading = $tech_sheet['tech_sheet_heading'];
+        $tech_sheet_file = $tech_sheet['tech_sheet_file'];
+        if ($tech_sheet_heading) {
+            echo "<strong>$tech_sheet_heading</strong>";
+        }
+        if ($tech_sheet_file) {
+            echo '<a href="'.wp_get_attachment_url($tech_sheet_file).'">Download <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+          </svg></a>';
+        }
+    }
 }
 
 function custom_tab_1_content()
