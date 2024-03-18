@@ -594,7 +594,9 @@ function action_woocommerce_product_tabs($tabs)
 
 function tech_sheet_content()
 {
-    $tech_sheets = get_post_meta(get_the_ID(), 'tech_sheets', true);
+    global $post;
+    echo 'xxx';
+    $tech_sheets = get_post_meta($post->ID, 'tech_sheets', true);
     foreach ($tech_sheets as $tech_sheet) {
         $tech_sheet_heading = $tech_sheet['tech_sheet_heading'];
         $tech_sheet_file = $tech_sheet['tech_sheet_file'];
