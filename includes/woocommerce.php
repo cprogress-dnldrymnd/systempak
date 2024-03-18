@@ -557,7 +557,7 @@ function action_woocommerce_product_tabs($tabs)
     $custom_tab_title1 = get_post_meta($post->ID, 'custom_tab_title1', true);
     $custom_tab_title2 = get_post_meta($post->ID, 'custom_tab_title2', true);
     $custom_tab_title3 = get_post_meta($post->ID, 'custom_tab_title3', true);
-    $tech_sheets = get_post_meta($post->ID, 'tech_sheets', true);
+    $tech_sheets = carbon_get_post_meta($post->ID, 'tech_sheets');
 
     if ($custom_tab_title1) {
         $tabs['custom_tab_1'] = array(
@@ -582,19 +582,20 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
     }
+    if ($tech_sheets) {
         $tabs['tech_sheet'] = array(
             'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
         );
+    }
     return $tabs;
 }
 
 function tech_sheet_content()
 {
     global $post;
-    echo 'xxx';
-    $tech_sheets = get_post_meta($post->ID, 'tech_sheets', true);
+    $tech_sheets = carbon_get_post_meta($post->ID, 'tech_sheets');
     foreach ($tech_sheets as $tech_sheet) {
         $tech_sheet_heading = $tech_sheet['tech_sheet_heading'];
         $tech_sheet_file = $tech_sheet['tech_sheet_file'];
