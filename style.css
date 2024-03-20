@@ -372,13 +372,14 @@ a:hover {
         border: 1px solid #eaeaea;
         cursor: pointer; }
         .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
-          border: 1px solid var(--black-color);
+          border: 1px solid var(--accent-color);
           background-color: var(--accent-color); }
     .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
       padding: 15px 30px;
       line-height: 1;
       position: relative; }
       .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info:before {
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
