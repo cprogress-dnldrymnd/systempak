@@ -102,12 +102,19 @@ if (!defined('WPINC')) {
 					<?php
 					$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
 
-					$price_num =  wc_get_price_to_display(
-						wc_get_product($product_id),
-						array('price' => $real_price,)
-					);
+					if ($quantity_per_box) {
+						$price_num =  wc_get_price_to_display(
+							wc_get_product($product_id),
+							array('price' => $real_price,)
+						);
 
-					$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
+						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
+					} else {
+						$price_per_unit = wp_kses_post(wc_price(wc_get_price_to_display(
+							wc_get_product($product_id),
+							array('price' => $real_price,)
+						)));
+					}
 					?>
 					<td>
 						<span class="price-per-unit"><?= $price_per_unit ?></span>
@@ -153,14 +160,22 @@ if (!defined('WPINC')) {
 						'price' => PriceManager::getPriceByRules($currentQuantity, $product_id, null, null, false),
 					));
 
-					$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
+					if ($quantity_per_box) {
+						$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
 
-					$price_num =  PriceManager::getPriceByRules(
-						$currentQuantity,
-						$product_id
-					);
+						$price_num =  PriceManager::getPriceByRules(
+							$currentQuantity,
+							$product_id
+						);
 
-					$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
+						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
+					} else {
+						$price_per_unit = wp_kses_post(wc_price(PriceManager::getPriceByRules(
+							$currentQuantity,
+							$product_id
+						)));
+					}
+
 					?>
 					<tr data-tiered-quantity="<?php echo esc_attr($currentQuantity); ?>" data-tiered-price="<?php echo esc_attr($currentProductPrice); ?>" data-tiered-price-exclude-taxes="<?php echo esc_attr($currentProductPriceExcludeTaxes); ?>" data-tiered-price-include-taxes="<?php echo esc_attr($currentProductPriceIncludeTaxes); ?>">
 						<td>
