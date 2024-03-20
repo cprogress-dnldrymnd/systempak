@@ -124,6 +124,9 @@ function action_woocommerce_before_add_to_cart_form()
             </div>
         </div>
     </div>
+    <div class="select-variation">
+        <p><strong>Select product variation</strong></p>
+    </div>
 <?php
 }
 
