@@ -833,3 +833,11 @@ body.search {
         }
     }
 }
+
+#wc-square-google-pay { 
+    .gpay-card-info-container-fill {
+        &:not(:first-child) {
+            display: none !important;
+        }
+    }
+}
