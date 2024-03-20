@@ -161,7 +161,7 @@ if (!defined('WPINC')) {
 							?>
 						</td>
 						<td>
-							<span class="price-per-unit">x</span>
+							<span class="price-per-unit"><?=  $product_id ?></span>
 						</td>
 					</tr>
 				<?php endwhile; ?>
