@@ -113,7 +113,7 @@ if (!defined('WPINC')) {
 
 					$iterator->next();
 					
-					$quantity_per_box = get_post_meta($variation->ID, 'quantity_per_box', true);
+					$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
 
 					if ('percentage' === $pricing_type) {
 						$discountAmount = $currentPrice;
