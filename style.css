@@ -329,6 +329,9 @@ a:hover {
 .entry-summary.entry-summary form.cart .clear {
   display: none; }
 
+.single_variation_wrap {
+  margin-top: 1rem !important; }
+
 .woovr-variations.woovr-variations {
   background-color: var(--light-gray-color);
   padding: 30px 20px 20px;
