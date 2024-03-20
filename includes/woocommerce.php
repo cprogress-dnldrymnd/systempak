@@ -219,7 +219,7 @@ function _products()
 }
 
 add_shortcode('_products', '_products');*/
-function rudr_upload_file_by_url($image_url)
+function variation_upload_file_by_url($image_url)
 {
 
     // it allows us to use download_url() and wp_handle_sideload() functions
@@ -311,7 +311,7 @@ function _products()
     var_dump(carbon_get_post_meta(8017, 'tech_sheets'));
     //carbon_set_post_meta(8786, 'tech_sheets[0]/tech_sheet_heading', 'Hello World!');
     //carbon_set_post_meta(8786, 'tech_sheets[0]/tech_sheet_file', 10199);
-    rudr_upload_file_by_url('https://systempak.net/wp-content/uploads/2016/11/TDS-2108-2000ML.pdf');
+    variation_upload_file_by_url('https://systempak.net/wp-content/uploads/2016/11/TDS-2108-2000ML.pdf');
     echo "</pre>";
 
     echo '<table>';
@@ -348,7 +348,7 @@ function _products()
         echo '<td><a href="' . get_permalink() . '">' . get_the_title() . '</a></td>';
         echo "<td>";
         echo var_dump($tech_sheets);
-        //$pdf_id =  rudr_upload_file_by_url($pdf_url);
+        //$pdf_id =  variation_upload_file_by_url($pdf_url);
         //carbon_set_post_meta($post_id, 'tech_sheets[' . $key . ']/tech_sheet_file', $pdf_id);
         //update_post_meta($post_id, $title_id, '');
         //update_post_meta($post_id, $content_id, '');
@@ -402,7 +402,7 @@ function _file_upload($pdf_url, $title, $post_id, $key, $title_id, $content_id)
     echo '<td><a href="' . get_permalink() . '">' . $title . '</a></td>';
     echo "<td>";
     echo $pdf_url;
-    //$pdf_id =  rudr_upload_file_by_url($pdf_url);
+    //$pdf_id =  variation_upload_file_by_url($pdf_url);
     //carbon_set_post_meta($post_id, 'tech_sheets[' . $key . ']/tech_sheet_file', $pdf_id);
     //update_post_meta($post_id, $title_id, '');
     //update_post_meta($post_id, $content_id, '');
@@ -657,4 +657,36 @@ function custom_tab_3_content()
     $custom_tab_content3 = get_post_meta($post->ID, 'custom_tab_content3', true);
 
     echo wpautop($custom_tab_content3);
+}
+
+
+add_action('woocommerce_product_after_variable_attributes', 'variation_fields', 10, 3);
+
+function variation_fields($loop, $variation_data, $variation)
+{
+    
+        woocommerce_wp_text_input(
+            array(
+                'id'            => 'quantity_per_box[' . $loop . ']',
+                'label'         => 'Start Date',
+                'wrapper_class' => 'form-row',
+                'placeholder'   => 'Type here...',
+                'desc_tip'      => 'true',
+                'description'   => 'Training Start Date',
+                'type'          => 'number',
+                'value'         => get_post_meta($variation->ID, 'quantity_per_box', true)
+            )
+        );
+       
+}
+
+add_action('woocommerce_save_product_variation', 'variation_save_fields', 10, 2);
+
+function variation_save_fields($variation_id, $loop)
+{
+
+    
+    $quantity_per_box = !empty($_POST['quantity_per_box'][$loop]) ? $_POST['quantity_per_box'][$loop] : '';
+    update_post_meta($variation_id, 'quantity_per_box', sanitize_textarea_field($quantity_per_box));
+
 }
