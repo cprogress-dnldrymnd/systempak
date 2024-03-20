@@ -852,3 +852,11 @@ body.search {
         color: var(--white-color) !important;
     }
 }
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 12px !important;
+    width: 16px !important;
+    top: 50% !important;
+    right: 10px !important;
+    transform: translateY(-50%);
+}
