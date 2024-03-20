@@ -330,7 +330,7 @@ function _products()
         }
 
         $tech_sheets = carbon_get_post_meta(get_the_ID(), 'tech_sheets');
-
+/*
         echo '<tr>';
         echo '<td><a href="' . get_permalink() . '">' . get_the_title() . '</a></td>';
         echo "<td>";
