@@ -36,20 +36,20 @@ if (!defined('WPINC')) {
 				<thead>
 					<tr>
 						<th>
-							<span class="nobr"><?php echo esc_attr(sanitize_text_field($settings['quantity_column_title'])); ?></span>
+							<span class="nobr"><strong><?php echo esc_attr(sanitize_text_field($settings['quantity_column_title'])); ?></strong></span>
 						</th>
 
 						<?php if ($settings['show_discount_column']) : ?>
 							<th>
-								<span class="nobr"><?php echo esc_attr(sanitize_text_field($settings['discount_column_title'])); ?></span>
+								<span class="nobr"><strong><?php echo esc_attr(sanitize_text_field($settings['discount_column_title'])); ?></strong></span>
 							</th>
 						<?php endif; ?>
 
 						<th>
-							<span class="nobr"><?php echo esc_attr(sanitize_text_field($settings['price_column_title'])); ?></span>
+							<span class="nobr"><strong><?php echo esc_attr(sanitize_text_field($settings['price_column_title'])); ?></strong></span>
 						</th>
 						<th>
-							<span class="nobr">Price Per Unit</span>
+							<span class="nobr"><strong>Price Per Unit</strong></span>
 						</th>
 					</tr>
 				</thead>
