@@ -320,7 +320,11 @@ function _products()
         if ($product->get_type() == "variable") {
             foreach ($product->get_variation_attributes() as $variations) {
                 foreach ($variations as $variation) {
+                    echo '<tr>';
+                    echo '<td>';
                     echo $product->get_title() . " - " . $variation;
+                    echo '</td>';
+                    echo '</tr>';
                 }
             }
         }
