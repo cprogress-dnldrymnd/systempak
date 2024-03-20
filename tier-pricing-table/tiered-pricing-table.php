@@ -102,9 +102,9 @@ if (!defined('WPINC')) {
 					<?php
 					$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
 
-					$price_num =  PriceManager::getPriceByRules(
-						$currentQuantity,
-						$product_id
+					$price_num =  wc_get_price_to_display(
+						wc_get_product($product_id),
+						array('price' => $real_price,)
 					);
 
 					$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
