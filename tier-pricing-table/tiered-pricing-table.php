@@ -99,6 +99,9 @@ if (!defined('WPINC')) {
 						)));
 						?>
 					</td>
+					<td>
+						x
+					</td>
 				</tr>
 
 				<?php $iterator = new ArrayIterator($price_rules); ?>
