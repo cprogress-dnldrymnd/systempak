@@ -124,7 +124,7 @@ function action_woocommerce_before_add_to_cart_form()
             </div>
         </div>
     </div>
- 
+
 <?php
 }
 
@@ -315,13 +315,16 @@ function _products()
     while ($query->have_posts()) {
         $query->the_post();
 
-        $custom_tab_title1 = get_post_meta(get_the_ID(), 'custom_tab_title1', true);
-        $custom_tab_title2 = get_post_meta(get_the_ID(), 'custom_tab_title2', true);
-        $custom_tab_title3 = get_post_meta(get_the_ID(), 'custom_tab_title3', true);
+        $product = wc_get_product(get_the_ID());
 
-        $custom_tab_content1 = get_post_meta(get_the_ID(), 'custom_tab_content1', true);
-        $custom_tab_content2 = get_post_meta(get_the_ID(), 'custom_tab_content2', true);
-        $custom_tab_content3 = get_post_meta(get_the_ID(), 'custom_tab_content3', true);
+        if ($product->get_type() == "variable") {
+            foreach ($product->get_variation_attributes() as $variations) {
+                foreach ($variations as $variation) {
+                    echo $product->get_title() . " - " . $variation;
+                }
+            }
+        }
+
         $tech_sheets = carbon_get_post_meta(get_the_ID(), 'tech_sheets');
 
         echo '<tr>';
