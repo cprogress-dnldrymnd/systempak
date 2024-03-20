@@ -320,18 +320,26 @@ function _products()
 
         if ($product->get_type() == "variable") {
             foreach ($product->get_variation_attributes() as $variations) {
+                echo '<tr>';
+                echo '<td>';
+                echo get_the_title();
+                echo '</td>';
+                echo '<td>';
+                echo '<ol>';
                 foreach ($variations as $variation) {
-                    echo '<tr>';
-                    echo '<td>';
+                    echo '<li>';
                     echo $product->get_title() . " - " . $variation;
-                    echo '</td>';
-                    echo '</tr>';
+                    echo '</li>';
                 }
+                echo '</ol>';
+                echo '</td>';
+
+                echo '</tr>';
             }
         }
 
         $tech_sheets = carbon_get_post_meta(get_the_ID(), 'tech_sheets');
-/*
+        /*
         echo '<tr>';
         echo '<td><a href="' . get_permalink() . '">' . get_the_title() . '</a></td>';
         echo "<td>";
