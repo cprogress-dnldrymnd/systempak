@@ -540,6 +540,7 @@ a {
 
                 &:checked {
                     border: 1px solid var(--black-color);
+                    background-color: var(--accent-color);
                 }
             }
         }

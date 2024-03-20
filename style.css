@@ -373,7 +373,8 @@ a:hover {
         cursor: pointer;
         background-color: var(--white-color); }
         .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
-          border: 1px solid var(--black-color); }
+          border: 1px solid var(--black-color);
+          background-color: var(--accent-color); }
     .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
       padding: 15px 30px;
       line-height: 1;
