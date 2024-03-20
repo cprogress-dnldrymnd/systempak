@@ -547,7 +547,7 @@ body.search .site-header-search {
   font-size: 16px;
   color: var(--secondary-color); }
   .widget.widget_product_categories .view-more-category span:before {
-    content: "View More Category"; }
+    content: "View More categories"; }
   .widget.widget_product_categories .view-more-category .minus {
     display: none; }
   .widget.widget_product_categories .view-more-category .plus {
