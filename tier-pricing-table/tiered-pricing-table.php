@@ -112,8 +112,7 @@ if (!defined('WPINC')) {
 					$currentQuantity = $iterator->key();
 
 					$iterator->next();
-					
-					$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
+
 
 					if ('percentage' === $pricing_type) {
 						$discountAmount = $currentPrice;
@@ -144,6 +143,14 @@ if (!defined('WPINC')) {
 						'price' => PriceManager::getPriceByRules($currentQuantity, $product_id, null, null, false),
 					));
 
+					$quantity_per_box = get_post_meta($product_id, 'quantity_per_box', true);
+
+					$price_num =  PriceManager::getPriceByRules(
+						$currentQuantity,
+						$product_id
+					);
+
+					$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
 					?>
 					<tr data-tiered-quantity="<?php echo esc_attr($currentQuantity); ?>" data-tiered-price="<?php echo esc_attr($currentProductPrice); ?>" data-tiered-price-exclude-taxes="<?php echo esc_attr($currentProductPriceExcludeTaxes); ?>" data-tiered-price-include-taxes="<?php echo esc_attr($currentProductPriceIncludeTaxes); ?>">
 						<td>
@@ -156,10 +163,7 @@ if (!defined('WPINC')) {
 						<?php endif; ?>
 						<td>
 							<?php
-							echo PriceManager::getPriceByRules(
-								$currentQuantity,
-								$product_id
-							);
+
 							echo wp_kses_post(wc_price(PriceManager::getPriceByRules(
 								$currentQuantity,
 								$product_id
@@ -167,7 +171,7 @@ if (!defined('WPINC')) {
 							?>
 						</td>
 						<td>
-							<span class="price-per-unit"><?=  $quantity_per_box ?></span>
+							<span class="price-per-unit"><?= $price_per_unit ?></span>
 						</td>
 					</tr>
 				<?php endwhile; ?>
