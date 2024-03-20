@@ -174,7 +174,7 @@ if (!defined('WPINC')) {
 							'decimals' => 3
 						);
 						$price_per_unit = $price_num / $quantity_per_box;
-						
+					} else {
 						$price_per_unit = wp_kses_post(wc_price(PriceManager::getPriceByRules(
 							$currentQuantity,
 							$product_id
