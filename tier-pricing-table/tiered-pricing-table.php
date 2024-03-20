@@ -154,7 +154,7 @@ if (!defined('WPINC')) {
 								<span><?php echo esc_attr(round($discountAmount, 2)); ?> %</span>
 							</td>
 						<?php endif; ?>
-						<td>
+						<td>xxx
 							<?php
 							echo wp_kses_post(wc_price(PriceManager::getPriceByRules(
 								$currentQuantity,
