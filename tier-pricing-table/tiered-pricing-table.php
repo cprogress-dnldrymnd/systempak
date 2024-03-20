@@ -108,10 +108,7 @@ if (!defined('WPINC')) {
 							array('price' => $real_price,)
 						);
 
-						$args = array(
-							'decimals' => 3
-						);
-						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box), $args);
+						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
 					} else {
 						$price_per_unit = wp_kses_post(wc_price(wc_get_price_to_display(
 							wc_get_product($product_id),
@@ -170,16 +167,8 @@ if (!defined('WPINC')) {
 							$currentQuantity,
 							$product_id
 						);
-						$args = apply_filters(
-							'wc_price_args',
-							wp_parse_args(
-								$args,
-								array(
-									'decimals'           => 3,
-								)
-							)
-						);
-						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box), $args);
+
+						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
 					} else {
 						$price_per_unit = wp_kses_post(wc_price(PriceManager::getPriceByRules(
 							$currentQuantity,
