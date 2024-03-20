@@ -329,52 +329,64 @@ a:hover {
 .entry-summary.entry-summary form.cart .clear {
   display: none; }
 
-.woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation {
-  padding: 20px 50px 20px 20px;
-  text-align: left; }
-  .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation .woovr-variation-info {
-    width: 100%; }
-  .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation .woovr-variation-name label {
+.woovr-variations.woovr-variations {
+  background-color: var(--light-gray-color);
+  padding: 30px 20px 20px;
+  border-radius: 10px; }
+  .woovr-variations.woovr-variations:before {
+    content: "Select Product Variation:";
     font-weight: bold;
-    font-size: 20px; }
-.woovr-variations.woovr-variations.woovr-variations-default {
-  display: flex;
-  flex-wrap: wrap; }
-  .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%; }
-    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 1.25rem; }
+  .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation {
+    padding: 20px 50px 20px 20px;
+    text-align: left; }
+    .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation .woovr-variation-info {
+      width: 100%; }
+    .woovr-variations.woovr-variations.woovr-variations-grid-2 .woovr-variation .woovr-variation-name label {
+      font-weight: bold;
+      font-size: 20px; }
+  .woovr-variations.woovr-variations.woovr-variations-default {
+    display: flex;
+    flex-wrap: wrap; }
+    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector {
       position: absolute;
       left: 0;
       top: 0;
       right: 0;
       bottom: 0;
+      width: 100%; }
+      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        border: 1px solid #eaeaea;
+        cursor: pointer;
+        background-color: var(--white-color); }
+        .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
+          border: 1px solid var(--black-color); }
+    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
+      padding: 15px 30px;
+      line-height: 1;
+      z-index: 1; }
+    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
+      position: relative;
       border-radius: 50px;
-      border: 1px solid #eaeaea;
-      cursor: pointer; }
-      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
-        border: 1px solid var(--black-color); }
-  .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
-    padding: 15px 30px;
-    line-height: 1; }
-  .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
-    position: relative;
-    border-radius: 50px;
-    margin: 0;
-    margin-bottom: 1rem; }
-    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio .woovr-variation-availability {
-      display: none !important; }
-    .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio:not(:last-child) {
-      margin-right: 1rem; }
+      margin: 0;
+      margin-bottom: 1rem; }
+      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio .woovr-variation-availability {
+        display: none !important; }
+      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio:not(:last-child) {
+        margin-right: 1rem; }
 
 .breadcrumbs-holder ul {
   padding: 0;
