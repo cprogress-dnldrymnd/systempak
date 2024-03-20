@@ -547,7 +547,7 @@ body.search .site-header-search {
   font-size: 16px;
   color: var(--secondary-color); }
   .widget.widget_product_categories .view-more-category span:before {
-    content: "View More categories"; }
+    content: "View More Categories"; }
   .widget.widget_product_categories .view-more-category .minus {
     display: none; }
   .widget.widget_product_categories .view-more-category .plus {
@@ -556,7 +556,7 @@ body.search .site-header-search {
   max-height: 700px;
   overflow: auto; }
 .widget.widget_product_categories.active .view-more-category span:before {
-  content: "Collapse Category"; }
+  content: "Collapse Categories"; }
 .widget.widget_product_categories.active .view-more-category .minus {
   display: inline-block; }
 .widget.widget_product_categories.active .view-more-category .plus {
