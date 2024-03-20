@@ -537,7 +537,7 @@ a {
                 background-color: var(--white-color);
 
                 &:checked {
-                    border: 1px solid var(--black-color);
+                    border: 1px solid var(--accent-color);
                     background-color: var(--accent-color);
                 }
             }
@@ -546,6 +546,9 @@ a {
             padding: 15px 30px;
             line-height: 1;
             z-index: 1;
+            label {
+                cursor: pointer;
+            }
         }
         .woovr-variation-radio {
             position: relative;
