@@ -173,8 +173,8 @@ if (!defined('WPINC')) {
 						$args = array(
 							'decimals' => 3
 						);
-						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box), $args);
-					} else {
+						$price_per_unit = $price_num / $quantity_per_box;
+						
 						$price_per_unit = wp_kses_post(wc_price(PriceManager::getPriceByRules(
 							$currentQuantity,
 							$product_id
