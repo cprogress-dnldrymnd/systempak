@@ -668,11 +668,11 @@ function variation_fields($loop, $variation_data, $variation)
         woocommerce_wp_text_input(
             array(
                 'id'            => 'quantity_per_box[' . $loop . ']',
-                'label'         => 'Start Date',
+                'label'         => 'Quantity Per Box',
                 'wrapper_class' => 'form-row',
-                'placeholder'   => 'Type here...',
+                'placeholder'   => 'Enter total quantity per box',
                 'desc_tip'      => 'true',
-                'description'   => 'Training Start Date',
+                'description'   => 'This will be use to compute for price per unit in the tiered pricing table ',
                 'type'          => 'number',
                 'value'         => get_post_meta($variation->ID, 'quantity_per_box', true)
             )
