@@ -322,7 +322,9 @@ function _products()
             foreach ($product->get_variation_attributes() as $variations) {
                 echo '<tr>';
                 echo '<td>';
+                echo '<a href="'.get_the_permalink().'">';
                 echo get_the_title();
+                echo '</a>';
                 echo '</td>';
                 echo '<td>';
                 echo '<ol>';
