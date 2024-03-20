@@ -834,10 +834,21 @@ body.search {
     }
 }
 
-#wc-square-google-pay { 
+#wc-square-google-pay {
     .gpay-card-info-container-fill {
         &:not(:first-child) {
             display: none !important;
         }
+    }
+}
+
+.yith-wocc-wrapper.yith-wocc-wrapper {
+    background-color: var(--light-gray-color);
+    padding: 2rem;
+    width: 100%;
+    border-radius: 10px;
+    .yith-wocc-button {
+        background-color: var(--secondary-color) !important;
+        color: var(--white-color) !important;
     }
 }
