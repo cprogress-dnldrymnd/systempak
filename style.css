@@ -370,24 +370,15 @@ a:hover {
         bottom: 0;
         border-radius: 50px;
         border: 1px solid #eaeaea;
-        cursor: pointer; }
+        cursor: pointer;
+        background-color: var(--white-color); }
         .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-selector input:checked {
-          border: 1px solid var(--accent-color);
+          border: 1px solid var(--black-color);
           background-color: var(--accent-color); }
     .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info {
       padding: 15px 30px;
       line-height: 1;
-      position: relative; }
-      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-info:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        border-radius: 50px;
-        background-color: var(--white-color); }
+      z-index: 1; }
     .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio {
       position: relative;
       border-radius: 50px;

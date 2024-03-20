@@ -482,6 +482,7 @@ a {
     }
 }
 
+
 .woovr-variations.woovr-variations {
     background-color: var(--light-gray-color);
     padding: 30px 20px 20px;
@@ -533,9 +534,10 @@ a {
                 border-radius: 50px;
                 border: 1px solid #eaeaea;
                 cursor: pointer;
+                background-color: var(--white-color);
 
                 &:checked {
-                    border: 1px solid var(--accent-color);
+                    border: 1px solid var(--black-color);
                     background-color: var(--accent-color);
                 }
             }
@@ -543,18 +545,7 @@ a {
         .woovr-variation-info {
             padding: 15px 30px;
             line-height: 1;
-            position: relative;
-            &:before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                border-radius: 50px;
-                background-color: var(--white-color);
-            }
+            z-index: 1;
         }
         .woovr-variation-radio {
             position: relative;
