@@ -112,6 +112,8 @@ if (!defined('WPINC')) {
 					$currentQuantity = $iterator->key();
 
 					$iterator->next();
+					
+					$quantity_per_box = get_post_meta($variation->ID, 'quantity_per_box', true);
 
 					if ('percentage' === $pricing_type) {
 						$discountAmount = $currentPrice;
@@ -161,7 +163,7 @@ if (!defined('WPINC')) {
 							?>
 						</td>
 						<td>
-							<span class="price-per-unit"><?=  $product_id ?></span>
+							<span class="price-per-unit"><?=  $quantity_per_box ?></span>
 						</td>
 					</tr>
 				<?php endwhile; ?>
