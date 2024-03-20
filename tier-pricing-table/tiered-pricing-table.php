@@ -108,7 +108,10 @@ if (!defined('WPINC')) {
 							array('price' => $real_price,)
 						);
 
-						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box));
+						$args = array(
+							'decimals' => 3
+						);
+						$price_per_unit = wp_kses_post(wc_price($price_num / $quantity_per_box), $args);
 					} else {
 						$price_per_unit = wp_kses_post(wc_price(wc_get_price_to_display(
 							wc_get_product($product_id),
