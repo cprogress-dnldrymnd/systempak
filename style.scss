@@ -811,3 +811,22 @@ body.search {
         }
     }
 }
+
+.tiered-pricing-table.tiered-pricing-table {
+    border-collapse: separate;
+    tr {
+        border: none;
+        &.tiered-pricing--active {
+            td {
+                background-color: var(--light-gray-color);
+                color: var(--black-color);
+                &:first-child {
+                    border-radius: 50px 0 0 50px;
+                }
+                &:last-child {
+                    border-radius: 0 50px 50px 0;
+                }
+            }
+        }
+    }
+}
