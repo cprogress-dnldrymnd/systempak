@@ -448,6 +448,15 @@ function woocommerce_product_custom_fields()
         )
     );
 
+    woocommerce_wp_text_input(
+        array(
+            'id' => 'quantity_per_box',
+            'placeholder' => 'Quantity Per Box',
+            'label' => __('Quantity Per Box', 'woocommerce'),
+            'type' => 'number',
+        )
+    );
+
     echo '</div>';
 }
 
@@ -462,8 +471,8 @@ function woocommerce_product_custom_fields_save($post_id)
     $capacity_value = $_POST['capacity_value'];
     update_post_meta($post_id, 'capacity_value', esc_attr($capacity_value));
 
-    $capacity = $_POST['capacity'];
-    update_post_meta($post_id, 'capacity', esc_attr($capacity));
+    $quantity_per_box = $_POST['quantity_per_box'];
+    update_post_meta($post_id, 'quantity_per_box', esc_attr($quantity_per_box));
 
     $custom_tab_title1 = $_POST['custom_tab_title1'];
     update_post_meta($post_id, 'custom_tab_title1', $custom_tab_title1);
