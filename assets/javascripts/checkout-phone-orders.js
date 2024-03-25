@@ -254,7 +254,7 @@ function ajax_product_modal_trigger() {
 
         jQuery('#productModalLabel').text($title);
         console.log($product_id);
-        //ajax_product_modal($product_id);
+        ajax_product_modal($product_id);
     });
 }
 

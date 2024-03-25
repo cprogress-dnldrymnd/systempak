@@ -203,7 +203,9 @@ function product_modal_ajax()
 {
     $product_id = $_POST['product_id'];
 
-    echo do_shortcode('[add_to_cart_form id="' . $product_id . '"]');
+    //echo do_shortcode('[add_to_cart_form id="' . $product_id . '"]');
+
+    echo do_shortcode('[add_to_cart_form id="10755"]');
 
     die();
 }

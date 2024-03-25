@@ -34,9 +34,7 @@ if (current_user_can('administrator')) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <?php
-                    echo do_shortcode('[add_to_cart_form id="10755"]');
-                    ?>
+                
                     <div id="modal-result">
 
                     </div>
