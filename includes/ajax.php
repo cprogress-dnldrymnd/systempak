@@ -222,7 +222,7 @@ function product_modal_ajax()
     while ($single_product->have_posts()) {
         $single_product->the_post();
         echo '<div class="single-product">';
-        woocommerce_template_single_add_to_cart();
+        the_content();
 
         $pricingRule = \TierPricingTable\PriceManager::getPricingRule($product_id);
 
