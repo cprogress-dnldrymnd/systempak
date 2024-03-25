@@ -181,6 +181,8 @@ add_shortcode('search_products', 'search_products');
 
 function add_to_cart_form_shortcode($atts)
 {
+    ob_start();
+
     if (empty($atts)) {
         return '';
     }
@@ -214,7 +216,6 @@ function add_to_cart_form_shortcode($atts)
     $single_product = new WP_Query($args);
 
     $single_product->is_single = true;
-    ob_start();
     global $wp_query;
 
     $previous_wp_query = $wp_query;
@@ -234,6 +235,7 @@ function add_to_cart_form_shortcode($atts)
     $wp_query = $previous_wp_query;
 
     wp_reset_postdata();
-    return '<div class="woocommerce">' . ob_get_clean() . '</div>';
+    
+    return ob_get_clean();
 }
 add_shortcode('add_to_cart_form', 'add_to_cart_form_shortcode');
