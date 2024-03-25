@@ -152,3 +152,28 @@ function search()
 }
 
 add_shortcode('search', 'search');
+
+
+function search_products()
+{
+    ob_start();
+?>
+    <div class="search-section">
+        <form>
+            <input type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Please type what you are looking for.." id="search-input">
+        </form>
+
+        <div id="results" page="1">
+            <div class="results-holder">
+
+            </div>
+            <div id="loadmore-holder" class="d-none">
+                <button id="load-more"><span>Load More</span></button>
+            </div>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+
+add_shortcode('search_products', 'search_products');
