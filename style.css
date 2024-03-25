@@ -475,10 +475,8 @@ a:hover {
         text-transform: capitalize; }
   .search-section .loading-results {
     text-align: center;
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    right: 0; }
+    position: static;
+    margin-top: 40px; }
     .search-section .loading-results svg {
       width: 50px;
       height: 50px; }
