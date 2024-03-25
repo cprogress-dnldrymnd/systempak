@@ -128,6 +128,8 @@ function search_ajax_products()
 
     $args['posts_per_page'] = $posts_per_page;
 
+    $args['post_type'] = $post_type;
+
     $the_query_args = new WP_Query($args);
 
     $found_posts = $the_query_args->found_posts;
