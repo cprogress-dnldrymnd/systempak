@@ -259,6 +259,39 @@ function ajax_products($offset, $event_type = 'html') {
     });
 }
 
+function ajax_product_modal_trigger() {
+    jQUery('.product-add-to-cart-modal').click(function (e) {
+        $product_id = jQUery(this).attr('product-id');
+    });
+}
+
+
+function ajax_product_modal($product_id) {
+
+    jQuery.ajax({
+
+        type: "POST",
+
+        url: "/wp-admin/admin-ajax.php",
+
+        data: {
+
+            action: 'ajax_product_modal',
+
+            product_id: $product_id,
+
+        },
+
+        success: function (response) {
+            $result_holder.html(response);
+        },
+        error: function (e) {
+            console.log(e);
+        }
+
+    });
+}
+
 jQuery(function ($) {
     $ = jQuery;
     /* global wc_add_to_cart_params */

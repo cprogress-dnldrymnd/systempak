@@ -172,7 +172,7 @@ function search_ajax_products()
                         <div class="col-content d-flex align-items-center justify-content-between col">
                             <h4><?php the_title() ?></h4>
                             <!-- Button trigger modal -->
-                            <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
+                            <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
                                 Add Product
                             </button>
                         </div>
@@ -189,6 +189,18 @@ function search_ajax_products()
     </div>
 
 <?php
+
+    die();
+}
+
+
+add_action('wp_ajax_nopriv_search_ajax_products', 'ajax_product_modal'); // for not logged in users
+add_action('wp_ajax_product_modal', 'ajax_product_modal');
+function ajax_product_modal()
+{
+    $product_id = $_POST['product_id'];
+
+    echo do_shortcode('[add_to_cart_form id="' . $product_id . '"]');
 
     die();
 }
