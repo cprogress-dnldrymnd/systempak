@@ -263,8 +263,8 @@ function ajax_products($offset, $event_type = 'html') {
 function ajax_product_modal_trigger() {
     jQuery(document).on('click', '.product-add-to-cart-modal', function () {
 
-        $product_id = jQUery(this).attr('product-id');
-        $title = jQUery(this).attr('title');
+        $product_id = jQuery(this).attr('product-id');
+        $title = jQuery(this).attr('title');
 
         jQUery('#productModalLabel').text($title);
         console.log($product_id);
@@ -274,7 +274,7 @@ function ajax_product_modal_trigger() {
 
 
 function ajax_product_modal($product_id) {
-    $result_holder = jQUery('#modal-result');
+    $result_holder = jQuery('#modal-result');
 
     jQuery.ajax({
 
