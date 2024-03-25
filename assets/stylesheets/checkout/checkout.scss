@@ -142,3 +142,8 @@
         display: none !important;
     }
 }
+#productModal {
+    .modal-dialog {
+        max-width: 1000px;
+    }
+}

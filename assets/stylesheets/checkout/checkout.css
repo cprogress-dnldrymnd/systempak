@@ -96,4 +96,7 @@
 .page-id-8978 .product_button {
   display: none !important; }
 
+#productModal .modal-dialog {
+  max-width: 1000px; }
+
 /*# sourceMappingURL=checkout.css.map */
