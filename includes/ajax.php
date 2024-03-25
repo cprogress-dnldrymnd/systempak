@@ -221,6 +221,11 @@ function product_modal_ajax()
         $single_product->the_post();
         echo '<div class="single-product">';
         woocommerce_template_single_add_to_cart();
+
+        $pricingRule = \TierPricingTable\PriceManager::getPricingRule($product_id);
+
+        echo $pricingRule->pricingData;
+
         echo '</div>';
     }
 
