@@ -35,7 +35,7 @@ if (current_user_can('administrator')) {
                 </div>
                 <div class="modal-body">
                     <?php
-                    echo do_shortcode('[add_to_cart_form id="9150"]');
+                    echo do_shortcode('[add_to_cart_form id="10755"]');
                     ?>
                     <div id="modal-result">
 
