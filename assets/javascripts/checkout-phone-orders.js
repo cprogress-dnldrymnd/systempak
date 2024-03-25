@@ -219,7 +219,7 @@ function ajax_products($offset, $event_type = 'html') {
 
         type: "POST",
 
-        url: "/wp-admin/admin-ajax_products.php",
+        url: "/wp-admin/admin-ajax.php",
 
         data: {
 
