@@ -1,5 +1,7 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
+.woocommerce-checkout .product_button {
+  display: none !important; }
 
 .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {
   border-radius: 0;
