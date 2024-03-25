@@ -84,4 +84,9 @@
       .woocommerce-checkout-review-order-table tbody tr td.product-total .remove-item {
         cursor: pointer; }
 
+.search-section-products .results-holder .post-item-holder .post-item .row .col-image {
+  flex: 0 0 100px; }
+.search-section-products .results-holder .post-item-holder .post-item .row .col-content h4 {
+  margin-bottom: 0; }
+
 /*# sourceMappingURL=checkout.css.map */

@@ -3,7 +3,7 @@ add_action('wp_ajax_nopriv_search_ajax', 'search_ajax'); // for not logged in us
 add_action('wp_ajax_search_ajax', 'search_ajax');
 function search_ajax()
 {
-    $posts_per_page_val = $_POST['posts_per_page'];
+    $posts_per_page_val = 10;
     $s = $_POST['s'];
     $post_type = $_POST['post_type'];
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
@@ -111,9 +111,9 @@ add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // fo
 add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
 function search_ajax_products()
 {
-    $posts_per_page_val = 10;
+    $posts_per_page_val = $_POST['posts_per_page'];
     $s = $_POST['s'];
-    $post_type ='product';
+    $post_type = 'product';
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
     $args = array();
@@ -158,9 +158,24 @@ function search_ajax_products()
                 $the_query->the_post();
         ?>
                 <div class="post-item">
-                    <div class="row" product-id="<?= get_the_ID() ?>">
+                    <div class="row">
+                        <?php
+                        if (get_the_post_thumbnail_url(get_the_ID())) {
+                            $url = get_the_post_thumbnail_url(get_the_ID());
+                        } else {
+                            $url = wc_placeholder_img_src();
+                        }
+                        ?>
+                        <div class="col-image">
+                            <img src="<?= $url  ?>" alt="<?php the_title() ?>">
+                        </div>
                         <div class="col-content">
                             <h4><?php the_title() ?></h4>
+                        </div>
+                        <div class="col-button">
+                            <a product-id="<?= get_the_ID() ?>">
+                                Add Product
+                            </a>
                         </div>
                     </div>
                 </div>
