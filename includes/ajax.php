@@ -3,7 +3,7 @@ add_action('wp_ajax_nopriv_search_ajax', 'search_ajax'); // for not logged in us
 add_action('wp_ajax_search_ajax', 'search_ajax');
 function search_ajax()
 {
-    $posts_per_page_val = 10;
+    $posts_per_page_val = $_POST['posts_per_page'];
     $s = $_POST['s'];
     $post_type = $_POST['post_type'];
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
@@ -111,7 +111,7 @@ add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // fo
 add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
 function search_ajax_products()
 {
-    $posts_per_page_val = $_POST['posts_per_page'];
+    $posts_per_page_val = 10;
     $s = $_POST['s'];
     $post_type = 'product';
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
@@ -147,7 +147,7 @@ function search_ajax_products()
     $the_query = new WP_Query($args);
 
     echo $s;
-    
+    echo 'xxxxx';
     $count = $the_query->found_posts;
     echo hide_load_more($count, $offset, $posts_per_page);
 
