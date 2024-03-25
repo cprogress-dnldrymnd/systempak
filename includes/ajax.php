@@ -111,7 +111,7 @@ add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // fo
 add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
 function search_ajax_products()
 {
-    $posts_per_page_val = $_POST['posts_per_page'];
+    $posts_per_page_val = 10;
     $s = $_POST['s'];
     $post_type ='product';
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
@@ -159,16 +159,6 @@ function search_ajax_products()
         ?>
                 <div class="post-item">
                     <div class="row" product-id="<?= get_the_ID() ?>">
-                        <?php
-                        if (get_the_post_thumbnail_url(get_the_ID())) {
-                            $url = get_the_post_thumbnail_url(get_the_ID());
-                        } else {
-                            $url = wc_placeholder_img_src();
-                        }
-                        ?>
-                        <div class="col-image">
-                            <img src="<?= $url  ?>" alt="<?php the_title() ?>">
-                        </div>
                         <div class="col-content">
                             <h4><?php the_title() ?></h4>
                         </div>
