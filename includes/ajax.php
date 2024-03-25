@@ -217,7 +217,6 @@ function product_modal_ajax()
 
     $single_product = new WP_Query($args);
 
-    wp_enqueue_script('wc-single-product');
     while ($single_product->have_posts()) {
         $single_product->the_post();
         echo '<div class="single-product">';
@@ -227,5 +226,5 @@ function product_modal_ajax()
 
     wp_reset_postdata();
 
-    //die();
+    die();
 }
