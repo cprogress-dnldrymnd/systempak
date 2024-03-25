@@ -146,7 +146,8 @@ function search_ajax_products()
 
     $the_query = new WP_Query($args);
 
-
+    echo $s;
+    
     $count = $the_query->found_posts;
     echo hide_load_more($count, $offset, $posts_per_page);
 
