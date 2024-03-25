@@ -215,12 +215,8 @@ function add_to_cart_form_shortcode($atts)
 
     $single_product = new WP_Query($args);
 
-    $single_product->is_single = true;
     global $wp_query;
 
-    $previous_wp_query = $wp_query;
-
-    $wp_query = $single_product;
 
     wp_enqueue_script('wc-single-product');
     while ($single_product->have_posts()) {
@@ -231,8 +227,6 @@ function add_to_cart_form_shortcode($atts)
         </div>
 <?php
     }
-
-    $wp_query = $previous_wp_query;
 
     wp_reset_postdata();
     
