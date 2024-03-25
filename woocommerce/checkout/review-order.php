@@ -80,9 +80,7 @@ defined('ABSPATH') || exit;
 					</p>
 				</div>
 				<div class="coupon-message"></div>
-				<div class="notice">
-					<strong>Important:</strong> Before purchasing if you’re intending to use hardware for commercial international use, please enquire directly to explore export regulations and guidelines from our expert sales team, purchases that breach manufacturers international sales policies are not eligible for refund.
-				</div>
+			
 			</td>
 		</tr>
 
