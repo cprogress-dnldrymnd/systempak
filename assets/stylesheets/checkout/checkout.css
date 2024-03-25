@@ -84,9 +84,13 @@
       .woocommerce-checkout-review-order-table tbody tr td.product-total .remove-item {
         cursor: pointer; }
 
-.search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-image {
-  flex: 0 0 100px; }
-.search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-content h4 {
-  margin-bottom: 0; }
+.search-section-products.search-section-products .results-holder {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden; }
+  .search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-image {
+    flex: 0 0 100px; }
+  .search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-content h4 {
+    margin-bottom: 0; }
 
 /*# sourceMappingURL=checkout.css.map */

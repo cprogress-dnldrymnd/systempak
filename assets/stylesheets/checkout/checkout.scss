@@ -117,6 +117,9 @@
 
 .search-section-products.search-section-products {
     .results-holder {
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden;
         .post-item-holder {
             .post-item .row {
                 .col-image {
