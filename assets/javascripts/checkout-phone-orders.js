@@ -277,7 +277,7 @@ function ajax_product_modal($product_id) {
         },
 
         success: function (response) {
-            jQuery('#testing').html(response);
+            $result_holder.html(response);
         },
         error: function (e) {
             console.log(e);
