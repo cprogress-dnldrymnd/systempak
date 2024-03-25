@@ -19,10 +19,6 @@
 defined('ABSPATH') || exit;
 ?>
 
-<?php if (is_page(8978)) { ?>
-	<?= do_shortcode('[search]') ?>
-<?php } ?>
-
 
 <table class="shop_table woocommerce-checkout-review-order-table">
 
