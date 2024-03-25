@@ -77,7 +77,8 @@
           background-color: var(--black-color); }
     .woocommerce-checkout-review-order-table tbody tr td.product-total {
       position: relative;
-      text-align: right; }
+      text-align: right;
+      width: 15% !important; }
       .woocommerce-checkout-review-order-table tbody tr td.product-total .woocommerce-Price-amount {
         font-weight: 600; }
       .woocommerce-checkout-review-order-table tbody tr td.product-total .remove-item {
