@@ -194,9 +194,9 @@ function search_ajax_products()
 }
 
 
-add_action('wp_ajax_nopriv_ajax_product_modal', 'ajax_product_modal'); // for not logged in users
-add_action('wp_ajax_product_modal', 'ajax_product_modal');
-function ajax_product_modal()
+add_action('wp_ajax_nopriv_product_modal_ajax', 'product_modal_ajax'); // for not logged in users
+add_action('wp_ajax_product_modal_ajax', 'product_modal_ajax');
+function product_modal_ajax()
 {
     $product_id = $_POST['product_id'];
 

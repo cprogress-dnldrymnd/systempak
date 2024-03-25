@@ -284,7 +284,7 @@ function ajax_product_modal($product_id) {
 
         data: {
 
-            action: 'ajax_product_modal',
+            action: 'product_modal_ajax',
 
             product_id: $product_id,
 
