@@ -55,6 +55,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 		<div class="col-lg-6">
 
 			<?php if (is_page(8978)) { ?>
+				<h2>Add Products</h2>
 				<?= do_shortcode('[search_products]') ?>
 			<?php } ?>
 
