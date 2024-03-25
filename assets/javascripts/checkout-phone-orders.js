@@ -191,7 +191,7 @@ function results_height() {
 
 function ajax_products($offset, $event_type = 'html') {
 
-    var $loadmore = jQuery('#load-more');
+    var $loadmore = jQuery('.search-section-products #load-more');
 
     var $archive_section = jQuery('.search-section-products');
 
