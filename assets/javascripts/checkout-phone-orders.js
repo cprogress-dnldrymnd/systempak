@@ -262,6 +262,8 @@ function ajax_products($offset, $event_type = 'html') {
 function ajax_product_modal_trigger() {
     jQUery('.product-add-to-cart-modal').click(function (e) {
         $product_id = jQUery(this).attr('product-id');
+        console.log($product_id);
+        ajax_product_modal($product_id);
     });
 }
 
