@@ -51,7 +51,7 @@ if ($related_products) :
         'posts_per_page' => 6,
     );
     $loop = new WP_Query($args);
-
+    
 
 ?>
 

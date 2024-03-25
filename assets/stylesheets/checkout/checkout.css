@@ -98,5 +98,9 @@
 
 #productModal .modal-dialog {
   max-width: 1000px; }
+  #productModal .modal-dialog .woocommerce-product-gallery {
+    display: none !important; }
+  #productModal .modal-dialog .summary {
+    width: 100%; }
 
 /*# sourceMappingURL=checkout.css.map */

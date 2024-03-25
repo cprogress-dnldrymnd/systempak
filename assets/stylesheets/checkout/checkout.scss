@@ -145,5 +145,11 @@
 #productModal {
     .modal-dialog {
         max-width: 1000px;
+        .woocommerce-product-gallery {
+            display: none !important;
+        }
+        .summary {
+            width: 100% ;
+        }
     }
 }
