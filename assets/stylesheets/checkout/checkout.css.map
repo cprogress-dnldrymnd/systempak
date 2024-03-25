@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AACI,mCAAc;EACV,KAAK,EAAE,IAAI",
+"sources": ["checkout.scss"],
 "names": [],
 "file": "checkout.css"
 }
