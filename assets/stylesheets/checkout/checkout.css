@@ -101,8 +101,9 @@
   #productModal .modal-dialog .woocommerce-product-gallery {
     display: none !important; }
   #productModal .modal-dialog .summary {
-    width: 100%; }
-  #productModal .modal-dialog .elementor {
-    display: none; }
+    width: 100%;
+    max-width: 100% !important; }
+  #productModal .modal-dialog .elementor, #productModal .modal-dialog .related {
+    display: none !important; }
 
 /*# sourceMappingURL=checkout.css.map */

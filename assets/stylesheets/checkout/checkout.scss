@@ -150,9 +150,10 @@
         }
         .summary {
             width: 100% ;
+            max-width: 100% !important;
         }
-        .elementor {
-            display: none;
+        .elementor, .related {
+            display: none !important;
         }
     }
 }
