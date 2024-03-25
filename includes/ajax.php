@@ -166,13 +166,11 @@ function search_ajax_products()
                             $url = wc_placeholder_img_src();
                         }
                         ?>
-                        <div class="col-image">
+                        <div class="col-image col-auto">
                             <img src="<?= $url  ?>" alt="<?php the_title() ?>">
                         </div>
-                        <div class="col-content">
+                        <div class="col-content d-flex align-items-center justify-content-between col">
                             <h4><?php the_title() ?></h4>
-                        </div>
-                        <div class="col-button">
                             <a class="button" product-id="<?= get_the_ID() ?>">
                                 Add Product
                             </a>
