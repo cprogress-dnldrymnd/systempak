@@ -1,6 +1,30 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
 
+.checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  width: 100%; }
+  .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-last,
+  .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-first {
+    padding: 0;
+    width: auto; }
+  .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-first {
+    flex: 1 0 0%; }
+  .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-last {
+    flex: 0 0 auto;
+    margin-left: 1rem !important; }
+  .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom + .coupon-message {
+    font-size: 15px;
+    font-weight: 500;
+    color: green; }
+    .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom + .coupon-message .failed {
+      color: #d10707; }
+
 .woocommerce-checkout-review-order-table {
   border: none;
   border-collapse: collapse; }

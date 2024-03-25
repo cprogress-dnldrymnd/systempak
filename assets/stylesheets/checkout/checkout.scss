@@ -3,6 +3,37 @@
         width: 100%;
     }
 }
+
+.checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    width: 100%;
+    .form-row-last,
+    .form-row-first {
+        padding: 0;
+        width: auto;
+    }
+
+    .form-row-first {
+        flex: 1 0 0%;
+    }
+    .form-row-last {
+        flex: 0 0 auto;
+        margin-left: 1rem !important;
+    }
+    & + .coupon-message {
+        font-size: 15px;
+        font-weight: 500;
+        color: green;
+        .failed {
+            color: #d10707;
+        }
+    }
+}
 .woocommerce-checkout-review-order-table {
     border: none;
     border-collapse: collapse;
