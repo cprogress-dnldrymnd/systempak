@@ -173,7 +173,7 @@ function search_ajax_products()
                             <h4><?php the_title() ?></h4>
                         </div>
                         <div class="col-button">
-                            <a product-id="<?= get_the_ID() ?>">
+                            <a class="button" product-id="<?= get_the_ID() ?>">
                                 Add Product
                             </a>
                         </div>
