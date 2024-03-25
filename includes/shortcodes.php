@@ -172,7 +172,7 @@ function search_products()
             </div>
         </div>
     </div>
-    <?php
+<?php
     return ob_get_clean();
 }
 
@@ -183,14 +183,6 @@ function add_to_cart_form_shortcode($atts)
 {
     ob_start();
 
-    if (empty($atts)) {
-        return '';
-    }
-
-    if (!isset($atts['id']) && !isset($atts['sku'])) {
-        return '';
-    }
-
     $args = array(
         'posts_per_page'      => 1,
         'post_type'           => 'product',
@@ -198,16 +190,6 @@ function add_to_cart_form_shortcode($atts)
         'ignore_sticky_posts' => 1,
         'no_found_rows'       => 1,
     );
-
-    if (isset($atts['sku'])) {
-        $args['meta_query'][] = array(
-            'key'     => '_sku',
-            'value'   => sanitize_text_field($atts['sku']),
-            'compare' => '=',
-        );
-
-        $args['post_type'] = array('product', 'product_variation');
-    }
 
     if (isset($atts['id'])) {
         $args['p'] = absint($atts['id']);
@@ -217,16 +199,14 @@ function add_to_cart_form_shortcode($atts)
 
     wp_enqueue_script('wc-single-product');
     while ($single_product->have_posts()) {
-        $single_product->the_post()
-    ?>
-        <div class="single-product">
-            <?php woocommerce_template_single_add_to_cart(); ?>
-        </div>
-<?php
+        $single_product->the_post();
+        echo '<div class="single-product">';
+        woocommerce_template_single_add_to_cart();
+        echo '</div>';
     }
 
     wp_reset_postdata();
-    
+
     return ob_get_clean();
 }
 add_shortcode('add_to_cart_form', 'add_to_cart_form_shortcode');

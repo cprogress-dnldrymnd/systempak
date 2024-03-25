@@ -203,9 +203,29 @@ function product_modal_ajax()
 {
     $product_id = $_POST['product_id'];
 
-    //echo do_shortcode('[add_to_cart_form id="' . $product_id . '"]');
+    $args = array(
+        'posts_per_page'      => 1,
+        'post_type'           => 'product',
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => 1,
+        'no_found_rows'       => 1,
+    );
 
-    echo do_shortcode('[add_to_cart_form id="10755"]');
+    if (isset($product_id)) {
+        $args['p'] = absint($product_id);
+    }
+
+    $single_product = new WP_Query($args);
+
+    wp_enqueue_script('wc-single-product');
+    while ($single_product->have_posts()) {
+        $single_product->the_post();
+        echo '<div class="single-product">';
+        woocommerce_template_single_add_to_cart();
+        echo '</div>';
+    }
+
+    wp_reset_postdata();
 
     die();
 }
