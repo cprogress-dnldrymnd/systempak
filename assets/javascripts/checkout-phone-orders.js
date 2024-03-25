@@ -215,7 +215,7 @@ function ajax_products($offset, $event_type = 'html') {
     }
 
 
-    jQuery.ajax_products({
+    jQuery.ajax({
 
         type: "POST",
 
