@@ -19,7 +19,7 @@
 defined('ABSPATH') || exit;
 ?>
 
-<?php if (is_page(9878)) { ?>
+<?php if (is_page(8978)) { ?>
 	<?= do_shortcode('[search]') ?>
 <?php } ?>
 
