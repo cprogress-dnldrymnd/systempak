@@ -19,6 +19,11 @@
 defined('ABSPATH') || exit;
 ?>
 
+<?php if (is_page(9878)) { ?>
+	<?= do_shortcode('[search]') ?>
+<?php } ?>
+
+
 <table class="shop_table woocommerce-checkout-review-order-table">
 
 	<tbody>
@@ -80,7 +85,7 @@ defined('ABSPATH') || exit;
 					</p>
 				</div>
 				<div class="coupon-message"></div>
-			
+
 			</td>
 		</tr>
 
