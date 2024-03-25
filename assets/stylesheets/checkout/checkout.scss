@@ -12,10 +12,12 @@
     display: flex;
     padding: 0;
     width: 100%;
+    align-items: center;
     .form-row-last,
     .form-row-first {
         padding: 0;
         width: auto;
+        float: none !important;
     }
 
     .form-row-first {

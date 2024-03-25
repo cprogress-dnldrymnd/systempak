@@ -8,11 +8,13 @@
   margin: 0;
   display: flex;
   padding: 0;
-  width: 100%; }
+  width: 100%;
+  align-items: center; }
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-last,
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-first {
     padding: 0;
-    width: auto; }
+    width: auto;
+    float: none !important; }
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-first {
     flex: 1 0 0%; }
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-last {
