@@ -172,7 +172,7 @@ function search_ajax_products()
                         <div class="col-content d-flex align-items-center justify-content-between col">
                             <h4><?php the_title() ?></h4>
                             <!-- Button trigger modal -->
-                            <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
+                            <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" title="<?= get_the_title() ?>" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
                                 Add Product
                             </button>
                         </div>
