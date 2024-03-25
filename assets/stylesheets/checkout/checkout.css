@@ -102,5 +102,7 @@
     display: none !important; }
   #productModal .modal-dialog .summary {
     width: 100%; }
+  #productModal .modal-dialog .elementor {
+    display: none; }
 
 /*# sourceMappingURL=checkout.css.map */
