@@ -130,6 +130,8 @@ function search_ajax_products()
 
     $args['post_type'] = $post_type;
 
+    $args['post_status'] = array('publish');
+
     $the_query_args = new WP_Query($args);
 
     $found_posts = $the_query_args->found_posts;
