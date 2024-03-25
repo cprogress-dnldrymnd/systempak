@@ -106,3 +106,89 @@ function hide_load_more($count, $offset, $posts_per_page)
 <?php
     return ob_get_clean();
 }
+
+add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // for not logged in users
+add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
+function search_ajax_products()
+{
+    $posts_per_page_val = $_POST['posts_per_page'];
+    $s = $_POST['s'];
+    $post_type = $_POST['post_type'];
+    $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
+    $offset = $_POST['offset'];
+    $args = array();
+
+
+    if ($offset) {
+        $args['offset'] = $offset;
+    }
+    if ($s) {
+        $args['s'] = $s;
+    }
+
+    $args['posts_per_page'] = $posts_per_page;
+
+    $args['post_type'] = $post_type;
+
+
+    $the_query_args = new WP_Query($args);
+
+    $found_posts = $the_query_args->found_posts;
+
+
+    if (!$found_posts && $post_type == 'product' && $s != '') {
+        $args['meta_query'] = array(
+            array(
+                'key' => '_sku',
+                'value' => $s,
+                'compare' => 'LIKE',
+            ),
+        );
+        unset($args['s']);
+    }
+
+
+    $the_query = new WP_Query($args);
+
+
+    $count = $the_query->found_posts;
+    echo hide_load_more($count, $offset, $posts_per_page);
+
+?>
+    <div class="post-item-holder">
+        <?php
+        if ($the_query->have_posts()) {
+            while ($the_query->have_posts()) {
+                $the_query->the_post();
+        ?>
+                <div class="post-item">
+                    <div class="row" product-id="<?= get_the_ID() ?>">
+                        <?php
+                        if (get_the_post_thumbnail_url(get_the_ID())) {
+                            $url = get_the_post_thumbnail_url(get_the_ID());
+                        } else {
+                            $url = wc_placeholder_img_src();
+                        }
+                        ?>
+                        <div class="col-image">
+                            <img src="<?= $url  ?>" alt="<?php the_title() ?>">
+                        </div>
+                        <div class="col-content">
+                            <h4><?php the_title() ?></h4>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+        } else {
+            ?>
+            <h2>No Results Found</h2>
+        <?php
+        }
+        wp_reset_postdata();
+        ?>
+    </div>
+
+<?php
+
+    die();
+}
