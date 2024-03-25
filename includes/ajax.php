@@ -113,7 +113,7 @@ function search_ajax_products()
 {
     $posts_per_page_val = $_POST['posts_per_page'];
     $s = $_POST['s'];
-    $post_type = $_POST['post_type'];
+    $post_type ='product';
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
     $args = array();
@@ -128,13 +128,9 @@ function search_ajax_products()
 
     $args['posts_per_page'] = $posts_per_page;
 
-    $args['post_type'] = $post_type;
-
-
     $the_query_args = new WP_Query($args);
 
     $found_posts = $the_query_args->found_posts;
-
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
         $args['meta_query'] = array(
