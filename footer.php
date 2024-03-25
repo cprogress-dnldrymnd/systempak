@@ -34,7 +34,36 @@ if (current_user_can('administrator')) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                
+                    <?php
+                    $product_id = 10755;
+
+                    $args = array(
+                        'posts_per_page'      => 1,
+                        'post_type'           => 'product',
+                        'post_status'         => 'publish',
+                        'ignore_sticky_posts' => 1,
+                        'no_found_rows'       => 1,
+                    );
+
+                    if (isset($product_id)) {
+                        $args['p'] = absint($product_id);
+                    }
+
+                    $single_product = new WP_Query($args);
+
+                    while ($single_product->have_posts()) {
+                        $single_product->the_post();
+                        echo '<div class="single-product">';
+                        woocommerce_template_single_add_to_cart();
+
+                        $pricingRule = \TierPricingTable\PriceManager::getPricingRule($product_id);
+
+                        echo $pricingRule->pricingData;
+
+                        echo '</div>';
+                    }
+                    wp_reset_postdata();
+                    ?>
                     <div id="modal-result">
 
                     </div>
