@@ -266,7 +266,7 @@ function ajax_product_modal_trigger() {
         $product_id = jQuery(this).attr('product-id');
         $title = jQuery(this).attr('title');
 
-        jQUery('#productModalLabel').text($title);
+        jQuery('#productModalLabel').text($title);
         console.log($product_id);
         ajax_product_modal($product_id);
     });
