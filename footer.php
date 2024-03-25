@@ -35,7 +35,7 @@ if (current_user_can('administrator')) {
                 </div>
                 <div class="modal-body">
                     <div id="modal-result">
-                        <?= do_shortcode('[product_page id="10755"]') ?>
+                        <?= do_shortcode('[add_to_cart_form id="10755"]') ?>
                     </div>
                 </div>
                 <div class="modal-footer">
