@@ -3,15 +3,13 @@
 <?php
 if (is_product_category()) {
     echo do_shortcode("[hfe_template id='5440']");
-
-
-   
 }
 if (current_user_can('administrator')) {
     //echo '<pre>';
     //var_dump(get_post_meta(7757));
     //echo '</pre>';
 }
+
 ?>
 <?php if (!is_search()) { ?>
     <div class="search-header d-none">
@@ -23,6 +21,28 @@ if (current_user_can('administrator')) {
             jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
         });
     </script>
+<?php } ?>
+
+
+<?php if (is_page(8978)) { ?>
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php } ?>
 
 <?php do_action('priotech_before_footer');
