@@ -226,6 +226,8 @@ function product_modal_ajax()
 
         echo $pricingRule->pricingData;
 
+        echo 'xxxx';
+
         echo '</div>';
     }
 
