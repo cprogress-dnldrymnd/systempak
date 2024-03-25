@@ -228,7 +228,7 @@ function product_modal_ajax()
         echo '<pre>';
         var_dump($pricingRule);
         var_dump($pricingRule->pricingData);
-        echo '<pre>';
+        echo '</pre>';
     }
 
     wp_reset_postdata();

@@ -51,9 +51,11 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 		woocommerce_template_single_add_to_cart();
 
 		$pricingRule = \TierPricingTable\PriceManager::getPricingRule($product_id);
-
+        echo '<pre>';
 		var_dump($pricingRule);
 		var_dump($pricingRule->pricingData);
+        echo '</pre>';
+
 	}
 
 	wp_reset_postdata();
