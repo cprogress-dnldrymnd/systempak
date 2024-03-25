@@ -269,7 +269,8 @@ function ajax_product_modal_trigger() {
 
 
 function ajax_product_modal($product_id) {
-
+    $result_holder = jQUery('#modal-result');
+    
     jQuery.ajax({
 
         type: "POST",
