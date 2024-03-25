@@ -225,9 +225,10 @@ function product_modal_ajax()
         woocommerce_template_single_add_to_cart();
 
         $pricingRule = \TierPricingTable\PriceManager::getPricingRule($product_id);
-
+        echo '<pre>';
         var_dump($pricingRule);
         var_dump($pricingRule->pricingData);
+        echo '<pre>';
     }
 
     wp_reset_postdata();
