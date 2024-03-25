@@ -4,6 +4,7 @@ jQuery(document).ready(function () {
     apply_coupon_custom();
     ajax_products_form();
     ajax_products();
+    ajax_product_modal_trigger();
 });
 
 
