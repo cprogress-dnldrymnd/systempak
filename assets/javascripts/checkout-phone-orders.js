@@ -193,9 +193,9 @@ function ajax_products($offset, $event_type = 'html') {
 
     var $loadmore = jQuery('#load-more');
 
-    var $archive_section = jQuery('.search-section');
+    var $archive_section = jQuery('.search-section-products');
 
-    var $result_holder = jQuery('#results .results-holder');
+    var $result_holder = jQuery('.search-section-products #results .results-holder');
 
     var $posts_per_page = 12;
 
