@@ -1,4 +1,56 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
 
+.woocommerce-checkout-review-order-table {
+  border: none;
+  border-collapse: collapse; }
+  .woocommerce-checkout-review-order-table tbody tr {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .woocommerce-checkout-review-order-table tbody tr td {
+      border: none;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e5e5e5;
+      vertical-align: bottom;
+      padding-left: 0;
+      padding-right: 0; }
+    .woocommerce-checkout-review-order-table tbody tr td.product-name .product-image {
+      flex: 0 0 100px;
+      margin-right: 2rem; }
+      .woocommerce-checkout-review-order-table tbody tr td.product-name .product-image img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover; }
+    .woocommerce-checkout-review-order-table tbody tr td.product-name .name {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5; }
+    .woocommerce-checkout-review-order-table tbody tr td.product-name .quantity-parent {
+      border: 1px solid #e5e5e5;
+      display: inline-flex; }
+      .woocommerce-checkout-review-order-table tbody tr td.product-name .quantity-parent .qty {
+        -webkit-appearance: none;
+        margin: 0;
+        font-weight: 600;
+        width: 44px; }
+      .woocommerce-checkout-review-order-table tbody tr td.product-name .quantity-parent .qty,
+      .woocommerce-checkout-review-order-table tbody tr td.product-name .quantity-parent button {
+        border: none;
+        background-color: transparent;
+        font-size: 1rem;
+        height: 36px; }
+      .woocommerce-checkout-review-order-table tbody tr td.product-name .quantity-parent button {
+        color: #c4c4c4;
+        width: 36px; }
+        .woocommerce-checkout-review-order-table tbody tr td.product-name .quantity-parent button:hover {
+          background-color: var(--black-color); }
+    .woocommerce-checkout-review-order-table tbody tr td.product-total {
+      position: relative;
+      text-align: right; }
+      .woocommerce-checkout-review-order-table tbody tr td.product-total .woocommerce-Price-amount {
+        font-weight: 600; }
+      .woocommerce-checkout-review-order-table tbody tr td.product-total .remove-item {
+        cursor: pointer; }
+
 /*# sourceMappingURL=checkout.css.map */
