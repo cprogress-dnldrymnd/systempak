@@ -3,6 +3,7 @@ jQuery(document).ready(function () {
     steps();
     apply_coupon_custom();
     ajax_products_form();
+    ajax_products();
 });
 
 
