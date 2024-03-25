@@ -227,5 +227,5 @@ function product_modal_ajax()
 
     wp_reset_postdata();
 
-    die();
+    //die();
 }
