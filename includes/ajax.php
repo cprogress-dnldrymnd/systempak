@@ -201,6 +201,8 @@ add_action('wp_ajax_nopriv_product_modal_ajax', 'product_modal_ajax'); // for no
 add_action('wp_ajax_product_modal_ajax', 'product_modal_ajax');
 function product_modal_ajax()
 {
+    wp_enqueue_script('wc-single-product');
+
     $product_id = $_POST['product_id'];
 
     $args = array(
@@ -226,7 +228,6 @@ function product_modal_ajax()
 
         var_dump($pricingRule);
         var_dump($pricingRule->pricingData);
-
     }
 
     wp_reset_postdata();
