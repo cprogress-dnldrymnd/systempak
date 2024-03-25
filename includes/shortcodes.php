@@ -160,7 +160,7 @@ function search_products()
 ?>
     <div class="search-section">
         <form>
-            <input type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input">
+            <input type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input-product">
         </form>
 
         <div id="results" page="1">
