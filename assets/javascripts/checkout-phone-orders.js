@@ -156,12 +156,12 @@ function ajax_products_form() {
     var typingTimer;
     var doneTypingInterval = 500;
 
-    jQuery('.search-section #search-input-product').on('keyup', function () {
+    jQuery('.search-section-products #search-input-product').on('keyup', function () {
         clearTimeout(typingTimer);
         typingTimer = setTimeout(doneTyping, doneTypingInterval);
     });
 
-    jQuery('.search-section #search-input-product').on('keydown', function () {
+    jQuery('.search-section-products #search-input-product').on('keydown', function () {
         clearTimeout(typingTimer);
     });
 
@@ -172,7 +172,7 @@ function ajax_products_form() {
 
 
 function load_more_button_listener($) {
-    jQuery(document).on("click", '#load-more', function (event) {
+    jQuery(document).on("click", '.search-section-products #load-more', function (event) {
         event.preventDefault();
         var offset = jQuery('.post-item').length;
         ajax_products(offset, 'append');
@@ -181,12 +181,7 @@ function load_more_button_listener($) {
 }
 
 
-function results_height() {
-    if (jQuery('#results').length > 0) {
-        $height = jQuery('#results .results-holder').outerHeight();
-        jQuery('#results').css('height', $height + 'px');
-    }
-}
+
 
 
 function ajax_products($offset, $event_type = 'html') {
@@ -196,8 +191,6 @@ function ajax_products($offset, $event_type = 'html') {
     var $archive_section = jQuery('.search-section-products');
 
     var $result_holder = jQuery('.search-section-products #results .results-holder');
-
-    var $posts_per_page = 12;
 
     var $s = jQuery('#search-input-product').val();
 
@@ -224,8 +217,6 @@ function ajax_products($offset, $event_type = 'html') {
 
             action: 'search_ajax_products',
 
-            posts_per_page: $posts_per_page,
-
             s: $s,
 
             offset: $offset,
@@ -247,7 +238,6 @@ function ajax_products($offset, $event_type = 'html') {
 
             $archive_section.removeClass('loading-post');
 
-            //results_height();
         },
         error: function (e) {
             console.log(e);

@@ -21,12 +21,12 @@ function ajax_form() {
         e.preventDefault();
         ajax();
     });
-    jQuery('.search-section #search-input').on('keyup', function () {
+    jQuery('.search-section-default #search-input').on('keyup', function () {
         clearTimeout(typingTimer);
         typingTimer = setTimeout(doneTyping, doneTypingInterval);
     });
 
-    jQuery('.search-section #search-input').on('keydown', function () {
+    jQuery('.search-section-default #search-input').on('keydown', function () {
         clearTimeout(typingTimer);
     });
 
@@ -37,7 +37,7 @@ function ajax_form() {
 
 
 function load_more_button_listener($) {
-    jQuery(document).on("click", '#load-more', function (event) {
+    jQuery(document).on("click", '.search-section-default #load-more', function (event) {
         event.preventDefault();
         var offset = jQuery('.post-item').length;
         ajax(offset, 'append');
@@ -47,8 +47,8 @@ function load_more_button_listener($) {
 
 
 function results_height() {
-    if (jQuery('#results').length > 0) {
-        $height = jQuery('#results .results-holder').outerHeight();
+    if (jQuery('.search-section-default #results').length > 0) {
+        $height = jQuery('.search-section-default #results .results-holder').outerHeight();
         jQuery('#results').css('height', $height + 'px');
     }
 }
@@ -56,15 +56,15 @@ function results_height() {
 
 function ajax($offset, $event_type = 'html') {
 
-    var $loadmore = jQuery('#load-more');
+    var $loadmore = jQuery('.search-section-default #load-more');
 
-    var $archive_section = jQuery('.search-section');
+    var $archive_section = jQuery('.search-section-default');
 
-    var $result_holder = jQuery('#results .results-holder');
+    var $result_holder = jQuery('.search-section-default #results .results-holder');
 
     var $posts_per_page = 12;
 
-    var $s = jQuery('#search-input').val();
+    var $s = jQuery('.search-section-default #search-input').val();
 
     var $post_type = jQuery('input[name="post_type"]:checked').val();
 
@@ -73,7 +73,7 @@ function ajax($offset, $event_type = 'html') {
     $archive_section.addClass('loading-post');
 
     if ($event_type == 'html') {
-        jQuery('#results  .results-holder').html($loading);
+        jQuery('.search-section-default #results  .results-holder').html($loading);
         $loadmore.addClass('d-none');
     } else {
         $loadmore.addClass('loading');
