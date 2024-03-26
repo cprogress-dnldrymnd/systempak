@@ -167,7 +167,7 @@ function search_products()
             <div class="results-holder">
 
             </div>
-            <div class="selected-products" id="selected-products">
+            <div class="selected-products d-none" id="selected-products">
                 <h4>Selected Products</h4>
                 <div class="post-item-holder">
 
