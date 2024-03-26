@@ -248,11 +248,10 @@ function ajax_products($offset, $event_type = 'html') {
 }
 
 function ajax_select_product_trigger() {
-    /*
-    jQuery(document).on('click', '.product-add-to-basket', function () {
-        $product_id = jQuery(this).attr('product-id');
-        ajax_select_product($product_id, jQuery(this));
-    });*/
+   
+    jQuery(document).on('click', '#add-to-order', function () {
+        ajax_select_product(jQuery(this));
+    });
 }
 
 
@@ -276,8 +275,13 @@ function select_products() {
 }
 
 
-function ajax_select_product($product_id, $this) {
+function ajax_select_product($this) {
     $this.addClass('adding');
+
+    $product_ids = jQuery('input[name="selected-product[]"]');
+
+    console.log($product_ids);
+
     jQuery.ajax({
 
         type: "POST",
@@ -288,12 +292,13 @@ function ajax_select_product($product_id, $this) {
 
             action: 'select_product_ajax',
 
-            product_id: $product_id,
+            product_ids: $product_ids,
 
         },
 
         success: function (response) {
-            jQuery('body').trigger('update_checkout');
+            //jQuery('body').trigger('update_checkout');
+            jQuery('#order_review_heading').html(response);
             $this.removeClass('adding');
         },
         error: function (e) {

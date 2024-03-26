@@ -96,17 +96,18 @@
   font-size: 14px; }
 .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content h4 {
   margin-bottom: 0; }
-.search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button {
+
+#add-to-order {
   padding-left: 10px;
   padding-right: 10px; }
-  .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button svg {
+  #add-to-order svg {
     width: 20px;
     height: 20px;
     display: none;
     margin-left: 1rem; }
-    .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button svg path {
+    #add-to-order svg path {
       fill: #fff; }
-  .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button.adding svg {
+  #add-to-order.adding svg {
     display: inline-block;
     animation-name: spin;
     animation-duration: 5000ms;
