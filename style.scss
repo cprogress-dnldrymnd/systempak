@@ -652,7 +652,27 @@ a {
             }
         }
     }
-
+    #load-more {
+        cursor: pointer;
+        font-family: var(--e-global-typography-accent-font-family);
+        font-weight: var(--e-global-typography-accent-font-weight);
+        text-transform: var(--e-global-typography-accent-text-transform);
+        font-style: var(--e-global-typography-accent-font-style);
+        text-decoration: var(--e-global-typography-accent-text-decoration);
+        line-height: var(--e-global-typography-accent-line-height);
+        letter-spacing: var(--e-global-typography-accent-letter-spacing);
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border-radius: 24px;
+        background-color: var(--e-global-color-primary);
+        border: 1px solid var(--e-global-color-primary);
+        white-space: nowrap;
+        padding: 10px 20px;
+        color: var(--white-color)
+    }
     .results-holder {
         .post-item-holder {
             .post-item {
@@ -858,4 +878,3 @@ body.search {
     right: 10px !important;
     transform: translateY(-50%);
 }
-
