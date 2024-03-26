@@ -164,3 +164,14 @@ function coupon_ajax()
 
     die();
 }
+
+/**
+ * @snippet       Avoid Empty Cart Redirect @ WooCommerce Checkout
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 3.6.4
+ * @community     https://businessbloomer.com/club/
+ */
+ 
+ add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
+ add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
