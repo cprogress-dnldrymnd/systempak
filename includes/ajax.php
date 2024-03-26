@@ -147,7 +147,7 @@ function search_ajax_products()
         unset($args['s']);
     }
 
-    $args['type'] = array(
+    $args['tax_query'] = array(
         array(
             'taxonomy' => 'product_type',
             'field'    => 'slug',
