@@ -593,4 +593,10 @@ body.search .site-header-search {
   right: 10px !important;
   transform: translateY(-50%); }
 
+.select-products {
+  padding: 2rem;
+  background-color: var(--light-gray-color);
+  border-radius: 10px;
+  margin-bottom: 2rem; }
+
 /*# sourceMappingURL=style.css.map */
