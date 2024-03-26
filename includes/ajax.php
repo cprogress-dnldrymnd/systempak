@@ -145,7 +145,7 @@ function search_ajax_products()
 
     $found_posts = $the_query_args->found_posts;
 
-    if (!$found_posts && $post_type == 'product' && $s != '') {
+    if (!$found_posts  && $s != '') {
         $args['meta_query'] = array(
             array(
                 'key' => '_sku',
@@ -154,7 +154,6 @@ function search_ajax_products()
             ),
         );
         unset($args['s']);
-        unset($args['tax_query']);
     }
 
 
