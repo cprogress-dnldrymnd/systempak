@@ -276,7 +276,7 @@ function ajax_select_product($product_id) {
         },
 
         success: function (response) {
-            $result_holder.html(response);
+            jQuery(this).html(response);
         },
         error: function (e) {
             console.log(e);
