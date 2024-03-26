@@ -145,7 +145,7 @@ function search_ajax_products()
 
 
 
-
+    $args['post__not_in'] = get_cart_product_ids();
 
 
     $the_query_args = new WP_Query($args);
