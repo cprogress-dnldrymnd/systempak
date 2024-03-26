@@ -9,7 +9,7 @@
     <section class="select-user py-5" style="max-width: 800px">
         <div class="container-fluid">
             <h3>Please select a user first before creating order</h3>
-            <div class="row">
+            <div class="row gy-2">
                 <?php foreach (get_users() as $user) { ?>
                     <?php
                     $link = user_switching::maybe_switch_url($user);
