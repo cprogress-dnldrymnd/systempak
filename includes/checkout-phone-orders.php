@@ -123,6 +123,8 @@ function action_woocommerce_checkout_empty_cart()
 {
     if (is_page(8978)) {
         return false;
+    } else {
+        return true;
     }
 }
 
