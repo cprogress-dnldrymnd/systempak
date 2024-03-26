@@ -257,11 +257,9 @@ function ajax_select_product_trigger() {
 
 function select_products() {
     jQuery(document).on('click', '.product-add-to-basket', function () {
-
         if(jQuery('#selected-products').hasClass('d-none')) {
             jQuery('#selected-products').removeClass('d-none');
         }
-
         $product_id = jQuery(this).attr('product-id');
         $post_item = jQuery('.post-' + $product_id);
         $post_item.find('.product-add-to-basket').text('Remove to basket').addClass('product-remove-to-basket').removeClass('product-add-to-basket');
@@ -277,7 +275,7 @@ function select_products() {
         $product_id = jQuery(this).attr('product-id');
         $post_item = jQuery('.post-' + $product_id);
         $post_item.find('.product-remove-to-basket').text('Add to baskset').addClass('product-add-to-basket').removeClass('product-remove-to-basket');
-        $post_item.appendTo('#select-products .results-holder .post-item-holder');
+        $post_item.appendTo('.select-products .results-holder .post-item-holder');
     });
 
 
