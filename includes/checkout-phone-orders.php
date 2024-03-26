@@ -52,62 +52,7 @@ function bbloomer_update_item_quantity_checkout($post_data)
     if ($updated_qty) WC()->cart->calculate_totals();
 }
 
-function theme_wc_setup()
-{
-    remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
-    add_action('custom_woocommerce_checkout_shipping', 'woocommerce_checkout_payment', 20);
-}
-add_action('after_setup_theme', 'theme_wc_setup');
 
-
-add_filter('woocommerce_checkout_fields', 'custom_checkout_order_notes');
-function custom_checkout_order_notes($fields)
-{
-    $fields['order']['order_comments']['class'][] = 'off';
-    return $fields;
-}
-
-add_action('woocommerce_before_order_notes', 'checkout_checkbox_show_hide_order_notes');
-function checkout_checkbox_show_hide_order_notes($fields)
-{
-    $target_id = 'order_comments';
-?>
-    <style>
-        p#<?php echo $target_id; ?>_field.off {
-            display: none;
-        }
-    </style>
-    <script type="text/javascript">
-        jQuery(function($) {
-            var a = 'input#checkbox_trigger',
-                b = '#<?php echo $target_id; ?>_field';
-
-            $(b).hide('fast');
-
-            $(a).change(function() {
-                if ($(b).hasClass('off')) {
-                    $(b).removeClass('off');
-                }
-
-                if ($(this).prop('checked')) {
-                    $(b).show('fast');
-                } else {
-                    $(b).hide('fast', function() {
-                        $(b + ' input').val('');
-                    });
-                }
-            });
-        });
-    </script>
-<?php
-
-    woocommerce_form_field('checkbox_trigger', array(
-        'type'      => 'checkbox',
-        'label'     => __('Order notes?', 'woocommerce'),
-        'class'     => array('form-row-wide'),
-        'clear'     => true,
-    ), false);
-}
 
 function ajax_apply_coupon_cart()
 {
