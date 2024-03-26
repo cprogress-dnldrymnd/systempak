@@ -134,6 +134,14 @@ function search_ajax_products()
 
     $the_query_args = new WP_Query($args);
 
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'product_type',
+            'field'    => 'slug',
+            'terms'    => array('simple', 'product_variation'),
+        ),
+    );
+
     $found_posts = $the_query_args->found_posts;
 
     if (!$found_posts && $post_type == 'product' && $s != '') {
@@ -147,13 +155,7 @@ function search_ajax_products()
         unset($args['s']);
     }
 
-    $args['tax_query'] = array(
-        array(
-            'taxonomy' => 'product_type',
-            'field'    => 'slug',
-            'terms'    => array('simple', 'product_variation'),
-        ),
-    );
+
 
 
     $the_query = new WP_Query($args);
