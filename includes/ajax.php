@@ -181,7 +181,6 @@ function search_ajax_products()
     echo hide_load_more($count, $offset, $posts_per_page);
 
 ?>
-<?php var_dump(get_cart_product_ids()) ?>
     <div class="post-item-holder">
         <?php
         if ($the_query->have_posts()) {
