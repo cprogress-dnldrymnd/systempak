@@ -188,9 +188,6 @@ function search_ajax_products()
                             <div>
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
-                                <p>
-                                    <?= $product->get_type() ?>
-                                </p>
                             </div>
 
                             <!-- Button trigger modal -->
