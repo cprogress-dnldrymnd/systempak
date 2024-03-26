@@ -6,12 +6,18 @@
 <?php get_header() ?>
 
 <?php if (current_user_can('administrator')) { ?>
+    <?php
+    $args = array(
+        'role' => array('customer')
+    );
+    $users = get_users($args);
+    ?>
     <section class="select-user py-5">
         <div class="container-fluid">
             <div class="inner">
                 <h3>Please select a user first before creating order</h3>
                 <div class="row gy-2">
-                    <?php foreach (get_users() as $user) { ?>
+                    <?php foreach ($users as $user) { ?>
                         <?php
                         $link = user_switching::maybe_switch_url($user);
                         ?>
