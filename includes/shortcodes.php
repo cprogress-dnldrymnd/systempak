@@ -167,7 +167,7 @@ function search_products()
             <div class="results-holder">
 
             </div>
-            <div id="loadmore-holder" class="d-none">
+            <div id="loadmore-holder" class="d-none mt-4">
                 <a id="load-more"><span>Load More</span></a>
             </div>
         </div>
