@@ -106,6 +106,17 @@ function hide_load_more($count, $offset, $posts_per_page)
     return ob_get_clean();
 }
 
+function get_cart_product_ids()
+{
+    $product_ids = [];
+    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+        $_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
+        $product_ids[] = $_product->get_id();
+    }
+
+    return product_ids();
+}
+
 add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // for not logged in users
 add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
 function search_ajax_products()
@@ -130,6 +141,12 @@ function search_ajax_products()
     $args['post_type'] = $post_type;
 
     $args['post_status'] = array('publish');
+
+
+
+
+
+
 
     $the_query_args = new WP_Query($args);
 
@@ -164,6 +181,7 @@ function search_ajax_products()
     echo hide_load_more($count, $offset, $posts_per_page);
 
 ?>
+<?= get_cart_product_ids() ?>
     <div class="post-item-holder">
         <?php
         if ($the_query->have_posts()) {
