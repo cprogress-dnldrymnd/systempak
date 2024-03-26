@@ -158,18 +158,15 @@ function search_products()
 {
     ob_start();
 ?>
-    <div class="select-products">
-        <div class="search-section search-section-products">
-            <form>
-                <input class="w-100 mb-3" type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input-product">
-            </form>
+    <div class="search-section search-section-products">
+        <form>
+            <input class="w-100 mb-3" type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input-product">
+        </form>
 
-            <div id="results" page="1">
-                <div class="results-holder">
+        <div id="results" page="1">
+            <div class="results-holder">
 
-                </div>
             </div>
-
             <div class="selected-products d-none" id="selected-products">
                 <h4>Selected Products</h4>
                 <div class="post-item-holder">
