@@ -8,6 +8,13 @@
 <?php if (current_user_can('administrator')) { ?>
     <section class="select-user">
         <h3>Please select a user first before creating order</h3>
+        <div class="row g-4">
+            <?php foreach (get_users() as $user) { ?>
+                <div class="col-12">
+                    <?= $user->display_name ?>
+                </div>
+            <?php } ?>
+        </div>
     </section>
 <?php } else { ?>
     <section class="checkout-form">
