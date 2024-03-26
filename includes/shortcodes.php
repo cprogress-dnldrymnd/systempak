@@ -231,6 +231,9 @@ add_shortcode('add_to_cart_form', 'add_to_cart_form_shortcode');
 function woocommerce_checkout_custom()
 {
     ob_start();
+    $args = [
+        'role__not_in' => ['administrator'],
+    ];
 ?>
     <?php if (current_user_can('administrator')) { ?>
         <section class="select-user py-5">
