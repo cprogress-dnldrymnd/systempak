@@ -475,23 +475,23 @@ a:hover {
     white-space: nowrap;
     padding: 10px 20px;
     color: var(--white-color); }
-  .search-section .results-holder .post-item-holder .post-item {
+  .search-section .post-item-holder .post-item {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid lightgray; }
-    .search-section .results-holder .post-item-holder .post-item .row {
+    .search-section .post-item-holder .post-item .row {
       display: flex;
       align-items: center;
       flex-wrap: nowrap; }
-      .search-section .results-holder .post-item-holder .post-item .row > div {
+      .search-section .post-item-holder .post-item .row > div {
         padding-left: 10px;
         padding-right: 10px; }
-      .search-section .results-holder .post-item-holder .post-item .row .col-image {
+      .search-section .post-item-holder .post-item .row .col-image {
         flex: 0 0 200px; }
-      .search-section .results-holder .post-item-holder .post-item .row .col-content h2 {
+      .search-section .post-item-holder .post-item .row .col-content h2 {
         margin-bottom: 1rem;
         font-size: 35px; }
-      .search-section .results-holder .post-item-holder .post-item .row .col-content .more-link-wrap {
+      .search-section .post-item-holder .post-item .row .col-content .more-link-wrap {
         text-transform: capitalize; }
   .search-section .loading-results {
     text-align: center;

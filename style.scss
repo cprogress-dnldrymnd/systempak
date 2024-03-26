@@ -673,31 +673,29 @@ a {
         padding: 10px 20px;
         color: var(--white-color)
     }
-    .results-holder {
-        .post-item-holder {
-            .post-item {
-                margin-bottom: 1rem;
-                padding-bottom: 1rem;
-                border-bottom: 1px solid lightgray;
-                .row {
-                    display: flex;
-                    align-items: center;
-                    flex-wrap: nowrap;
-                    > div {
-                        padding-left: 10px;
-                        padding-right: 10px;
+    .post-item-holder {
+        .post-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid lightgray;
+            .row {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                > div {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                .col-image {
+                    flex: 0 0 200px;
+                }
+                .col-content {
+                    h2 {
+                        margin-bottom: 1rem;
+                        font-size: 35px;
                     }
-                    .col-image {
-                        flex: 0 0 200px;
-                    }
-                    .col-content {
-                        h2 {
-                            margin-bottom: 1rem;
-                            font-size: 35px;
-                        }
-                        .more-link-wrap {
-                            text-transform: capitalize;
-                        }
+                    .more-link-wrap {
+                        text-transform: capitalize;
                     }
                 }
             }
