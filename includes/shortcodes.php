@@ -167,9 +167,14 @@ function search_products()
             <div class="results-holder">
 
             </div>
+            <div class="selected-products">
+                <h4>Selected Orders</h4>
+                <a id="load-more" class="d-inline-block mt-4"><span>Add to basket</span></a>
+            </div>
+            <!--
             <div id="loadmore-holder" class="d-none mt-4">
                 <a id="load-more"><span>Load More</span></a>
-            </div>
+            </div>-->
         </div>
     </div>
 <?php

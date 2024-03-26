@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
     ajax_products_form();
     ajax_products();
     ajax_select_product_trigger();
-    load_more_button_listener();
+    //load_more_button_listener();
 });
 
 
@@ -170,7 +170,7 @@ function ajax_products_form() {
         ajax_products();
     }
 }
-
+/*
 
 function load_more_button_listener($) {
     jQuery(document).on("click", '.search-section-products #load-more', function (event) {
@@ -179,7 +179,7 @@ function load_more_button_listener($) {
         ajax_products(offset, 'append');
     });
 
-}
+}*/
 
 
 
