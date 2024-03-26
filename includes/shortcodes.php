@@ -232,7 +232,7 @@ function woocommerce_checkout_custom()
 {
     ob_start();
     $args = array(
-        'role__not_in' => array('administrator')
+        'role' => array('customer')
     );
     $users = get_users($args);
 ?>
