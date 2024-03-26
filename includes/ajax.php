@@ -159,6 +159,7 @@ function search_ajax_products()
         if ($the_query->have_posts()) {
             while ($the_query->have_posts()) {
                 $the_query->the_post();
+                global $product;
         ?>
                 <div class="post-item">
                     <div class="row">
@@ -174,6 +175,7 @@ function search_ajax_products()
                         </div>
                         <div class="col-content d-flex align-items-center justify-content-between col">
                             <p><strong><?php the_title() ?></strong></p>
+                            <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
                             <!-- Button trigger modal -->
                             <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" title="<?= get_the_title() ?>" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
                                 Select
@@ -201,7 +203,7 @@ add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for 
 add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
 function select_product_ajax()
 {
-    
+
 
     die();
 }
