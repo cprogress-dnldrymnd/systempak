@@ -277,7 +277,14 @@ function select_products() {
 function ajax_select_product($this) {
     $this.addClass('adding');
 
-    $product_ids = jQuery('#selected-products input[name="selected-product[]"]').val();
+    $post_item = jQuery('#selected-products .post-item');
+    $product_ids = [];
+    jQUery('.post_item').each(function (index, element) {
+        $product_id = jQUery(this).attr('product-id');
+        $product_ids.push($product_id);
+
+    });
+
 
     console.log($product_ids);
 
