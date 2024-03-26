@@ -154,6 +154,7 @@ function search_ajax_products()
             ),
         );
         unset($args['s']);
+        unset($args['tax_query']);
     }
 
 
