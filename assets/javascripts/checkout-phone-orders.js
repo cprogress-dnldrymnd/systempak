@@ -303,8 +303,7 @@ function ajax_select_product($this) {
         },
 
         success: function (response) {
-            //jQuery('body').trigger('update_checkout');
-            jQuery('#order_review_heading').html(response);
+            jQuery('body').trigger('update_checkout');
             $this.removeClass('adding');
         },
         error: function (e) {
