@@ -455,7 +455,7 @@ a:hover {
               background-color: var(--white-color); }
             .search-section form .search-by > .search-by-wrapper input:checked + label + .search-by-wrapper {
               display: inline-block; }
-  .search-section #load-more {
+  .search-section #load-more, .search-section #add-to-order {
     cursor: pointer;
     font-family: var(--e-global-typography-accent-font-family);
     font-weight: var(--e-global-typography-accent-font-weight);

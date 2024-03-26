@@ -249,7 +249,7 @@ function ajax_products($offset, $event_type = 'html') {
 
 function ajax_select_product_trigger() {
     /*
-    jQuery(document).on('click', '.product-add-to-cart-modal', function () {
+    jQuery(document).on('click', '.product-add-to-basket', function () {
         $product_id = jQuery(this).attr('product-id');
         ajax_select_product($product_id, jQuery(this));
     });*/
@@ -258,7 +258,7 @@ function ajax_select_product_trigger() {
 
 
 function select_products() {
-    jQuery(document).on('click', '.product-add-to-cart-modal', function () {
+    jQuery(document).on('click', '.product-add-to-basket', function () {
         $product_id = jQuery(this).attr('product-id');
         $post_item = jQuery('.post-' + $product_id);
 
