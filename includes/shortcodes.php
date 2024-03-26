@@ -241,7 +241,7 @@ function woocommerce_checkout_custom()
                 <div class="inner">
                     <h3>Please select a user first before creating order</h3>
                     <div class="row gy-2">
-                        <?php foreach (get_users() as $user) { ?>
+                        <?php foreach (get_users($args) as $user) { ?>
                             <?php
                             $link = user_switching::maybe_switch_url($user);
                             ?>
