@@ -5,8 +5,14 @@
 ?>
 <?php get_header() ?>
 <?php
-$switched_user = current_user_switched();
-echo $switched_user;
+$old_user = user_switching::get_old_user();
+if ( $old_user ) {
+    printf(
+        '<a href="%1$s">Switch back to %2$s</a>',
+        esc_url( user_switching::switch_back_url( $old_user ) ),
+        esc_html( $old_user->display_name )
+    );
+}
 ?>
 <?php if (current_user_can('administrator')) { ?>
     <section class="select-user py-5" style="max-width: 800px">
