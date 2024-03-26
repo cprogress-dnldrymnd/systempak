@@ -138,7 +138,7 @@ function search_ajax_products()
         array(
             'taxonomy' => 'product_type',
             'field'    => 'slug',
-            'terms'    => 'variable',
+            'terms'    => array('variable'),
             'compare' => 'NOT IN'
         ),
     );
