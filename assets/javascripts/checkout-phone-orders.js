@@ -248,9 +248,7 @@ function ajax_products($offset, $event_type = 'html') {
 
 function ajax_select_product_trigger() {
     jQuery(document).on('click', '.product-add-to-cart-modal', function () {
-
         $product_id = jQuery(this).attr('product-id');
-        console.log($product_id);
         ajax_select_product($product_id);
     });
 }
