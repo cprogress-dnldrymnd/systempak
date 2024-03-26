@@ -4,16 +4,16 @@
 /*-----------------------------------------------------------------------------------*/
 ?>
 <?php get_header() ?>
-
+<?php
+$switched_user = current_user_switched();
+echo $switched_user;
+?>
 <?php if (current_user_can('administrator')) { ?>
     <section class="select-user py-5" style="max-width: 800px">
         <div class="container-fluid">
             <h3>Please select a user first before creating order</h3>
 
-            <?php
-            $switched_user = current_user_switched();
-            echo $switched_user;
-            ?>
+
             <div class="row gy-2">
                 <?php foreach (get_users() as $user) { ?>
                     <?php
