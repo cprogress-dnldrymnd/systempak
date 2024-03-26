@@ -121,20 +121,27 @@
 
 .search-section-products.search-section-products {
     .post-item-holder.post-item-holder.post-item-holder {
-        .post-item .row {
-            .col-image {
-                flex: 0 0 80px;
-            }
-            .col-content {
-                p {
-                    margin-bottom: 6px;
-                    line-height: 1;
-                    font-size: 14px;
+        .post-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            .row {
+                .col-image {
+                    flex: 0 0 80px;
                 }
-                h4 {
-                    margin-bottom: 0;
+                .col-content {
+                    .plus-minus {
+                        padding: 10px;
+                        border-radius: 0;
+                    }
+                    p {
+                        margin-bottom: 6px;
+                        line-height: 1;
+                        font-size: 14px;
+                    }
+                    h4 {
+                        margin-bottom: 0;
+                    }
                 }
-               
             }
         }
     }
