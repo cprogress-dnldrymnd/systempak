@@ -260,7 +260,6 @@ function ajax_select_product_trigger() {
 
 
 function ajax_select_product($product_id) {
-    $result_holder = jQuery('#modal-result');
 
     jQuery.ajax({
 

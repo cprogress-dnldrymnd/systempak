@@ -190,8 +190,7 @@ function search_ajax_products()
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
                             </div>
 
-                            <!-- Button trigger modal -->
-                            <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" title="<?= get_the_title() ?>" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
+                            <button type="button" class="button product-add-to-cart-modal" product-id="<?= get_the_ID() ?>">
                                 Select
                             </button>
                         </div>
