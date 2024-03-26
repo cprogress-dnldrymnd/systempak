@@ -175,23 +175,7 @@ function search_ajax_products()
                 <div class="post-item post-<?= get_the_ID() ?>" product-id="<?= get_the_ID() ?>">
                     <div class="row">
                         <?php
-                        if ($product->get_type() == ' simple') {
-                            if (get_the_post_thumbnail_url(get_the_ID())) {
-                                $url = get_the_post_thumbnail_url(get_the_ID());
-                            } else {
-                                $url = wc_placeholder_img_src();
-                            }
-                        } else {
-                            if (wp_get_attachment_image_url($product->get_image_id())) {
-                                $url = wp_get_attachment_image_url($product->get_image_id());
-                            } else {
-                                if (get_the_post_thumbnail_url(get_the_ID())) {
-                                    $url = get_the_post_thumbnail_url(get_the_ID());
-                                } else {
-                                    $url = wc_placeholder_img_src();
-                                }
-                            }
-                        }
+                      
                         ?>
                         <div class="col-image col-auto">
                             <img src="<?= $url  ?>" alt="<?php the_title() ?>">
