@@ -135,12 +135,20 @@
                         margin-bottom: 0;
                     }
                     button {
+                        padding-left: 10px;
+                        padding-right: 10px;
                         svg {
                             width: 20px;
                             height: 20px;
+                            display: none;
+                            margin-left: 1rem;
+                            path {
+                                fill: #fff;
+                            }
                         }
                         &.adding {
                             svg {
+                                display: inline-block;
                                 animation-name: spin;
                                 animation-duration: 5000ms;
                                 animation-iteration-count: infinite;
