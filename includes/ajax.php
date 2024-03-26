@@ -197,41 +197,11 @@ function search_ajax_products()
 }
 
 
-add_action('wp_ajax_nopriv_product_modal_ajax', 'product_modal_ajax'); // for not logged in users
-add_action('wp_ajax_product_modal_ajax', 'product_modal_ajax');
-function product_modal_ajax()
+add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for not logged in users
+add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
+function select_product_ajax()
 {
-    wp_enqueue_script('wc-single-product');
-
-    $product_id = $_POST['product_id'];
-
-    $args = array(
-        'posts_per_page'      => 1,
-        'post_type'           => 'product',
-        'post_status'         => 'publish',
-        'ignore_sticky_posts' => 1,
-        'no_found_rows'       => 1,
-    );
-
-    if (isset($product_id)) {
-        $args['p'] = absint($product_id);
-    }
-
-    $single_product = new WP_Query($args);
-
-    while ($single_product->have_posts()) {
-        $single_product->the_post();
-        echo '<div class="single-product">';
-        woocommerce_template_single_add_to_cart();
-
-        $pricingRule = \TierPricingTable\PriceManager::getPricingRule($product_id);
-        echo '<pre>';
-        var_dump($pricingRule);
-        var_dump($pricingRule->pricingData);
-        echo '</pre>';
-    }
-
-    wp_reset_postdata();
+    
 
     die();
 }

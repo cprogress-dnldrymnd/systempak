@@ -4,7 +4,7 @@ jQuery(document).ready(function () {
     apply_coupon_custom();
     ajax_products_form();
     ajax_products();
-    ajax_product_modal_trigger();
+    ajax_select_product_trigger();
 });
 
 
@@ -246,7 +246,7 @@ function ajax_products($offset, $event_type = 'html') {
     });
 }
 
-function ajax_product_modal_trigger() {
+function ajax_select_product_trigger() {
     jQuery(document).on('click', '.product-add-to-cart-modal', function () {
 
         $product_id = jQuery(this).attr('product-id');
@@ -254,12 +254,12 @@ function ajax_product_modal_trigger() {
 
         jQuery('#productModalLabel').text($title);
         console.log($product_id);
-        ajax_product_modal($product_id);
+        ajax_select_product($product_id);
     });
 }
 
 
-function ajax_product_modal($product_id) {
+function ajax_select_product($product_id) {
     $result_holder = jQuery('#modal-result');
 
     jQuery.ajax({
@@ -270,7 +270,7 @@ function ajax_product_modal($product_id) {
 
         data: {
 
-            action: 'product_modal_ajax',
+            action: 'select_product_ajax',
 
             product_id: $product_id,
 

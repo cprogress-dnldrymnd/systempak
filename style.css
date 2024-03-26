@@ -599,4 +599,7 @@ body.search .site-header-search {
   border-radius: 10px;
   margin-bottom: 2rem; }
 
+.add-product-ajax .quantity .qty {
+  width: auto; }
+
 /*# sourceMappingURL=style.css.map */
