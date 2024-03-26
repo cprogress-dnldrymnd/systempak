@@ -117,8 +117,15 @@ function coupon_ajax()
  * @compatible    WooCommerce 3.6.4
  * @community     https://businessbloomer.com/club/
  */
- 
- add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
- add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
 
- remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
+
+function enable_checkout_if_empty()
+{
+    if (is_page(8978)) {
+        add_filter('woocommerce_checkout_redirect_empty_cart', '__return_false');
+        add_filter('woocommerce_checkout_update_order_review_expired', '__return_false');
+    }
+}
+add_action('init', 'enable_checkout_if_empty');
+
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
