@@ -169,9 +169,9 @@ function search_products()
             </div>
             <div class="selected-products">
                 <h4>Selected Products</h4>
-                <form class="post-item-holder">
+                <div class="post-item-holder">
 
-                </form>
+                </div>
                 <a id="add-to-order" class="d-inline-block button mt-4 w-100 text-center">
                     <span>Add to order</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

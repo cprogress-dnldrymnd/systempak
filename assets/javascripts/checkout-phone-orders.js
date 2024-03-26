@@ -277,7 +277,7 @@ function select_products() {
 function ajax_select_product($this) {
     $this.addClass('adding');
 
-    $product_ids = jQuery('input[name="selected-product[]"]');
+    $product_ids = jQuery('input[name="selected-product[]"]').val();
 
     console.log($product_ids);
 
