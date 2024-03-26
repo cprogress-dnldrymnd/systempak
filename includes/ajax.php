@@ -113,7 +113,7 @@ function search_ajax_products()
 {
     $posts_per_page_val = 10;
     $s = $_POST['s'];
-    $post_type = 'product';
+    $post_type = array('product', 'product_variation');
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
     $args = array();
