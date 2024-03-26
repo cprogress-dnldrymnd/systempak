@@ -157,32 +157,33 @@ add_shortcode('search', 'search');
 function search_products()
 {
     ob_start();
-?>
-    <div class="search-section search-section-products">
-        <form>
-            <input class="w-100 mb-3" type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input-product">
-        </form>
+?> <div class="select-products">
+        <div class="search-section search-section-products">
+            <form>
+                <input class="w-100 mb-3" type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input-product">
+            </form>
 
-        <div id="results" page="1">
-            <div class="results-holder">
-
-            </div>
-            <div class="selected-products d-none" id="selected-products">
-                <h4>Selected Products</h4>
-                <div class="post-item-holder">
+            <div id="results" page="1">
+                <div class="results-holder">
 
                 </div>
-                <a id="add-to-order" class="d-inline-block button mt-4 w-100 text-center">
-                    <span>Add to order</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"></path>
-                    </svg>
-                </a>
-            </div>
-            <!--
+                <div class="selected-products d-none" id="selected-products">
+                    <h4>Selected Products</h4>
+                    <div class="post-item-holder">
+
+                    </div>
+                    <a id="add-to-order" class="d-inline-block button mt-4 w-100 text-center">
+                        <span>Add to order</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <!--
             <div id="loadmore-holder" class="d-none mt-4">
                 <a id="load-more"><span>Load More</span></a>
             </div>-->
+            </div>
         </div>
     </div>
 <?php
