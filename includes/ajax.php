@@ -114,7 +114,7 @@ function get_cart_product_ids()
         $product_ids[] = $_product->get_id();
     }
 
-    return product_ids();
+    return $product_ids;
 }
 
 add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // for not logged in users
