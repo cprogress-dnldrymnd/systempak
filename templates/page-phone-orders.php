@@ -25,7 +25,7 @@
         </div>
     </section>
 <?php } else { ?>
-    <section class="logged-in-as">
+    <section class="logged-in-as mb-5">
         <?php
         $current_user = wp_get_current_user();
         ?>
