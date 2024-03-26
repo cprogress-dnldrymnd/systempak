@@ -129,6 +129,5 @@ function action_woocommerce_checkout_empty_cart()
 add_filter('woocommerce_checkout_redirect_empty_cart', 'action_woocommerce_checkout_empty_cart');
 add_filter('woocommerce_checkout_update_order_review_expired', 'action_woocommerce_checkout_empty_cart');
 
-add_action('init', 'enable_checkout_if_empty');
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
