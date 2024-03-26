@@ -39,7 +39,6 @@ function search_ajax()
         unset($args['s']);
     }
 
-
     $the_query = new WP_Query($args);
 
 
