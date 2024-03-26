@@ -169,12 +169,9 @@ function search_products()
             </div>
             <div class="selected-products">
                 <h4>Selected Products</h4>
-
-                <div class="post-item-holder">
-
-                </div>
-
-                <a id="add-to-order" class="d-inline-block mt-4 w-100 text-center"><span>Add to order</span></a>
+                <form action="">
+                    <a id="add-to-order" class="d-inline-block button mt-4 w-100 text-center"><span>Add to order</span></a>
+                </form>
             </div>
             <!--
             <div id="loadmore-holder" class="d-none mt-4">

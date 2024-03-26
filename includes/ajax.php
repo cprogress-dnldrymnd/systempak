@@ -172,6 +172,7 @@ function search_ajax_products()
                 global $product;
         ?>
                 <div class="post-item post-<?= get_the_ID() ?>">
+                    <input type="checkbox" value="<?= get_the_ID() ?>" name="selected-product[]">
                     <div class="row">
                         <?php
                         if (get_the_post_thumbnail_url(get_the_ID())) {
