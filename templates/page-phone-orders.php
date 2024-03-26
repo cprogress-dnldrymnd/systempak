@@ -6,7 +6,7 @@
 <?php get_header() ?>
 
 <?php if (current_user_can('administrator')) { ?>
-    <section class="select-user">
+    <section class="select-user" style="max-width: 500px">
         <h3>Please select a user first before creating order</h3>
         <div class="row g-2">
             <?php foreach (get_users() as $user) { ?>
