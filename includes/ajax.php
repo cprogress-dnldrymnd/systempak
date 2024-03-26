@@ -216,11 +216,11 @@ add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
 function select_product_ajax()
 {
     $product_ids = $_POST['product_ids'];
-    echo '<pre>';
-    var_dump($product_ids);
-    echo '</pre>';
-    //global $woocommerce;
-    //$woocommerce->cart->add_to_cart($product_id);
-    //echo $product_id;
+    global $woocommerce;
+
+    foreach ($product_ids as $product_id) {
+        $woocommerce->cart->add_to_cart($product_id);
+    }
+
     die();
 }
