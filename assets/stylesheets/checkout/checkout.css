@@ -1,12 +1,23 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
 
-.page-id-8978 #page #content {
+.page-id-8978.page-id-8978 #page #content {
   margin-top: 0;
   padding-left: 0;
   padding-right: 0; }
-  .page-id-8978 #page #content .col-full {
+  .page-id-8978.page-id-8978 #page #content .col-full {
     max-width: 100% !important; }
+.page-id-8978.page-id-8978 .header-group-action,
+.page-id-8978.page-id-8978 .header-center,
+.page-id-8978.page-id-8978 .header-right {
+  display: none !important; }
+.page-id-8978.page-id-8978 .header-left {
+  width: 100%; }
+.page-id-8978.page-id-8978 .site-branding {
+  margin-right: 0 !important; }
+  .page-id-8978.page-id-8978 .site-branding img {
+    margin-left: auto;
+    margin-right: auto; }
 
 .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {
   border-radius: 0;
