@@ -262,7 +262,7 @@ function select_products() {
         $product_id = jQuery(this).attr('product-id');
         $post_item = jQuery('.post-' + $product_id);
 
-        $post_item.appendTo('.selected-products');
+        $post_item.appendTo('.selected-products .post-item-holder');
         //ajax_select_product($product_id, jQuery(this));
     });
 }
