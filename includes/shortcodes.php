@@ -234,6 +234,7 @@ function woocommerce_checkout_custom()
     $args = array(
         'role__not_in' => array('administrator')
     );
+    $users = get_users($args);
 ?>
     <?php if (current_user_can('administrator')) { ?>
         <section class="select-user py-5">
@@ -241,7 +242,7 @@ function woocommerce_checkout_custom()
                 <div class="inner">
                     <h3>Please select a user first before creating order</h3>
                     <div class="row gy-2">
-                        <?php foreach (get_users($args) as $user) { ?>
+                        <?php foreach ($args as $user) { ?>
                             <?php
                             $link = user_switching::maybe_switch_url($user);
                             ?>
