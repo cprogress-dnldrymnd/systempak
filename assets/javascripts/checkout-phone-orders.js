@@ -261,7 +261,7 @@ function select_products() {
     jQuery(document).on('click', '.product-add-to-basket', function () {
         $product_id = jQuery(this).attr('product-id');
         $post_item = jQuery('.post-' + $product_id);
-
+        $post_item.find('.product-add-to-basket').text('Remove to basket').addClass('product-remove-to-basket').removeClass('.product-add-to-basket');
         $post_item.appendTo('.selected-products .post-item-holder');
         //ajax_select_product($product_id, jQuery(this));
     });
