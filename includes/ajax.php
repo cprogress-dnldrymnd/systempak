@@ -192,7 +192,6 @@ function search_ajax_products()
                                 }
                             }
                         }
-
                         ?>
                         <div class="col-image col-auto">
                             <img src="<?= $url  ?>" alt="<?php the_title() ?>">
