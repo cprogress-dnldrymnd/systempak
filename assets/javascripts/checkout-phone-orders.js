@@ -260,7 +260,7 @@ function ajax_select_product_trigger() {
 function select_products() {
     jQuery(document).on('click', '.product-add-to-cart-modal', function () {
         $product_id = jQuery(this).attr('product-id');
-        $post_item = jQuery('post-'+$product_id);
+        $post_item = jQuery('.post-' + $product_id);
 
         $post_item.appendTo('.selected-products');
         //ajax_select_product($product_id, jQuery(this));
