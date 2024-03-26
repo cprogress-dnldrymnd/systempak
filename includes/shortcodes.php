@@ -226,3 +226,11 @@ function add_to_cart_form_shortcode($atts)
     return ob_get_clean();
 }
 add_shortcode('add_to_cart_form', 'add_to_cart_form_shortcode');
+
+
+function woocommerce_checkout_custom()
+{
+    return do_shortcode('[woocommerce_checkout]');
+}
+
+add_shortcode('woocommerce_checkout_custom', 'woocommerce_checkout_custom');
