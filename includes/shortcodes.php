@@ -169,6 +169,11 @@ function search_products()
             </div>
             <div class="selected-products">
                 <h4>Selected Orders</h4>
+
+                <div class="post-item-holder">
+
+                </div>
+
                 <a id="load-more" class="d-inline-block mt-4"><span>Add to basket</span></a>
             </div>
             <!--
