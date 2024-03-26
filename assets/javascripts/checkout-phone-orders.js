@@ -255,7 +255,7 @@ function ajax_select_product_trigger() {
 
 
 function ajax_select_product($product_id) {
-    
+
     jQuery.ajax({
 
         type: "POST",
@@ -265,13 +265,10 @@ function ajax_select_product($product_id) {
         data: {
 
             action: 'select_product_ajax',
-
             product_id: $product_id,
-
         },
 
         success: function (response) {
-            //jQuery('body').trigger('update_checkout');
             console.log(response);
         },
         error: function (e) {
@@ -279,6 +276,8 @@ function ajax_select_product($product_id) {
         }
 
     });
+
+    jQuery('body').trigger('update_checkout');
 }
 
 jQuery(function ($) {
