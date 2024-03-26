@@ -14,7 +14,7 @@
                     <?php var_dump($user) ?>
                     <div class="d-flex justify-content-between">
                         <strong><?= $user->display_name ?></strong>
-                        <a class="button" href="<?= wp_login_url() ?>?action=switch_to_user&user_id=3&nr=1&_wpnonce=<?= wp_create_nonce() ?>">
+                        <a class="button" href="<?= wp_login_url() ?>?action=switch_to_user&user_id=<?= $user->ID ?>&nr=1&_wpnonce=<?= wp_create_nonce() ?>">
                             Select Customer
                         </a>
                     </div>
