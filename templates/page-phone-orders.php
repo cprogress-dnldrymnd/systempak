@@ -10,7 +10,6 @@
         <h3>Please select a user first before creating order</h3>
         <div class="row g-2">
             <?php foreach (get_users() as $user) { ?>
-
                 <?php
                 $link = user_switching::maybe_switch_url($user);
                 ?>
@@ -26,6 +25,12 @@
         </div>
     </section>
 <?php } else { ?>
+    <section class="logged-in-as">
+        <?php
+        $current_user = wp_get_current_user();
+        ?>
+        <h4>Logged-in as <?= $current_user->user_email ?></h4>
+    </section>
     <section class="checkout-form">
         <?= do_shortcode('[woocommerce_checkout]') ?>
     </section>
