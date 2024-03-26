@@ -260,7 +260,7 @@ function ajax_select_product_trigger() {
 
 
 function ajax_select_product($product_id) {
-
+    
     jQuery.ajax({
 
         type: "POST",
@@ -276,7 +276,7 @@ function ajax_select_product($product_id) {
         },
 
         success: function (response) {
-            jQuery(this).html(response);
+            jQuery('.product-add-to-cart-modal').html(response);
         },
         error: function (e) {
             console.log(e);
