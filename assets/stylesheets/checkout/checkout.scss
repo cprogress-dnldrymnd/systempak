@@ -225,3 +225,14 @@ section.logged-in-as {
         }
     }
 }
+
+section.select-user {
+    .inner {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: var(--light-gray-color);
+        padding: 2rem;
+        border-radius: 10px;
+    }
+}
