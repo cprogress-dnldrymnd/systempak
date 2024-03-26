@@ -271,9 +271,7 @@ function ajax_select_product($product_id) {
         },
 
         success: function (response) {
-            if(response == 'success') {
-                jQuery('body').trigger('update_checkout');
-            }
+            jQuery('body').trigger('update_checkout');
         },
         error: function (e) {
             console.log(e);

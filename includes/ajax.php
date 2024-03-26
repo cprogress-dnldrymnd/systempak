@@ -217,10 +217,8 @@ function select_product_ajax()
 {
     $product_id = $_POST['product_id'];
 
-    if (WC()->cart->add_to_cart($product_id)) {
-        echo 'success';
-    } else {
-        echo 'failed';
-    }
+    global $woocommerce;
+    $woocommerce->cart->add_to_cart($product_id);
+
     die();
 }
