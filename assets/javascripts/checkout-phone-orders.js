@@ -267,7 +267,7 @@ function select_products() {
     });
 
     jQuery(document).on('click', '.product-remove-to-basket', function () {
-        if (jQuery('#selected-products .post-item').length == 0) {
+        if (jQuery('#selected-products .post-item').length == 1) {
             jQuery('#selected-products').addClass('d-none');
         } else {
             jQuery('#selected-products').removeClass('d-none');
