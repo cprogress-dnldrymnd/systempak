@@ -120,3 +120,5 @@ function coupon_ajax()
  
  add_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
  add_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
+
+ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
