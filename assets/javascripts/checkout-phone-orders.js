@@ -279,7 +279,7 @@ function ajax_select_product($this) {
 
     $post_item = jQuery('#selected-products .post-item');
     $product_ids = [];
-    jQuery('.post_item').each(function (index, element) {
+    $post_item.each(function (index, element) {
         $product_id = jQuery(this).attr('product-id');
         $product_ids.push($product_id);
 
