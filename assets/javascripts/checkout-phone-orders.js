@@ -272,6 +272,7 @@ function ajax_select_product($product_id) {
 
         success: function (response) {
             jQuery('body').trigger('update_checkout');
+            console.log(response);
         },
         error: function (e) {
             console.log(e);

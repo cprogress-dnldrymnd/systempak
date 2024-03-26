@@ -219,6 +219,6 @@ function select_product_ajax()
 
     global $woocommerce;
     $woocommerce->cart->add_to_cart($product_id);
-
+    echo $product_id;
     die();
 }
