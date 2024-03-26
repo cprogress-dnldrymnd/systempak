@@ -18,6 +18,10 @@
         padding: 0;
         width: auto;
         float: none !important;
+        margin: 0;
+    }
+    input {
+        min-height: 53px;
     }
 
     .form-row-first {

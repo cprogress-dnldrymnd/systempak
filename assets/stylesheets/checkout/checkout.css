@@ -14,7 +14,10 @@
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-first {
     padding: 0;
     width: auto;
-    float: none !important; }
+    float: none !important;
+    margin: 0; }
+  .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom input {
+    min-height: 53px; }
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-first {
     flex: 1 0 0%; }
   .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom .form-row-last {
