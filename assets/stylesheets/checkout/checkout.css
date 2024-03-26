@@ -96,6 +96,14 @@
     font-size: 14px; }
   .search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-content h4 {
     margin-bottom: 0; }
+  .search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-content button svg {
+    width: 20px;
+    height: 20px; }
+  .search-section-products.search-section-products .results-holder .post-item-holder .post-item .row .col-content button.adding svg {
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
 
 .page-id-8978 .product_button {
   display: none !important; }

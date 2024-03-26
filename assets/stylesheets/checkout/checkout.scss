@@ -134,6 +134,20 @@
                     h4 {
                         margin-bottom: 0;
                     }
+                    button {
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
+                        &.adding {
+                            svg {
+                                animation-name: spin;
+                                animation-duration: 5000ms;
+                                animation-iteration-count: infinite;
+                                animation-timing-function: linear;
+                            }
+                        }
+                    }
                 }
             }
         }
