@@ -183,6 +183,7 @@ function search_ajax_products()
                             }
                         } else {
                             echo $product->get_image();   
+                            echo 'xxx';
                         }
 
                         ?>
