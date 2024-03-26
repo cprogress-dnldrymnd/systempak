@@ -172,7 +172,6 @@ function search_products()
                 </div>
                 <div class="col-lg-6">
                     <div class="selected-products d-none" id="selected-products">
-                        <h4>Selected Products</h4>
                         <div class="post-item-holder">
 
                         </div>
