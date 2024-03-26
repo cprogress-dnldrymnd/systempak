@@ -174,7 +174,7 @@ function search_products()
 
                 </div>
 
-                <a id="load-more" class="d-inline-block mt-4"><span>Add to basket</span></a>
+                <a id="load-more" class="d-inline-block mt-4"><span>Add to order</span></a>
             </div>
             <!--
             <div id="loadmore-holder" class="d-none mt-4">

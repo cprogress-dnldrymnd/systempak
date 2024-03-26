@@ -120,40 +120,40 @@
         max-height: 400px;
         overflow-y: auto;
         overflow-x: hidden;
-        .post-item-holder {
-            .post-item .row {
-                .col-image {
-                    flex: 0 0 80px;
+    }
+    .post-item-holder {
+        .post-item .row {
+            .col-image {
+                flex: 0 0 80px;
+            }
+            .col-content {
+                p {
+                    margin-bottom: 6px;
+                    line-height: 1;
+                    font-size: 14px;
                 }
-                .col-content {
-                    p {
-                        margin-bottom: 6px;
-                        line-height: 1;
-                        font-size: 14px;
-                    }
-                    h4 {
-                        margin-bottom: 0;
-                    }
-                    button {
-                        padding-left: 10px;
-                        padding-right: 10px;
-                        svg {
-                            width: 20px;
-                            height: 20px;
-                            display: none;
-                            margin-left: 1rem;
-                            path {
-                                fill: #fff;
-                            }
+                h4 {
+                    margin-bottom: 0;
+                }
+                button {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        display: none;
+                        margin-left: 1rem;
+                        path {
+                            fill: #fff;
                         }
-                        &.adding {
-                            svg {
-                                display: inline-block;
-                                animation-name: spin;
-                                animation-duration: 5000ms;
-                                animation-iteration-count: infinite;
-                                animation-timing-function: linear;
-                            }
+                    }
+                    &.adding {
+                        svg {
+                            display: inline-block;
+                            animation-name: spin;
+                            animation-duration: 5000ms;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: linear;
                         }
                     }
                 }
