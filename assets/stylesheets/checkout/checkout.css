@@ -88,25 +88,25 @@
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden; }
-.search-section-products.search-section-products .post-item-holder .post-item .row .col-image {
+.search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-image {
   flex: 0 0 80px; }
-.search-section-products.search-section-products .post-item-holder .post-item .row .col-content p {
+.search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content p {
   margin-bottom: 6px;
   line-height: 1;
   font-size: 14px; }
-.search-section-products.search-section-products .post-item-holder .post-item .row .col-content h4 {
+.search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content h4 {
   margin-bottom: 0; }
-.search-section-products.search-section-products .post-item-holder .post-item .row .col-content button {
+.search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button {
   padding-left: 10px;
   padding-right: 10px; }
-  .search-section-products.search-section-products .post-item-holder .post-item .row .col-content button svg {
+  .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button svg {
     width: 20px;
     height: 20px;
     display: none;
     margin-left: 1rem; }
-    .search-section-products.search-section-products .post-item-holder .post-item .row .col-content button svg path {
+    .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button svg path {
       fill: #fff; }
-  .search-section-products.search-section-products .post-item-holder .post-item .row .col-content button.adding svg {
+  .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content button.adding svg {
     display: inline-block;
     animation-name: spin;
     animation-duration: 5000ms;
