@@ -170,12 +170,15 @@ function search_ajax_products()
             while ($the_query->have_posts()) {
                 $the_query->the_post();
                 global $product;
-
         ?>
                 <div class="post-item post-<?= get_the_ID() ?>" product-id="<?= get_the_ID() ?>">
                     <div class="row">
                         <?php
-                      
+                        if (get_the_post_thumbnail_url(get_the_ID())) {
+                            $url = get_the_post_thumbnail_url(get_the_ID());
+                        } else {
+                            $url = wc_placeholder_img_src();
+                        }
                         ?>
                         <div class="col-image col-auto">
                             <img src="<?= $url  ?>" alt="<?php the_title() ?>">
