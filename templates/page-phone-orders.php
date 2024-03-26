@@ -8,7 +8,7 @@
 <?php if (current_user_can('administrator')) { ?>
     <section class="select-user">
         <h3>Please select a user first before creating order</h3>
-        <div class="row g-5">
+        <div class="row g-2">
             <?php foreach (get_users() as $user) { ?>
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
@@ -17,7 +17,6 @@
                             Select Customer
                         </a>
                     </div>
-                    <hr>
                 </div>
             <?php } ?>
         </div>
