@@ -182,8 +182,15 @@ function search_ajax_products()
                                 $url = wc_placeholder_img_src();
                             }
                         } else {
-                            echo $product->get_image();   
-                            echo 'xxx';
+                            if (wp_get_attachment_image_url($product->get_image_id())) {
+                                $url = wp_get_attachment_image_url($product->get_image_id());
+                            } else {
+                                if (get_the_post_thumbnail_url(get_the_ID())) {
+                                    $url = get_the_post_thumbnail_url(get_the_ID());
+                                } else {
+                                    $url = wc_placeholder_img_src();
+                                }
+                            }
                         }
 
                         ?>
