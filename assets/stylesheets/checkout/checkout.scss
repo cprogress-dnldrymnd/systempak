@@ -2,6 +2,15 @@
     #order_review {
         width: 100%;
     }
+
+    #content {
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        .col-full {
+            max-width: 100% !important;
+        }
+    }
 }
 
 .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {
@@ -198,4 +207,11 @@
     background-color: var(--light-gray-color);
     border-radius: 10px;
     margin-bottom: 2rem;
+}
+
+
+section.logged-in-as {
+    background-color: var(--accent-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

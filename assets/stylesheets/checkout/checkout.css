@@ -1,5 +1,11 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
+.woocommerce-checkout #content {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0; }
+  .woocommerce-checkout #content .col-full {
+    max-width: 100% !important; }
 
 .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {
   border-radius: 0;
@@ -139,5 +145,10 @@
   background-color: var(--light-gray-color);
   border-radius: 10px;
   margin-bottom: 2rem; }
+
+section.logged-in-as {
+  background-color: var(--accent-color);
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 /*# sourceMappingURL=checkout.css.map */
