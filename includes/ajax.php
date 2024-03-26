@@ -215,7 +215,12 @@ add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for 
 add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
 function select_product_ajax()
 {
+    $product_id = $_POST['product_id'];
 
-    echo 'failed';
+    if (WC()->cart->add_to_cart($product_id)) {
+        echo 'success';
+    } else {
+        echo 'failed';
+    }
     die();
 }
