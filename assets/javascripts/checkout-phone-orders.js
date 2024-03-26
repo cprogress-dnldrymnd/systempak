@@ -248,7 +248,6 @@ function ajax_products($offset, $event_type = 'html') {
 }
 
 function ajax_select_product_trigger() {
-   
     jQuery(document).on('click', '#add-to-order', function () {
         ajax_select_product(jQuery(this));
     });
