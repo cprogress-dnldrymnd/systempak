@@ -250,9 +250,6 @@ function ajax_select_product_trigger() {
     jQuery(document).on('click', '.product-add-to-cart-modal', function () {
 
         $product_id = jQuery(this).attr('product-id');
-        $title = jQuery(this).attr('title');
-
-        jQuery('#productModalLabel').text($title);
         console.log($product_id);
         ajax_select_product($product_id);
     });
@@ -276,7 +273,8 @@ function ajax_select_product($product_id) {
         },
 
         success: function (response) {
-            jQuery('.product-add-to-cart-modal').html(response);
+            console.log(response);
+            //jQuery('.product-add-to-cart-modal').html(response);
         },
         error: function (e) {
             console.log(e);
