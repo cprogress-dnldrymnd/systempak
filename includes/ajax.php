@@ -147,6 +147,14 @@ function search_ajax_products()
         unset($args['s']);
     }
 
+    $args['type'] = array(
+        array(
+            'taxonomy' => 'product_type',
+            'field'    => 'slug',
+            'terms'    => array('simple', 'product_variation'),
+        ),
+    );
+
 
     $the_query = new WP_Query($args);
 
@@ -178,6 +186,7 @@ function search_ajax_products()
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
                             </div>
+
                             <!-- Button trigger modal -->
                             <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" title="<?= get_the_title() ?>" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
                                 Select
