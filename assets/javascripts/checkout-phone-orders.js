@@ -5,6 +5,7 @@ jQuery(document).ready(function () {
     ajax_products_form();
     ajax_products();
     ajax_select_product_trigger();
+    load_more_button_listener();
 });
 
 
