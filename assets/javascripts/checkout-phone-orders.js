@@ -5,6 +5,7 @@ jQuery(document).ready(function () {
     ajax_products_form();
     ajax_products();
     ajax_select_product_trigger();
+    select_products();
     //load_more_button_listener();
 });
 
@@ -184,7 +185,6 @@ function load_more_button_listener($) {
 
 
 
-
 function ajax_products($offset, $event_type = 'html') {
 
     var $loadmore = jQuery('.search-section-products #load-more');
@@ -248,9 +248,19 @@ function ajax_products($offset, $event_type = 'html') {
 }
 
 function ajax_select_product_trigger() {
+    /*
     jQuery(document).on('click', '.product-add-to-cart-modal', function () {
         $product_id = jQuery(this).attr('product-id');
         ajax_select_product($product_id, jQuery(this));
+    });*/
+}
+
+
+
+function select_products() {
+    jQuery(document).on('click', '.product-add-to-cart-modal', function () {
+        $product_id = jQuery(this).attr('product-id');
+        //ajax_select_product($product_id, jQuery(this));
     });
 }
 
