@@ -174,8 +174,10 @@ function search_ajax_products()
                             <img src="<?= $url  ?>" alt="<?php the_title() ?>">
                         </div>
                         <div class="col-content d-flex align-items-center justify-content-between col">
-                            <p><strong><?php the_title() ?></strong></p>
-                            <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
+                            <div>
+                                <p><strong><?php the_title() ?></strong></p>
+                                <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
+                            </div>
                             <!-- Button trigger modal -->
                             <button type="button" class="button product-add-to-cart-modal" data-bs-toggle="modal" title="<?= get_the_title() ?>" data-bs-target="#productModal" product-id="<?= get_the_ID() ?>">
                                 Select
