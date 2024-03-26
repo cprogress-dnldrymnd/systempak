@@ -593,13 +593,4 @@ body.search .site-header-search {
   right: 10px !important;
   transform: translateY(-50%); }
 
-.select-products {
-  padding: 2rem;
-  background-color: var(--light-gray-color);
-  border-radius: 10px;
-  margin-bottom: 2rem; }
-
-.add-product-ajax .quantity .qty {
-  width: auto; }
-
 /*# sourceMappingURL=style.css.map */
