@@ -1,11 +1,11 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
 
-.page-id-8978 #content {
+.page-id-8978 #page #content {
   margin-top: 0;
   padding-left: 0;
   padding-right: 0; }
-  .page-id-8978 #content .col-full {
+  .page-id-8978 #page #content .col-full {
     max-width: 100% !important; }
 
 .checkout_coupon_custom.checkout_coupon_custom.checkout_coupon_custom {

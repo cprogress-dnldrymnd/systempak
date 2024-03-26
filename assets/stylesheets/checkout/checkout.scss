@@ -5,12 +5,14 @@
 }
 
 .page-id-8978 {
-    #content {
-        margin-top: 0;
-        padding-left: 0;
-        padding-right: 0;
-        .col-full {
-            max-width: 100% !important;
+    #page {
+        #content {
+            margin-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+            .col-full {
+                max-width: 100% !important;
+            }
         }
     }
 }

@@ -29,9 +29,13 @@
         <?php
         $current_user = wp_get_current_user();
         ?>
-        <h4>Logged-in as <?= $current_user->user_email ?></h4>
+        <div class="container-fluid">
+            <h4 class="mb-0">Logged-in as <?= $current_user->user_email ?></h4>
+        </div>
     </section>
     <section class="checkout-form">
-        <?= do_shortcode('[woocommerce_checkout]') ?>
+        <div class="container-fluid">
+            <?= do_shortcode('[woocommerce_checkout]') ?>
+        </div>
     </section>
 <?php } ?>
