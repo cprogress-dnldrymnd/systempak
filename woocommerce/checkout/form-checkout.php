@@ -28,39 +28,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 	return;
 }
 ?>
-<div id="testing">
-	<?php
-	$product_id = 10755;
-	$args = array(
-		'posts_per_page'      => 1,
-		'post_type'           => 'product',
-		'post_status'         => 'publish',
-		'ignore_sticky_posts' => 1,
-		'no_found_rows'       => 1,
-	);
 
-	if (isset($product_id)) {
-		$args['p'] = absint($product_id);
-	}
-
-	$single_product = new WP_Query($args);
-
-	while ($single_product->have_posts()) {
-		$single_product->the_post();
-		echo '<div class="single-product">';
-		woocommerce_template_single_add_to_cart();
-
-		$pricingRule = \TierPricingTable\PriceManager::getPricingRule(11035);
-        echo '<pre>';
-		var_dump($pricingRule);
-		var_dump($pricingRule->pricingData);
-        echo '</pre>';
-
-	}
-
-	wp_reset_postdata();
-	?>
-</div>
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 
 	<div class="row">
