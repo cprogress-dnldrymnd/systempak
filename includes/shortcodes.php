@@ -300,7 +300,7 @@ add_shortcode('woocommerce_checkout_custom', 'woocommerce_checkout_custom');
 
 function product_quantity()
 {
-    $posts_per_page_val = 50;
+    $posts_per_page_val = -1;
     $post_type = array('product', 'product_variation');
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $args = array();
