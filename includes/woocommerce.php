@@ -453,7 +453,7 @@ function woocommerce_product_custom_fields()
             'id' => 'quantity_per_box',
             'placeholder' => 'Quantity Per Box',
             'label' => __('Quantity Per Box', 'woocommerce'),
-            'type' => 'number',
+            'type' => 'text',
         )
     );
 
