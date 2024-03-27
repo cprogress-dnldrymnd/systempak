@@ -313,7 +313,7 @@ function product_quantity()
             $the_query->the_post();
             global $product;
             $pa_containers = $product->get_attribute('pa_containers');
-            echo get_the_title();
+            echo get_the_title() . '<br>';
             echo $pa_containers;
         }
         wp_reset_postdata();
