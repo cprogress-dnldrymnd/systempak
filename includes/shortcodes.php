@@ -316,6 +316,7 @@ function product_quantity()
 
             echo $pa_containers;
         }
+        wp_reset_postdata();
     }
 }
 add_shortcode('product_quantity', 'product_quantity');
