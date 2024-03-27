@@ -318,3 +318,4 @@ function product_quantity()
         }
     }
 }
+add_shortcode('product_quantity', 'product_quantity');
