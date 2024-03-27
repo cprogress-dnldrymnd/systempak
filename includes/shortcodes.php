@@ -296,3 +296,25 @@ function woocommerce_checkout_custom()
 }
 
 add_shortcode('woocommerce_checkout_custom', 'woocommerce_checkout_custom');
+
+
+function product_quantity()
+{
+    $posts_per_page_val = 50;
+    $post_type = array('product', 'product_variation');
+    $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
+    $args = array();
+    $args['posts_per_page'] = $posts_per_page;
+    $args['post_type'] = $post_type;
+    $the_query = new WP_Query($args);
+
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            global $product;
+            $pa_containers = $product->get_attribute('pa_containers');
+
+            echo $pa_containers;
+        }
+    }
+}
