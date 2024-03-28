@@ -894,6 +894,9 @@ body.search {
     .category-image {
         text-align: center;
         margin-top: -120px;
+        img {
+            display: inline-block;
+        }
     }
     .icon-box {
         .icon {

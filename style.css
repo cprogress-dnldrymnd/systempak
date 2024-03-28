@@ -628,6 +628,8 @@ body.search .site-header-search {
   .featured-section .category-image {
     text-align: center;
     margin-top: -120px; }
+    .featured-section .category-image img {
+      display: inline-block; }
   .featured-section .icon-box .icon {
     flex: 0 0 90px;
     width: 90px;
