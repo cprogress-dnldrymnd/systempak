@@ -30,6 +30,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
+<?php do_action('woocommerce_cart_totals_before_order_total') ?>
 
 	<div class="row">
 		<div class="col-lg-6">
