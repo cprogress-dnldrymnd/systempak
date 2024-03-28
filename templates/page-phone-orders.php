@@ -42,8 +42,8 @@
             ?>
             <div class="container-fluid">
                 <div class="d-flex justify-content-between">
-                    <div class="d-flex">
-                        <h5 class="mb-0">Logged-in as <?= $current_user->user_email ?></h5>
+                    <div class="d-flex align-items-center">
+                        <h5 class="mb-0 me-2">Logged-in as <?= $current_user->user_email ?></h5>
                         <a class="button d-inline-block" href="/my-account/orders/">View Orders</a>
                     </div>
                     <h5 class="mb-0">
