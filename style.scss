@@ -890,12 +890,33 @@ body.search {
         flex: 0 0 33.33333333%;
         padding-left: 10px;
         padding-right: 10px;
+        @media (max-width: 1199px) {
+            width: 100%;
+            flex: 0 0 100%;
+        }
+        &:nth-child(1) {
+            @media (max-width: 1199px) {
+                order: 2;
+            }
+        }
+        &:nth-child(2) {
+            @media (max-width: 1199px) {
+                order: 1;
+            }
+        }
+      
     }
     .category-image {
         text-align: center;
-        margin-top: -120px;
         img {
             display: inline-block;
+        }
+        @media (min-width: 1200px) {
+            margin-top: -120px;
+        }
+        @media (max-width: 1199px) {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
     }
     .icon-box {
