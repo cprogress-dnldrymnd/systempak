@@ -303,17 +303,7 @@ function woo_get_ajax_data()
  
     die(); // Alway at the end (to avoid server error 500)
 }
-// Calculate and add extra fee based on radio button selection
-add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
-function add_custom_extra_fee($cart)
-{
-    if (is_admin() && !defined('DOING_AJAX')) {
-        return;
-    }
-    $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
 
-    $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
-}
 add_action('wp_footer', 'cart_update_qty_script');
 function cart_update_qty_script()
 {
