@@ -334,7 +334,6 @@ function product_category_features()
     }
 
 
-    echo $term_id;
     if (!$hide_featured_section) {
         if ($featured_section_left || $featured_section_right) {
             $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
