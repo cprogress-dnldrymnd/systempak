@@ -11,7 +11,6 @@ if (current_user_can('administrator')) {
 }
 
 ?>
-<?php if (!is_search()) { ?>
     <div class="search-header d-none">
         <?= do_shortcode('[search]') ?>
     </div>
@@ -21,7 +20,6 @@ if (current_user_can('administrator')) {
             jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
         });
     </script>
-<?php } ?>
 
 
 <?php if (is_page(8978)) { ?>
