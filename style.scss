@@ -888,6 +888,16 @@ body.search {
             align-items: center;
         }
     }
+    .col-lg-6 {
+        width: 33.33333333%;
+        flex: 0 0 33.33333333%;
+        padding-left: 10px;
+        padding-right: 10px;
+        @media (max-width: 991px) {
+            width: 100%;
+            flex: 0 0 100%;
+        }
+    }
     .col-lg-4 {
         width: 33.33333333%;
         flex: 0 0 33.33333333%;

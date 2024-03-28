@@ -623,6 +623,15 @@ body.search .site-header-search {
     @media (max-width: 1199px) and (min-width: 991px) {
       .featured-section .row {
         align-items: center; } }
+  .featured-section .col-lg-6 {
+    width: 33.33333333%;
+    flex: 0 0 33.33333333%;
+    padding-left: 10px;
+    padding-right: 10px; }
+    @media (max-width: 991px) {
+      .featured-section .col-lg-6 {
+        width: 100%;
+        flex: 0 0 100%; } }
   .featured-section .col-lg-4 {
     width: 33.33333333%;
     flex: 0 0 33.33333333%;
