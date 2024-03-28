@@ -688,4 +688,7 @@ body.search .site-header-search {
         flex-direction: column;
         align-items: flex-start; } }
 
+.tier-pricing-summary-table__total .amount:after {
+  content: "Excl. VAT"; }
+
 /*# sourceMappingURL=style.css.map */

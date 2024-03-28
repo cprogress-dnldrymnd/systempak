@@ -971,3 +971,11 @@ body.search {
         }
     }
 }
+
+.tier-pricing-summary-table__total {
+    .amount {
+        &:after {
+            content: "Excl. VAT";
+        }
+    }
+}
