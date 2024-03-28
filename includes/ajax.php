@@ -345,6 +345,7 @@ function cart_update_qty_script()
                     'custom_radio_field': fee,
                 },
                 success: function(result) {
+                    console.log('mama mo');
                     jQuery('button[name="update_cart"]').removeAttr('disabled');
                     jQuery("[name='update_cart']").trigger("click");
                 }
