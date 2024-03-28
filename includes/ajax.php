@@ -339,7 +339,7 @@ function cart_update_qty_script()
             var fee = jQuery(this).val();
             jQuery.ajax({
                 type: 'POST',
-                url: wc_cart_params.ajax_url,
+                url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'woo_get_ajax_data',
                     'custom_radio_field': fee,
