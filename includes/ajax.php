@@ -292,8 +292,10 @@ function add_custom_extra_fee($cart)
             }
         }
         // set new fee array
-        $cart->fees_api()->set_fees($fees);
+        $cart->fees_api()->set_fees();
     }
+    $cart->fees_api()->set_fees();
+
 }
 add_action('wp_footer', 'cart_update_qty_script');
 function cart_update_qty_script()
