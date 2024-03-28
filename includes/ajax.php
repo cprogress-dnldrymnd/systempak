@@ -288,18 +288,11 @@ function add_custom_extra_fee($cart)
 add_action('woocommerce_cart_totals_before_order_total', 'ts_add_custom_radio_button_field');
 function ts_add_custom_radio_button_field()
 {
-    $radio_options = array(
-        'option_1' => __('1 year($29)', 'text-domain'),
-        'option_2' => __('2 years($49)', 'text-domain'),
-        'option_3' => __('Not Needed', 'text-domain')
-        // Add more options if needed
-    );
     woocommerce_form_field('custom_shipping_cost', array(
-        'type' => 'radio',
+        'type' => 'text',
         'class' => array('form-row-wide'),
-        'label' => __('Option for Extended Warranty cover', 'text-domain'),
-        'required' => true,
-        'options' => $radio_options,
+        'label' => __('Custom Shipping Fee', 'text-domain'),
+        'required' => false,
     ), WC()->session->get('custom_shipping_cost'));
 }
 // Php Ajax (Receiving request and saving to WC session)
