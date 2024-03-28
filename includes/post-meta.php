@@ -29,7 +29,14 @@ Container::make('term_meta', __('Category Properties'))
 	->where('term_taxonomy', '=', 'product_cat')
 	->add_fields(array(
 		Field::make('checkbox', 'hide_featured_section', __('Hide Featured Section')),
-		Field::make('complex', 'featured_section', __('Featured Section'))
+		Field::make('complex', 'featured_section', __('Featured Section Left'))
+			->add_fields(array(
+				Field::make('text', 'heading', __('Heading')),
+				Field::make('textarea', 'description', __('Description')),
+				Field::make('image', 'image', __('Image/Icon')),
+			))
+			->set_layout('tabbed-horizontal')
+			Field::make('complex', 'featured_section_right', __('Featured Section Right'))
 			->add_fields(array(
 				Field::make('text', 'heading', __('Heading')),
 				Field::make('textarea', 'description', __('Description')),
