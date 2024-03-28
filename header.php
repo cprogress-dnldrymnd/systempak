@@ -27,11 +27,18 @@
          *
          */
         do_action('priotech_before_header');
-        if (priotech_is_elementor_activated() && function_exists('hfe_init') && hfe_header_enabled()) {
-            do_action('hfe_header');
+        $old_user = user_switching::get_old_user();
+
+        if ($old_user) {
+            echo do_shortcode('[phone_orders_header]');
         } else {
-            get_template_part('template-parts/header/header-1');
+            if (priotech_is_elementor_activated() && function_exists('hfe_init') && hfe_header_enabled()) {
+                do_action('hfe_header');
+            } else {
+                get_template_part('template-parts/header/header-1');
+            }
         }
+
 
         /**
          * Functions hooked in to priotech_before_content action
