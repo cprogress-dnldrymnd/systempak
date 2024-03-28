@@ -262,7 +262,6 @@ function select_product_ajax()
     }
 
 	
-    $woocommerce->cart->add_fee( __('Custom', 'woocommerce'), 5 );
 
     die();
 }

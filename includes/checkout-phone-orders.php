@@ -124,3 +124,20 @@ add_filter('woocommerce_checkout_update_order_review_expired', '__return_false')
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 
+
+
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ *
+ * Add custom fee to cart automatically
+ *
+ */
+function woo_add_cart_fee() {
+ 
+    global $woocommerce;
+      
+    $woocommerce->cart->add_fee( __('Custom', 'woocommerce'), 5 );
+      
+  }
+  add_action( 'woocommerce_cart_calculate_fees', 'woo_add_cart_fee' );
