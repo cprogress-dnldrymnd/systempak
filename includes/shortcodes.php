@@ -305,10 +305,9 @@ function product_category_features()
     $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
     $featured_section_shortcode = carbon_get_term_meta($term->term_id, 'featured_section_shortcode');
 
-    if(!$hide_featured_section) {
-       // return do_shortcode($featured_section_shortcode);
+    if (!$hide_featured_section) {
+        return do_shortcode($featured_section_shortcode);
     }
-    return do_shortcode($featured_section_shortcode);
 }
 
 add_shortcode('product_category_features', 'product_category_features');
