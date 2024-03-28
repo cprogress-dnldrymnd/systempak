@@ -709,12 +709,11 @@ section.logged-in-as {
     margin-right: 0.5rem !important; }
 
 .faqs-tabs {
-  margin-bottom: 3rem;
-  padding-left: 20px;
-  padding-right: 20px; }
+  margin-bottom: 3rem; }
   .faqs-tabs ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     margin: 0; }
     .faqs-tabs ul button {
       background: transparent;

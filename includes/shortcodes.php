@@ -454,6 +454,7 @@ function faqs()
 
     <div class="faqs-tabs">
         <ul>
+            <li><button target="all"> Show All</button></li>
             <?php foreach ($terms as $term) { ?>
                 <li>
                     <button target="<?= $term->slug ?>"><?= $term->name ?></button>
@@ -461,47 +462,62 @@ function faqs()
             <?php } ?>
         </ul>
     </div>
-    <div class="elementor-element elementor-element-563633e elementor-widget elementor-widget-n-accordion" data-id="563633e" data-element_type="widget" data-settings="{&quot;default_state&quot;:&quot;all_collapsed&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}" data-widget_type="nested-accordion.default">
-        <div class="elementor-widget-container">
-            <div class="e-n-accordion">
-                <?php foreach ($faqs as $faq) { ?>
+    <div class="faqs-holder">
+        <div class="elementor-element elementor-element-563633e elementor-widget elementor-widget-n-accordion" data-id="563633e" data-element_type="widget" data-settings="{&quot;default_state&quot;:&quot;all_collapsed&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}" data-widget_type="nested-accordion.default">
+            <div class="elementor-widget-container">
+                <div class="e-n-accordion">
+                    <?php foreach ($faqs as $faq) { ?>
 
-                    <?php
-                    $cats = get_the_terms($faq->ID, 'faq_cat');
-                    $class = '';
-                    foreach ($cats as $cat) {
-                        $class .= $cat->slug . ' ';
-                    }
-                    ?>
-                    <details id="e-n-accordion-item-<?= $faq->ID ?>" class="e-n-accordion-item <?= $class ?>">
-                        <summary class="e-n-accordion-item-title" data-accordion-index="1" tabindex="0" aria-expanded="false" aria-controls="e-n-accordion-item-<?= $faq->ID ?>">
-                            <span class="e-n-accordion-item-title-header">
-                                <div class="e-n-accordion-item-title-text"> <?= $faq->post_title ?> </div>
-                            </span>
-                            <span class="e-n-accordion-item-title-icon">
-                                <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                                        </path>
-                                    </svg></span>
-                                <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                                        </path>
-                                    </svg></span>
-                            </span>
+                        <?php
+                        $cats = get_the_terms($faq->ID, 'faq_cat');
+                        $class = '';
+                        foreach ($cats as $cat) {
+                            $class .= $cat->slug . ' ';
+                        }
+                        ?>
+                        <details id="e-n-accordion-item-<?= $faq->ID ?>" class="e-n-accordion-item <?= $class ?>">
+                            <summary class="e-n-accordion-item-title" data-accordion-index="1" tabindex="0" aria-expanded="false" aria-controls="e-n-accordion-item-<?= $faq->ID ?>">
+                                <span class="e-n-accordion-item-title-header">
+                                    <div class="e-n-accordion-item-title-text"> <?= $faq->post_title ?> </div>
+                                </span>
+                                <span class="e-n-accordion-item-title-icon">
+                                    <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                            </path>
+                                        </svg></span>
+                                    <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
+                                            </path>
+                                        </svg></span>
+                                </span>
 
-                        </summary>
-                        <div role="region" aria-labelledby="e-n-accordion-item-<?= $faq->ID ?>" class="elementor-element elementor-element-1ccc9dd e-con-full e-flex e-con e-child" data-id="1ccc9dd" data-element_type="container">
-                            <div class="elementor-element elementor-element-2cb1db1 elementor-widget elementor-widget-text-editor" data-id="2cb1db1" data-element_type="widget" data-widget_type="text-editor.default">
-                                <div class="elementor-widget-container">
-                                    <?= wpautop($faq->post_content) ?>
+                            </summary>
+                            <div role="region" aria-labelledby="e-n-accordion-item-<?= $faq->ID ?>" class="elementor-element elementor-element-1ccc9dd e-con-full e-flex e-con e-child" data-id="1ccc9dd" data-element_type="container">
+                                <div class="elementor-element elementor-element-2cb1db1 elementor-widget elementor-widget-text-editor" data-id="2cb1db1" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                        <?= wpautop($faq->post_content) ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </details>
-                <?php } ?>
+                        </details>
+                    <?php } ?>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        jQUery(document).ready(function() {
+            jQUery('.faqs-tabs button').click(function(e) {
+                $target = jQuery(this).attr('target');
+                if ($target == 'all') {
+                    jQuery('.faqs-holder .e-n-accordion-item').removeClass('d-none');
+                } else {
+                    jQuery('.faqs-holder ..e-n-accordion-item:not(.' + $target + ')').addClass('d-none');
+                }
+                e.preventDefault();
+            });
+        });
+    </script>
 <?php
     return ob_get_clean();
 }
