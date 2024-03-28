@@ -120,3 +120,22 @@ function coupon_ajax()
 
 add_filter('woocommerce_checkout_redirect_empty_cart', '__return_false');
 add_filter('woocommerce_checkout_update_order_review_expired', '__return_false');
+
+function action_wp_head_phone_oders()
+{
+    $old_user = user_switching::get_old_user();
+    if ($old_user) {
+?>
+        <style>
+            #qlwapp {
+                display: none !important;
+            }
+            #user_switching_switch_on {
+                display: none;
+            }
+        </style>
+<?php
+    }
+}
+
+add_action('wp_head', 'action_wp_head_phone_oders');
