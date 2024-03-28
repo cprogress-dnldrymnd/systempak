@@ -261,41 +261,6 @@ function select_product_ajax()
 }
 //add custom shipping
 
-/*
-add_action('wp_ajax_set_custom_shipping', 'set_custom_shipping');
-add_action('wp_ajax_nopriv_set_custom_shipping', 'set_custom_shipping');
-function set_custom_shipping()
-{
-    if (isset($_POST['custom_shipping'])) {
-        $custom_shipping = sanitize_key($_POST['custom_shipping']);
-        WC()->session->set('custom_shipping', $custom_shipping);
-        echo json_encode($custom_shipping);
-    }
-    die(); // Alway at the end (to avoid server error 500)
-}
-// Calculate and add extra fee based on radio button selection
-add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
-function add_custom_extra_fee($cart)
-{
-    if (is_admin() && !defined('DOING_AJAX')) {
-        return;
-    }
-    $custom_shipping = WC()->session->get('custom_shipping');
-
-    $cart->add_fee(__('Custom Shipping', 'text-domain'), $custom_shipping, true, 'standard');
-}*/
-
-add_action('woocommerce_cart_totals_before_order_total', 'ts_add_custom_radio_button_field');
-function ts_add_custom_radio_button_field()
-{
-    woocommerce_form_field('custom_shipping_cost', array(
-        'type' => 'text',
-        'class' => array('form-row-wide'),
-        'label' => __('Option for Extended Warranty cover', 'text-domain'),
-        'required' => false,
-    ), WC()->session->get('custom_shipping_cost'));
-}
-// Php Ajax (Receiving request and saving to WC session)
 add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
 add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
 function woo_get_ajax_data()
@@ -316,7 +281,7 @@ function add_custom_extra_fee($cart)
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
   
-    $cart->add_fee(__('Extended Warranty(2 years)', 'text-domain'), $custom_shipping_cost, true, 'standard');
+    $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
     
 }
 add_action('wp_footer', 'cart_update_qty_script');
