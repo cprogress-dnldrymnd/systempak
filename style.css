@@ -708,4 +708,11 @@ section.logged-in-as {
   section.logged-in-as .me-2 {
     margin-right: .5rem !important; }
 
+.faqs-tabs {
+  margin-bottom: 1rem; }
+  .faqs-tabs ul {
+    list-style: none;
+    display: flex;
+    margin: 0; }
+
 /*# sourceMappingURL=style.css.map */

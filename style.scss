@@ -1003,3 +1003,12 @@ section.logged-in-as {
         margin-right: .5rem !important;
     }
 }
+
+.faqs-tabs {
+    margin-bottom: 1rem;
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+    }
+}

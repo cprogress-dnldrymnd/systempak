@@ -445,9 +445,22 @@ function faqs()
     );
 
     $faqs = get_posts($args);
+
+    $terms = get_terms(array(
+        'taxonomy'   => 'faq_cat',
+        'hide_empty' => false,
+    ));
 ?>
 
-
+    <div class="faqs-tabs">
+        <ul>
+            <?php foreach ($terms as $term) { ?>
+                <li>
+                    <button target="<?= $term->slug ?>"><?= $term->name ?></button>
+                </li>
+            <?php } ?>
+        </ul>
+    </div>
     <div class="elementor-element elementor-element-563633e elementor-widget elementor-widget-n-accordion" data-id="563633e" data-element_type="widget" data-settings="{&quot;default_state&quot;:&quot;all_collapsed&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}" data-widget_type="nested-accordion.default">
         <div class="elementor-widget-container">
             <div class="e-n-accordion">
