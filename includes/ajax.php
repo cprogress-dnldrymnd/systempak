@@ -266,11 +266,8 @@ add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
 function woo_get_ajax_data()
 {
     if (isset($_POST['custom_shipping_cost'])) {
-
-        if ($_POST['custom_shipping_cost'] != 'false') {
-            $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);
-            WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
-        }
+        $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);
+        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
     }
     die(); // Alway at the end (to avoid server error 500)
 }
@@ -282,7 +279,7 @@ function add_custom_extra_fee($cart)
         return;
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
-    if ($custom_shipping_cost && !empty($custom_shipping_cost) && $custom_shipping_cost != '') {
+    if ($custom_shipping_cost != 'false') {
         $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
     } else {
         $fees = $cart->get_fees();
