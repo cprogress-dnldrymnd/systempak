@@ -314,7 +314,7 @@ function add_custom_extra_fee($cart)
     if (is_admin() && !defined('DOING_AJAX')) {
         return;
     }
-    $radio_option = WC()->session->get('custom_radio_field');
+    $radio_option = WC()->session->get('custom_shipping_cost');
     if ($radio_option === 'option_1') {
         $extra_fee = 29.00; // Set your extra fee amount for Option 1
     } elseif ($radio_option === 'option_2') {
@@ -341,7 +341,7 @@ function cart_update_qty_script()
                 url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'woo_get_ajax_data',
-                    'custom_radio_field': fee,
+                    'custom_shipping_cost': 'option_1',
                 },
                 success: function(result) {
                     jQuery('body').trigger('update_checkout');
