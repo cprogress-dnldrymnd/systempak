@@ -515,6 +515,7 @@ function faqs()
                     jQuery('.faqs-holder .e-n-accordion-item').removeClass('d-none');
                 } else {
                     jQuery('.faqs-holder .e-n-accordion-item:not(.' + $target + ')').addClass('d-none');
+                    jQuery('.faqs-holder .e-n-accordion-item.' + $target + '').removeClass('d-none');
                 }
                 e.preventDefault();
             });
