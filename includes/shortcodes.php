@@ -298,6 +298,16 @@ function woocommerce_checkout_custom()
 add_shortcode('woocommerce_checkout_custom', 'woocommerce_checkout_custom');
 
 
+function category_image()
+{
+    $term = get_queried_object();
+    $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
+    $image = wp_get_attachment_url($thumbnail_id);
+
+    // print the IMG HTML
+    return  "<img src='{$image}' alt='{$term->name}' class='category-image' />";
+}
+add_shortcode('category_image', 'category_image');
 
 function product_category_features()
 {
@@ -307,6 +317,7 @@ function product_category_features()
     $featured_section_shortcode = carbon_get_term_meta($term->term_id, 'featured_section_shortcode');
 
     if (!$hide_featured_section) {
+
         if (!$parent) {
             if ($featured_section_shortcode) {
                 return do_shortcode($featured_section_shortcode);
