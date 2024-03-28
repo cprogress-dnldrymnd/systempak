@@ -357,3 +357,4 @@ function set_custom_shipping() {
 
     });
 }
+

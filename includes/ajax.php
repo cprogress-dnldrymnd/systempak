@@ -276,6 +276,80 @@ function set_custom_shipping()
 
     if ($amount) {
         global $woocommerce;
-        $woocommerce->cart->add_fee( __('Custom', 'woocommerce'), 5 );
+        $woocommerce->cart->add_fee(__('Custom', 'woocommerce'), 5);
     }
+}
+
+add_action('woocommerce_cart_totals_before_order_total', 'ts_add_custom_radio_button_field');
+function ts_add_custom_radio_button_field()
+{
+    $radio_options = array(
+        'option_1' => __('1 year($29)', 'text-domain'),
+        'option_2' => __('2 years($49)', 'text-domain'),
+        'option_3' => __('Not Needed', 'text-domain')
+        // Add more options if needed
+    );
+    woocommerce_form_field('custom_radio_field', array(
+        'type' => 'radio',
+        'class' => array('form-row-wide'),
+        'label' => __('Option for Extended Warranty cover', 'text-domain'),
+        'required' => true,
+        'options' => $radio_options,
+    ), WC()->session->get('custom_radio_field'));
+}
+// Php Ajax (Receiving request and saving to WC session)
+add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
+add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
+function woo_get_ajax_data()
+{
+    if (isset($_POST['custom_radio_field'])) {
+        $packing = sanitize_key($_POST['custom_radio_field']);
+        WC()->session->set('custom_radio_field', $packing);
+        echo json_encode($packing);
+    }
+    die(); // Alway at the end (to avoid server error 500)
+}
+// Calculate and add extra fee based on radio button selection
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
+function add_custom_extra_fee($cart)
+{
+    if (is_admin() && !defined('DOING_AJAX')) {
+        return;
+    }
+    $radio_option = WC()->session->get('custom_radio_field');
+    if ($radio_option === 'option_1') {
+        $extra_fee = 29.00; // Set your extra fee amount for Option 1
+    } elseif ($radio_option === 'option_2') {
+        $extra_fee = 49.00; // Set your extra fee amount for Option 2
+    } else {
+        $extra_fee = 0.00; // No fee for other options or if no option is selected
+    }
+    if ($extra_fee == 29) {
+        $cart->add_fee(__('Extended Warranty(1 year)', 'text-domain'), $extra_fee, true, 'standard');
+    } elseif ($extra_fee == 49) {
+        $cart->add_fee(__('Extended Warranty(2 years)', 'text-domain'), $extra_fee, true, 'standard');
+    }
+}
+add_action('wp_footer', 'cart_update_qty_script');
+function cart_update_qty_script()
+{
+?>
+    <script>
+        jQuery('div.woocommerce').on('change', '#custom_radio_field_field  input:radio', function() {
+            var fee = jQuery(this).val();
+            jQuery.ajax({
+                type: 'POST',
+                url: wc_cart_params.ajax_url,
+                data: {
+                    'action': 'woo_get_ajax_data',
+                    'custom_radio_field': fee,
+                },
+                success: function(result) {
+                    jQuery('button[name="update_cart"]').removeAttr('disabled');
+                    jQuery("[name='update_cart']").trigger("click");
+                }
+            });
+        });
+    </script>
+<?php
 }
