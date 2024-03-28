@@ -346,8 +346,7 @@ function cart_update_qty_script() {
                 'custom_radio_field': fee,
             },
             success: function (result) {
-                jQuery( 'button[name="update_cart"]' ).removeAttr('disabled');
-                jQuery( "[name='update_cart']" ).trigger( "click" );
+                jQuery('body').trigger('update_checkout');
             }
         });
     } );
