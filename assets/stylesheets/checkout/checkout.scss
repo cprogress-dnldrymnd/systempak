@@ -231,18 +231,7 @@
     margin-bottom: 2rem;
 }
 
-section.logged-in-as {
-    background-color: var(--accent-color);
-    padding-top: 20px;
-    padding-bottom: 20px;
 
-    a {
-        &:hover {
-            color: #000;
-            text-decoration: underline !important;
-        }
-    }
-}
 
 section.select-user {
     .inner {
