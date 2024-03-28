@@ -280,11 +280,10 @@ function add_custom_extra_fee($cart)
         return;
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
-
+    $fees = $cart->get_fees();
     if ($custom_shipping_cost && !empty($custom_shipping_cost) && $custom_shipping_cost != '') {
         $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
     } else {
-        $fees = $cart->get_fees();
         foreach ($fees as $key => $fee) {
             // unset that specific fee from the array
             if ($fees[$key]->name === __("Custom Shipping Cost")) {
@@ -293,8 +292,7 @@ function add_custom_extra_fee($cart)
         }
         // set new fee array
     }
-    $cart->fees_api()->set_fees();
-
+    $cart->fees_api()->set_fees($fees);
 }
 add_action('wp_footer', 'cart_update_qty_script');
 function cart_update_qty_script()
