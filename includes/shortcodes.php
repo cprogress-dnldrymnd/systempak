@@ -299,11 +299,11 @@ add_shortcode('woocommerce_checkout_custom', 'woocommerce_checkout_custom');
 
 
 
-
-function product_category_features() {
+function product_category_features()
+{
     $term = get_queried_object();
-
-
+    $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
+    
 }
 
 add_shortcode('product_category_features', 'product_category_features');
