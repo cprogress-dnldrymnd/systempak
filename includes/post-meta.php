@@ -22,3 +22,12 @@ Container::make('post_meta', 'Tech Sheets')
 				->set_layout('tabbed-horizontal')
 		)
 	);
+
+
+
+Container::make('term_meta', __('Category Properties'))
+	->where('term_taxonomy', '=', 'product_cat')
+	->add_fields(array(
+		Field::make('checkbox', 'hide_featured_section', __('Hide Featured Section')),
+		Field::make('image', 'featured_image', __('Featured Image')),
+	));
