@@ -884,6 +884,9 @@ body.search {
     .row {
         margin-left: 0;
         margin-right: 0;
+        @media (max-width: 1199px) and (min-width: 991px) {
+            align-items: center;
+        }
     }
     .col-lg-4 {
         width: 33.33333333%;
@@ -910,7 +913,7 @@ body.search {
         img {
             display: inline-block;
         }
-        @media (min-width: 992px) {
+        @media (min-width: 1200px) {
             margin-top: -120px;
         }
         @media (max-width: 991px) {
@@ -946,6 +949,7 @@ body.search {
         }
         @media (max-width: 1199px) and (min-width: 991px) {
             flex-direction: column;
+            align-items: flex-start;
         }
     }
 }
