@@ -1,77 +1,80 @@
 </div><!-- .col-full -->
 </div><!-- #content -->
 <?php
-if (is_product_category()) {
-    echo do_shortcode("[hfe_template id='5440']");
-}
-if (current_user_can('administrator')) {
-    //echo '<pre>';
-    //var_dump(get_post_meta(7757));
-    //echo '</pre>';
-}
+$old_user = user_switching::get_old_user();
+if (!$old) {
+    if (is_product_category()) {
+        echo do_shortcode("[hfe_template id='5440']");
+    }
+    if (current_user_can('administrator')) {
+        //echo '<pre>';
+        //var_dump(get_post_meta(7757));
+        //echo '</pre>';
+    }
 
 ?>
-<div class="search-header d-none">
-    <?= do_shortcode('[search]') ?>
-</div>
-<script>
-    jQuery(document).ready(function() {
-        jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
-        jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
-    });
+    <div class="search-header d-none">
+        <?= do_shortcode('[search]') ?>
+    </div>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
+            jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
+        });
 
-    jQuery('#search-input').keypress(function(e) {
-        if (e.which == 13) return false;
- 
-    });
-</script>
+        jQuery('#search-input').keypress(function(e) {
+            if (e.which == 13) return false;
+
+        });
+    </script>
 
 
-<?php if (is_page(8978)) { ?>
-    <!-- Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="modal-result">
-
+    <?php if (is_page(8978)) { ?>
+        <!-- Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="modal-body">
+                        <div id="modal-result">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<?php } ?>
+    <?php } ?>
 
-<?php do_action('priotech_before_footer');
-if (priotech_is_elementor_activated() && function_exists('hfe_init') && (hfe_footer_enabled() || hfe_is_before_footer_enabled())) {
-    do_action('hfe_footer_before');
-    do_action('hfe_footer');
-} else {
-?>
+    <?php do_action('priotech_before_footer');
+    if (priotech_is_elementor_activated() && function_exists('hfe_init') && (hfe_footer_enabled() || hfe_is_before_footer_enabled())) {
+        do_action('hfe_footer_before');
+        do_action('hfe_footer');
+    } else {
+    ?>
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <?php
-        /**
-         * Functions hooked in to priotech_footer action
-         *
-         * @see priotech_footer_default - 20
-         *
-         *
-         */
-        do_action('priotech_footer');
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <?php
+            /**
+             * Functions hooked in to priotech_footer action
+             *
+             * @see priotech_footer_default - 20
+             *
+             *
+             */
+            do_action('priotech_footer');
 
-        ?>
+            ?>
 
-    </footer><!-- #colophon -->
+        </footer><!-- #colophon -->
 
 <?php
+    }
 }
 
 /**
