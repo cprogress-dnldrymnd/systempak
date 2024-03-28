@@ -291,7 +291,7 @@ function ts_add_custom_radio_button_field()
     woocommerce_form_field('custom_shipping_cost', array(
         'type' => 'text',
         'class' => array('form-row-wide'),
-        'label' => __('Custom Shipping Fee', 'text-domain'),
+        'label' => __('Option for Extended Warranty cover', 'text-domain'),
         'required' => false,
     ), WC()->session->get('custom_shipping_cost'));
 }
@@ -300,18 +300,53 @@ add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
 add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
 function woo_get_ajax_data()
 {
-    echo 'test';
+    if (isset($_POST['custom_shipping_cost'])) {
+        $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);
+        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+        echo json_encode($custom_shipping_cost);
+    }
     die(); // Alway at the end (to avoid server error 500)
 }
-
+// Calculate and add extra fee based on radio button selection
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
+function add_custom_extra_fee($cart)
+{
+    if (is_admin() && !defined('DOING_AJAX')) {
+        return;
+    }
+    $radio_option = WC()->session->get('custom_radio_field');
+    if ($radio_option === 'option_1') {
+        $extra_fee = 29.00; // Set your extra fee amount for Option 1
+    } elseif ($radio_option === 'option_2') {
+        $extra_fee = 49.00; // Set your extra fee amount for Option 2
+    } else {
+        $extra_fee = 0.00; // No fee for other options or if no option is selected
+    }
+    if ($extra_fee == 29) {
+        $cart->add_fee(__('Extended Warranty(1 year)', 'text-domain'), $extra_fee, true, 'standard');
+    } elseif ($extra_fee == 49) {
+        $cart->add_fee(__('Extended Warranty(2 years)', 'text-domain'), $extra_fee, true, 'standard');
+    }
+}
 add_action('wp_footer', 'cart_update_qty_script');
 function cart_update_qty_script()
 {
 ?>
     <script>
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
-            var custom_shipping_cost = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]');
-          
+            var fee = jQuery('#custom_radio_field_field  input:radio').val();
+            console.log(fee);
+            jQuery.ajax({
+                type: 'POST',
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    'action': 'woo_get_ajax_data',
+                    'custom_radio_field': fee,
+                },
+                success: function(result) {
+                    jQuery('body').trigger('update_checkout');
+                }
+            });
         });
     </script>
 <?php
