@@ -11,15 +11,20 @@ if (current_user_can('administrator')) {
 }
 
 ?>
-    <div class="search-header d-none">
-        <?= do_shortcode('[search]') ?>
-    </div>
-    <script>
-        jQuery(document).ready(function() {
-            jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
-            jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
-        });
-    </script>
+<div class="search-header d-none">
+    <?= do_shortcode('[search]') ?>
+</div>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
+        jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
+    });
+
+    jQuery('#search-input').keypress(function(e) {
+        if (e.which == 13) return false;
+ 
+    });
+</script>
 
 
 <?php if (is_page(8978)) { ?>
