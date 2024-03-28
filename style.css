@@ -621,6 +621,9 @@ body.search .site-header-search {
   flex: 0 0 33.33333333%;
   padding-left: 10px;
   padding-right: 10px; }
+.featured-section .category-image {
+  text-align: center;
+  margin-top: -120px; }
 .featured-section .icon-box .icon {
   flex: 0 0 90px;
   width: 90px;
