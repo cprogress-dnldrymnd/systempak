@@ -211,7 +211,7 @@ function search_ajax_products()
                         }
 
                         $get_stock_quantity = $product->get_stock_quantity();
-                        if($get_stock_quantity) {
+                        if ($get_stock_quantity) {
                             $stock = $get_stock_quantity;
                         } else {
                             $stock = $product->get_stock_status();
@@ -225,7 +225,7 @@ function search_ajax_products()
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
                                 <p><strong>STOCK: </strong> <?= $stock ?> </p>
-                               
+
                             </div>
 
                             <button type="button" class="plus-minus product-add-to-basket" product-id="<?= get_the_ID() ?>">
@@ -261,10 +261,14 @@ function select_product_ajax()
         $woocommerce->cart->add_to_cart($product_id);
     }
 
-	
-
     die();
 }
 
+add_action('wp_ajax_woocommerce_cart_calculate_fees', 'select_product_ajax');
 
+function action_woocommerce_cart_calculate_fees()
+{
+    global $woocommerce;
+    $woocommerce->cart->add_fee(__('Custom', 'woocommerce'), 5);
+}
 //add custom shipping
