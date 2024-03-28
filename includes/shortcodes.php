@@ -112,7 +112,7 @@ function search()
     ob_start();
 ?>
     <div class="search-section search-section-default">
-        <form>
+        <form action="/">
             <div class="search-by">
 
                 <div class="search-by-wrapper">
