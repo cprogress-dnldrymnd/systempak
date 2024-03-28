@@ -406,7 +406,13 @@ function phone_orders_header()
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
                     <h5 class="mb-0 me-2">Logged-in as <?= $current_user->user_email ?></h5>
-                    <a class="button d-inline-block" href="/my-account/orders/">View Orders</a>
+                    <a class="button d-inline-block me-2" href="/my-account/orders/">View Orders</a>
+
+                    <?php if (!is_page(8978)) { ?>
+                        <a class="button" href="<?= get_permalink(8978) ?>">
+                            Create Order
+                        </a>
+                    <?php } ?>
                 </div>
                 <h5 class="mb-0">
                     <?php

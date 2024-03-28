@@ -27,6 +27,7 @@
                                 <a class="button" href="<?= $link ?>&redirect_to=https://spnew.theprogressteam.com/phone-orders/">
                                     Select Customer
                                 </a>
+                              
                             </div>
                         </div>
                     <?php } ?>
@@ -36,7 +37,7 @@
     </section>
 <?php } else { ?>
     <?php if (is_user_logged_in()) { ?>
-      
+
         <section class="checkout-form">
             <div class="container-fluid">
                 <a href="<?= get_site_url() ?>"></a>
