@@ -347,9 +347,9 @@ function set_custom_shipping() {
         },
 
         success: function (response) {
-            jQuery('body').trigger('update_checkout');
-            $this.removeClass('adding');
-            $post_item.remove();
+            //jQuery('body').trigger('update_checkout');
+            //$this.removeClass('adding');
+            //$post_item.remove();
         },
         error: function (e) {
             console.log(e);
