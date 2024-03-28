@@ -120,14 +120,3 @@ function coupon_ajax()
 
 add_filter('woocommerce_checkout_redirect_empty_cart', '__return_false');
 add_filter('woocommerce_checkout_update_order_review_expired', '__return_false');
-
-
-add_filter( 'woocommerce_cart_item_price', 'kd_custom_price_message' );
-add_filter( 'woocommerce_cart_item_subtotal', 'kd_custom_price_message' );  
-add_filter( 'woocommerce_cart_subtotal', 'kd_custom_price_message' );  
-add_filter( 'woocommerce_cart_total', 'kd_custom_price_message' ); 
-
-function kd_custom_price_message( $price ) {
-    $afterPriceSymbol = ' TTC';
-    return $price . $afterPriceSymbol;
-}
