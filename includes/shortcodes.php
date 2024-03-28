@@ -339,10 +339,15 @@ function product_category_features()
         if ($featured_section_left || $featured_section_right) {
             $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
             $image = wp_get_attachment_url($thumbnail_id);
+
+            if ($thumbnail_id) {
+                $class = 'no-image';
+                $class2 = 'col-lg-6';
+            }
     ?>
-            <div class="featured-section">
+            <div class="featured-section <?= $class ?>">
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="<?= $class2 ?>">
                         <?php foreach ($featured_section_left as $featured_section) { ?>
                             <div class="icon-box d-flex">
                                 <div class="icon">
@@ -355,12 +360,14 @@ function product_category_features()
                             </div>
                         <?php } ?>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="category-image">
-                            <img src="<?= $image ?>" alt="<?= $term->name ?>">
+                    <?php if ($thumbnail_id) { ?>
+                        <div class="col-lg-4">
+                            <div class="category-image">
+                                <img src="<?= $image ?>" alt="<?= $term->name ?>">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
+                    <?php } ?>
+                    <div class="<?= $class2 ?>">
                         <?php foreach ($featured_section_right as $featured_section) { ?>
                             <div class="icon-box d-flex">
                                 <div class="icon">
