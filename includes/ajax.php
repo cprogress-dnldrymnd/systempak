@@ -276,6 +276,6 @@ function set_custom_shipping()
 
     if ($amount) {
         global $woocommerce;
-        $woocommerce->cart->fees_api()->set_fees();
+        $woocommerce->cart->add_fee( __('Custom', 'woocommerce'), 5 );
     }
 }
