@@ -300,7 +300,7 @@ add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
 add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
 function woo_get_ajax_data()
 {
- 
+    echo 'test';
     die(); // Alway at the end (to avoid server error 500)
 }
 
