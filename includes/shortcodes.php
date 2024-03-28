@@ -333,7 +333,7 @@ function product_category_features()
                 <div class="row">
                     <div class="col-lg-4">
                         <?php foreach ($featured_section_left_arr as $featured_section) { ?>
-                            <div class="icon-box">
+                            <div class="icon-box d-flex">
                                 <div class="icon">
                                     <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
                                 </div>

@@ -671,7 +671,7 @@ a {
         border: 1px solid var(--e-global-color-primary);
         white-space: nowrap;
         padding: 10px 20px;
-        color: var(--white-color)
+        color: var(--white-color);
     }
     .post-item-holder {
         .post-item {
@@ -877,7 +877,19 @@ body.search {
     transform: translateY(-50%);
 }
 
-
 .featured-section {
-    
+    .col-lg-4 {
+        width: 33.33333333%;
+        flex: 0 0 33.33333333%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .icon-box {
+        flex: 0 0 90px;
+        width: 90px;
+        margin-right: 1rem;
+        h3 {
+            
+        }
+    }
 }

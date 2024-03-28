@@ -613,4 +613,14 @@ body.search .site-header-search {
   right: 10px !important;
   transform: translateY(-50%); }
 
+.featured-section .col-lg-4 {
+  width: 33.33333333%;
+  flex: 0 0 33.33333333%;
+  padding-left: 10px;
+  padding-right: 10px; }
+.featured-section .icon-box {
+  flex: 0 0 90px;
+  width: 90px;
+  margin-right: 1rem; }
+
 /*# sourceMappingURL=style.css.map */
