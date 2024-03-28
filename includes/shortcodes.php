@@ -336,7 +336,7 @@ function product_category_features()
 
     if (!$hide_featured_section) {
         if ($featured_section_left || $featured_section_right) {
-            $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
+            $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
             $image = wp_get_attachment_url($thumbnail_id);
     ?>
             <div class="featured-section">
