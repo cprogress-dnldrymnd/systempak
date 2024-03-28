@@ -22,6 +22,14 @@ function search_ajax()
 
     $args['post_type'] = $post_type;
 
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'product_visibility',
+            'field'    => 'name',
+            'terms'    => 'exclude-from-catalog',
+            'operator' => 'NOT IN',
+        ),
+    );
 
     $the_query_args = new WP_Query($args);
 
