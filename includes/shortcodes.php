@@ -315,15 +315,11 @@ function product_category_features()
     $term = get_queried_object();
     $parent = $term->parent;
     $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
-    $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
-    $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
 
-    if (!$hide_featured_section) {
-    }
+
     if (!$parent) {
-        if ($featured_section_left || $featured_section_right) {
-            $term_id = $term->term_id;
-        }
+        $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
+        $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
     } else {
         $term_id = $parent;
         $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
@@ -337,8 +333,7 @@ function product_category_features()
         }
     }
 
-    $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
-  
+
     echo $term_id;
     if (!$hide_featured_section) {
         if ($featured_section_left || $featured_section_right) {
