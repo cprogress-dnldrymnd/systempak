@@ -337,6 +337,10 @@ function product_category_features()
                                 <div class="icon">
                                     <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
                                 </div>
+                                <div class="content">
+                                    <h3><?= $featured_section['heading'] ?></h3>
+                                    <?= wpautop($featured_section['description']) ?>
+                                </div>
                             </div>
                         <?php } ?>
                     </div>
