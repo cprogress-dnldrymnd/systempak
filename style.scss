@@ -878,6 +878,10 @@ body.search {
 }
 
 .featured-section {
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .col-lg-4 {
         width: 33.33333333%;
         flex: 0 0 33.33333333%;
@@ -885,11 +889,15 @@ body.search {
         padding-right: 10px;
     }
     .icon-box {
-        flex: 0 0 90px;
-        width: 90px;
-        margin-right: 1rem;
+        .icon {
+            flex: 0 0 90px;
+            width: 90px;
+            margin-right: 1rem;
+        }
         h3 {
-            
+        }
+        &:not(:last-child) {
+            margin-bottom: 2rem;
         }
     }
 }

@@ -613,14 +613,19 @@ body.search .site-header-search {
   right: 10px !important;
   transform: translateY(-50%); }
 
+.featured-section .row {
+  margin-left: 0;
+  margin-right: 0; }
 .featured-section .col-lg-4 {
   width: 33.33333333%;
   flex: 0 0 33.33333333%;
   padding-left: 10px;
   padding-right: 10px; }
-.featured-section .icon-box {
+.featured-section .icon-box .icon {
   flex: 0 0 90px;
   width: 90px;
   margin-right: 1rem; }
+.featured-section .icon-box:not(:last-child) {
+  margin-bottom: 2rem; }
 
 /*# sourceMappingURL=style.css.map */
