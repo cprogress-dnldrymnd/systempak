@@ -322,24 +322,3 @@ function ajax_select_product($this) {
     });
 }
 
-
-
-function set_custom_shipping() {
-    /*jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function () {
-
-        $amount = jQuery('input[name="custom_shipping_cost"]');
-        jQuery.ajax({
-            type: 'POST',
-            url: "/wp-admin/admin-ajax.php",
-            data: {
-                'action': 'set_custom_shipping',
-                'amount': $amount,
-            },
-            success: function (result) {
-                console.log('mama mo');
-                jQuery('body').trigger('update_checkout');
-            }
-        });
-    });*/
-}
-
