@@ -307,9 +307,7 @@ function product_category_features()
 
     if (!$hide_featured_section) {
         return do_shortcode($featured_section_shortcode);
-    } else {
-        return 'xxxs';
-    }
+    } 
 }
 
 add_shortcode('product_category_features', 'product_category_features');
