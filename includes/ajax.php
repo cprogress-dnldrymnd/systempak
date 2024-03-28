@@ -263,12 +263,19 @@ function select_product_ajax()
 
     die();
 }
-
-add_action('wp_ajax_woocommerce_cart_calculate_fees', 'select_product_ajax');
-
-function action_woocommerce_cart_calculate_fees()
-{
-    global $woocommerce;
-    $woocommerce->cart->fees_api()->set_fees();
-}
 //add custom shipping
+
+add_action('wp_ajax_woocommerce_cart_calculate_fees', 'set_custom_shipping');
+add_action('wp_ajax_woocommerce_cart_calculate_fees', 'set_custom_shipping');
+
+
+function set_custom_shipping()
+{
+
+    $amount = $_POST['amount'];
+
+    if ($amount) {
+        global $woocommerce;
+        $woocommerce->cart->fees_api()->set_fees();
+    }
+}

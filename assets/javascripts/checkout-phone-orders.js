@@ -6,6 +6,7 @@ jQuery(document).ready(function () {
     ajax_products();
     ajax_select_product_trigger();
     select_products();
+    set_custom_shipping_trigger();
     //load_more_button_listener();
 });
 
@@ -306,6 +307,41 @@ function ajax_select_product($this) {
             action: 'select_product_ajax',
 
             product_ids: $product_ids,
+
+        },
+
+        success: function (response) {
+            jQuery('body').trigger('update_checkout');
+            $this.removeClass('adding');
+            $post_item.remove();
+        },
+        error: function (e) {
+            console.log(e);
+        }
+
+    });
+}
+
+function set_custom_shipping_trigger() {
+    jQuery(document).on('click', '.apply_custom_shipping_cost', function () {
+        set_custom_shipping();
+    });
+}
+
+function set_custom_shipping() {
+    $amount = jQuery('input[name="custom_shipping_cost"]');
+
+    jQuery.ajax({
+
+        type: "POST",
+
+        url: "/wp-admin/admin-ajax.php",
+
+        data: {
+
+            action: 'set_custom_shipping',
+
+            amount: $amount,
 
         },
 
