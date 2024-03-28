@@ -292,7 +292,6 @@ function add_custom_extra_fee($cart)
             }
         }
         // set new fee array
-        $cart->fees_api()->set_fees();
     }
     $cart->fees_api()->set_fees();
 
