@@ -730,4 +730,7 @@ section.logged-in-as {
       margin-right: 10px;
       border-radius: 1px solid; }
 
+.d-none {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */
