@@ -6,7 +6,7 @@ jQuery(document).ready(function () {
     ajax_products();
     ajax_select_product_trigger();
     select_products();
-    set_custom_shipping_trigger();
+    set_custom_shipping();
     //load_more_button_listener();
 });
 
@@ -322,39 +322,23 @@ function ajax_select_product($this) {
     });
 }
 
-function set_custom_shipping_trigger() {
-    jQuery(document).on('click', '.apply_custom_shipping_cost', function () {
-        set_custom_shipping();
-        console.log('mama mo');
-    });
-}
+
 
 function set_custom_shipping() {
-    $amount = jQuery('input[name="custom_shipping_cost"]');
-
-    jQuery.ajax({
-
-        type: "POST",
-
-        url: "/wp-admin/admin-ajax.php",
-
-        data: {
-
-            action: 'set_custom_shipping',
-
-            amount: $amount,
-
-        },
-
-        success: function (response) {
-            //jQuery('body').trigger('update_checkout');
-            //$this.removeClass('adding');
-            //$post_item.remove();
-        },
-        error: function (e) {
-            console.log(e);
-        }
-
+    jQuery(document).on('click', '.apply_custom_shipping_cost', function () {
+        $amount = jQuery('input[name="custom_shipping_cost"]');
+        jQuery.ajax({
+            type: 'POST',
+            url: "/wp-admin/admin-ajax.php",
+            data: {
+                'action': 'set_custom_shipping',
+                'amount': $amount,
+            },
+            success: function (result) {
+                console.log('mama mo');
+                jQuery('body').trigger('update_checkout');
+            }
+        });
     });
 }
 
