@@ -735,10 +735,10 @@ section.logged-in-as {
   display: none !important; }
 
 .faqs-holder .elementor-widget-n-accordion .e-n-accordion-item {
-  border-bottom: 1px solid; }
+  border-bottom: 1px solid var(--white-color); }
   .faqs-holder .elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title {
     border: none;
-    color: var(--white-color);
+    color: var(--white-color) !important;
     justify-content: space-between;
     flex-direction: row-reverse;
     font-weight: 600;
