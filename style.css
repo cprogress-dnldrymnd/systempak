@@ -728,7 +728,8 @@ section.logged-in-as {
     .faqs-tabs ul li {
       padding-right: 10px;
       margin-right: 10px;
-      border-radius: 1px solid; }
+      border-radius: 1px solid;
+      margin-bottom: 10px; }
 
 .d-none {
   display: none !important; }
