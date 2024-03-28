@@ -506,8 +506,8 @@ function faqs()
         </div>
     </div>
     <script>
-        jQUery(document).ready(function() {
-            jQUery('.faqs-tabs button').click(function(e) {
+        jQuery(document).ready(function() {
+            jQuery('.faqs-tabs button').click(function(e) {
                 $target = jQuery(this).attr('target');
                 if ($target == 'all') {
                     jQuery('.faqs-holder .e-n-accordion-item').removeClass('d-none');
