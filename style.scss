@@ -1019,7 +1019,7 @@ section.logged-in-as {
             border-radius: 0;
             padding-bottom: 10px;
             &.active {
-                border-color: #fff;
+                border-color: var(--white-color);
             }
         }
         li {
@@ -1029,6 +1029,35 @@ section.logged-in-as {
         }
     }
 }
-.d-none  {
+.d-none {
     display: none !important;
+}
+
+.faqs-holder {
+    .elementor-widget-n-accordion {
+        .e-n-accordion-item {
+            border-bottom: 1px solid;
+
+            .e-n-accordion-item-title {
+                border: none;
+                color: var(--white-color);
+                justify-content: space-between;
+                flex-direction: row-reverse;
+                font-weight: 600;
+                padding-left: 0;
+                padding-right: 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                & + div {
+                    padding:  0 0 30px;
+                    border: none;
+                    p,
+                    li,
+                    a {
+                        color: var(--white-color);
+                    }
+                }
+            }
+        }
+    }
 }
