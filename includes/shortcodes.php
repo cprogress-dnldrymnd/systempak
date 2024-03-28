@@ -307,7 +307,7 @@ function product_category_features()
 
     if(!$hide_featured_section) {
        // return do_shortcode($featured_section_shortcode);
-    } return  $featured_section_shortcode;
+    } return $hide_featured_section;
 }
 
 add_shortcode('product_category_features', 'product_category_features');
