@@ -341,10 +341,11 @@ function product_category_features()
             $image = wp_get_attachment_url($thumbnail_id);
 
             if ($thumbnail_id) {
-                $class = 'no-image';
+                $class = '';
                 $class2 = 'col-lg-4';
             } else {
                 $class2 = 'col-lg-6';
+                $class = 'no-image';
             }
     ?>
             <div class="featured-section <?= $class ?>">

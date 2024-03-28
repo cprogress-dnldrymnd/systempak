@@ -881,6 +881,9 @@ body.search {
     max-width: 1700px;
     margin-left: auto;
     margin-right: auto;
+    &.no-image {
+        max-width: 1000px;
+    }
     .row {
         margin-left: 0;
         margin-right: 0;
