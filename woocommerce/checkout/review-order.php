@@ -19,7 +19,7 @@
 defined('ABSPATH') || exit;
 ?>
 
-
+<?php do_action('woocommerce_cart_totals_before_order_total') ?>
 <table class="shop_table woocommerce-checkout-review-order-table">
 
 	<tbody>
