@@ -342,9 +342,9 @@ function product_category_features()
 
             if ($thumbnail_id) {
                 $class = 'no-image';
-                $class2 = 'col-lg-6';
-            } else {
                 $class2 = 'col-lg-4';
+            } else {
+                $class2 = 'col-lg-6';
             }
     ?>
             <div class="featured-section <?= $class ?>">
