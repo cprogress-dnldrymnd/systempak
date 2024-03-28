@@ -281,8 +281,8 @@ function add_custom_extra_fee($cart)
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
   
-    $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
-    
+    //$cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
+    $cart->fees_api()->set_fees();
 }
 add_action('wp_footer', 'cart_update_qty_script');
 function cart_update_qty_script()
