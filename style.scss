@@ -907,6 +907,11 @@ body.search {
                 order: 1;
             }
         }
+        &:nth-child(3) {
+            @media (max-width: 991px) {
+                order: 3;
+            }
+        }
     }
     .category-image {
         text-align: center;

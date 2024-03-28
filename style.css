@@ -638,6 +638,9 @@ body.search .site-header-search {
     @media (max-width: 991px) {
       .featured-section .col-lg-4:nth-child(2) {
         order: 1; } }
+    @media (max-width: 991px) {
+      .featured-section .col-lg-4:nth-child(3) {
+        order: 3; } }
   .featured-section .category-image {
     text-align: center; }
     .featured-section .category-image img {
