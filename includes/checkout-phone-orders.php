@@ -123,3 +123,18 @@ add_filter('woocommerce_checkout_update_order_review_expired', '__return_false')
 
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+
+/**
+ * @snippet       Adds suffix to WooCommerce prices
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 7
+ * @community     https://businessbloomer.com/club/
+ */
+   
+ add_filter( 'woocommerce_get_price_suffix', 'bbloomer_add_price_suffix', 99, 4 );
+  
+ function bbloomer_add_price_suffix( $html, $product, $price, $qty ){
+     $html .= ' suffix here';
+     return $html;
+ }
