@@ -325,6 +325,7 @@ function ajax_select_product($this) {
 function set_custom_shipping_trigger() {
     jQuery(document).on('click', '.apply_custom_shipping_cost', function () {
         set_custom_shipping();
+        console.log('mama mo');
     });
 }
 
