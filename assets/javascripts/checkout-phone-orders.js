@@ -325,7 +325,7 @@ function ajax_select_product($this) {
 
 
 function set_custom_shipping() {
-    jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function () {
+    /*jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function () {
 
         $amount = jQuery('input[name="custom_shipping_cost"]');
         jQuery.ajax({
@@ -340,6 +340,6 @@ function set_custom_shipping() {
                 jQuery('body').trigger('update_checkout');
             }
         });
-    });
+    });*/
 }
 
