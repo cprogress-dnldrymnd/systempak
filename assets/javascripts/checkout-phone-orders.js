@@ -325,7 +325,8 @@ function ajax_select_product($this) {
 
 
 function set_custom_shipping() {
-    jQuery(document).on('click', '.apply_custom_shipping_cost', function () {
+    jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function () {
+
         $amount = jQuery('input[name="custom_shipping_cost"]');
         jQuery.ajax({
             type: 'POST',
