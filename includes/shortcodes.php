@@ -465,7 +465,15 @@ function faqs()
         <div class="elementor-widget-container">
             <div class="e-n-accordion">
                 <?php foreach ($faqs as $faq) { ?>
-                    <details id="e-n-accordion-item-<?= $faq->ID ?>" class="e-n-accordion-item" style="">
+
+                    <?php
+                    $cats = get_the_terms($faq->ID, 'faq_cat');
+                    $class = '';
+                    foreach ($cat as $cat) {
+                        $class .= $cat->slug . ' ';
+                    }
+                    ?>
+                    <details id="e-n-accordion-item-<?= $faq->ID ?>" class="e-n-accordion-item <?= $class ?>">
                         <summary class="e-n-accordion-item-title" data-accordion-index="1" tabindex="0" aria-expanded="false" aria-controls="e-n-accordion-item-<?= $faq->ID ?>">
                             <span class="e-n-accordion-item-title-header">
                                 <div class="e-n-accordion-item-title-text"> <?= $faq->post_title ?> </div>
