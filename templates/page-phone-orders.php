@@ -36,31 +36,7 @@
     </section>
 <?php } else { ?>
     <?php if (is_user_logged_in()) { ?>
-        <section class="logged-in-as mb-5">
-            <?php
-            $current_user = wp_get_current_user();
-            ?>
-            <div class="container-fluid">
-                <div class="d-flex justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <h5 class="mb-0 me-2">Logged-in as <?= $current_user->user_email ?></h5>
-                        <a class="button d-inline-block" href="/my-account/orders/">View Orders</a>
-                    </div>
-                    <h5 class="mb-0">
-                        <?php
-                        $old_user = user_switching::get_old_user();
-                        if ($old_user) {
-                            printf(
-                                '<a href="%1$s">Switch back to %2$s</a>',
-                                esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
-                                esc_html($old_user->display_name)
-                            );
-                        }
-                        ?>
-                    </h5>
-                </div>
-            </div>
-        </section>
+        <?= do_shortcode('[phone_orders_header]') ?>
         <section class="checkout-form">
             <div class="container-fluid">
                 <?= do_shortcode('[woocommerce_checkout]') ?>
