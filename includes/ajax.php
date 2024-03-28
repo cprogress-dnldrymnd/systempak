@@ -338,6 +338,7 @@ function cart_update_qty_script() {
     <script>
     jQuery( 'div.woocommerce' ).on( 'click', '.apply_custom_shipping_cost', function () {
         var fee = jQuery('#custom_radio_field_field  input:radio').val();
+        console.log(fee);
         jQuery.ajax({
             type: 'POST',
             url: "/wp-admin/admin-ajax.php",
