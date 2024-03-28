@@ -314,19 +314,10 @@ function add_custom_extra_fee($cart)
     if (is_admin() && !defined('DOING_AJAX')) {
         return;
     }
-    $radio_option = WC()->session->get('custom_shipping_cost');
-    if ($radio_option === 'option_1') {
-        $extra_fee = 29.00; // Set your extra fee amount for Option 1
-    } elseif ($radio_option === 'option_2') {
-        $extra_fee = 49.00; // Set your extra fee amount for Option 2
-    } else {
-        $extra_fee = 0.00; // No fee for other options or if no option is selected
-    }
-    if ($extra_fee == 29) {
-        $cart->add_fee(__('Extended Warranty(1 year)', 'text-domain'), $extra_fee, true, 'standard');
-    } elseif ($extra_fee == 49) {
-        $cart->add_fee(__('Extended Warranty(2 years)', 'text-domain'), $extra_fee, true, 'standard');
-    }
+    $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
+  
+    $cart->add_fee(__('Extended Warranty(2 years)', 'text-domain'), $custom_shipping_cost, true, 'standard');
+    
 }
 add_action('wp_footer', 'cart_update_qty_script');
 function cart_update_qty_script()
@@ -341,7 +332,7 @@ function cart_update_qty_script()
                 url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'woo_get_ajax_data',
-                    'custom_shipping_cost': 'option_1',
+                    'custom_shipping_cost': custom_shipping_cost,
                 },
                 success: function(result) {
                     jQuery('body').trigger('update_checkout');
