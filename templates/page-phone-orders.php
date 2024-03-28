@@ -42,7 +42,10 @@
             ?>
             <div class="container-fluid">
                 <div class="d-flex justify-content-between">
-                    <h5 class="mb-0">Logged-in as <?= $current_user->user_email ?></h5>
+                    <div>
+                        <h5 class="mb-0">Logged-in as <?= $current_user->user_email ?></h5>
+                        <a class="button" href="/my-account/orders/">View Orders</a>
+                    </div>
                     <h5 class="mb-0">
                         <?php
                         $old_user = user_switching::get_old_user();
