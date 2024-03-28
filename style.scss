@@ -1015,6 +1015,13 @@ section.logged-in-as {
             padding: 0;
             border: none;
             font-weight: 500;
+            border-bottom: 2px solid transparent;
+            border-radius: 0;
+            padding-bottom: 10px;
+            &.active {
+                background-color: #fff;
+                border-color: #fff;
+            }
         }
         li {
             padding-right: 10px;

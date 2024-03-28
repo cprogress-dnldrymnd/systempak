@@ -508,7 +508,9 @@ function faqs()
     <script>
         jQuery(document).ready(function() {
             jQuery('.faqs-tabs button').click(function(e) {
+                jQuery('.faqs-tabs button').removeClass('active');
                 $target = jQuery(this).attr('target');
+                jQuery(this).addClass('active');
                 if ($target == 'all') {
                     jQuery('.faqs-holder .e-n-accordion-item').removeClass('d-none');
                 } else {
