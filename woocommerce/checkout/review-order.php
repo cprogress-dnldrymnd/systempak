@@ -84,7 +84,7 @@ defined('ABSPATH') || exit;
 			</td>
 		</tr>
 
-		<tr class="custom-shipping custom-forms">
+		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
 			<td colspan="2" class="td-coupon">
 				<div class="checkout_coupon_custom">
 					<p class="form-row form-row-first">
