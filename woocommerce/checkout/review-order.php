@@ -39,6 +39,7 @@ defined('ABSPATH') || exit;
 							<div>
 								<div class="name mb-4">
 									<?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?>
+									<span><?php echo 'Price per unit: '.WC()->cart->get_product_subtotal($_product, 1); ?></span>
 								</div>
 								<?php echo apply_filters('woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf('&times;&nbsp;%s', $cart_item['quantity']) . '</strong>', $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 								?>
@@ -58,11 +59,8 @@ defined('ABSPATH') || exit;
 									<path d="M9 1L1 9M9 9L1 1" stroke="#16110E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
 								</svg>
 							</a>
-							<span><?php echo 'Price per unit: ' . WC()->cart->get_product_subtotal($_product, 1); ?></span>
-							<span>
-								<?php echo 'Subtotal: ' . apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-
-							</span>
+							<?php echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+							?>
 						</div>
 					</td>
 				</tr>
