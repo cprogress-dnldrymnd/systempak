@@ -334,8 +334,8 @@ function cart_update_qty_script()
 ?>
     <script>
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
-            var fee = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val();
-            console.log(fee);
+            var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
+            console.log(custom_shipping_cost);
             jQuery.ajax({
                 type: 'POST',
                 url: "/wp-admin/admin-ajax.php",
