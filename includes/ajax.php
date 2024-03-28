@@ -209,6 +209,13 @@ function search_ajax_products()
                                 }
                             }
                         }
+
+                        $get_stock_quantity = $product->get_stock_quantity();
+                        if($get_stock_quantity) {
+                            $stock = $get_stock_quantity;
+                        } else {
+                            $stock = $product->get_stock_status();
+                        }
                         ?>
                         <div class="col-image col-auto">
                             <img src="<?= $url  ?>" alt="<?php the_title() ?>">
@@ -217,7 +224,7 @@ function search_ajax_products()
                             <div>
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
-                                <p><strong>STOCK: </strong> <?= $product->get_stock_quantity() ?> </p>
+                                <p><strong>STOCK: </strong> <?= $stock ?> </p>
                                
                             </div>
 
