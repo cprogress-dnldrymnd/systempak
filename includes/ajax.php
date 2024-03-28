@@ -288,9 +288,7 @@ function add_custom_extra_fee($cart)
             if ($fees[$key]->name === __("Custom Shipping Cost")) {
                 unset($fees[$key]);
             }
-            if ($fees[$key]->name === __("Custom")) {
-                unset($fees[$key]);
-            }
+         
         }
         $cart->fees_api()->set_fees($fees);
     }
