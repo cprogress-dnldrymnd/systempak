@@ -182,4 +182,7 @@ section.select-user .inner {
   animation-iteration-count: infinite;
   animation-timing-function: linear; }
 
+.custom-forms a {
+  cursor: pointer; }
+
 /*# sourceMappingURL=checkout.css.map */

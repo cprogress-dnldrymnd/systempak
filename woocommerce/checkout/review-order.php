@@ -70,7 +70,7 @@ defined('ABSPATH') || exit;
 		do_action('woocommerce_review_order_after_cart_contents');
 
 		?>
-		<tr class="coupon">
+		<tr class="coupon custom-forms">
 			<td colspan="2" class="td-coupon">
 				<div class="checkout_coupon_custom">
 					<p class="form-row form-row-first">
@@ -85,7 +85,7 @@ defined('ABSPATH') || exit;
 			</td>
 		</tr>
 
-		<tr class="custom-shipping">
+		<tr class="custom-shipping custom-forms">
 			<td colspan="2" class="td-coupon">
 				<div class="checkout_coupon_custom">
 					<p class="form-row form-row-first">
