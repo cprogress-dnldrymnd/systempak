@@ -286,71 +286,64 @@ function add_custom_extra_fee($cart)
 }*/
 
 add_action('woocommerce_cart_totals_before_order_total', 'ts_add_custom_radio_button_field');
-function ts_add_custom_radio_button_field() {
+function ts_add_custom_radio_button_field()
+{
     $radio_options = array(
         'option_1' => __('1 year($29)', 'text-domain'),
         'option_2' => __('2 years($49)', 'text-domain'),
-    'option_3' => __('Not Needed', 'text-domain')
+        'option_3' => __('Not Needed', 'text-domain')
         // Add more options if needed
     );
-    woocommerce_form_field('custom_radio_field', array(
+    woocommerce_form_field('custom_shipping_cost', array(
         'type' => 'radio',
         'class' => array('form-row-wide'),
         'label' => __('Option for Extended Warranty cover', 'text-domain'),
         'required' => true,
         'options' => $radio_options,
-    ), WC()->session->get('custom_radio_field'));
+    ), WC()->session->get('custom_shipping_cost'));
 }
 // Php Ajax (Receiving request and saving to WC session)
-add_action( 'wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data' );
-add_action( 'wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data' );
-function woo_get_ajax_data() {
-    if ( isset($_POST['custom_radio_field']) ){
-        $packing = sanitize_key( $_POST['custom_radio_field'] );
-        WC()->session->set('custom_radio_field', $packing );
-        echo json_encode( $packing );
+add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
+add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
+function woo_get_ajax_data()
+{
+    if (isset($_POST['custom_shipping_cost'])) {
+        $packing = sanitize_key($_POST['custom_shipping_cost']);
+        WC()->session->set('custom_shipping_cost', $packing);
+        echo json_encode($packing);
     }
     die(); // Alway at the end (to avoid server error 500)
 }
 // Calculate and add extra fee based on radio button selection
 add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
-function add_custom_extra_fee($cart) {
-    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
+function add_custom_extra_fee($cart)
+{
+    if (is_admin() && !defined('DOING_AJAX')) {
         return;
     }
-    $radio_option = WC()->session->get( 'custom_radio_field' );
-     if ($radio_option === 'option_1') {
-        $extra_fee = 29.00; // Set your extra fee amount for Option 1
-    } elseif ($radio_option === 'option_2') {
-        $extra_fee = 49.00; // Set your extra fee amount for Option 2
-    } else {
-        $extra_fee = 0.00; // No fee for other options or if no option is selected
-    }
-    if ($extra_fee == 29) {
-        $cart->add_fee(__('Extended Warranty(1 year)', 'text-domain'), $extra_fee, true,'standard');
-    } elseif ($extra_fee == 49){
-    $cart->add_fee(__('Extended Warranty(2 years)','text-domain'), $extra_fee, true,'standard');
-    }
+    $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
+
+    $cart->add_fee(__('Custom Shipping Fee', 'text-domain'), $custom_shipping_cost, true, 'standard');
 }
-add_action( 'wp_footer', 'cart_update_qty_script' );
-function cart_update_qty_script() {
-    ?>
+add_action('wp_footer', 'cart_update_qty_script');
+function cart_update_qty_script()
+{
+?>
     <script>
-    jQuery( 'div.woocommerce' ).on( 'click', '.apply_custom_shipping_cost', function () {
-        var fee = jQuery('#custom_radio_field_field  input:radio').val();
-        console.log(fee);
-        jQuery.ajax({
-            type: 'POST',
-            url: "/wp-admin/admin-ajax.php",
-            data: {
-                'action': 'woo_get_ajax_data',
-                'custom_radio_field': fee,
-            },
-            success: function (result) {
-                jQuery('body').trigger('update_checkout');
-            }
+        jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
+            var custom_shipping_cost = jQuery('input[name="custom_shipping_cost"]');
+            jQuery.ajax({
+                type: 'POST',
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    'action': 'woo_get_ajax_data',
+                    'custom_shipping_cost': custom_shipping_cost,
+                },
+                success: function(result) {
+                    jQuery('body').trigger('update_checkout');
+                }
+            });
         });
-    } );
     </script>
-    <?php
+<?php
 }
