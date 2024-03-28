@@ -318,6 +318,7 @@ function product_category_features()
 
 
     if (!$parent) {
+        $term_id = $term->term_id;
         $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
         $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
     } else {
