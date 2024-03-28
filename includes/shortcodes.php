@@ -328,6 +328,8 @@ function product_category_features()
     }
     if (!$hide_featured_section) {
         if ($featured_section_left_arr || $featured_section_right_arr) {
+            $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
+            $image = wp_get_attachment_url($thumbnail_id);
     ?>
             <div class="featured-section">
                 <div class="row">
@@ -343,6 +345,11 @@ function product_category_features()
                                 </div>
                             </div>
                         <?php } ?>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="category-image">
+                            <img src="<?= $image ?>" alt="<?= $term->name ?>">
+                        </div>
                     </div>
                 </div>
             </div>
