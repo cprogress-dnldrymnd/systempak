@@ -217,6 +217,8 @@ function search_ajax_products()
                             <div>
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
+                                <p><strong>STOCK: </strong> <?= $product->get_stock_quantity() ?> </p>
+                               
                             </div>
 
                             <button type="button" class="plus-minus product-add-to-basket" product-id="<?= get_the_ID() ?>">
