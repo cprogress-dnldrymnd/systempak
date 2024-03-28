@@ -454,7 +454,7 @@ function faqs()
 
     <div class="faqs-tabs">
         <ul>
-            <li><button target="all"> Show All</button></li>
+            <li><button class="active" target="all"> Show All</button></li>
             <?php foreach ($terms as $term) { ?>
                 <li>
                     <button target="<?= $term->slug ?>"><?= $term->name ?></button>
@@ -514,7 +514,7 @@ function faqs()
                 if ($target == 'all') {
                     jQuery('.faqs-holder .e-n-accordion-item').removeClass('d-none');
                 } else {
-                    jQuery('.faqs-holder ..e-n-accordion-item:not(.' + $target + ')').addClass('d-none');
+                    jQuery('.faqs-holder .e-n-accordion-item:not(.' + $target + ')').addClass('d-none');
                 }
                 e.preventDefault();
             });

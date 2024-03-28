@@ -724,7 +724,6 @@ section.logged-in-as {
       border-radius: 0;
       padding-bottom: 10px; }
       .faqs-tabs ul button.active {
-        background-color: #fff;
         border-color: #fff; }
     .faqs-tabs ul li {
       padding-right: 10px;
