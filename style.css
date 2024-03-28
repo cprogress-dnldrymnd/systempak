@@ -746,6 +746,8 @@ section.logged-in-as {
     padding-right: 0;
     padding-top: 20px;
     padding-bottom: 20px; }
+    .faqs-holder .elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title svg {
+      fill: var(--white-color) !important; }
     .faqs-holder .elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title + div {
       padding: 0 0 30px;
       border: none; }
