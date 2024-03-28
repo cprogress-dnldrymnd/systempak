@@ -469,7 +469,7 @@ function faqs()
                     <?php
                     $cats = get_the_terms($faq->ID, 'faq_cat');
                     $class = '';
-                    foreach ($cat as $cat) {
+                    foreach ($cats as $cat) {
                         $class .= $cat->slug . ' ';
                     }
                     ?>
