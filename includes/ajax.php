@@ -269,6 +269,6 @@ add_action('wp_ajax_woocommerce_cart_calculate_fees', 'select_product_ajax');
 function action_woocommerce_cart_calculate_fees()
 {
     global $woocommerce;
-    $woocommerce->cart->add_fee(__('Custom', 'woocommerce'), 5);
+    $woocommerce->cart->fees_api()->set_fees();
 }
 //add custom shipping
