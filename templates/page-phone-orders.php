@@ -36,9 +36,10 @@
     </section>
 <?php } else { ?>
     <?php if (is_user_logged_in()) { ?>
-        <?= do_shortcode('[phone_orders_header]') ?>
+      
         <section class="checkout-form">
             <div class="container-fluid">
+                <a href="<?= get_site_url() ?>"></a>
                 <?= do_shortcode('[woocommerce_checkout]') ?>
             </div>
         </section>
