@@ -1,6 +1,8 @@
 .woocommerce-checkout #order_review {
   width: 100%; }
 
+.page-id-8978.page-id-8978 #page #wc-square-digital-wallet {
+  display: none !important; }
 .page-id-8978.page-id-8978 #page #content {
   margin-top: 0;
   padding-left: 0;
@@ -183,6 +185,8 @@ section.select-user .inner {
   animation-timing-function: linear; }
 
 .custom-forms a {
-  cursor: pointer; }
+  cursor: pointer;
+  min-width: 195px;
+  text-align: center; }
 
 /*# sourceMappingURL=checkout.css.map */
