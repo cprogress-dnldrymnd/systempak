@@ -322,19 +322,25 @@ function product_category_features()
     }
     if (!$parent) {
         if ($featured_section_left || $featured_section_right) {
-            $featured_section_left_arr = $featured_section_left;
-            $featured_section_right_arr = $featured_section_right;
+            $term_id = $term->term_id;
+        } else {
+            $term_id = $parent;
         }
     }
+
+    $hide_featured_section = carbon_get_term_meta($term_id, 'hide_featured_section');
+    $featured_section_left = carbon_get_term_meta($term_id, 'featured_section');
+    $featured_section_right = carbon_get_term_meta($term_id, 'featured_section_right');
+
     if (!$hide_featured_section) {
-        if ($featured_section_left_arr || $featured_section_right_arr) {
+        if ($featured_section_left || $featured_section_right) {
             $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
             $image = wp_get_attachment_url($thumbnail_id);
     ?>
             <div class="featured-section">
                 <div class="row">
                     <div class="col-lg-4">
-                        <?php foreach ($featured_section_left_arr as $featured_section) { ?>
+                        <?php foreach ($featured_section_left as $featured_section) { ?>
                             <div class="icon-box d-flex">
                                 <div class="icon">
                                     <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
@@ -350,6 +356,19 @@ function product_category_features()
                         <div class="category-image">
                             <img src="<?= $image ?>" alt="<?= $term->name ?>">
                         </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <?php foreach ($featured_section_right as $featured_section) { ?>
+                            <div class="icon-box d-flex">
+                                <div class="icon">
+                                    <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
+                                </div>
+                                <div class="content">
+                                    <h3><?= $featured_section['heading'] ?></h3>
+                                    <?= wpautop($featured_section['description']) ?>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
