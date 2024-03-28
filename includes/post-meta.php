@@ -35,7 +35,8 @@ Container::make('term_meta', __('Category Properties'))
 				Field::make('textarea', 'description', __('Description')),
 				Field::make('image', 'image', __('Image/Icon')),
 			))
-			->set_layout('tabbed-horizontal'),
+			->set_layout('tabbed-horizontal')
+			->set_header_template('<%- heading %>'),
 			Field::make('complex', 'featured_section_right', __('Featured Section Right'))
 			->add_fields(array(
 				Field::make('text', 'heading', __('Heading')),
@@ -43,4 +44,5 @@ Container::make('term_meta', __('Category Properties'))
 				Field::make('image', 'image', __('Image/Icon')),
 			))
 			->set_layout('tabbed-horizontal')
+			->set_header_template('<%- heading %>')
 	));
