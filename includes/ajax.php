@@ -261,5 +261,11 @@ function select_product_ajax()
         $woocommerce->cart->add_to_cart($product_id);
     }
 
+	
+    $woocommerce->cart->add_fee( __('Custom', 'woocommerce'), 5 );
+
     die();
 }
+
+
+//add custom shipping
