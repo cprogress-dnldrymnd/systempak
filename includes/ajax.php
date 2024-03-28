@@ -265,20 +265,6 @@ function select_product_ajax()
 }
 //add custom shipping
 
-add_action('wp_ajax_woocommerce_cart_calculate_fees', 'set_custom_shipping');
-add_action('wp_ajax_woocommerce_cart_calculate_fees', 'set_custom_shipping');
-
-
-function set_custom_shipping()
-{
-
-    $amount = $_POST['amount'];
-
-    if ($amount) {
-        global $woocommerce;
-        $woocommerce->cart->add_fee(__('Custom', 'woocommerce'), 5);
-    }
-}
 
 add_action('wp_ajax_set_custom_shipping', 'set_custom_shipping');
 add_action('wp_ajax_nopriv_set_custom_shipping', 'set_custom_shipping');
