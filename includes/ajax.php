@@ -266,9 +266,11 @@ add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
 function woo_get_ajax_data()
 {
     if (isset($_POST['custom_shipping_cost'])) {
-        $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);
-        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
-        echo json_encode($custom_shipping_cost);
+
+        if ($_POST['custom_shipping_cost'] != 'false') {
+            $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);
+            WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+        }
     }
     die(); // Alway at the end (to avoid server error 500)
 }
@@ -300,13 +302,19 @@ function cart_update_qty_script()
     <script>
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
             var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
-            console.log(custom_shipping_cost);
+
+            if (custom_shipping_cost) {
+                custom_shipping_cost_val = custom_shipping_cost;
+            } else {
+                custom_shipping_cost_val = 'false';
+            }
+            console.log(custom_shipping_cost_val);
             jQuery.ajax({
                 type: 'POST',
                 url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'woo_get_ajax_data',
-                    'custom_shipping_cost': custom_shipping_cost,
+                    'custom_shipping_cost': custom_shipping_cost_val,
                 },
                 success: function(result) {
                     jQuery('body').trigger('update_checkout');
