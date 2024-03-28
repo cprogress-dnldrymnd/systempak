@@ -300,11 +300,7 @@ add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
 add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
 function woo_get_ajax_data()
 {
-    if (isset($_POST['custom_shipping_cost'])) {
-        $packing = sanitize_key($_POST['custom_shipping_cost']);
-        WC()->session->set('custom_shipping_cost', $packing);
-        echo json_encode($packing);
-    }
+ 
     die(); // Alway at the end (to avoid server error 500)
 }
 // Calculate and add extra fee based on radio button selection
