@@ -291,7 +291,7 @@ function woocommerce_checkout_custom()
             </section>
         <?php } ?>
     <?php } ?>
-<?php
+    <?php
     return ob_get_clean();
 }
 
@@ -311,19 +311,41 @@ add_shortcode('category_image', 'category_image');
 
 function product_category_features()
 {
+    ob_start();
     $term = get_queried_object();
     $parent = $term->parent;
     $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
-    $featured_section_shortcode = carbon_get_term_meta($term->term_id, 'featured_section_shortcode');
+    $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
+    $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
 
     if (!$hide_featured_section) {
-
-        if (!$parent) {
-            if ($featured_section_shortcode) {
-                return do_shortcode($featured_section_shortcode);
-            }
+    }
+    if (!$parent) {
+        if ($featured_section_left || $featured_section_right) {
+            $featured_section_left_arr = $featured_section_left;
+            $featured_section_right_arr = $featured_section_right;
         }
     }
+    if (!$hide_featured_section) {
+        if ($featured_section_left_arr || $featured_section_right_arr) {
+    ?>
+            <div class="featured-section">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <?php foreach ($featured_section_left_arr as $featured_section) { ?>
+                            <div class="icon-box">
+                                <div class="icon">
+                                    <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+<?php
+        }
+    }
+    return ob_get_clean();
 }
 
 add_shortcode('product_category_features', 'product_category_features');
