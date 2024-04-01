@@ -382,8 +382,10 @@ function custom_product_ajax() {
             success: function (result) {
                 jQuery('#addCustomProduct .loading').addClass('d-none');
                 jQuery('body').trigger('update_checkout');
-                var myModal = document.getElementById('addCustomProduct');
-                myModal.modal('hide');
+                const myModal = new bootstrap.Modal('#addCustomProduct', {
+                    keyboard: false
+                });
+                myModal.hide();
 
             }
         });
