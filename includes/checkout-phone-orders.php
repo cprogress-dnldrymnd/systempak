@@ -440,12 +440,13 @@ function action_custom_product()
                         jQuery(result).appendTo('.select-products');
                         jQuery('#addCustomProduct .loading').addClass('d-none');
                         jQuery('body').trigger('update_checkout');
-                        const myModalEl = document.getElementById('addCustomProduct');
-                        var modal = bootstrap.Modal.getInstance(myModalEl)
-                        modal.hide();
                         jQuery('html, body').animate({
                             scrollTop: jQuery("#order_review").offset().top
                         }, 2000);
+                        const myModalEl = document.getElementById('addCustomProduct');
+                        var modal = bootstrap.Modal.getInstance(myModalEl)
+                        modal.hide();
+                       
                     }
                 });
             } else {
