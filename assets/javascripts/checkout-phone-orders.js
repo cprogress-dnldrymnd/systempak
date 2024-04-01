@@ -7,7 +7,7 @@ jQuery(document).ready(function () {
     ajax_select_product_trigger();
     select_products();
     custom_shipping_ajax();
-    custom_product_ajax();
+    //custom_product_ajax();
     //load_more_button_listener();
 });
 
@@ -382,10 +382,7 @@ function custom_product_ajax() {
             success: function (result) {
                 jQuery('#addCustomProduct .loading').addClass('d-none');
                 jQuery('body').trigger('update_checkout');
-                const myModal = new bootstrap.Modal('#addCustomProduct', {
-                    keyboard: false
-                });
-                myModal.hide();
+                jQuery('button[data-bs-dismiss="modal"]')
 
                 jQuery('.cart-product-' + result).addClass('highlight');
 

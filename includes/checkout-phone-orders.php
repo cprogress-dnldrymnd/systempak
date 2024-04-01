@@ -315,7 +315,7 @@ function action_wp_head_phone_oders()
                 display: none;
             }
         </style>
-<?php
+    <?php
     }
 }
 
@@ -389,3 +389,61 @@ function custom_product_ajax()
 
     die(); // Alway at the end (to avoid server error 500)
 }
+
+
+function action_custom_product()
+{
+    ?>
+    <script>
+        jQuery(document).on('click', '#add-custom-product', function() {
+
+            var title = jQuery('#addCustomProduct input[name="title"]').val();
+            var sku = jQuery('#addCustomProduct input[name="sku"]').val();
+            var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
+            var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
+            var weight = parseFloat(jQuery('#addCustomProduct input[name="weight"]').val());
+            var length = parseFloat(jQuery('#addCustomProduct input[name="length"]').val());
+            var width = parseFloat(jQuery('#addCustomProduct input[name="width"]').val());
+            var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
+            var tax_status = jQuery('#addCustomProduct select[name="tax_status"]').val();
+            var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
+
+            jQuery('#addCustomProduct .loading').removeClass('d-none');
+
+            jQuery.ajax({
+                type: 'POST',
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    'action': 'custom_product_ajax',
+                    'title': title,
+                    'sku': sku,
+                    'quantity': quantity,
+                    'price': price,
+                    'weight': weight,
+                    'length': length,
+                    'width': width,
+                    'height': height,
+                    'tax_status': tax_status,
+                    'tax_class': tax_class,
+                },
+                success: function(result) {
+                    jQuery('#addCustomProduct .loading').addClass('d-none');
+                    jQuery('body').trigger('update_checkout');
+                    jQuery('button[data-bs-dismiss="modal"]')
+
+                    jQuery('.cart-product-' + result).addClass('highlight');
+
+                    setTimeout(function() {
+
+                        jQuery('.cart-product-' + result).removeClass('highlight');
+
+                    }, 1000);
+
+                }
+            });
+        });
+    </script>
+<?php
+}
+
+add_shortcode('wp_footer', 'action_custom_product');
