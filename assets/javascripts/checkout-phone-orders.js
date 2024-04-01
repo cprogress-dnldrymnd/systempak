@@ -355,8 +355,8 @@ function custom_product_ajax() {
         var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
         var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
 
+        jQuery('#add-custom-product .loading').removeClass('d-none');
 
-        console.log('[mama mo]');
         jQuery.ajax({
             type: 'POST',
             url: "/wp-admin/admin-ajax.php",
@@ -368,6 +368,7 @@ function custom_product_ajax() {
                 'price': price,
             },
             success: function (result) {
+                jQuery('#add-custom-product .loading').addClass('d-none');
                 jQuery('body').trigger('update_checkout');
             }
         });
