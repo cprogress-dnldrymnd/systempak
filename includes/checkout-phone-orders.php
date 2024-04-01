@@ -357,7 +357,7 @@ function custom_product_ajax()
     if($length) {
         $product->set_length( $length );
     }
-    if($width) {
+        if($width) {
         $product->set_width( $width );
     }
     if($height) {
@@ -372,7 +372,7 @@ function custom_product_ajax()
 
     global $woocommerce;
 
-    $woocommerce->cart->add_to_cart($product->get_id()), $quantity;
+    $woocommerce->cart->add_to_cart($product->get_id(), $quantity);
 
 
     die(); // Alway at the end (to avoid server error 500)
