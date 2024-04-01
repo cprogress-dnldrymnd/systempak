@@ -415,11 +415,10 @@ function action_custom_product()
             var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
             var tax_status = jQuery('#addCustomProduct select[name="tax_status"]').val();
             var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
-            var delete_product = jQuery('#addCustomProduct input[name="delete-product"]:checked');
+            var delete_product = jQuery('#addCustomProduct input[name="delete-product"]:checked').val();
 
             if (price && title) {
                 jQuery('#addCustomProduct .loading').removeClass('d-none');
-
                 jQuery.ajax({
                     type: 'POST',
                     url: "/wp-admin/admin-ajax.php",
