@@ -483,7 +483,8 @@ function action_delete_custom_products($order_id)
         $product_id = $item->get_product_id();
         $delete_product = get_post_meta($product_id, 'delete_product', true);
 
-        echo get_the_title($product_id). ' ';
-        echo $delete_product;
+        if ($delete_product) {
+            wp_delete_post($product_id, true);
+        }
     }
 }
