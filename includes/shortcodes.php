@@ -159,7 +159,15 @@ function search_products()
     ob_start();
 ?>
     <div class="select-products">
-        <h3>Add Products</h3>
+        <div class="d-flex">
+            <h3>Add Products</h3>
+            <div class="button-box">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Launch demo modal
+                </button>
+            </div>
+        </div>
         <div class="search-section search-section-products">
             <form>
                 <input class="w-100 mb-3" type="text" name="s" value="<?= isset($_GET['s']) ? $_GET['s'] : '' ?>" placeholder="Search products" id="search-input-product">
@@ -184,6 +192,25 @@ function search_products()
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -526,15 +553,3 @@ function faqs()
 }
 
 add_shortcode('faqs', 'faqs');
-
-
-function custom_product()
-{
-?>
-    <div class="add-custom-product">
-        <h3>Add Custom Product</h3>
-    </div>
-<?php
-}
-
-add_shortcode('custom_product', 'custom_product');
