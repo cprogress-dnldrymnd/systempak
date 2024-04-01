@@ -370,6 +370,10 @@ function custom_product_ajax() {
                 'sku': sku,
                 'quantity': quantity,
                 'price': price,
+                'weight': weight,
+                'length': length,
+                'width': width,
+                'height': height,
             },
             success: function (result) {
                 jQuery('#addCustomProduct .loading').addClass('d-none');
