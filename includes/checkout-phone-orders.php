@@ -144,9 +144,9 @@ function select_product_ajax()
 }
 //add custom shipping
 
-add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
-add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
-function woo_get_ajax_data()
+add_action('wp_ajax_custom_shipping_ajax', 'custom_shipping_ajax');
+add_action('wp_ajax_nopriv_custom_shipping_ajax', 'custom_shipping_ajax');
+function custom_shipping_ajax()
 {
     if (isset($_POST['custom_shipping_cost'])) {
         $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);

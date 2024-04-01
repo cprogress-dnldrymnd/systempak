@@ -115,7 +115,7 @@ $old_user = user_switching::get_old_user();
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Add product</button>
+                    <button type="button" class="btn btn-primary" id="add-custom-product">Add product</button>
                 </div>
             </div>
         </div>

@@ -336,8 +336,34 @@ function custom_shipping_ajax() {
             type: 'POST',
             url: "/wp-admin/admin-ajax.php",
             data: {
-                'action': 'woo_get_ajax_data',
+                'action': 'custom_shipping_ajax',
                 'custom_shipping_cost': custom_shipping_cost_val,
+            },
+            success: function (result) {
+                jQuery('body').trigger('update_checkout');
+            }
+        });
+    });
+}
+
+function custom_product_ajax() {
+    jQuery('div.woocommerce').on('click', '#add-custom-product', function () {
+        var title = jQuery('#addCustomProduct input[name="title"]').val();
+        var sku = jQuery('#addCustomProduct input[name="sku"]').val();
+        var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
+        var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
+
+     
+        console.log(custom_shipping_cost_val);
+        jQuery.ajax({
+            type: 'POST',
+            url: "/wp-admin/admin-ajax.php",
+            data: {
+                'action': 'custom_product_ajax',
+                'title': title,
+                'sku': sku,
+                'quantity': quantity,
+                'price': price,
             },
             success: function (result) {
                 jQuery('body').trigger('update_checkout');
