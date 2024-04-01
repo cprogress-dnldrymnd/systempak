@@ -429,8 +429,10 @@ function action_custom_product()
                 success: function(result) {
                     jQuery('#addCustomProduct .loading').addClass('d-none');
                     jQuery('body').trigger('update_checkout');
-                    jQuery('button[data-bs-dismiss="modal"]')
-
+                    const myModalEl  = document.getElementById('addCustomProduct');
+                    var modal = bootstrap.Modal.getInstance(myModalEl)
+                    modal.hide();
+                    
                     jQuery('.cart-product-' + result).addClass('highlight');
 
                     setTimeout(function() {
