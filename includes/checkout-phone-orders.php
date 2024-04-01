@@ -366,10 +366,10 @@ function custom_product_ajax()
         $product->set_height($height);
     }
 
-    if($tax_status) {
+    if ($tax_status) {
         $product->update_meta_data('_tax_status', $tax_status);
     }
-    if($tax_class) {
+    if ($tax_class) {
         $product->update_meta_data('_tax_class', $tax_class);
     }
 
@@ -379,12 +379,13 @@ function custom_product_ajax()
 
     $product->save();
 
+    echo $product->get_id();
 
     global $woocommerce;
 
     $woocommerce->cart->add_to_cart($product->get_id(), $quantity);
 
-    echo $product->get_id();
+
 
     die(); // Alway at the end (to avoid server error 500)
 }
