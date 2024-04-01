@@ -85,7 +85,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-form">
-                        <div class="mb-3">
+                        <div class="mb-3 d-flex align-items-center form-holder">
                             <label for="Title" class="form-label">Title</label>
                             <input type="text" class="form-control" id="Title" placeholder="Enter title">
                         </div>
