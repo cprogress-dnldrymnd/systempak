@@ -186,4 +186,22 @@ section.select-user .inner {
   flex: 0 0 20%;
   max-width: 20%; }
 
+.form-style-1 .loading {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .form-style-1 .loading svg {
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+
 /*# sourceMappingURL=checkout.css.map */
