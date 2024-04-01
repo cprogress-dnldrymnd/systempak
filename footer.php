@@ -145,7 +145,7 @@ $old_user = user_switching::get_old_user();
                             </select>
                         </div>
                         <div class="mb-3 d-flex align-items-center mb-3">
-                            <label for="tax_class" class="form-label">Delete after placed order</label>
+                            <label for="tax_class" class="form-label mb-0 me-3">Delete after placed order</label>
                             <input type="checkbox" name="delete-product" >
                         </div>
                     </div>
