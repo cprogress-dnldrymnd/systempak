@@ -11,6 +11,8 @@
         'role' => array('customer')
     );
     $users = get_users($args);
+
+    $old_user = user_switching::get_old_user();
     ?>
     <section class="select-user py-5">
         <div class="container-fluid">
@@ -36,7 +38,7 @@
         </div>
     </section>
 <?php } else { ?>
-    <?php if (is_user_logged_in()) { ?>
+    <?php if (is_user_logged_in() && $old_user) { ?>
 
         <section class="checkout-form">
             <div class="container-fluid">
@@ -72,7 +74,7 @@
 
 
 <?php } ?>
-<?php if (is_user_logged_in()) { ?>
+<?php if (is_user_logged_in() && $old_user) { ?>
     <!-- Modal -->
     <div class="modal fade" id="addCustomProduct" tabindex="-1" aria-labelledby="addCustomProductLabel" aria-hidden="true">
         <div class="modal-dialog">
