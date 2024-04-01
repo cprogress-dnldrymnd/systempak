@@ -159,12 +159,12 @@ function search_products()
     ob_start();
 ?>
     <div class="select-products">
-        <div class="d-flex">
+        <div class="d-flex justify-content-between">
             <h3>Add Products</h3>
             <div class="button-box">
                 <!-- Button trigger modal -->
                 <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#addCustomProduct">
-                    Launch demo modal
+                    Add Custom Product
                 </button>
             </div>
         </div>
