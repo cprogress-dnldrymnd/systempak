@@ -129,8 +129,20 @@ $old_user = user_switching::get_old_user();
                             </div>
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
-                            <label for="weight" class="form-label">Weight</label>
-                            <input type="number" class="form-control" id="weights" name="weights" placeholder="Enter s">
+                            <label for="tax_status" class="form-label">Tax Status</label>
+                            <select id="tax_status" name="tax_status" class="form-control">
+                                <option value="taxable" selected="selected">Taxable</option>
+                                <option value="shipping">Shipping only</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="tax_class" class="form-label">Tax Class</label>
+                            <select id="tax_class" name="tax_class" class="form-control">
+                                <option value="" selected="selected">Standard</option>
+                                <option value="reduced-rate">Reduced rate</option>
+                                <option value="zero-rate">Zero rate</option>
+                            </select>
                         </div>
                     </div>
                 </div>
