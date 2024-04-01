@@ -163,7 +163,7 @@ function search_products()
             <h3>Add Products</h3>
             <div class="button-box">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomProduct">
+                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#addCustomProduct">
                     Launch demo modal
                 </button>
             </div>
