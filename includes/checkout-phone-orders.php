@@ -386,7 +386,7 @@ function custom_product_ajax()
 
     $product->save();
     echo '<div id="custom-product-cart-style">';
-    echo '<style> .cart-product-' . $product->get_id() . ' .name-wrapper{ content: "Just added"; background-color: var(--accent-color); padding: 5px 15px; border-radius: 20px; font-size: 15px; text-transform: uppercase; } </style>';
+    echo '<style> .cart-product-' . $product->get_id() . ' .name-wrapper:after{ content: "Just added"; background-color: var(--accent-color); padding: 5px 15px; border-radius: 20px; font-size: 15px; text-transform: uppercase; } </style>';
     echo '</div>';
 
     global $woocommerce;
