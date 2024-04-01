@@ -7,6 +7,7 @@ jQuery(document).ready(function () {
     ajax_select_product_trigger();
     select_products();
     custom_shipping_ajax();
+    custom_product_ajax();
     //load_more_button_listener();
 });
 

@@ -123,7 +123,7 @@ function search_ajax_products()
         ?>
     </div>
 
-<?php
+    <?php
 
     die();
 }
@@ -305,11 +305,12 @@ function action_wp_head_phone_oders()
 {
     $old_user = user_switching::get_old_user();
     if ($old_user) {
-?>
+    ?>
         <style>
             #qlwapp {
                 display: none !important;
             }
+
             #user_switching_switch_on {
                 display: none;
             }
@@ -320,3 +321,32 @@ function action_wp_head_phone_oders()
 
 add_action('wp_head', 'action_wp_head_phone_oders');
 
+
+add_action('wp_ajax_custom_product_ajax', 'custom_product_ajax');
+add_action('wp_ajax_nopriv_custom_product_ajax', 'custom_product_ajax');
+function custom_product_ajax()
+{
+
+    $title = isset($_POST['custom_shipping_cost']) ? $_POST['custom_shipping_cost'] : false;
+    $sku = isset($_POST['sku']) ? $_POST['sku'] : false;
+    $sku = isset($_POST['sku']) ? $_POST['quantity'] : false;
+    $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : false;
+    $price = isset($_POST['price']) ? $_POST['price'] : false;
+
+    // that's CRUD object
+    $product = new WC_Product_Simple();
+
+    if ($title) {
+        $product->set_name($title); // product title
+
+    }
+
+    if ($price) {
+        $product->set_regular_price($price); // in current shop currency
+    }
+    $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
+    // let's suppose that our 'Accessories' category has ID = 19 
+
+    $product->save();
+    die(); // Alway at the end (to avoid server error 500)
+}
