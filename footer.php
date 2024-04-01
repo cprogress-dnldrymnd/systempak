@@ -95,9 +95,17 @@ $old_user = user_switching::get_old_user();
                 </div>
                 <div class="modal-body">
                     <div class="modal-form">
-                        <div class="mb-3 d-flex align-items-center form-holder">
-                            <label for="Title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="Title" placeholder="Enter title">
+                    <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+                        </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="sku" class="form-label">SKU</label>
+                            <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter SKU">
+                        </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="quantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity">
                         </div>
                     </div>
                 </div>
