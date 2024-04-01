@@ -427,20 +427,20 @@ function action_custom_product()
                     'tax_class': tax_class,
                 },
                 success: function(result) {
+                    var result = result;
                     jQuery('#addCustomProduct .loading').addClass('d-none');
                     jQuery('body').trigger('update_checkout');
-                    const myModalEl  = document.getElementById('addCustomProduct');
+                    const myModalEl = document.getElementById('addCustomProduct');
                     var modal = bootstrap.Modal.getInstance(myModalEl)
                     modal.hide();
-                    
+
                     jQuery('.cart-product-' + result).addClass('highlight');
 
-                    setTimeout(function() {
-
-                        jQuery('.cart-product-' + result).removeClass('highlight');
-
-                    }, 1000);
-
+                    jQuery(document.body).on('updated_checkout', function() {
+                        setTimeout(function() {
+                            jQuery('.cart-product-' + result).removeClass('highlight');
+                        }, 1000);
+                    });
                 }
             });
         });
