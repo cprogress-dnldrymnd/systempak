@@ -329,7 +329,6 @@ function custom_product_ajax()
 
     $title = isset($_POST['custom_shipping_cost']) ? $_POST['custom_shipping_cost'] : false;
     $sku = isset($_POST['sku']) ? $_POST['sku'] : false;
-    $sku = isset($_POST['sku']) ? $_POST['quantity'] : false;
     $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : false;
     $price = isset($_POST['price']) ? $_POST['price'] : false;
 
