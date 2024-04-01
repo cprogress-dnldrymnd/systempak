@@ -118,14 +118,14 @@ $old_user = user_switching::get_old_user();
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
                             <label for="weight" class="form-label">Weight</label>
-                            <input type="number" class="form-control" id="weight" name="weight" placeholder="Enter weight">
+                            <input type="number" class="form-control" id="weight" name="weight" placeholder="Weight">
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
                             <label class="form-label">Dimensions</label>
                             <div class="form-group d-flex">
-                                <input type="number" class="form-control" id="length" name="length" placeholder="Enter length">
-                                <input type="number" class="form-control me-3" id="width" name="width" placeholder="Enter width">
-                                <input type="number" class="form-control me-3" id="height" name="height" placeholder="Enter height">
+                                <input type="number" class="form-control" id="length" name="length" placeholder="Length">
+                                <input type="number" class="form-control me-3" id="width" name="width" placeholder="Width">
+                                <input type="number" class="form-control me-3" id="height" name="height" placeholder="Height">
                             </div>
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
