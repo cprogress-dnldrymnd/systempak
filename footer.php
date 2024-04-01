@@ -107,6 +107,10 @@ $old_user = user_switching::get_old_user();
                             <label for="quantity" class="form-label">Quantity</label>
                             <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity">
                         </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
