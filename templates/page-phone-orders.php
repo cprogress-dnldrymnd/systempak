@@ -4,7 +4,9 @@
 /*-----------------------------------------------------------------------------------*/
 ?>
 <?php get_header() ?>
-
+<?php
+$old_user = user_switching::get_old_user();
+?>
 <?php if (current_user_can('administrator')) { ?>
     <?php
     $args = array(
@@ -12,7 +14,6 @@
     );
     $users = get_users($args);
 
-    $old_user = user_switching::get_old_user();
     ?>
     <section class="select-user py-5">
         <div class="container-fluid">
