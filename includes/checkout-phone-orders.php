@@ -475,7 +475,7 @@ add_action('wp_footer', 'action_custom_product');
 
 add_action( 'woocommerce_thankyou', 'action_delete_custom_products');
 
-function action_delete_custom_products() {
-    global $order;
+function action_delete_custom_products($order_id) {
+    $order = wc_get_order( $order_id );
     var_dump($order->get_id());
 }
