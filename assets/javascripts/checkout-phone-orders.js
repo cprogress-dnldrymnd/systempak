@@ -370,6 +370,9 @@ function custom_product_ajax() {
             success: function (result) {
                 jQuery('#addCustomProduct .loading').addClass('d-none');
                 jQuery('body').trigger('update_checkout');
+                var myModal = document.getElementById('addCustomProduct');
+                myModal.hide();
+
             }
         });
     });

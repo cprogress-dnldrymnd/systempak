@@ -339,7 +339,10 @@ function custom_product_ajax()
         $product->set_name($title); // product title
 
     }
+    if ($sku) {
+        $product->set_sku($sku); // product title
 
+    }
     if ($price) {
         $product->set_regular_price($price); // in current shop currency
     }
@@ -347,5 +350,12 @@ function custom_product_ajax()
     // let's suppose that our 'Accessories' category has ID = 19 
 
     $product->save();
+
+
+    global $woocommerce;
+
+    $woocommerce->cart->add_to_cart($product->get_id());
+
+
     die(); // Alway at the end (to avoid server error 500)
 }
