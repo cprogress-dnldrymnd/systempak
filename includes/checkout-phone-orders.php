@@ -366,8 +366,7 @@ function custom_product_ajax()
 
     $product->update_meta_data('custom_product', true);
 
-    $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
-    // let's suppose that our 'Accessories' category has ID = 19 
+    $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p><p>'.$weight.'</p><p>'.$length.'</p><p>'.$width.'</p><p>'.$height.'</p>');
 
     $product->save();
 
