@@ -354,6 +354,10 @@ function custom_product_ajax() {
         var sku = jQuery('#addCustomProduct input[name="sku"]').val();
         var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
         var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
+        var weight = parseFloat(jQuery('#addCustomProduct input[name="weight"]').val());
+        var length = parseFloat(jQuery('#addCustomProduct input[name="length"]').val());
+        var width = parseFloat(jQuery('#addCustomProduct input[name="width"]').val());
+        var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
 
         jQuery('#addCustomProduct .loading').removeClass('d-none');
 

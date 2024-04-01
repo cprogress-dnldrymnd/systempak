@@ -331,6 +331,10 @@ function custom_product_ajax()
     $sku = isset($_POST['sku']) ? $_POST['sku'] : false;
     $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
     $price = isset($_POST['price']) ? $_POST['price'] : false;
+    $weight = isset($_POST['weight']) ? $_POST['weight'] : false;
+    $length = isset($_POST['length']) ? $_POST['length'] : false;
+    $width = isset($_POST['width']) ? $_POST['width'] : false;
+    $height = isset($_POST['height']) ? $_POST['height'] : false;
 
     // that's CRUD object
     $product = new WC_Product_Simple();
@@ -346,6 +350,20 @@ function custom_product_ajax()
     if ($price) {
         $product->set_regular_price($price); // in current shop currency
     }
+
+    if($weight) {
+        $product->set_weight( $weight );
+    }
+    if($length) {
+        $product->set_length( $length );
+    }
+    if($width) {
+        $product->set_width( $width );
+    }
+    if($height) {
+        $product->set_height( $height );
+    }
+
     $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
     // let's suppose that our 'Accessories' category has ID = 19 
 

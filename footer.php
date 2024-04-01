@@ -110,11 +110,27 @@ $old_user = user_switching::get_old_user();
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity" value="1">
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter quantity" value="1">
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter Price">
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter price">
+                        </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="weight" class="form-label">Weight</label>
+                            <input type="number" class="form-control" id="weight" name="weight" placeholder="Enter weight">
+                        </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label class="form-label">Dimensions</label>
+                            <div class="form-group d-flex">
+                                <input type="number" class="form-control" id="length" name="length" placeholder="Enter length">
+                                <input type="number" class="form-control me-3" id="width" name="width" placeholder="Enter width">
+                                <input type="number" class="form-control me-3" id="height" name="height" placeholder="Enter height">
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                            <label for="weight" class="form-label">Weight</label>
+                            <input type="number" class="form-control" id="weights" name="weights" placeholder="Enter s">
                         </div>
                     </div>
                 </div>
