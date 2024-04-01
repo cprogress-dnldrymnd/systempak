@@ -88,7 +88,7 @@ $old_user = user_switching::get_old_user();
     <!-- Modal -->
     <div class="modal fade form-style-1" id="addCustomProduct" tabindex="-1" aria-labelledby="addCustomProductLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <form class="modal-content">
                 <div class="loading d-none">
                     <svg class="adding-product" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                         <path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"></path>
@@ -146,15 +146,15 @@ $old_user = user_switching::get_old_user();
                         </div>
                         <div class="mb-3 d-flex align-items-center mb-3">
                             <label for="tax_class" class="form-label mb-0 me-3">Delete after placed order</label>
-                            <input type="checkbox" name="delete-product" >
+                            <input type="checkbox" name="delete-product">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="add-custom-product">Add product</button>
+                    <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+                    <button type="submit" class="btn btn-primary" id="add-custom-product">Add product</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 <?php } ?>
