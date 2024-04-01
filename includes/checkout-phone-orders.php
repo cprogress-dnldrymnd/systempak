@@ -337,6 +337,7 @@ function custom_product_ajax()
     $height = isset($_POST['height']) ? $_POST['height'] : false;
     $tax_status = isset($_POST['tax_status']) ? $_POST['tax_status'] : false;
     $tax_class = isset($_POST['tax_class']) ? $_POST['tax_class'] : false;
+    $delete_product = isset($_POST['delete_product']) ? $_POST['delete_product'] : false;
 
     // that's CRUD object
     $product = new WC_Product_Simple();
@@ -372,7 +373,9 @@ function custom_product_ajax()
     if ($tax_class) {
         $product->update_meta_data('_tax_class', $tax_class);
     }
-
+    if ($delete_product) {
+        $product->update_meta_data('delete_product', true);
+    }
     $product->update_meta_data('custom_product', true);
 
     $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
@@ -412,6 +415,8 @@ function action_custom_product()
             var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
             var tax_status = jQuery('#addCustomProduct select[name="tax_status"]').val();
             var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
+            var delete_product = jQuery('#addCustomProduct input[name="delete-product"]:checked');
+
 
             jQuery('#addCustomProduct .loading').removeClass('d-none');
 
@@ -430,6 +435,7 @@ function action_custom_product()
                     'height': height,
                     'tax_status': tax_status,
                     'tax_class': tax_class,
+                    'delete_product': delete_product
                 },
                 success: function(result) {
                     jQuery(result).appendTo('.select-products');
