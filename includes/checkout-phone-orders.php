@@ -327,7 +327,7 @@ add_action('wp_ajax_nopriv_custom_product_ajax', 'custom_product_ajax');
 function custom_product_ajax()
 {
 
-    $title = isset($_POST['custom_shipping_cost']) ? $_POST['custom_shipping_cost'] : false;
+    $title = isset($_POST['title']) ? $_POST['title'] : false;
     $sku = isset($_POST['sku']) ? $_POST['sku'] : false;
     $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : false;
     $price = isset($_POST['price']) ? $_POST['price'] : false;
