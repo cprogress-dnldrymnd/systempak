@@ -379,7 +379,7 @@ function custom_product_ajax()
 
     $product->save();
 
-    echo $product->get_id();
+    echo '<style id="custom-product-cart-style"> .cart-product-' . $product->get_id() . '{ background-color: var(--accent-color) } </style>';
 
     global $woocommerce;
 
@@ -433,14 +433,7 @@ function action_custom_product()
                     const myModalEl = document.getElementById('addCustomProduct');
                     var modal = bootstrap.Modal.getInstance(myModalEl)
                     modal.hide();
-
-                    jQuery('.cart-product-' + result).addClass('highlight');
-
-                    jQuery(document.body).on('updated_checkout', function() {
-                        setTimeout(function() {
-                            jQuery('.cart-product-' + result).removeClass('highlight');
-                        }, 1000);
-                    });
+                    jQuery('#custom-product-cart-style').remove();
                 }
             });
         });
