@@ -454,6 +454,7 @@ function action_custom_product()
         });
 
         jQUery(document.body).on('updated_checkout', function() {
+            console.log('updated-checkout');
             setTimeout(function() {
                 jQuery('#custom-product-cart-style').remove();
             }, 1000);
