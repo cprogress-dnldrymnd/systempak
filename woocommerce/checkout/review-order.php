@@ -30,7 +30,7 @@ defined('ABSPATH') || exit;
 
 			if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key)) {
 		?>
-				<tr class="<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+				<tr class="<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?> cart-product-<?= $_product->get_id() ?>">
 					<td class="product-name">
 						<div class="d-flex align-items-center">
 							<div class="product-image">
