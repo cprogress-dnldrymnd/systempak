@@ -444,7 +444,7 @@ function action_custom_product()
                         var modal = bootstrap.Modal.getInstance(myModalEl)
                         modal.hide();
                         jQuery('html, body').animate({
-                            scrollTop: jQuery("#order_review .cart_item:last-child").offset().top
+                            scrollTop: jQuery("#order_review").offset().top
                         }, 2000);
                     }
                 });
