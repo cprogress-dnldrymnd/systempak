@@ -378,8 +378,9 @@ function custom_product_ajax()
     $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
 
     $product->save();
-
-    echo '<style id="custom-product-cart-style"> .cart-product-' . $product->get_id() . '{ background-color: var(--accent-color) } </style>';
+    echo '<div id="custom-product-cart-style">';
+    echo '<style> .cart-product-' . $product->get_id() . '{ background-color: var(--accent-color) } </style>';
+    echo '</div>';
 
     global $woocommerce;
 
@@ -433,7 +434,7 @@ function action_custom_product()
                     const myModalEl = document.getElementById('addCustomProduct');
                     var modal = bootstrap.Modal.getInstance(myModalEl)
                     modal.hide();
-                    jQuery('#custom-product-cart-style').remove();
+                   // jQuery('#custom-product-cart-style').remove();
                 }
             });
         });
