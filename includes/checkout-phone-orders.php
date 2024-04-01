@@ -440,7 +440,7 @@ function action_custom_product()
                         jQuery(result).appendTo('.select-products');
                         jQuery('#addCustomProduct .loading').addClass('d-none');
                         jQuery('body').trigger('update_checkout');
-
+                        jQuery('body').addClass('trigger-add-custom-product');
 
                     }
                 });
@@ -450,15 +450,21 @@ function action_custom_product()
         });
 
         jQuery(document.body).on('updated_checkout', function() {
-            jQuery('html, body').animate({
-                scrollTop: jQuery("#order_review").offset().top
-            }, 2000);
-            const myModalEl = document.getElementById('addCustomProduct');
-            var modal = bootstrap.Modal.getInstance(myModalEl)
-            modal.hide();
-            setTimeout(function() {
-                jQuery('#custom-product-cart-style').remove();
-            }, 2000);
+            if (jQuery('body').hasClass('trigger-add-custom-product')) {
+                jQuery('html, body').animate({
+                    scrollTop: jQuery("#order_review").offset().top
+                }, 2000);
+                const myModalEl = document.getElementById('addCustomProduct');
+                var modal = bootstrap.Modal.getInstance(myModalEl)
+                modal.hide();
+                setTimeout(function() {
+                    jQuery('#custom-product-cart-style').remove();
+                    jQuery('body').removeClass('trigger-add-custom-product');
+                }, 2000);
+            } else {
+
+            }
+
         });
     </script>
 <?php
