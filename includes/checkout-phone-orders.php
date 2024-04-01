@@ -417,38 +417,41 @@ function action_custom_product()
             var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
             var delete_product = jQuery('#addCustomProduct input[name="delete-product"]:checked');
 
+            if (price && title) {
+                jQuery('#addCustomProduct .loading').removeClass('d-none');
 
-            jQuery('#addCustomProduct .loading').removeClass('d-none');
-
-            jQuery.ajax({
-                type: 'POST',
-                url: "/wp-admin/admin-ajax.php",
-                data: {
-                    'action': 'custom_product_ajax',
-                    'title': title,
-                    'sku': sku,
-                    'quantity': quantity,
-                    'price': price,
-                    'weight': weight,
-                    'length': length,
-                    'width': width,
-                    'height': height,
-                    'tax_status': tax_status,
-                    'tax_class': tax_class,
-                    'delete_product': delete_product
-                },
-                success: function(result) {
-                    jQuery(result).appendTo('.select-products');
-                    jQuery('#addCustomProduct .loading').addClass('d-none');
-                    jQuery('body').trigger('update_checkout');
-                    const myModalEl = document.getElementById('addCustomProduct');
-                    var modal = bootstrap.Modal.getInstance(myModalEl)
-                    modal.hide();
-                    jQuery('html, body').animate({
-                        scrollTop: jQuery("#order_review").offset().top
-                    }, 2000);
-                }
-            });
+                jQuery.ajax({
+                    type: 'POST',
+                    url: "/wp-admin/admin-ajax.php",
+                    data: {
+                        'action': 'custom_product_ajax',
+                        'title': title,
+                        'sku': sku,
+                        'quantity': quantity,
+                        'price': price,
+                        'weight': weight,
+                        'length': length,
+                        'width': width,
+                        'height': height,
+                        'tax_status': tax_status,
+                        'tax_class': tax_class,
+                        'delete_product': delete_product
+                    },
+                    success: function(result) {
+                        jQuery(result).appendTo('.select-products');
+                        jQuery('#addCustomProduct .loading').addClass('d-none');
+                        jQuery('body').trigger('update_checkout');
+                        const myModalEl = document.getElementById('addCustomProduct');
+                        var modal = bootstrap.Modal.getInstance(myModalEl)
+                        modal.hide();
+                        jQuery('html, body').animate({
+                            scrollTop: jQuery("#order_review").offset().top
+                        }, 2000);
+                    }
+                });
+            } else {
+                alert('Title and price field is required.');
+            }
         });
 
         jQUery(document.body).on('updated_checkout', function() {
