@@ -471,3 +471,11 @@ function action_custom_product()
 }
 
 add_action('wp_footer', 'action_custom_product');
+
+
+add_action( 'woocommerce_thankyou', 'action_delete_custom_products');
+
+function action_delete_custom_products() {
+    global $order;
+    var_dump($order->get_id());
+}
