@@ -358,8 +358,8 @@ function custom_product_ajax() {
         var length = parseFloat(jQuery('#addCustomProduct input[name="length"]').val());
         var width = parseFloat(jQuery('#addCustomProduct input[name="width"]').val());
         var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
-        var tax_status = jQuery('#addCustomProduct input[name="tax_status"]').val();
-        var tax_class = jQuery('#addCustomProduct input[name="tax_class"]').val();
+        var tax_status = jQuery('#addCustomProduct select[name="tax_status"]').val();
+        var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
 
         jQuery('#addCustomProduct .loading').removeClass('d-none');
 
@@ -383,7 +383,7 @@ function custom_product_ajax() {
                 jQuery('#addCustomProduct .loading').addClass('d-none');
                 jQuery('body').trigger('update_checkout');
                 var myModal = document.getElementById('addCustomProduct');
-                myModal.hide();
+                myModal.modal('hide');
 
             }
         });
