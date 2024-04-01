@@ -355,7 +355,7 @@ function custom_product_ajax() {
         var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
         var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
 
-        jQuery('#add-custom-product .loading').removeClass('d-none');
+        jQuery('#addCustomProduct .loading').removeClass('d-none');
 
         jQuery.ajax({
             type: 'POST',
@@ -368,7 +368,7 @@ function custom_product_ajax() {
                 'price': price,
             },
             success: function (result) {
-                jQuery('#add-custom-product .loading').addClass('d-none');
+                jQuery('#addCustomProduct .loading').addClass('d-none');
                 jQuery('body').trigger('update_checkout');
             }
         });
