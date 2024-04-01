@@ -473,9 +473,17 @@ function action_custom_product()
 add_action('wp_footer', 'action_custom_product');
 
 
-add_action( 'woocommerce_thankyou', 'action_delete_custom_products');
+add_action('woocommerce_thankyou', 'action_delete_custom_products');
 
-function action_delete_custom_products($order_id) {
-    $order = wc_get_order( $order_id );
-    var_dump($order->get_id());
+function action_delete_custom_products($order_id)
+{
+    $order = wc_get_order($order_id);
+    // Get and Loop Over Order Items
+    foreach ($order->get_items() as $item_id => $item) {
+        $product_id = $item->get_product_id();
+        $delete_product = get_post_meta($product_id, 'delete_product', true);
+
+        echo $product->get_name() . ' ';
+        echo $delete_product;
+    }
 }
