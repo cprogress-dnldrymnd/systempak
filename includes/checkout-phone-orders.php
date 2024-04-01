@@ -438,7 +438,6 @@ function action_custom_product()
                     },
                     success: function(result) {
                         jQuery(result).appendTo('.select-products');
-                        jQuery('#addCustomProduct .loading').addClass('d-none');
                         jQuery('body').trigger('update_checkout');
                         jQuery('body').addClass('trigger-add-custom-product');
 
@@ -454,8 +453,9 @@ function action_custom_product()
                 jQuery('html, body').animate({
                     scrollTop: jQuery("#order_review").offset().top
                 }, 2000);
+                jQuery('#addCustomProduct .loading').addClass('d-none');
                 const myModalEl = document.getElementById('addCustomProduct');
-                var modal = bootstrap.Modal.getInstance(myModalEl)
+                var modal = bootstrap.Modal.getInstance(myModalEl);
                 modal.hide();
                 setTimeout(function() {
                     jQuery('#custom-product-cart-style').remove();
