@@ -56,6 +56,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
 			<?php if (is_page(8978)) { ?>
 				<?= do_shortcode('[search_products]') ?>
+				<?= do_shortcode('[custom_product]') ?>
 			<?php } ?>
 
 			<?php do_action('woocommerce_checkout_before_order_review_heading'); ?>

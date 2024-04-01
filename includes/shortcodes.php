@@ -526,3 +526,15 @@ function faqs()
 }
 
 add_shortcode('faqs', 'faqs');
+
+
+function custom_product()
+{
+?>
+    <div class="add-custom-product">
+        <h3>Add Custom Product</h3>
+    </div>
+<?php
+}
+
+add_shortcode('custom_product', 'custom_product');
