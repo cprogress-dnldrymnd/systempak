@@ -351,18 +351,20 @@ function custom_product_ajax()
         $product->set_regular_price($price); // in current shop currency
     }
 
-    if($weight) {
-        $product->set_weight( $weight );
+    if ($weight) {
+        $product->set_weight($weight);
     }
-    if($length) {
-        $product->set_length( $length );
+    if ($length) {
+        $product->set_length($length);
     }
-        if($width) {
-        $product->set_width( $width );
+    if ($width) {
+        $product->set_width($width);
     }
-    if($height) {
-        $product->set_height( $height );
+    if ($height) {
+        $product->set_height($height);
     }
+
+    $product->update_meta_data('custom_product', true);
 
     $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
     // let's suppose that our 'Accessories' category has ID = 19 
