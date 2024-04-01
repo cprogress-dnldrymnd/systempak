@@ -440,13 +440,8 @@ function action_custom_product()
                         jQuery(result).appendTo('.select-products');
                         jQuery('#addCustomProduct .loading').addClass('d-none');
                         jQuery('body').trigger('update_checkout');
-                        jQuery('html, body').animate({
-                            scrollTop: jQuery("#order_review").offset().top
-                        }, 2000);
-                        const myModalEl = document.getElementById('addCustomProduct');
-                        var modal = bootstrap.Modal.getInstance(myModalEl)
-                        modal.hide();
-                       
+
+
                     }
                 });
             } else {
@@ -455,10 +450,15 @@ function action_custom_product()
         });
 
         jQuery(document.body).on('updated_checkout', function() {
-            console.log('updated-checkout');
+            jQuery('html, body').animate({
+                scrollTop: jQuery("#order_review").offset().top
+            }, 2000);
+            const myModalEl = document.getElementById('addCustomProduct');
+            var modal = bootstrap.Modal.getInstance(myModalEl)
+            modal.hide();
             setTimeout(function() {
                 jQuery('#custom-product-cart-style').remove();
-            }, 3000);
+            }, 2000);
         });
     </script>
 <?php
