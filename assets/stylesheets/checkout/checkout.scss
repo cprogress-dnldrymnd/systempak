@@ -296,3 +296,12 @@ section.select-user {
         }
     }
 }
+
+.cart_item {
+    &.highlight {
+        background-color: var(--accent-color);
+        .quantity-parent {
+            background-color: var(--white-color);
+        }
+    }
+}

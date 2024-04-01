@@ -208,4 +208,9 @@ section.select-user .inner {
     animation-iteration-count: infinite;
     animation-timing-function: linear; }
 
+.cart_item.highlight {
+  background-color: var(--accent-color); }
+  .cart_item.highlight .quantity-parent {
+    background-color: var(--white-color); }
+
 /*# sourceMappingURL=checkout.css.map */

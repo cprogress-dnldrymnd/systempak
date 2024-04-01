@@ -387,6 +387,14 @@ function custom_product_ajax() {
                 });
                 myModal.hide();
 
+                jQuery('.cart-product-' + result).addClass('highlight');
+
+                setTimeout(function () {
+
+                    jQuery('.cart-product-' + result).removeClass('highlight');
+
+                }, 1000);
+
             }
         });
     });
