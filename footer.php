@@ -83,6 +83,7 @@ do_action('priotech_after_footer');
 <?php
 $old_user = user_switching::get_old_user();
 ?>
+
 <?php if (is_user_logged_in() && $old_user) { ?>
     <!-- Modal -->
     <div class="modal fade" id="addCustomProduct" tabindex="-1" aria-labelledby="addCustomProductLabel" aria-hidden="true">
