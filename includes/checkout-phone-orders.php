@@ -427,7 +427,7 @@ function action_custom_product()
                     'tax_class': tax_class,
                 },
                 success: function(result) {
-                    var result = result;
+                    result.appendTo('.select-products');
                     jQuery('#addCustomProduct .loading').addClass('d-none');
                     jQuery('body').trigger('update_checkout');
                     const myModalEl = document.getElementById('addCustomProduct');
