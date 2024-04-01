@@ -3,6 +3,7 @@ define('theme_dir', get_stylesheet_directory_uri() . '/');
 define('assets_dir', theme_dir . 'assets/');
 define('image_dir', assets_dir . 'images/');
 define('vendor_dir', assets_dir . 'vendors/');
+define('checkout_version', 6.4);
 
 add_action('wp_enqueue_scripts', 'priotech_child_enqueue_styles');
 function priotech_child_enqueue_styles()
@@ -16,8 +17,8 @@ function priotech_child_enqueue_styles()
 	if (is_page(8978) || is_checkout()) {
 		wp_enqueue_style('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 		wp_enqueue_script('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
-		wp_enqueue_script('systempak-checkout', assets_dir . 'javascripts/checkout-phone-orders.js', array('jquery'), 5.9);
-		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, 6.3);
+		wp_enqueue_script('systempak-checkout', assets_dir . 'javascripts/checkout-phone-orders.js', array('jquery'), checkout_version);
+		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
 
 	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.4);

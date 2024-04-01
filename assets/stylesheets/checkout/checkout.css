@@ -181,4 +181,9 @@ section.select-user .inner {
   min-width: 195px;
   text-align: center; }
 
+.modal-form .form-holder label {
+  margin-bottom: 0;
+  flex: 0 0 20%;
+  max-width: 20%; }
+
 /*# sourceMappingURL=checkout.css.map */

@@ -756,9 +756,4 @@ section.logged-in-as {
       .faqs-holder .elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title + div a {
         color: var(--white-color); }
 
-.modal-form .form-holder label {
-  margin-bottom: 0;
-  flex: 0 0 20%;
-  max-width: 20%; }
-
 /*# sourceMappingURL=style.css.map */

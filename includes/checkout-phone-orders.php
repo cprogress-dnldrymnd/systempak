@@ -1,5 +1,185 @@
 <?php
 
+add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // for not logged in users
+add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
+function search_ajax_products()
+{
+    $posts_per_page_val = 5;
+    $s = $_POST['s'];
+    $post_type = array('product', 'product_variation');
+    $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
+    $offset = $_POST['offset'];
+    $args = array();
+
+
+    if ($offset) {
+        $args['offset'] = $offset;
+    }
+    if ($s) {
+        $args['s'] = $s;
+    }
+
+    $args['posts_per_page'] = $posts_per_page;
+
+    $args['post_type'] = $post_type;
+
+    $args['post_status'] = array('publish');
+
+    $args['post__not_in'] = get_cart_product_ids();
+
+    $the_query_args = new WP_Query($args);
+
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'product_type',
+            'field'    => 'slug',
+            'terms'    => array('variable'),
+            'operator' => 'NOT IN'
+        ),
+    );
+
+    $found_posts = $the_query_args->found_posts;
+
+    if (!$found_posts  && $s != '') {
+        $args['meta_query'] = array(
+            array(
+                'key' => '_sku',
+                'value' => $s,
+                'compare' => 'LIKE',
+            ),
+        );
+        unset($args['s']);
+    }
+
+
+
+
+    $the_query = new WP_Query($args);
+
+    $count = $the_query->found_posts;
+    echo hide_load_more($count, $offset, $posts_per_page);
+
+?>
+    <div class="post-item-holder">
+        <?php
+        if ($the_query->have_posts()) {
+            while ($the_query->have_posts()) {
+                $the_query->the_post();
+                global $product;
+
+        ?>
+                <div class="post-item post-<?= get_the_ID() ?>" product-id="<?= get_the_ID() ?>">
+                    <div class="row">
+                        <?php
+                        if ($product->get_type() == ' simple') {
+                            if (get_the_post_thumbnail_url(get_the_ID())) {
+                                $url = get_the_post_thumbnail_url(get_the_ID());
+                            } else {
+                                $url = wc_placeholder_img_src();
+                            }
+                        } else {
+                            if (wp_get_attachment_image_url($product->get_image_id())) {
+                                $url = wp_get_attachment_image_url($product->get_image_id());
+                            } else {
+                                if (get_the_post_thumbnail_url(get_the_ID())) {
+                                    $url = get_the_post_thumbnail_url(get_the_ID());
+                                } else {
+                                    $url = wc_placeholder_img_src();
+                                }
+                            }
+                        }
+
+                        $get_stock_quantity = $product->get_stock_quantity();
+                        if ($get_stock_quantity) {
+                            $stock = $get_stock_quantity;
+                        } else {
+                            $stock = $product->get_stock_status();
+                        }
+                        ?>
+                        <div class="col-image col-auto">
+                            <img src="<?= $url  ?>" alt="<?php the_title() ?>">
+                        </div>
+                        <div class="col-content d-flex align-items-center justify-content-between col">
+                            <div>
+                                <p><strong><?php the_title() ?></strong></p>
+                                <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
+                                <p><strong>STOCK: </strong> <?= $stock ?> </p>
+
+                            </div>
+
+                            <button type="button" class="plus-minus product-add-to-basket" product-id="<?= get_the_ID() ?>">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+        } else {
+            ?>
+            <h2>No Results Found</h2>
+        <?php
+        }
+        wp_reset_postdata();
+        ?>
+    </div>
+
+<?php
+
+    die();
+}
+
+
+add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for not logged in users
+add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
+function select_product_ajax()
+{
+    $product_ids = $_POST['product_ids'];
+    global $woocommerce;
+
+    foreach ($product_ids as $product_id) {
+        $woocommerce->cart->add_to_cart($product_id);
+    }
+
+    die();
+}
+//add custom shipping
+
+add_action('wp_ajax_woo_get_ajax_data', 'woo_get_ajax_data');
+add_action('wp_ajax_nopriv_woo_get_ajax_data', 'woo_get_ajax_data');
+function woo_get_ajax_data()
+{
+    if (isset($_POST['custom_shipping_cost'])) {
+        $custom_shipping_cost = sanitize_key($_POST['custom_shipping_cost']);
+        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+    }
+    die(); // Alway at the end (to avoid server error 500)
+}
+// Calculate and add extra fee based on radio button selection
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
+function add_custom_extra_fee($cart)
+{
+    if (is_admin() && !defined('DOING_AJAX')) {
+        return;
+    }
+    $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
+    if ($custom_shipping_cost != 'false') {
+        $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
+    } else {
+        $fees = $cart->get_fees();
+        foreach ($fees as $key => $fee) {
+            // unset that specific fee from the array
+            if ($fees[$key]->name === __("Custom Shipping Cost")) {
+                unset($fees[$key]);
+            }
+            if ($fees[$key]->name === __("Custom")) {
+                unset($fees[$key]);
+            }
+        }
+        $cart->fees_api()->set_fees($fees);
+    }
+}
+
+
 /**
  * @snippet       Item Quantity Inputs @ WooCommerce Checkout
  * @how-to        Get CustomizeWoo.com FREE
