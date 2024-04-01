@@ -384,6 +384,7 @@ function custom_product_ajax()
 
     $woocommerce->cart->add_to_cart($product->get_id(), $quantity);
 
+    echo $product->get_id();
 
     die(); // Alway at the end (to avoid server error 500)
 }
