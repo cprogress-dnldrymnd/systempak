@@ -378,7 +378,9 @@ function custom_product_ajax()
     $product->set_description('<p>This product was temporarily created for a manual/order order. This product will be automatically deleted.</p>');
 
     $product->set_catalog_visibility('hidden');
-    
+
+    $product->set_category_ids(array(1263));
+
     $product->save();
     echo '<div id="custom-product-cart-style">';
     echo '<style> .cart-product-' . $product->get_id() . '{ background-color: var(--accent-color) } </style>';
