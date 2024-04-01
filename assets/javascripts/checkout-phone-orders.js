@@ -348,13 +348,14 @@ function custom_shipping_ajax() {
 }
 
 function custom_product_ajax() {
-    jQuery('div.woocommerce').on('click', '#add-custom-product', function () {
+    jQuery(document).on('click', '#add-custom-product', function () {
+
         var title = jQuery('#addCustomProduct input[name="title"]').val();
         var sku = jQuery('#addCustomProduct input[name="sku"]').val();
         var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
         var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
 
-     
+
         console.log(custom_shipping_cost_val);
         jQuery.ajax({
             type: 'POST',
