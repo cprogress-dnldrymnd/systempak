@@ -373,7 +373,7 @@ function custom_product_ajax()
     if ($tax_class) {
         $product->update_meta_data('_tax_class', $tax_class);
     }
-    if ($delete_product) {
+    if ($delete_product == 'yes') {
         $product->update_meta_data('delete_product', true);
     }
     $product->update_meta_data('custom_product', true);
@@ -415,7 +415,7 @@ function action_custom_product()
             var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
             var tax_status = jQuery('#addCustomProduct select[name="tax_status"]').val();
             var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
-            var delete_product = jQuery('#addCustomProduct input[name="delete-product"]:checked').val();
+            var delete_product = jQuery('#addCustomProduct select[name="delete_product"]').val();
 
             if (price && title) {
                 jQuery('#addCustomProduct .loading').removeClass('d-none');
