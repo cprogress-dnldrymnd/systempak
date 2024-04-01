@@ -448,4 +448,4 @@ function action_custom_product()
 <?php
 }
 
-add_shortcode('wp_footer', 'action_custom_product');
+add_action('wp_footer', 'action_custom_product');
