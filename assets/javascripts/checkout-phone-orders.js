@@ -356,7 +356,7 @@ function custom_product_ajax() {
         var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
 
 
-        console.log(custom_shipping_cost_val);
+        console.log('[mama mo]');
         jQuery.ajax({
             type: 'POST',
             url: "/wp-admin/admin-ajax.php",
