@@ -457,7 +457,7 @@ function action_custom_product()
             console.log('updated-checkout');
             setTimeout(function() {
                 jQuery('#custom-product-cart-style').remove();
-            }, 1000);
+            }, 3000);
         });
     </script>
 <?php
