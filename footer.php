@@ -144,9 +144,9 @@ $old_user = user_switching::get_old_user();
                                 <option value="zero-rate">Zero rate</option>
                             </select>
                         </div>
-                        <div class="mb-3 d-flex align-items-center form-holder mb-3">
+                        <div class="mb-3 d-flex align-items-center mb-3">
                             <label for="tax_class" class="form-label">Delete after placed order</label>
-                            <input type="checkbox" name="delete-product" class="form-control">
+                            <input type="checkbox" name="delete-product" >
                         </div>
                     </div>
                 </div>
