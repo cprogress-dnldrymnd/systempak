@@ -329,7 +329,7 @@ function custom_product_ajax()
 
     $title = isset($_POST['title']) ? $_POST['title'] : false;
     $sku = isset($_POST['sku']) ? $_POST['sku'] : false;
-    $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : false;
+    $quantity = isset($_POST['quantity']) ? $_POST['quantity'] : 1;
     $price = isset($_POST['price']) ? $_POST['price'] : false;
 
     // that's CRUD object
@@ -354,7 +354,7 @@ function custom_product_ajax()
 
     global $woocommerce;
 
-    $woocommerce->cart->add_to_cart($product->get_id());
+    $woocommerce->cart->add_to_cart($product->get_id()), $quantity;
 
 
     die(); // Alway at the end (to avoid server error 500)

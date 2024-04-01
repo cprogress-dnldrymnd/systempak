@@ -110,7 +110,7 @@ $old_user = user_switching::get_old_user();
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity">
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity" value="1">
                         </div>
                         <div class="mb-3 d-flex align-items-center form-holder mb-3">
                             <label for="price" class="form-label">Price</label>
