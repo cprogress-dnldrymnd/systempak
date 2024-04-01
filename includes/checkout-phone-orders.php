@@ -434,9 +434,14 @@ function action_custom_product()
                     const myModalEl = document.getElementById('addCustomProduct');
                     var modal = bootstrap.Modal.getInstance(myModalEl)
                     modal.hide();
-                   // jQuery('#custom-product-cart-style').remove();
                 }
             });
+        });
+
+        jQUery(document.body).on('updated_checkout', function() {
+            setTimeout(function() {
+                jQuery('#custom-product-cart-style').remove();
+            }, 1000);
         });
     </script>
 <?php
