@@ -191,13 +191,17 @@ section.select-user .inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; }
   .form-style-1 .loading svg {
     width: 30px;
     height: 30px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
     z-index: 1;
     animation-name: spin;
     animation-duration: 5000ms;
