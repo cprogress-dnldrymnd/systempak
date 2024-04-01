@@ -335,6 +335,8 @@ function custom_product_ajax()
     $length = isset($_POST['length']) ? $_POST['length'] : false;
     $width = isset($_POST['width']) ? $_POST['width'] : false;
     $height = isset($_POST['height']) ? $_POST['height'] : false;
+    $tax_status = isset($_POST['tax_status']) ? $_POST['tax_status'] : false;
+    $tax_class = isset($_POST['tax_class']) ? $_POST['tax_class'] : false;
 
     // that's CRUD object
     $product = new WC_Product_Simple();
@@ -362,6 +364,13 @@ function custom_product_ajax()
     }
     if ($height) {
         $product->set_height($height);
+    }
+
+    if($tax_status) {
+        $product->update_meta_data('_tax_status', $tax_status);
+    }
+    if($tax_class) {
+        $product->update_meta_data('_tax_class', $tax_class);
     }
 
     $product->update_meta_data('custom_product', true);
