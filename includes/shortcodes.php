@@ -159,7 +159,7 @@ function search_products()
     ob_start();
 ?>
     <div class="select-products">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mb-3">
             <h3>Add Products</h3>
             <div class="button-box">
                 <!-- Button trigger modal -->
