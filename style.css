@@ -799,4 +799,7 @@ section.logged-in-as {
 .shop-term a {
   color: var(--accent-color); }
 
+.mobile-nav-tabs {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */
