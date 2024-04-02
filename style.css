@@ -702,7 +702,8 @@ body.search .site-header-search {
     @media (max-width: 767px) {
       .featured-section .icon-box {
         flex-direction: column;
-        text-align: center; } }
+        text-align: center;
+        margin-bottom: 3rem; } }
 
 .tier-pricing-summary-table__total .amount:after {
   content: "Excl. VAT";
