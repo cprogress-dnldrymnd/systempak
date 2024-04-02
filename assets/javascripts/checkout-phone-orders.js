@@ -327,7 +327,7 @@ function custom_shipping_ajax() {
     jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function () {
         var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
 
-        if (custom_shipping_cost) {
+        if (custom_shipping_cost && custom_shipping_cost != '') {
             custom_shipping_cost_val = custom_shipping_cost;
         } else {
             custom_shipping_cost_val = 'false';
