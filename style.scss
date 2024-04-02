@@ -355,6 +355,9 @@ body.single-product.single-product #page .site-content {
             }
             &:not(:last-child) {
                 margin-right: 22px;
+                @media(max-width: 480px) {
+                    margin-right: 10px;
+                }
             }
         }
     }

@@ -239,6 +239,9 @@ body.single-product.single-product #page .site-content {
         height: 100%; }
       .product-features .product-features-box .product-feature:not(:last-child) {
         margin-right: 22px; }
+        @media (max-width: 480px) {
+          .product-features .product-features-box .product-feature:not(:last-child) {
+            margin-right: 10px; } }
 
 b,
 strong {
