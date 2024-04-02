@@ -843,12 +843,11 @@ body.search {
 
         &.tiered-pricing--active {
             td {
-                background-color: var(--light-gray-color);
                 color: var(--black-color);
-                * {
-                    color: var(--black-color);
-                }
+               
                 @media (min-width: 575px) {
+                    background-color: var(--light-gray-color);
+
                     &:first-child {
                         border-radius: 50px 0 0 50px;
                     }
@@ -856,9 +855,12 @@ body.search {
                         border-radius: 0 50px 50px 0;
                     }
                 }
+                * {
+                    color: var(--black-color);
+                }
             }
             @media (max-width: 575px) {
-                background-color: var(--light-gray-color);
+                background-color: var(--accent-color);
             }
         }
 
