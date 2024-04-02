@@ -1177,3 +1177,14 @@ section.logged-in-as {
 .mobile-nav-tabs {
     display: none !important;
 }
+
+
+#order_review .woocommerce-checkout-review-order-table td.product-name {
+    .d-flex {
+        @media(max-width: 767px) {
+              flex-direction: column;
+    text-align: left;
+    align-items: flex-start !important;  
+        }
+    }
+}

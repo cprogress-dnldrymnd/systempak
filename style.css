@@ -839,4 +839,10 @@ section.logged-in-as {
 .mobile-nav-tabs {
   display: none !important; }
 
+@media (max-width: 767px) {
+  #order_review .woocommerce-checkout-review-order-table td.product-name .d-flex {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start !important; } }
+
 /*# sourceMappingURL=style.css.map */
