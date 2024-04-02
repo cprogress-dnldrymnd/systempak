@@ -856,4 +856,12 @@ section.logged-in-as {
       width: 100%;
       margin-top: 1rem; } }
 
+@media (max-width: 575px) {
+  #payment .payment_methods li .payment_box {
+    padding: 0; } }
+
+label[for="payment_method_square_credit_card"] {
+  display: flex !important;
+  flex-wrap: wrap; }
+
 /*# sourceMappingURL=style.css.map */

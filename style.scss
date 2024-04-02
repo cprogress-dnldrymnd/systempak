@@ -1204,3 +1204,14 @@ section.logged-in-as {
         }
     }
 }
+
+#payment .payment_methods li .payment_box {
+    @media(max-width: 575px) {
+        padding: 0;
+    }
+}
+
+label[for="payment_method_square_credit_card"] {
+    display: flex !important;
+    flex-wrap: wrap;
+}
