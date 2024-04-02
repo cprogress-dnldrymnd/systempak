@@ -796,5 +796,7 @@ section.logged-in-as {
   .single-post #secondary {
     display: block;
     width: 100%; } }
+.shop-breadcrumbs a {
+  color: var(--accent-color); }
 
 /*# sourceMappingURL=style.css.map */
