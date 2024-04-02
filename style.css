@@ -608,8 +608,8 @@ body.search .site-header-search {
       .tiered-pricing-table.tiered-pricing-table tr {
         display: flex;
         flex-direction: column;
-        border-radius: 20px;
-        border: 1px solid #8c8c8c;
+        border-radius: 10px;
+        border: 1px solid #cdcdcd;
         padding: 10px; }
         .tiered-pricing-table.tiered-pricing-table tr:not(:last-child) {
           margin-bottom: 1rem; }
