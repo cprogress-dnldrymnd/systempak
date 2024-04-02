@@ -312,6 +312,8 @@ strong {
   .newsletter p .wpcf7-submit {
     border-radius: 0px 15px 15px 0px;
     background-color: var(--text-color); }
+.newsletter .wpcf7-spinner {
+  position: absolute; }
 
 .shortcode-inherit-style * {
   font-size: inherit;
