@@ -629,9 +629,10 @@ body.search .site-header-search {
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(4):before {
             font-weight: bold;
             content: "Price Per Unit: "; } }
-  .tiered-pricing-table.tiered-pricing-table tbody {
-    display: flex;
-    flex-direction: column; }
+  @media (max-width: 575px) {
+    .tiered-pricing-table.tiered-pricing-table tbody {
+      display: flex;
+      flex-direction: column; } }
 
 #wc-square-google-pay .gpay-card-info-container-fill:not(:first-child) {
   display: none !important; }
