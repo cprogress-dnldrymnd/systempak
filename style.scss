@@ -856,6 +856,10 @@ body.search {
                     }
                 }
             }
+            @media (max-width: 575px) {
+                background-color: var(--light-gray-color);
+                border-radius: 20px;
+            }
         }
 
         @media (max-width: 575px) {

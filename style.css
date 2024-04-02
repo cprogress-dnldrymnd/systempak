@@ -601,6 +601,10 @@ body.search .site-header-search {
         .tiered-pricing-table.tiered-pricing-table tr.tiered-pricing--active td:last-child {
           border-radius: 0 50px 50px 0; } }
     @media (max-width: 575px) {
+      .tiered-pricing-table.tiered-pricing-table tr.tiered-pricing--active {
+        background-color: var(--light-gray-color);
+        border-radius: 20px; } }
+    @media (max-width: 575px) {
       .tiered-pricing-table.tiered-pricing-table tr {
         display: flex;
         flex-direction: column; }
