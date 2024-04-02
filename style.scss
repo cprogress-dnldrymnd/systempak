@@ -844,7 +844,7 @@ body.search {
         &.tiered-pricing--active {
             td {
                 color: var(--black-color);
-               
+               background-color: transparent !important;
                 @media (min-width: 575px) {
                     background-color: var(--light-gray-color);
 
