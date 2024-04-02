@@ -833,6 +833,11 @@ body.search {
 
 .tiered-pricing-table.tiered-pricing-table {
     border-collapse: separate;
+    thead {
+        @media (max-width: 575px) {
+            display: none;
+        }
+    }
     tr {
         border: none;
         &.tiered-pricing--active {
@@ -842,14 +847,52 @@ body.search {
                 * {
                     color: var(--black-color);
                 }
-                &:first-child {
-                    border-radius: 50px 0 0 50px;
-                }
-                &:last-child {
-                    border-radius: 0 50px 50px 0;
+                @media (min-width: 575px) {
+                    &:first-child {
+                        border-radius: 50px 0 0 50px;
+                    }
+                    &:last-child {
+                        border-radius: 0 50px 50px 0;
+                    }
                 }
             }
         }
+
+        @media (max-width: 575px) {
+            display: flex;
+            flex-direction: column;
+            td {
+                display: block;
+                &:nth-child(1) {
+                    &:before {
+                        font-weight: bold;
+                        content: "Quantity";
+                    }
+                }
+                &:nth-child(2) {
+                    &:before {
+                        font-weight: bold;
+                        content: "Discount(%)";
+                    }
+                }
+                &:nth-child(3) {
+                    &:before {
+                        font-weight: bold;
+                        content: "Price";
+                    }
+                }
+                &:nth-child(4) {
+                    &:before {
+                        font-weight: bold;
+                        content: "Price Per Unit";
+                    }
+                }
+            }
+        }
+    }
+    tbody {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -1109,7 +1152,6 @@ section.logged-in-as {
         width: 100%;
     }
 }
-
 
 .shop-term {
     a {
