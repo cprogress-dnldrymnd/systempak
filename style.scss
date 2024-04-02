@@ -1178,13 +1178,29 @@ section.logged-in-as {
     display: none !important;
 }
 
-
 #order_review .woocommerce-checkout-review-order-table td.product-name {
     .d-flex {
-        @media(max-width: 767px) {
-              flex-direction: column;
-    text-align: left;
-    align-items: flex-start !important;  
+        @media (max-width: 767px) {
+            flex-direction: column;
+            text-align: left;
+            align-items: flex-start !important;
+        }
+    }
+}
+
+.custom-forms {
+    .checkout_coupon_custom {
+        @media (max-width: 767px) {
+            flex-direction: column;
+            p {
+                flex: 0 0 100% !important;;
+                width: 100% !important;
+            }
+            .button {
+                display: block !important;
+                width: 100%;
+                margin-top: 1rem;
+            }
         }
     }
 }

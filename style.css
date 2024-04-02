@@ -845,4 +845,15 @@ section.logged-in-as {
     text-align: left;
     align-items: flex-start !important; } }
 
+@media (max-width: 767px) {
+  .custom-forms .checkout_coupon_custom {
+    flex-direction: column; }
+    .custom-forms .checkout_coupon_custom p {
+      flex: 0 0 100% !important;
+      width: 100% !important; }
+    .custom-forms .checkout_coupon_custom .button {
+      display: block !important;
+      width: 100%;
+      margin-top: 1rem; } }
+
 /*# sourceMappingURL=style.css.map */
