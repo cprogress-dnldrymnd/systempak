@@ -759,4 +759,28 @@ section.logged-in-as {
       .faqs-holder .elementor-widget-n-accordion .e-n-accordion-item .e-n-accordion-item-title + div a {
         color: var(--white-color); }
 
+.single-post .col-full {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-right: -20px; }
+
+.single-post #primary,
+.single-post #secondary {
+  float: none;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.single-post #primary {
+  width: 70%; }
+
+.single-post #secondary {
+  width: 30%; }
+
+@media (max-width: 1023px) {
+  .single-post #primary,
+  .single-post #secondary {
+    display: block;
+    width: 100%; } }
+
 /*# sourceMappingURL=style.css.map */

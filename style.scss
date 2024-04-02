@@ -602,7 +602,7 @@ a {
     form {
         background-color: #f1f1f1;
         padding: 2rem;
-        @media(max-width: 767px) {
+        @media (max-width: 767px) {
             padding: 1rem;
         }
         input[type="text"] {
@@ -1056,7 +1056,7 @@ section.logged-in-as {
                     fill: var(--white-color) !important;
                 }
                 & + div {
-                    padding:  0 0 30px;
+                    padding: 0 0 30px;
                     border: none;
                     p,
                     li,
@@ -1066,5 +1066,32 @@ section.logged-in-as {
                 }
             }
         }
+    }
+}
+
+.single-post .col-full {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.single-post #primary,
+.single-post #secondary {
+    float: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.single-post #primary {
+    width: 70%;
+}
+.single-post #secondary {
+    width: 30%;
+}
+
+@media (max-width: 1023px) {
+    .single-post #primary,
+    .single-post #secondary {
+        display: block;
+        width: 100%;
     }
 }
