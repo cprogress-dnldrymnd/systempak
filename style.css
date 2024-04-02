@@ -680,8 +680,17 @@ body.search .site-header-search {
       @media (max-width: 991px) {
         .featured-section .icon-box .icon {
           margin-right: 1rem; } }
+      @media (max-width: 767px) {
+        .featured-section .icon-box .icon {
+          margin-right: 1rem; } }
     .featured-section .icon-box h3 {
       margin-bottom: 15px; }
+      @media (max-width: 767px) {
+        .featured-section .icon-box h3 {
+          font-size: 25px; } }
+      @media (max-width: 575px) {
+        .featured-section .icon-box h3 {
+          font-size: 20px; } }
     .featured-section .icon-box p:not(:last-child) {
       margin-bottom: 10px; }
     .featured-section .icon-box:not(:last-child) {
@@ -690,6 +699,10 @@ body.search .site-header-search {
       .featured-section .icon-box {
         flex-direction: column;
         align-items: flex-start; } }
+    @media (max-width: 767px) {
+      .featured-section .icon-box {
+        flex-direction: column;
+        text-align: center; } }
 
 .tier-pricing-summary-table__total .amount:after {
   content: "Excl. VAT";
