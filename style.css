@@ -230,10 +230,13 @@ body.single-product.single-product #page .site-content {
 .product-features {
   margin-top: 30px; }
   .product-features .product-features-box {
-    display: flex;
-    flex-wrap: wrap; }
+    display: flex; }
     .product-features .product-features-box .product-feature {
-      margin-bottom: 22px; }
+      margin-bottom: 22px;
+      flex: 0 0 20%; }
+      .product-features .product-features-box .product-feature svg {
+        width: 100%;
+        height: 100%; }
       .product-features .product-features-box .product-feature:not(:last-child) {
         margin-right: 22px; }
 
