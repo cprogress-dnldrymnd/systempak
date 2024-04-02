@@ -840,6 +840,7 @@ body.search {
     }
     tr {
         border: none;
+
         &.tiered-pricing--active {
             td {
                 background-color: var(--light-gray-color);
@@ -858,37 +859,38 @@ body.search {
             }
             @media (max-width: 575px) {
                 background-color: var(--light-gray-color);
-                border-radius: 20px;
             }
         }
 
         @media (max-width: 575px) {
             display: flex;
             flex-direction: column;
+            border-radius: 20px;
+
             td {
                 display: block;
                 &:nth-child(1) {
                     &:before {
                         font-weight: bold;
-                        content: "Quantity";
+                        content: "Quantity: ";
                     }
                 }
                 &:nth-child(2) {
                     &:before {
                         font-weight: bold;
-                        content: "Discount(%)";
+                        content: "Discount(%): ";
                     }
                 }
                 &:nth-child(3) {
                     &:before {
                         font-weight: bold;
-                        content: "Price";
+                        content: "Price: ";
                     }
                 }
                 &:nth-child(4) {
                     &:before {
                         font-weight: bold;
-                        content: "Price Per Unit";
+                        content: "Price Per Unit: ";
                     }
                 }
             }

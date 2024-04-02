@@ -602,26 +602,26 @@ body.search .site-header-search {
           border-radius: 0 50px 50px 0; } }
     @media (max-width: 575px) {
       .tiered-pricing-table.tiered-pricing-table tr.tiered-pricing--active {
-        background-color: var(--light-gray-color);
-        border-radius: 20px; } }
+        background-color: var(--light-gray-color); } }
     @media (max-width: 575px) {
       .tiered-pricing-table.tiered-pricing-table tr {
         display: flex;
-        flex-direction: column; }
+        flex-direction: column;
+        border-radius: 20px; }
         .tiered-pricing-table.tiered-pricing-table tr td {
           display: block; }
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(1):before {
             font-weight: bold;
-            content: "Quantity"; }
+            content: "Quantity: "; }
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(2):before {
             font-weight: bold;
-            content: "Discount(%)"; }
+            content: "Discount(%): "; }
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(3):before {
             font-weight: bold;
-            content: "Price"; }
+            content: "Price: "; }
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(4):before {
             font-weight: bold;
-            content: "Price Per Unit"; } }
+            content: "Price Per Unit: "; } }
   .tiered-pricing-table.tiered-pricing-table tbody {
     display: flex;
     flex-direction: column; }
