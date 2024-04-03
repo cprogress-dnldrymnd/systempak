@@ -1238,3 +1238,9 @@ label[for="payment_method_square_credit_card"] {
         }
     }
 }
+
+.woocommerce-cart {
+    #wc-square-digital-wallet, #ppc-button-ppcp-gateway {
+        margin-top: 1.5rem;
+    }
+}

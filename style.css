@@ -879,4 +879,7 @@ label[for="payment_method_square_credit_card"] {
     font-size: 70px;
     line-height: 1.2; } }
 
+.woocommerce-cart #wc-square-digital-wallet, .woocommerce-cart #ppc-button-ppcp-gateway {
+  margin-top: 1.5rem; }
+
 /*# sourceMappingURL=style.css.map */
