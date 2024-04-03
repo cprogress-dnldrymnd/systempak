@@ -698,3 +698,10 @@ function variation_save_fields($variation_id, $loop)
     update_post_meta($variation_id, 'quantity_per_box', sanitize_textarea_field($quantity_per_box));
 }
 
+
+add_filter('woocommerce_default_catalog_orderby', 'misha_default_catalog_orderby');
+
+function misha_default_catalog_orderby($sort_by)
+{
+    return 'capacity-asc';
+}
