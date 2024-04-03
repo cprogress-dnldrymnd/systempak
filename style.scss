@@ -1244,3 +1244,11 @@ label[for="payment_method_square_credit_card"] {
         margin-top: 1.5rem;
     }
 }
+
+.woocommerce-terms-and-conditions {
+    @media(max-width: 767px) {
+        h1 {
+            font-size: 30px !important;
+        }
+    }
+}
