@@ -699,13 +699,3 @@ function variation_save_fields($variation_id, $loop)
 }
 
 add_action('woocommerce_before_single_product_summary', 'add_custom_text_before_product_title', 5);
-
-function add_custom_text_before_product_title()
-{
-    global $product;
-
-    $sku = $product->get_sku();
-    if ($sku) {
-        echo '<span>' . $sku . '</span>';
-    }
-}
