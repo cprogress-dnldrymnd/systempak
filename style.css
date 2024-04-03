@@ -884,6 +884,10 @@ label[for="payment_method_square_credit_card"] {
 
 @media (max-width: 767px) {
   .woocommerce-terms-and-conditions h1 {
-    font-size: 30px !important; } }
+    font-size: 22px !important; }
+  .woocommerce-terms-and-conditions h2 {
+    font-size: 20px !important; }
+  .woocommerce-terms-and-conditions h3 {
+    font-size: 18px !important; } }
 
 /*# sourceMappingURL=style.css.map */
