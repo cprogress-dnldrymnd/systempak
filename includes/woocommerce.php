@@ -698,4 +698,3 @@ function variation_save_fields($variation_id, $loop)
     update_post_meta($variation_id, 'quantity_per_box', sanitize_textarea_field($quantity_per_box));
 }
 
-add_action('woocommerce_before_single_product_summary', 'add_custom_text_before_product_title', 5);
