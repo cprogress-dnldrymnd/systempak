@@ -605,7 +605,7 @@ function action_woocommerce_product_tabs($tabs)
         );
     }
 
-    if ($custom_tab_title3) {
+    if ($custom_tab_title3 && $custom_tab_title3 != 'Tech Sheet') {
         $tabs['custom_tab_3'] = array(
             'title' => __($custom_tab_title3, 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
@@ -673,20 +673,19 @@ add_action('woocommerce_product_after_variable_attributes', 'variation_fields', 
 
 function variation_fields($loop, $variation_data, $variation)
 {
-    
-        woocommerce_wp_text_input(
-            array(
-                'id'            => 'quantity_per_box[' . $loop . ']',
-                'label'         => 'Quantity Per Box',
-                'wrapper_class' => 'form-row',
-                'placeholder'   => 'Enter total quantity per box',
-                'desc_tip'      => 'true',
-                'description'   => 'This will be use to compute for price per unit in the tiered pricing table ',
-                'type'          => 'number',
-                'value'         => get_post_meta($variation->ID, 'quantity_per_box', true)
-            )
-        );
-       
+
+    woocommerce_wp_text_input(
+        array(
+            'id'            => 'quantity_per_box[' . $loop . ']',
+            'label'         => 'Quantity Per Box',
+            'wrapper_class' => 'form-row',
+            'placeholder'   => 'Enter total quantity per box',
+            'desc_tip'      => 'true',
+            'description'   => 'This will be use to compute for price per unit in the tiered pricing table ',
+            'type'          => 'number',
+            'value'         => get_post_meta($variation->ID, 'quantity_per_box', true)
+        )
+    );
 }
 
 add_action('woocommerce_save_product_variation', 'variation_save_fields', 10, 2);
@@ -694,8 +693,7 @@ add_action('woocommerce_save_product_variation', 'variation_save_fields', 10, 2)
 function variation_save_fields($variation_id, $loop)
 {
 
-    
+
     $quantity_per_box = !empty($_POST['quantity_per_box'][$loop]) ? $_POST['quantity_per_box'][$loop] : '';
     update_post_meta($variation_id, 'quantity_per_box', sanitize_textarea_field($quantity_per_box));
-
 }
