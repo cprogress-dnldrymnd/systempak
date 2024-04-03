@@ -1225,3 +1225,16 @@ label[for="payment_method_square_credit_card"] {
     display: flex !important;
     flex-wrap: wrap;
 }
+
+
+.error404 {
+    .img-404{
+        display: none;
+    }
+    .error-subtitle{
+        @media(min-width: 1200px) {
+            font-size: 70px;
+            line-height: 1.2;
+        }
+    }
+}
