@@ -18,10 +18,11 @@ $old_user = user_switching::get_old_user();
 
     <section class="select-user-form py-5">
         <div class="container">
-            <h3>Please search and select a user first before creating order</h3>
 
             <div id="userSearchForm">
                 <div class="form-holder">
+                    <h3>Please search and select a user first before creating order</h3>
+
                     <div class="mb-3">
                         <label for="userSearch" class="form-label">Email address</label>
                         <input type="search" class="form-control" name="search" id="userSearch">
