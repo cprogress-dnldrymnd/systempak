@@ -39,7 +39,21 @@ $old_user = user_switching::get_old_user();
                             </tr>
                         </thead>
                         <tbody class="results-holder">
+                            <?php foreach ($user_query->get_results() as $user) {  ?>
 
+                                <?php
+                                $link = user_switching::maybe_switch_url($user);
+                                ?>
+                                <tr>
+                                    <td><?= $user->display_name ?> </td>
+                                    <td><?= $user->user_email ?></td>
+                                    <td>
+                                        <a class="btn btn-primary" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
+                                            Select Customer
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
 
