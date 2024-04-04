@@ -25,7 +25,7 @@ $old_user = user_switching::get_old_user();
 
                     <div class="row g-0">
                         <div class="col">
-                            <input type="search" class="form-control" name="search" id="userSearch" placeholder="Search by name or email adress">
+                            <input type="text" class="form-control" name="search" id="userSearch" placeholder="Search by name or email adress">
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Search customer</button>
