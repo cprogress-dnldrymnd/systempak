@@ -943,7 +943,7 @@ label[for="payment_method_square_credit_card"] {
     content: "SystemPAK";
     font-size: 13px; }
 
-section.select-user-form #user-results {
+section.select-user-form #userSearchForm {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto; }
