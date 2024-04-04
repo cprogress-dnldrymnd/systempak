@@ -540,7 +540,7 @@ function user_search_ajax()
                 <td><?= $user->display_name ?> </td>
                 <td><?= $user->user_email ?></td>
                 <td class="text-end">
-                    <a class="btn btn-primary" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
+                    <a class="btn btn-link" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
                         Select Customer
                     </a>
                 </td>
