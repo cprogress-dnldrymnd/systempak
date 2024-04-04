@@ -539,7 +539,7 @@ function user_search_ajax()
                 <td><?= $user->display_name ?> </td>
                 <td><?= $user->user_email ?></td>
                 <td class="text-end">
-                    <div class="d-flex">
+                    <div class="d-inline-flex">
                         <a class="btn btn-link me-3" href="<?= $link ?>&redirect_to=https://systempak.net/my-account/orders/">
                             View Orders
                         </a>
