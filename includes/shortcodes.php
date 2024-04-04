@@ -422,7 +422,7 @@ function phone_orders_header()
                     if ($old_user) {
                         printf(
                             '<a class="ab-item" href="%1$s">Switch back to %2$s</a>',
-                            esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
+                            esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://systempak.net/wp-admin/',
                             esc_html($old_user->display_name)
                         );
                     }
