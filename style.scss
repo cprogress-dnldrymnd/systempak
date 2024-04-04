@@ -1074,6 +1074,7 @@ section.logged-in-as {
     padding-bottom: 20px;
     padding-left: 12px;
     padding-right: 12px;
+    margin-top: 32px;
     a {
         &:hover {
             color: #000;
@@ -1330,3 +1331,4 @@ label[for="payment_method_square_credit_card"] {
         }
     }
 }
+
