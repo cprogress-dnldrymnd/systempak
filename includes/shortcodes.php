@@ -407,6 +407,7 @@ add_shortcode('product_category_features', 'product_category_features');
 function phone_orders_header()
 {
     ob_start();
+    $current_user = wp_get_current_user();
     ?>
     <div id="wpadminbar" class="nojq">
         <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
@@ -414,9 +415,12 @@ function phone_orders_header()
                 <li id="wp-admin-bar-site-name">
                     <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">SystemPAK</a>
                 </li>
+                <li>
+                    <div class="ab-item">Logged-in as <?= $current_user->user_email ?></div>
+                </li>
             </ul>
             <ul role="menu" id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
-                <li id="wp-admin-bar-site-name">
+                <li id="wp-admin-bar-my-account">
                     <?php
                     $old_user = user_switching::get_old_user();
                     if ($old_user) {
@@ -432,13 +436,11 @@ function phone_orders_header()
         </div>
     </div>
     <section class="logged-in-as mb-5">
-        <?php
-        $current_user = wp_get_current_user();
-        ?>
+
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center">
-                    <h5 class="mb-0 me-2">Logged-in as <?= $current_user->user_email ?></h5>
+                    <h5 class="mb-0 me-2"></h5>
                     <a class="button d-inline-block me-2" href="/my-account/orders/">View Orders</a>
 
                     <?php if (!is_page(8978)) { ?>
