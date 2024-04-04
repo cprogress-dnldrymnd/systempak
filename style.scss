@@ -1282,8 +1282,6 @@ label[for="payment_method_square_credit_card"] {
 
 .free-sample {
     background-color: var(--secondary-color);
-    padding: 20px;
-    border-radius: 10px;
     color: var(--white-color);
     > div {
         &:not(:last-child) {
@@ -1302,6 +1300,32 @@ label[for="payment_method_square_credit_card"] {
             &:hover {
                 background-color: transparent;
                 color: var(--white-color);
+            }
+        }
+    }
+}
+
+.woocommerce-tabs {
+    .accordion-item {
+        &:last-child {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+
+            .accordion-head {
+                border: none !important;
+                &:before,
+                &:after {
+                    background-color: var(--white-color) !important;
+                }
+                .accordion-title {
+                    color: var(--white-color);
+                }
+            }
+        }
+        &:nth-last-child(2) {
+            .accordion-head {
+                border: none !important;
             }
         }
     }

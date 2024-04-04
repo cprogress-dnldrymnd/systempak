@@ -909,8 +909,6 @@ label[for="payment_method_square_credit_card"] {
 
 .free-sample {
   background-color: var(--secondary-color);
-  padding: 20px;
-  border-radius: 10px;
   color: var(--white-color); }
   .free-sample > div:not(:last-child) {
     margin-bottom: 1.5rem; }
@@ -924,5 +922,18 @@ label[for="payment_method_square_credit_card"] {
     .free-sample .button-box .button:hover {
       background-color: transparent;
       color: var(--white-color); }
+
+.woocommerce-tabs .accordion-item:last-child {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px; }
+  .woocommerce-tabs .accordion-item:last-child .accordion-head {
+    border: none !important; }
+    .woocommerce-tabs .accordion-item:last-child .accordion-head:before, .woocommerce-tabs .accordion-item:last-child .accordion-head:after {
+      background-color: var(--white-color) !important; }
+    .woocommerce-tabs .accordion-item:last-child .accordion-head .accordion-title {
+      color: var(--white-color); }
+.woocommerce-tabs .accordion-item:nth-last-child(2) .accordion-head {
+  border: none !important; }
 
 /*# sourceMappingURL=style.css.map */
