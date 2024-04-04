@@ -417,18 +417,16 @@ function phone_orders_header()
             </ul>
             <ul role="menu" id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
                 <li id="wp-admin-bar-site-name">
-                    <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">
-                        <?php
-                        $old_user = user_switching::get_old_user();
-                        if ($old_user) {
-                            printf(
-                                '<a href="%1$s">Switch back to %2$s</a>',
-                                esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
-                                esc_html($old_user->display_name)
-                            );
-                        }
-                        ?>
-                    </a>
+                    <?php
+                    $old_user = user_switching::get_old_user();
+                    if ($old_user) {
+                        printf(
+                            '<a class="class="ab-item" role="menuitem" " href="%1$s">Switch back to %2$s</a>',
+                            esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
+                            esc_html($old_user->display_name)
+                        );
+                    }
+                    ?>
                 </li>
             </ul>
         </div>
