@@ -940,7 +940,7 @@ label[for="payment_method_square_credit_card"] {
 .switch-back-admin-bar.switch-back-admin-bar {
   font-size: 0 !important; }
   .switch-back-admin-bar.switch-back-admin-bar:after {
-    content: 'SystemPAK';
+    content: "SystemPAK";
     font-size: 13px; }
 
 /*# sourceMappingURL=style.css.map */
