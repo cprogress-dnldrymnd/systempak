@@ -476,7 +476,7 @@ function action_custom_checkout()
                     type: 'POST',
                     url: "/wp-admin/admin-ajax.php",
                     data: {
-                        'action': 'custom_product_ajax',
+                        'action': 'user_search_ajax',
                         'search': search,
                     },
                     success: function(result) {
