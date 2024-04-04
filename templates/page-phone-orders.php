@@ -21,7 +21,7 @@ $old_user = user_switching::get_old_user();
 
             <div id="userSearchForm">
                 <div class="form-holder">
-                    <h3>Please search and select a customer first before creating order</h3>
+                    <h3>Customer Search Form</h3>
 
                     <div class="mb-3">
                         <label for="userSearch" class="form-label">Email address</label>
