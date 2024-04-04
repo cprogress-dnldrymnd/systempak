@@ -471,7 +471,7 @@ function action_custom_checkout()
             var search = jQuery('#userSearchForm input[name="search"]').val();
 
             if (search) {
-                jQuery('#addCustomProduct .loading').removeClass('d-none');
+                jQuery('#userSearchForm .loading').removeClass('d-none');
                 jQuery.ajax({
                     type: 'POST',
                     url: "/wp-admin/admin-ajax.php",
@@ -481,7 +481,7 @@ function action_custom_checkout()
                     },
                     success: function(result) {
                         jQuery('#user-results .results-holder').html(result);
-
+                        jQuery('#userSearchForm .loading').addClass('d-none');
                     }
                 });
             } else {
