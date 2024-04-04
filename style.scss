@@ -355,7 +355,7 @@ body.single-product.single-product #page .site-content {
             }
             &:not(:last-child) {
                 margin-right: 22px;
-                @media(max-width: 480px) {
+                @media (max-width: 480px) {
                     margin-right: 10px;
                 }
             }
@@ -1226,13 +1226,12 @@ label[for="payment_method_square_credit_card"] {
     flex-wrap: wrap;
 }
 
-
 .error404 {
-    .img-404{
+    .img-404 {
         display: none;
     }
-    .error-subtitle{
-        @media(min-width: 1200px) {
+    .error-subtitle {
+        @media (min-width: 1200px) {
             font-size: 70px;
             line-height: 1.2;
         }
@@ -1240,13 +1239,14 @@ label[for="payment_method_square_credit_card"] {
 }
 
 .woocommerce-cart {
-    #wc-square-digital-wallet, #ppc-button-ppcp-gateway {
+    #wc-square-digital-wallet,
+    #ppc-button-ppcp-gateway {
         margin-top: 1.5rem;
     }
 }
 
 .woocommerce-terms-and-conditions {
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
         h1 {
             font-size: 22px !important;
         }
@@ -1281,5 +1281,19 @@ label[for="payment_method_square_credit_card"] {
 }
 
 .free-sample {
-    
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--white-color);
+    > div {
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    }
+    .button-box {
+        .button {
+            display: inline-block;
+            background-color: var(--white-color);
+        }
+    }
 }

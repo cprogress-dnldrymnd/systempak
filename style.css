@@ -879,7 +879,8 @@ label[for="payment_method_square_credit_card"] {
     font-size: 70px;
     line-height: 1.2; } }
 
-.woocommerce-cart #wc-square-digital-wallet, .woocommerce-cart #ppc-button-ppcp-gateway {
+.woocommerce-cart #wc-square-digital-wallet,
+.woocommerce-cart #ppc-button-ppcp-gateway {
   margin-top: 1.5rem; }
 
 @media (max-width: 767px) {
@@ -905,5 +906,16 @@ label[for="payment_method_square_credit_card"] {
 
 .shipping_class.shipping_class {
   display: none !important; }
+
+.free-sample {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--white-color); }
+  .free-sample > div:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .free-sample .button-box .button {
+    display: inline-block;
+    background-color: var(--white-color); }
 
 /*# sourceMappingURL=style.css.map */
