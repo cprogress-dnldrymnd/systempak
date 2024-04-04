@@ -197,7 +197,7 @@ function search_products()
         </div>
     </div>
 
- 
+
 <?php
     return ob_get_clean();
 }
@@ -408,6 +408,15 @@ function phone_orders_header()
 {
     ob_start();
     ?>
+    <div id="wpadminbar" class="nojq">
+        <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+            <ul role="menu" id="wp-admin-bar-root-default" class="ab-top-menu">
+                <li id="wp-admin-bar-site-name">
+                    <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">SystemPAK</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <section class="logged-in-as mb-5">
         <?php
         $current_user = wp_get_current_user();
@@ -425,6 +434,17 @@ function phone_orders_header()
                     <?php } ?>
                 </div>
                 <h5 class="mb-0">
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown link
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
                     <?php
                     $old_user = user_switching::get_old_user();
                     if ($old_user) {
