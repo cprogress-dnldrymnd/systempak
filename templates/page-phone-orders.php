@@ -27,7 +27,7 @@ $old_user = user_switching::get_old_user();
                         <div class="col-12">
                             <div class="d-flex justify-content-between">
                                 <strong><?= $user->display_name ?></strong>
-                                <a class="button" href="<?= $link ?>&redirect_to=https://spnew.theprogressteam.com/phone-orders/">
+                                <a class="button" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
                                     Select Customer
                                 </a>
 
