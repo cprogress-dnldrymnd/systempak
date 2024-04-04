@@ -552,7 +552,7 @@ function user_search_ajax()
     } else {
     ?>
         <tr>
-            <td colspan="3" class="p-5"> <h5>No results found</h5> </td>
+            <td colspan="3" class="p-5"> <h3>No customer found</h3> </td>
         </tr>
 <?php
     }
