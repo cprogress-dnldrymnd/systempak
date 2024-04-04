@@ -966,6 +966,7 @@ section.select-user-form table td {
     height: 50px; }
 
 .btn-primary {
-  background-color: var(--secondary-color); }
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color); }
 
 /*# sourceMappingURL=style.css.map */
