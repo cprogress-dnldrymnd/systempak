@@ -50,7 +50,7 @@ $old_user = user_switching::get_old_user();
                                 <tr>
                                     <td><?= $user->display_name ?> </td>
                                     <td><?= $user->user_email ?></td>
-                                    <td>
+                                    <td class="text-end">
                                         <a class="btn btn-primary" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
                                             Select Customer
                                         </a>
