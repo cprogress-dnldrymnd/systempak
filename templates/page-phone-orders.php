@@ -21,7 +21,13 @@ $old_user = user_switching::get_old_user();
             <h3>Please search and select a user first before creating order</h3>
 
             <form action="">
-
+                <div class="mb-3">
+                    <label for="userSearch" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="userSearch" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <div id="user-results">
                 <div class="results-holder">
