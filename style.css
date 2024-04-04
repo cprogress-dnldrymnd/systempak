@@ -937,4 +937,9 @@ label[for="payment_method_square_credit_card"] {
 .woocommerce-tabs .accordion-item:nth-last-child(2) .accordion-head {
   border: none !important; }
 
+.switch-back-admin-bar.switch-back-admin-bar {
+  font-size: 0 !important; }
+  .switch-back-admin-bar.switch-back-admin-bar:after {
+    content: 'SystemPAK'; }
+
 /*# sourceMappingURL=style.css.map */
