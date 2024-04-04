@@ -1351,6 +1351,15 @@ section.select-user-form {
         padding: 20px;
         border-radius: 10px;
         margin-bottom: 3rem;
+        input[type="text"] {
+            border-radius: 5px 0 0 5px;
+        }
+
+        button {
+            height: 43px;
+            border-radius: 0 5px 5px 0;;
+        }
+
     }
     table {
         td {
