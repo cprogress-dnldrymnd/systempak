@@ -565,3 +565,19 @@ function user_search_ajax()
 
     die();
 }
+
+
+add_action('admin_bar_menu', 'add_toolbar_items', 100);
+function add_toolbar_items($admin_bar)
+{
+    $admin_bar->add_menu(array(
+        'id'    => 'phone-orders',
+        'title' => 'Phone Orders',
+        'href'  => 'https://systempak.net/phone-orders/',
+        'meta'  => array(
+            'title' => __('Phone Orders'),
+        ),
+    ));
+
+   
+}
