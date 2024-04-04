@@ -469,7 +469,7 @@ function action_custom_checkout()
 
         jQuery(document).on('click', '#userSearchFormTrigger', function() {
             var search = jQuery('#userSearchForm input[name="search"]').val();
-
+            console.log(userSearchFormTrigger);
             if (search) {
                 jQuery('#userSearchForm .loading').removeClass('d-none');
                 jQuery.ajax({
