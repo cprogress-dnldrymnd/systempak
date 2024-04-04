@@ -1309,7 +1309,7 @@ label[for="payment_method_square_credit_card"] {
     .accordion-item {
         &:last-child {
             background-color: var(--secondary-color);
-            padding: 20px;
+            padding: 10px 20px;
             border-radius: 10px;
 
             .accordion-head {
@@ -1319,7 +1319,7 @@ label[for="payment_method_square_credit_card"] {
                     background-color: var(--white-color) !important;
                 }
                 .accordion-title {
-                    color: var(--white-color);
+                    color: var(--white-color) !important;
                 }
             }
         }
