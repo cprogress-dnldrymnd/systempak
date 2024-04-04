@@ -51,12 +51,14 @@ $old_user = user_switching::get_old_user();
                                     <td><?= $user->display_name ?> </td>
                                     <td><?= $user->user_email ?></td>
                                     <td class="text-end">
-                                        <a class="btn btn-link" href="<?= $link ?>&redirect_to=https://systempak.net/my-account/orders/">
-                                            View Orders
-                                        </a>
-                                        <a class="btn btn-link" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
-                                            Select Customer
-                                        </a>
+                                        <div class="d-flex">
+                                            <a class="btn btn-link me-3" href="<?= $link ?>&redirect_to=https://systempak.net/my-account/orders/">
+                                                View Orders
+                                            </a>
+                                            <a class="btn btn-link" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
+                                                Select Customer
+                                            </a>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php } ?>
