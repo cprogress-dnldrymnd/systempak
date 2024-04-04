@@ -1297,6 +1297,12 @@ label[for="payment_method_square_credit_card"] {
         .button {
             display: inline-block;
             background-color: var(--white-color);
+            color: var(--secondary-color);
+            border: 2px solid var(--white-color);
+            &:hover {
+                background-color: transparent;
+                color: var(--white-color);
+            }
         }
     }
 }
