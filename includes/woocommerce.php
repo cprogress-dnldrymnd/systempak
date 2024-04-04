@@ -621,7 +621,7 @@ function action_woocommerce_product_tabs($tabs)
     }
 
     $tabs['free_sample'] = array(
-        'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
+        'title' => __('Free Sample', 'woocommerce'), // TAB TITLE
         'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
         'callback' => 'free_sample_content', // TAB CONTENT CALLBACK
     );
