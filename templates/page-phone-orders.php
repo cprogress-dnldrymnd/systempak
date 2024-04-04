@@ -12,6 +12,7 @@ $old_user = user_switching::get_old_user();
     $args = array(
         'role' => array('customer'),
         'number' => 10,
+        'search' => 'Amanda Bower'
     );
     $user_query = new WP_User_Query($args);
 
