@@ -11,7 +11,8 @@ $old_user = user_switching::get_old_user();
     <?php
     $args = array(
         'role' => array('customer'),
-        'number' => 10
+        'number' => 10,
+        'search' => 'Dev'
     );
     $user_query = new WP_User_Query($args);
 
