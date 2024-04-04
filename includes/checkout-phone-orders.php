@@ -399,12 +399,11 @@ function custom_product_ajax()
 }
 
 
-function action_custom_product()
+function action_custom_checkout()
 {
     ?>
     <script>
         jQuery(document).on('click', '#add-custom-product', function() {
-
             var title = jQuery('#addCustomProduct input[name="title"]').val();
             var sku = jQuery('#addCustomProduct input[name="sku"]').val();
             var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
@@ -466,11 +465,34 @@ function action_custom_product()
             }
 
         });
+
+
+        jQuery(document).on('click', '#userSearchFormTrigger', function() {
+            var search = jQuery('#userSearchForm input[name="search"]').val();
+
+            if (search) {
+                jQuery('#addCustomProduct .loading').removeClass('d-none');
+                jQuery.ajax({
+                    type: 'POST',
+                    url: "/wp-admin/admin-ajax.php",
+                    data: {
+                        'action': 'custom_product_ajax',
+                        'search': search,
+                    },
+                    success: function(result) {
+                        jQuery('#user-results .results-holder').html(result);
+
+                    }
+                });
+            } else {
+                alert('Search field is required.');
+            }
+        });
     </script>
 <?php
 }
 
-add_action('wp_footer', 'action_custom_product');
+add_action('wp_footer', 'action_custom_checkout');
 
 
 add_action('woocommerce_thankyou', 'action_delete_custom_products');
@@ -487,4 +509,39 @@ function action_delete_custom_products($order_id)
             wp_delete_post($product_id, true);
         }
     }
+}
+
+
+
+add_action('wp_ajax_nopriv_user_search_ajax', 'user_search_ajax'); // for not logged in users
+add_action('wp_ajax_user_search_ajax', 'user_search_ajax');
+function user_search_ajax()
+{
+    $search = $_POST['search'];
+    $args = array(
+        'role' => array('customer'),
+        'number' => 10,
+    );
+    $user_query = new WP_User_Query($args);
+
+?>
+    <?php foreach ($user_query->get_results() as $user) {  ?>
+
+        <?php
+        $link = user_switching::maybe_switch_url($user);
+        ?>
+        <tr>
+            <td><?= $user->display_name ?> </td>
+            <td><?= $user->user_email ?></td>
+            <td>
+                <a class="btn btn-primary" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
+                    Select Customer
+                </a>
+            </td>
+        </tr>
+    <?php } ?>
+
+<?php
+
+    die();
 }
