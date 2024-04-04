@@ -419,11 +419,11 @@ function phone_orders_header()
                     <a class="ab-item" href="/my-account/"> | Logged-in as <?= $current_user->user_email ?></a>
                 </li>
                 <li>
-                    <a class="ab-item" href="/my-account/orders/">View Orders</a>
+                    <a class="ab-item view-orders" href="/my-account/orders/">View Orders</a>
                 </li>
                 <?php if (!is_page(8978)) { ?>
                     <li>
-                        <a class="ab-item" href="<?= get_permalink(8978) ?>">Create Order</a>
+                        <a class="ab-item create-order" href="<?= get_permalink(8978) ?>">Create Order</a>
                     </li>
                 <?php } ?>
 
