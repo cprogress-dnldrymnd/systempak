@@ -421,7 +421,7 @@ function phone_orders_header()
                     $old_user = user_switching::get_old_user();
                     if ($old_user) {
                         printf(
-                            '<a class="class="ab-item" role="menuitem" " href="%1$s">Switch back to %2$s</a>',
+                            '<a class="ab-item" href="%1$s">Switch back to %2$s</a>',
                             esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
                             esc_html($old_user->display_name)
                         );
