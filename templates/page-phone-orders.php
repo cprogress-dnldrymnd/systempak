@@ -20,14 +20,14 @@ $old_user = user_switching::get_old_user();
         <div class="container">
             <h3>Please search and select a user first before creating order</h3>
 
-            <form id="userSearchForm">
+            <div id="userSearchForm">
                 <div class="mb-3">
                     <label for="userSearch" class="form-label">Email address</label>
                     <input type="search" class="form-control" name="search" id="userSearch">
                 </div>
 
                 <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Submit</button>
-            </form>
+            </div>
             <div id="user-results">
                 <table class="table table-striped">
                     <thead>
