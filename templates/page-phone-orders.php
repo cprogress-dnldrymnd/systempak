@@ -23,7 +23,7 @@ $old_user = user_switching::get_old_user();
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
 
-                    <div class="row g-0">
+                    <div class="row g-0 m-0">
                         <div class="col">
                             <input type="text" class="form-control" name="search" id="userSearch" placeholder="Search by name or email adress">
                         </div>
