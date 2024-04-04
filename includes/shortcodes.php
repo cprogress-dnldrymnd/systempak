@@ -417,7 +417,7 @@ function phone_orders_header()
                     <?php
                     if ($old_user) {
                         printf(
-                            '<a class="ab-item" href="%1$s">Switch back to %2$s</a>',
+                            '<a class="ab-item switch-back-admin-bar" href="%1$s">Switch back to %2$s</a>',
                             esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://systempak.net/wp-admin/',
                             esc_html('SystemPAK')
                         );

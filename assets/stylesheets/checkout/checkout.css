@@ -216,4 +216,9 @@ section.select-user .inner {
 section.checkout-form {
   margin-top: 50px; }
 
+.switch-back-admin-bar {
+  font-size: 0 !important; }
+  .switch-back-admin-bar:after {
+    content: 'SystemPAK'; }
+
 /*# sourceMappingURL=checkout.css.map */
