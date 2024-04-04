@@ -470,7 +470,8 @@ function action_custom_checkout()
         jQuery(document).on('click', '#userSearchFormTrigger', function() {
             var search = jQuery('#userSearchForm input[name="search"]').val();
             if (search) {
-                jQuery('#userSearchForm .loading').removeClass('d-none');
+                jQuery('#userSearchForm .loading-style-1').removeClass('d-none');
+                jQuery('#user-results .results-holder').html('');
                 jQuery.ajax({
                     type: 'POST',
                     url: "/wp-admin/admin-ajax.php",
@@ -481,7 +482,7 @@ function action_custom_checkout()
                     success: function(result) {
                         console.log('xsdsds');
                         jQuery('#user-results .results-holder').html(result);
-                        jQuery('#userSearchForm .loading').addClass('d-none');
+                        jQuery('#userSearchForm .loading-style-1').addClass('d-none');
                     }
                 });
             } else {
