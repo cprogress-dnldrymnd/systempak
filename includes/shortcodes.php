@@ -418,6 +418,15 @@ function phone_orders_header()
                 <li>
                     <div class="ab-item"> | Logged-in as <?= $current_user->user_email ?></div>
                 </li>
+                <li>
+                    <a class="ab-item" href="/my-account/orders/">View Orders</a>
+                </li>
+                <?php if (!is_page(8978)) { ?>
+                    <li>
+                        <a class="ab-item" href="<?= get_permalink(8978) ?>">Create Order</a>
+                    </li>
+                <?php } ?>
+
             </ul>
             <ul role="menu" id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
                 <li id="wp-admin-bar-my-account">
@@ -435,24 +444,6 @@ function phone_orders_header()
             </ul>
         </div>
     </div>
-    <section class="logged-in-as mb-5">
-
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center">
-                    <h5 class="mb-0 me-2"></h5>
-                    <a class="button d-inline-block me-2" href="/my-account/orders/">View Orders</a>
-
-                    <?php if (!is_page(8978)) { ?>
-                        <a class="button" href="<?= get_permalink(8978) ?>">
-                            Create Order
-                        </a>
-                    <?php } ?>
-                </div>
-
-            </div>
-        </div>
-    </section>
 <?php
     return ob_get_clean();
 }
