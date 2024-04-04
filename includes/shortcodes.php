@@ -416,7 +416,7 @@ function phone_orders_header()
                     <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">SystemPAK</a>
                 </li>
                 <li>
-                    <div class="ab-item"> | Logged-in as <?= $current_user->user_email ?></div>
+                    <a class="ab-item" href="/my-account/"> | Logged-in as <?= $current_user->user_email ?></a>
                 </li>
                 <li>
                     <a class="ab-item" href="/my-account/orders/">View Orders</a>
