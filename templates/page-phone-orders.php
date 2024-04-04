@@ -21,7 +21,7 @@ $old_user = user_switching::get_old_user();
             <form action="">
 
             </form>
-            <div id="results">
+            <div id="user-results">
                 <div class="results-holder">
                     <table class="table">
                         <thead>
