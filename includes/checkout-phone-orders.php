@@ -489,7 +489,7 @@ function action_custom_checkout()
             }
         });
     </script>
-<?php
+    <?php
 }
 
 add_action('wp_footer', 'action_custom_checkout');
@@ -520,33 +520,41 @@ function user_search_ajax()
     $search = $_POST['search'];
     $args = array(
         'role' => array('customer'),
-        'number' => 10,''
+        'number' => 10, ''
     );
     $args['role'] = array('customer');
     $args['number'] = 10;
-    if(isset($search)) {
+    if (isset($search)) {
         $args['search'] = $search;
     }
     $user_query = new WP_User_Query($args);
+    if ($user_query->get_results()) {
+    ?>
+        <?php foreach ($user_query->get_results() as $user) {  ?>
 
-?>
-    <?php foreach ($user_query->get_results() as $user) {  ?>
+            <?php
+            $link = user_switching::maybe_switch_url($user);
+            ?>
+            <tr>
+                <td><?= $user->display_name ?> </td>
+                <td><?= $user->user_email ?></td>
+                <td>
+                    <a class="btn btn-primary" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
+                        Select Customer
+                    </a>
+                </td>
+            </tr>
+        <?php } ?>
 
-        <?php
-        $link = user_switching::maybe_switch_url($user);
-        ?>
+    <?php
+
+    } else {
+    ?>
         <tr>
-            <td><?= $user->display_name ?> </td>
-            <td><?= $user->user_email ?></td>
-            <td>
-                <a class="btn btn-primary" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
-                    Select Customer
-                </a>
-            </td>
+            <td colspan="3" class="p-5"> <h5>No results found</h5> </td>
         </tr>
-    <?php } ?>
-
 <?php
+    }
 
     die();
 }
