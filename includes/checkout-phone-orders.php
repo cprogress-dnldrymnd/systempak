@@ -480,6 +480,7 @@ function action_custom_checkout()
                         'search': search,
                     },
                     success: function(result) {
+                        console.log('xsdsds');
                         jQuery('#user-results .results-holder').html(result);
                         jQuery('#userSearchForm .loading').addClass('d-none');
                     }
