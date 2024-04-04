@@ -4,7 +4,12 @@ define('assets_dir', theme_dir . 'assets/');
 define('image_dir', assets_dir . 'images/');
 define('vendor_dir', assets_dir . 'vendors/');
 define('checkout_version', 7.8);
+add_action('after_setup_theme', 'add_wc_gallery_lightbox', 100);
 
+function add_wc_gallery_lightbox()
+{
+	add_theme_support('wc-product-gallery-lightbox');
+}
 add_action('wp_enqueue_scripts', 'priotech_child_enqueue_styles');
 function priotech_child_enqueue_styles()
 {
