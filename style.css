@@ -900,4 +900,7 @@ label[for="payment_method_square_credit_card"] {
   .dropdown-toggle.dropdown-toggle:after {
     content: none !important; }
 
+.pswp__bg.pswp__bg {
+  background-color: rgba(0, 0, 0, 0.8); }
+
 /*# sourceMappingURL=style.css.map */
