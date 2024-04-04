@@ -619,7 +619,33 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
         );
     }
+
+    $tabs['free_sample'] = array(
+        'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
+        'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+        'callback' => 'free_sample_content', // TAB CONTENT CALLBACK
+    );
     return $tabs;
+}
+
+function free_sample_content()
+{
+?>
+    <div class="free-sample">
+        <div class="heading-box">
+            <h4>Claim Your Free Sample Today!</h4>
+        </div>
+        <div class="description-box">
+            <p>
+                See the quality for yourself. Our samples are free. You’ll just need to cover the postage.
+            </p>
+        </div>
+        <div class="button-box">
+            <a href="https://systempak.net/claim-your-free-sample/" class="button">
+            </a>
+        </div>
+    </div>
+<?php
 }
 
 function tech_sheet_content()
