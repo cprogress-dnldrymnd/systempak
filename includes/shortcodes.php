@@ -415,6 +415,22 @@ function phone_orders_header()
                     <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">SystemPAK</a>
                 </li>
             </ul>
+            <ul role="menu" id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+                <li id="wp-admin-bar-site-name">
+                    <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">
+                        <?php
+                        $old_user = user_switching::get_old_user();
+                        if ($old_user) {
+                            printf(
+                                '<a href="%1$s">Switch back to %2$s</a>',
+                                esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
+                                esc_html($old_user->display_name)
+                            );
+                        }
+                        ?>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
     <section class="logged-in-as mb-5">
@@ -433,29 +449,7 @@ function phone_orders_header()
                         </a>
                     <?php } ?>
                 </div>
-                <h5 class="mb-0">
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
-                        </a>
 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                    <?php
-                    $old_user = user_switching::get_old_user();
-                    if ($old_user) {
-                        printf(
-                            '<a href="%1$s">Switch back to %2$s</a>',
-                            esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://spnew.theprogressteam.com/phone-orders/',
-                            esc_html($old_user->display_name)
-                        );
-                    }
-                    ?>
-                </h5>
             </div>
         </div>
     </section>
