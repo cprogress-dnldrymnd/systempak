@@ -213,4 +213,7 @@ section.select-user .inner {
   .cart_item.highlight .quantity-parent {
     background-color: var(--white-color); }
 
+section.checkout-form {
+  margin-top: 50px; }
+
 /*# sourceMappingURL=checkout.css.map */
