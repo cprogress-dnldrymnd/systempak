@@ -23,11 +23,14 @@ $old_user = user_switching::get_old_user();
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
 
-                    <div class="mb-3">
-                        <label for="userSearch" class="form-label">Email address</label>
-                        <input type="search" class="form-control" name="search" id="userSearch">
+                    <div class="row g-0">
+                        <div class="col">
+                            <input type="search" class="form-control" name="search" id="userSearch" placeholder="Search by name or email adress">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Search customer</button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Search customer</button>
                 </div>
                 <div id="user-results">
                     <table class="table table-striped">
