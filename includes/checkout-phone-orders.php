@@ -526,7 +526,7 @@ function user_search_ajax()
     $args['role'] = array('customer');
     $args['number'] = 10;
     if (isset($search)) {
-        $args['search'] = $search;
+        $args['search'] = '*' . $search . '*';
     }
     $user_query = new WP_User_Query($args);
     if ($user_query->get_results()) {
@@ -552,7 +552,9 @@ function user_search_ajax()
     } else {
     ?>
         <tr>
-            <td colspan="3" class="p-5"> <h3>No customer found</h3> </td>
+            <td colspan="3" class="p-5">
+                <h3>No customer found</h3>
+            </td>
         </tr>
 <?php
     }
