@@ -532,7 +532,6 @@ function user_search_ajax()
     if ($user_query->get_results()) {
     ?>
         <?php foreach ($user_query->get_results() as $user) {  ?>
-
             <?php
             $link = user_switching::maybe_switch_url($user);
             ?>
