@@ -642,6 +642,7 @@ function free_sample_content()
         </div>
         <div class="button-box">
             <a href="https://systempak.net/claim-your-free-sample/" class="button">
+                Claim Your Sample
             </a>
         </div>
     </div>
