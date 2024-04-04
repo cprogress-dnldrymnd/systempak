@@ -943,4 +943,9 @@ label[for="payment_method_square_credit_card"] {
     content: "SystemPAK";
     font-size: 13px; }
 
+section.select-user-form #user-results {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto; }
+
 /*# sourceMappingURL=style.css.map */
