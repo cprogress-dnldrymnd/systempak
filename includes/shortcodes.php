@@ -408,12 +408,21 @@ function phone_orders_header()
 {
     ob_start();
     $current_user = wp_get_current_user();
+    $old_user = user_switching::get_old_user();
     ?>
     <div id="wpadminbar" class="nojq">
         <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
             <ul role="menu" id="wp-admin-bar-root-default" class="ab-top-menu">
                 <li id="wp-admin-bar-site-name">
-                    <a class="ab-item" role="menuitem" aria-expanded="false" href="https://systempak.net/wp-admin/">SystemPAK</a>
+                    <?php
+                    if ($old_user) {
+                        printf(
+                            '<a class="ab-item" href="%1$s">Switch back to %2$s</a>',
+                            esc_url(user_switching::switch_back_url($old_user)) . '&redirect_to=https://systempak.net/wp-admin/',
+                            esc_html('SystemPAK')
+                        );
+                    }
+                    ?>
                 </li>
                 <li>
                     <a class="ab-item" href="/my-account/"> | Logged-in as <?= $current_user->user_email ?></a>
@@ -431,7 +440,6 @@ function phone_orders_header()
             <ul role="menu" id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
                 <li id="wp-admin-bar-my-account">
                     <?php
-                    $old_user = user_switching::get_old_user();
                     if ($old_user) {
                         printf(
                             '<a class="ab-item" href="%1$s">Switch back to %2$s</a>',
