@@ -469,7 +469,6 @@ function action_custom_checkout()
 
         jQuery(document).on('click', '#userSearchFormTrigger', function() {
             var search = jQuery('#userSearchForm input[name="search"]').val();
-            console.log(userSearchFormTrigger);
             if (search) {
                 jQuery('#userSearchForm .loading').removeClass('d-none');
                 jQuery.ajax({
@@ -521,8 +520,13 @@ function user_search_ajax()
     $search = $_POST['search'];
     $args = array(
         'role' => array('customer'),
-        'number' => 10,
+        'number' => 10,''
     );
+    $args['role'] = array('customer');
+    $args['number'] = 10;
+    if(isset($search)) {
+        $args['search'] = $search;
+    }
     $user_query = new WP_User_Query($args);
 
 ?>
