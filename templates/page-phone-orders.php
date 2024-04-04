@@ -32,9 +32,9 @@ $old_user = user_switching::get_old_user();
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email Address</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col"><strong>Name</strong></th>
+                                <th scope="col"><strong>Email Address</strong></th>
+                                <th scope="col"><strong>Actions</strong></th>
                             </tr>
                         </thead>
                         <tbody class="results-holder">
