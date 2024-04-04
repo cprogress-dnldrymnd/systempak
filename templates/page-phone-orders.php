@@ -38,7 +38,7 @@ $old_user = user_switching::get_old_user();
                             <tr>
                                 <th scope="col"><strong>Name</strong></th>
                                 <th scope="col"><strong>Email Address</strong></th>
-                                <th scope="col"><strong>Actions</strong></th>
+                                <th scope="col" class="text-end"><strong>Actions</strong></th>
                             </tr>
                         </thead>
                         <tbody class="results-holder">
