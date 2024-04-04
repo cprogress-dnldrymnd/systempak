@@ -914,6 +914,8 @@ label[for="payment_method_square_credit_card"] {
   color: var(--white-color); }
   .free-sample > div:not(:last-child) {
     margin-bottom: 1.5rem; }
+  .free-sample h3 {
+    color: inherit; }
   .free-sample .button-box .button {
     display: inline-block;
     background-color: var(--white-color); }

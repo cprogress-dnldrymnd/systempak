@@ -633,7 +633,7 @@ function free_sample_content()
 ?>
     <div class="free-sample">
         <div class="heading-box">
-            <h4>Claim Your Free Sample Today!</h4>
+            <h3>Claim Your Free Sample Today!</h3>
         </div>
         <div class="description-box">
             <p>
