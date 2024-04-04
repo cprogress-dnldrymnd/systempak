@@ -10,9 +10,10 @@ $old_user = user_switching::get_old_user();
 <?php if (current_user_can('administrator')) { ?>
     <?php
     $args = array(
-        'role' => array('customer')
+        'role' => array('customer'),
+        'number' => 10
     );
-    $users = get_users($args);
+    $user_query = new WP_User_Query($args);
 
     ?>
 
@@ -25,7 +26,7 @@ $old_user = user_switching::get_old_user();
                     <label for="userSearch" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="userSearch" aria-describedby="emailHelp">
                 </div>
-            
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <div id="user-results">
@@ -39,7 +40,7 @@ $old_user = user_switching::get_old_user();
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($users as $user) { ?>
+                            <?php foreach ($user_query->get_results() as $user) {  ?>
 
                                 <?php
                                 $link = user_switching::maybe_switch_url($user);
