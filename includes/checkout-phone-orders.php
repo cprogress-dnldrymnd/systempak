@@ -618,3 +618,13 @@ function custom_cart_item_price($cart)
         }
     }
 }
+
+// display new price
+function my_new_price($values, $item)
+{
+    if (get_current_user_id() == 3) {
+        return 'test';
+    }
+}
+
+add_filter('woocommerce_cart_item_subtotal', 'my_new_price', 10, 2);
