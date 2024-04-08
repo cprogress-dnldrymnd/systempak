@@ -17,9 +17,6 @@
  */
 
 defined('ABSPATH') || exit;
-
-$old_user = user_switching::get_old_user();
-
 ?>
 
 <table class="shop_table woocommerce-checkout-review-order-table">
@@ -95,22 +92,20 @@ $old_user = user_switching::get_old_user();
 
 			</td>
 		</tr>
-		<?php if ($old_user) { ?>
-			<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
-				<td colspan="2" class="td-coupon">
-					<div class="checkout_coupon_custom">
-						<p class="form-row form-row-first">
-							<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost">
-						</p>
-						<p class="form-row form-row-last">
-							<a class="button apply_custom_shipping_cost">Set Cost</a>
-						</p>
-					</div>
-					<div class="custom-shipping-message"></div>
-				</td>
-			</tr>
 
-		<?php } ?>
+		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
+			<td colspan="2" class="td-coupon">
+				<div class="checkout_coupon_custom">
+					<p class="form-row form-row-first">
+						<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost">
+					</p>
+					<p class="form-row form-row-last">
+						<a class="button apply_custom_shipping_cost">Set Cost</a>
+					</p>
+				</div>
+				<div class="custom-shipping-message"></div>
+			</td>
+		</tr>
 	</tbody>
 	<tfoot>
 
@@ -126,18 +121,17 @@ $old_user = user_switching::get_old_user();
 			</tr>
 		<?php endforeach; ?>
 
-		<?php if (!$old_user) { ?>
 
-			<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
+		<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
 
-				<?php do_action('woocommerce_review_order_before_shipping'); ?>
+			<?php do_action('woocommerce_review_order_before_shipping'); ?>
 
-				<?php wc_cart_totals_shipping_html(); ?>
+			<?php wc_cart_totals_shipping_html(); ?>
 
-				<?php do_action('woocommerce_review_order_after_shipping'); ?>
+			<?php do_action('woocommerce_review_order_after_shipping'); ?>
 
-			<?php endif; ?>
-		<?php  } ?>
+		<?php endif; ?>
+
 
 		<?php foreach (WC()->cart->get_fees() as $fee) : ?>
 			<tr class="fee">
