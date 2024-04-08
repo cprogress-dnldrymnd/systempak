@@ -176,6 +176,11 @@
             }
         }
     }
+    .results-holder {
+        input[name="custom_price"] {
+            display: none !important;
+        }
+    }
 }
 
 #add-to-order {
