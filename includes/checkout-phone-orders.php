@@ -508,7 +508,7 @@ function action_custom_checkout()
                     'custom_shipping_cost': custom_shipping_cost_val,
                 },
                 success: function(result) {
-                    //jQuery('body').trigger('update_checkout');
+                    jQuery('body').trigger('update_checkout');
                 }
             });
         });
