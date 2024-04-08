@@ -649,8 +649,8 @@ add_action('init', 'customer_capabilities');
 
 function disable_shipping_calc_on_cart($show_shipping)
 {
-
-    if (is_page(8978)) {
+    $old_user = user_switching::get_old_user();
+    if ($old_user) {
         return false;
     } else {
         return $show_shipping;
