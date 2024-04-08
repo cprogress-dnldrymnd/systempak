@@ -661,7 +661,7 @@ add_filter('woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_av
 function bbloomer_unset_shipping_when_free_is_available_in_zone($rates, $package)
 {
     foreach ($rates as $rate) {
-        unset($rate);
+        unset($rates[$rate]);
     }
     return $rates;
 }
