@@ -6,7 +6,7 @@ function search_ajax_products()
 {
     $posts_per_page_val = 5;
     $s = $_POST['s'];
-    $post_type = array('product', 'product_variation');
+    $post_type = array('product', 'product_variation', 'virtual');
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
     $args = array();
@@ -35,6 +35,13 @@ function search_ajax_products()
             'field'    => 'slug',
             'terms'    => array('variable'),
             'operator' => 'NOT IN'
+        ),
+    );
+    $args['meta_query'] = array(
+        array(
+            'key' => '_virtual',
+            'value' => true,
+            'compare' => 'LIKE',
         ),
     );
 
