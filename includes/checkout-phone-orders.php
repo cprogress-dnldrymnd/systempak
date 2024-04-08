@@ -611,7 +611,7 @@ function custom_cart_item_price( $cart ) {
         return;
 
     foreach ( $cart->get_cart() as $cart_item ) {
-        if ( isset( $cart_item['margin'] ) && ! empty( $cart_item['margin'] ) ) {
+        if ( isset( $cart_item['custom_price'] ) && ! empty( $cart_item['custom_price'] ) ) {
             $final_price = $cart_item['custom_price'];
             $cart_item['data']->set_price( $final_price );
         }
