@@ -37,6 +37,12 @@ function search_ajax_products()
             'operator' => 'NOT IN'
         ),
     );
+    $args['meta_query'] = array(
+        array(
+            'key' => '_virtual',
+            'value' => true,
+        ),
+    );
 
     $found_posts = $the_query_args->found_posts;
 
