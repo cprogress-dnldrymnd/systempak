@@ -66,7 +66,7 @@ defined('ABSPATH') || exit;
 							echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 
 							if (get_current_user_id() == 3) {
-								return 'test';
+								echo 'test';
 							}
 							?>
 						</div>
