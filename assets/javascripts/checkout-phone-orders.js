@@ -303,7 +303,7 @@ function ajax_select_product($this) {
     });
     $post_item.each(function (index, element) {
         $product_id = jQuery(this).attr('product-id');
-        $product_ids.push($product_id);
+        //$product_ids.push($product_id);
 
     });
 
