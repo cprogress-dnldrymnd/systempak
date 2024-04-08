@@ -614,7 +614,6 @@ function custom_cart_item_price( $cart ) {
         if ( isset( $cart_item['custom_price'] ) && ! empty( $cart_item['custom_price'] ) ) {
             $final_price = $cart_item['custom_price'];
         }
-        $cart_item['data']->set_price( 20 );
 
     }
     
