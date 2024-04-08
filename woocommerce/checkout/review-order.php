@@ -67,6 +67,7 @@ defined('ABSPATH') || exit;
 
 							if (get_current_user_id() == 3) {
 								echo 'test';
+								echo $cart_item['custom_price'];
 							}
 							?>
 						</div>
