@@ -343,4 +343,7 @@ body:not(.page-template-page-phone-orders) {
     input {
         margin: 0 !important;
     }
+    input,button {
+        min-height: 53px !important;
+    }
 }

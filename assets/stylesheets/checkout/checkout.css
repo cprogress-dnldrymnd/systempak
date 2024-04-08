@@ -236,5 +236,7 @@ body:not(.page-template-page-phone-orders) .fee {
       display: none; }
   .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input {
     margin: 0 !important; }
+  .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input, .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon button {
+    min-height: 53px !important; }
 
 /*# sourceMappingURL=checkout.css.map */
