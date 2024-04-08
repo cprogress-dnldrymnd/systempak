@@ -629,6 +629,11 @@ function customer_capabilities()
         $user->add_cap('read_private_products', true);
         $user->add_cap('edit_others_products', true);
         $user->add_cap('edit_private_products', true);
+    } else {
+        $user = new WP_User($user_id);
+        $user->remove_cap('read_private_products', true);
+        $user->remove_cap('edit_others_products', true);
+        $user->remove_cap('edit_private_products', true);
     }
 }
 
