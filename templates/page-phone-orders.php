@@ -94,6 +94,6 @@ $old_user = user_switching::get_old_user();
 <script>
     jQuery(document).ready(function () {
         jQuery('input[name="coupon_code"]').val('xsxsxxs');
-        jQuery('button[name="apply_coupon"]').click();
+        jQuery('.woocommerce-form-coupon').submit();
     });
 </script>
