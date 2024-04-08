@@ -618,11 +618,17 @@ function custom_cart_item_price($cart)
     }
 }
 
-function customer_capabilities() {
-    $current_user = wp_get_current_user();
+function customer_capabilities()
+{
+    $user_id = get_current_user_id();
     $old_user = user_switching::get_old_user();
 
-    if($old_user) {
+    if ($old_user) {
+        //to add capability to user
+        $user = new WP_User($user_id);
+        $user->add_cap('read_private_products', true);
+        $user->add_cap('edit_others_products', true);
+        $user->add_cap('edit_private_products', true);
     }
 }
 
