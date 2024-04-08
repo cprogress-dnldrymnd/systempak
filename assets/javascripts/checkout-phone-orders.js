@@ -325,7 +325,6 @@ function ajax_select_product($this) {
         },
 
         success: function (response) {
-            console.log(response);
             jQuery('body').trigger('update_checkout');
             $this.removeClass('adding');
             $post_item.remove();
