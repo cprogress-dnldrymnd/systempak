@@ -604,7 +604,7 @@ function add_toolbar_items($admin_bar)
 }
 
 
-add_action('woocommerce_before_calculate_totals', 'custom_cart_item_price', 999, 1);
+add_action('woocommerce_before_calculate_totals', 'custom_cart_item_price', 999999, 1);
 function custom_cart_item_price($cart)
 {
 
