@@ -175,7 +175,7 @@ function add_custom_extra_fee($cart)
         $cart->fees_api()->set_fees($fees);
     }
 
-    WC()->session->set( 'sess_variable_name', null );
+    WC()->session->set( 'Custom Shipping Cost', null );
 }
 
 
