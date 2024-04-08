@@ -174,6 +174,8 @@ function add_custom_extra_fee($cart)
         }
         $cart->fees_api()->set_fees($fees);
     }
+
+    WC()->session->__unset( 'Custom Shipping Cost' );
 }
 
 
