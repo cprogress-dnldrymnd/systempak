@@ -660,7 +660,7 @@ add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_
 
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
-add_action('woocommerce_review_order_after_cart_contents', 'woocommerce_checkout_coupon_form', 99);
+add_action('woocommerce_review_order_after_cart_contents', 'woocommerce_checkout_coupon_form_custom', 99999);
 function woocommerce_checkout_coupon_form_custom()
 {
     echo '<tr class="coupon-form"><td colspan="2">';
