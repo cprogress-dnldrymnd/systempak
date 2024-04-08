@@ -94,5 +94,6 @@ $old_user = user_switching::get_old_user();
 <script>
     jQuery(document).ready(function () {
         jQuery('input[name="coupon_code"]').val('xsxsxxs');
+        jQuery('input[name="apply_coupon"]').click();
     });
 </script>
