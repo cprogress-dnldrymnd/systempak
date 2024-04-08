@@ -226,4 +226,7 @@ body:not(.page-template-page-phone-orders) .fee {
 .woocommerce-shipping-totals th, .woocommerce-shipping-totals td {
   width: 50%; }
 
+.woocommerce-form-coupon {
+  display: grid !important; }
+
 /*# sourceMappingURL=checkout.css.map */

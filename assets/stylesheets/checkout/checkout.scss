@@ -329,3 +329,7 @@ body:not(.page-template-page-phone-orders) {
         width: 50%;
     }
 }
+
+.woocommerce-form-coupon {
+    display: grid !important;
+}
