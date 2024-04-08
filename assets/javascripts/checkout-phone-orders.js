@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
     quantity_plus_minus();
     steps();
-    apply_coupon_custom();
+    //apply_coupon_custom();
     ajax_products_form();
     //ajax_products();
     ajax_select_product_trigger();
