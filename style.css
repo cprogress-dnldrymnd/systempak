@@ -978,14 +978,14 @@ section.select-user-form table td {
   max-width: 100%;
   margin-bottom: 0;
   display: flex !important; }
-  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p {
-    margin: 0 !important; }
-    .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p:first-child {
-      display: none; }
-  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input {
-    margin: 0 !important; }
-  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input,
-  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon button {
-    min-height: 53px !important; }
+.custom-forms.custom-forms.custom-forms p {
+  margin: 0 !important; }
+  .custom-forms.custom-forms.custom-forms p:first-child {
+    display: none; }
+.custom-forms.custom-forms.custom-forms input {
+  margin: 0 !important; }
+.custom-forms.custom-forms.custom-forms input,
+.custom-forms.custom-forms.custom-forms button {
+  min-height: 53px !important; }
 
 /*# sourceMappingURL=style.css.map */
