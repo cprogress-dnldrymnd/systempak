@@ -299,6 +299,9 @@ function ajax_select_product($this) {
             'custom_price': $custom_price
         };
 
+        $product_ids.push($data);
+
+
     });
     $post_item.each(function (index, element) {
         $product_id = jQuery(this).attr('product-id');
@@ -309,7 +312,7 @@ function ajax_select_product($this) {
     $products = JSON.stringify(product_ids);
 
 
-    //console.log($product_ids);
+    console.log($products);
 
     jQuery.ajax({
 
