@@ -617,3 +617,14 @@ function custom_cart_item_price($cart)
         }
     }
 }
+
+function customer_capabilities() {
+    $current_user = wp_get_current_user();
+    $old_user = user_switching::get_old_user();
+
+    if($old_user) {
+        echo 'xxxx';
+    }
+}
+
+add_action('init', 'customer_capabilities');
