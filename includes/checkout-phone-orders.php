@@ -655,7 +655,7 @@ add_action('init', 'customer_capabilities');
  * @community     https://businessbloomer.com/club/
  */
   
- add_filter( 'woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_available_in_zone', 9999, 2 );
+ add_filter( 'woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_available_in_zone', 999999999, 2 );
    
  function bbloomer_unset_shipping_when_free_is_available_in_zone( $rates, $package ) {
     // Only unset rates if free_shipping is available
