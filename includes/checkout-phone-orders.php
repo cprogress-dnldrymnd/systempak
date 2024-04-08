@@ -623,7 +623,7 @@ function customer_capabilities() {
     $old_user = user_switching::get_old_user();
 
     if($old_user) {
-        echo 'xxxx';
+        echo 'teststo';
     }
 }
 
