@@ -657,21 +657,3 @@ function disable_shipping_calc_on_cart($show_shipping)
     }
 }
 add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
-
-
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-add_action( 'custom_coupon_form', 'woocommerce_checkout_coupon_form_custom' );
-
-
-function woocommerce_checkout_coupon_form_custom()
-{
-    echo '<tr class="coupon-form"><td colspan="2">';
-
-    wc_get_template(
-        'checkout/form-coupon.php',
-        array(
-            'checkout' => WC()->checkout(),
-        )
-    );
-    echo '</tr></td>';
-}
