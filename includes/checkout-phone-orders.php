@@ -646,4 +646,3 @@ function customer_capabilities()
 }
 
 add_action('init', 'customer_capabilities');
-
