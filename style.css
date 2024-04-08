@@ -974,17 +974,18 @@ section.select-user-form table td {
   background-color: var(--secondary-color);
   border-color: var(--secondary-color); }
 
-.woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon {
+.custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon {
   max-width: 100%;
   margin-bottom: 0;
   display: flex !important; }
-  .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p {
+  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p {
     margin: 0 !important; }
-    .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p:first-child {
+    .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p:first-child {
       display: none; }
-  .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input {
+  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input {
     margin: 0 !important; }
-  .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input, .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon button {
+  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input,
+  .custom-forms.custom-forms.custom-forms .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon button {
     min-height: 53px !important; }
 
 /*# sourceMappingURL=style.css.map */

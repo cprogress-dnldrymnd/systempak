@@ -1357,9 +1357,8 @@ section.select-user-form {
 
         button {
             height: 43px;
-            border-radius: 0 5px 5px 0;;
+            border-radius: 0 5px 5px 0;
         }
-
     }
     table {
         td {
@@ -1384,21 +1383,23 @@ section.select-user-form {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
-
-.woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon {
-    max-width: 100%;
-    margin-bottom: 0;
-    display: flex !important;
-    p {
-        margin: 0 !important;
-        &:first-child {
-            display: none;
+.custom-forms.custom-forms.custom-forms {
+    .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon {
+        max-width: 100%;
+        margin-bottom: 0;
+        display: flex !important;
+        p {
+            margin: 0 !important;
+            &:first-child {
+                display: none;
+            }
         }
-    }
-    input {
-        margin: 0 !important;
-    }
-    input,button {
-        min-height: 53px !important;
+        input {
+            margin: 0 !important;
+        }
+        input,
+        button {
+            min-height: 53px !important;
+        }
     }
 }
