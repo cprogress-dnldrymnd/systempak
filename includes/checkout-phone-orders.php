@@ -655,7 +655,7 @@ add_action('init', 'customer_capabilities');
  */
 function ts_hide_free_shipping_for_order_weight($rates, $package)
 {
-    foreach ($rates as $rate_id => $rate_val) {
+    foreach ($rates as $rate_val) {
         unset($rates[$rate_val]);
     }
     return $rates;
