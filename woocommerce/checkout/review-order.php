@@ -66,7 +66,7 @@ defined('ABSPATH') || exit;
 							if (!$cart_item['custom_price']) {
 								echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 							} else {
-								echo '<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">£</span>'. $cart_item['custom_price'] * $cart_item['quantity'].' </bdi></span>';
+								echo wp_price($cart_item['custom_price'] * $cart_item['quantity']);
 							}
 							?>
 						</div>
