@@ -130,8 +130,8 @@ function search_ajax_products()
 }
 
 
-add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for not logged in users
-add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
+add_action('wp_ajax_nopriv_woocommerce_add_to_cart_validation ', 'select_product_ajax'); // for not logged in users
+add_action('wp_ajax_woocommerce_add_to_cart_validation', 'select_product_ajax');
 function select_product_ajax()
 {
     $products = $_POST['products'];
