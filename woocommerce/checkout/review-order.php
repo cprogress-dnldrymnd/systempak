@@ -88,7 +88,7 @@ defined('ABSPATH') || exit;
 		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
 			<td colspan="2" class="td-coupon">
 				<div class="checkout_coupon_custom">
-					<p class="form-row form-row-first">
+					<p class="form-row form-row-first not-hide">
 						<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost">
 					</p>
 					<p class="form-row form-row-last">
