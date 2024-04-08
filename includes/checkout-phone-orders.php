@@ -507,7 +507,9 @@ function action_custom_checkout()
                     'custom_shipping_cost': custom_shipping_cost_val,
                 },
                 success: function(result) {
-                    jQuery('body').trigger('update_checkout');
+                    setTimeout(function() {
+                        jQuery('body').trigger('update_checkout');
+                    }, 1000);
                 }
             });
         });
@@ -659,5 +661,5 @@ function disable_shipping_calc_on_cart($show_shipping)
 add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
 
 
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-add_action( 'custom_coupon_form', 'woocommerce_checkout_coupon_form' );
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
