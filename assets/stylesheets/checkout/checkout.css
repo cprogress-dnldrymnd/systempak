@@ -226,15 +226,15 @@ body:not(.page-template-page-phone-orders) .fee {
 .woocommerce-shipping-totals th, .woocommerce-shipping-totals td {
   width: 50%; }
 
-.woocommerce-form-coupon {
+.woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon {
   max-width: 100%;
   margin-bottom: 0;
   display: flex !important; }
-  .woocommerce-form-coupon p {
+  .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p {
     margin: 0 !important; }
-    .woocommerce-form-coupon p:first-child {
+    .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon p:first-child {
       display: none; }
-  .woocommerce-form-coupon input {
+  .woocommerce-form-coupon.woocommerce-form-coupon.woocommerce-form-coupon input {
     margin: 0 !important; }
 
 /*# sourceMappingURL=checkout.css.map */
