@@ -647,3 +647,19 @@ function customer_capabilities()
 
 add_action('init', 'customer_capabilities');
 
+/**
+ * @snippet       Hide one shipping rate when Free Shipping is available
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 6
+ * @community     https://businessbloomer.com/club/
+ */
+  
+ add_filter( 'woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_available_in_zone', 9999, 2 );
+   
+ function bbloomer_unset_shipping_when_free_is_available_in_zone( $rates, $package ) {
+    // Only unset rates if free_shipping is available
+    unset( $rates['flexible_shipping_single:5'] );
+  
+    return $rates;
+ }
