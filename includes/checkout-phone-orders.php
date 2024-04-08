@@ -33,7 +33,7 @@ function search_ajax_products()
         array(
             'taxonomy' => 'product_type',
             'field'    => 'slug',
-            'terms'    => array('variable', 'virtual'),
+            'terms'    => array('variable'),
             'operator' => 'NOT IN'
         ),
     );
