@@ -121,7 +121,7 @@
     font-size: 14px; }
   .search-section-products.search-section-products .post-item-holder.post-item-holder.post-item-holder .post-item .row .col-content h4 {
     margin-bottom: 0; }
-.search-section-products.search-section-products .results-holder input[name="custom_price"] {
+.search-section-products.search-section-products .results-holder .custom-price {
   display: none !important; }
 
 #add-to-order {
