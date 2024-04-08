@@ -23,7 +23,7 @@ function search_ajax_products()
 
     $args['post_type'] = $post_type;
 
-    $args['post_status'] = array('publish');
+    $args['post_status'] = array('publish', 'private');
 
     $args['post__not_in'] = get_cart_product_ids();
 
