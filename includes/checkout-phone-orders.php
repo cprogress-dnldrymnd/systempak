@@ -6,7 +6,7 @@ function search_ajax_products()
 {
     $posts_per_page_val = 5;
     $s = $_POST['s'];
-    $post_type = array('product', 'product_variation', 'virtual');
+    $post_type = array('product', 'product_variation');
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
     $offset = $_POST['offset'];
     $args = array();
@@ -629,11 +629,17 @@ function customer_capabilities()
         $user->add_cap('read_private_products', true);
         $user->add_cap('edit_others_products', true);
         $user->add_cap('edit_private_products', true);
+        $user->add_cap('read_private_product_variations', true);
+        $user->add_cap('edit_others_product_variations', true);
+        $user->add_cap('edit_private_product_variations', true);
     } else {
         $user = new WP_User($user_id);
         $user->remove_cap('read_private_products', true);
         $user->remove_cap('edit_others_products', true);
         $user->remove_cap('edit_private_products', true);
+        $user->remove_cap('read_private_product_variations', true);
+        $user->remove_cap('edit_others_product_variations', true);
+        $user->remove_cap('edit_private_product_variations', true);
     }
 }
 
