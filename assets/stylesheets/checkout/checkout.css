@@ -227,6 +227,14 @@ body:not(.page-template-page-phone-orders) .fee {
   width: 50%; }
 
 .woocommerce-form-coupon {
-  display: grid !important; }
+  max-width: 100%;
+  margin-bottom: 0;
+  display: flex !important; }
+  .woocommerce-form-coupon p {
+    margin: 0 !important; }
+    .woocommerce-form-coupon p:first-child {
+      display: none; }
+  .woocommerce-form-coupon input {
+    margin: 0 !important; }
 
 /*# sourceMappingURL=checkout.css.map */

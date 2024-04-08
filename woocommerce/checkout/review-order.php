@@ -80,7 +80,7 @@ defined('ABSPATH') || exit;
 		?>
 
 		<tr class="coupon custom-forms">
-			<td>
+			<td colspan="2">
 				<?php do_action('custom_coupon_form'); ?>
 			</td>
 		</tr>
