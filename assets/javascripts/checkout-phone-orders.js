@@ -293,7 +293,6 @@ function ajax_select_product($this) {
     $post_item.each(function (index, element) {
         $custom_price = jQuery(this).find('input[name="custom_price"]').val();
         $product_id = jQuery(this).attr('product-id');
-
         $data = {
             'product_id': $product_id,
             'custom_price': $custom_price
@@ -324,6 +323,7 @@ function ajax_select_product($this) {
         },
 
         success: function (response) {
+            console.log(response);
             jQuery('body').trigger('update_checkout');
             $this.removeClass('adding');
             $post_item.remove();
