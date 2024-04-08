@@ -223,4 +223,7 @@ section.checkout-form {
 body:not(.page-template-page-phone-orders) .fee {
   display: none !important; }
 
+.woocommerce-shipping-totals th, .woocommerce-shipping-totals td {
+  width: 50%; }
+
 /*# sourceMappingURL=checkout.css.map */

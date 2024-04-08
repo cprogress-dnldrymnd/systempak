@@ -323,3 +323,9 @@ body:not(.page-template-page-phone-orders) {
         display: none !important;
     }
 }
+
+.woocommerce-shipping-totals {
+    th, td {
+        width: 50%;
+    }
+}
