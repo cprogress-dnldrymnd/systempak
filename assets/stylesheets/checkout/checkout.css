@@ -220,4 +220,7 @@ section.select-user .inner {
 section.checkout-form {
   margin-top: 50px; }
 
+body:not(.page-template-page-phone-orders) .fee {
+  display: none !important; }
+
 /*# sourceMappingURL=checkout.css.map */
