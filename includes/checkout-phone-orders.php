@@ -646,18 +646,3 @@ function customer_capabilities()
 }
 
 add_action('init', 'customer_capabilities');
-
-/** 
- * Hide free shipping when the order weight is more than 5 kgs.
- * 
- * @param array $rates Array of rates found for the package. 
- * @return array 
- */
-function ts_hide_free_shipping_for_order_weight($rates, $package)
-{
-    foreach ($rates as $rate_id => $rate_val) {
-        unset($rates[$rate_val]);
-    }
-    return $rates;
-}
-add_filter('woocommerce_package_rates', 'ts_hide_free_shipping_for_order_weight', 100, 2);
