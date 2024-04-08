@@ -41,6 +41,7 @@ function search_ajax_products()
         array(
             'key' => '_virtual',
             'value' => true,
+            'compare' => 'IN',
         ),
     );
 
