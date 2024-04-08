@@ -33,18 +33,10 @@ function search_ajax_products()
         array(
             'taxonomy' => 'product_type',
             'field'    => 'slug',
-            'terms'    => array('variable'),
+            'terms'    => array('variable', 'virtual'),
             'operator' => 'NOT IN'
         ),
     );
-    $args['meta_query'] = array(
-        array(
-            'key' => '_virtual',
-            'value' => true,
-            'compare' => 'IN',
-        ),
-    );
-
     $found_posts = $the_query_args->found_posts;
 
     if (!$found_posts  && $s != '') {
