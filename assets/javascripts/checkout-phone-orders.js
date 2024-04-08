@@ -318,7 +318,7 @@ function ajax_select_product($this) {
 
             action: 'select_product_ajax',
 
-            //product_ids: $product_ids,
+            product_ids: $product_ids,
 
         },
 
