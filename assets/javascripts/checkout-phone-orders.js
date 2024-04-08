@@ -138,13 +138,12 @@ function coupon_ajax() {
             },
 
             success: function (response) {
-
                 setTimeout(function () {
                     jQuery('body').trigger('update_checkout');
                     jQuery(document.body).on('updated_checkout', function () {
                         jQuery('.coupon-message').html(response);
                     });
-                }, 2000);
+                }, 1000);
             },
             error: function (e) {
                 console.log(e);
