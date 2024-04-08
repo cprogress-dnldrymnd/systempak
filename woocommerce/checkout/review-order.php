@@ -39,11 +39,7 @@ defined('ABSPATH') || exit;
 							<div>
 								<div class="name mb-4">
 									<?php
-									if(get_current_user_id()==3) {
-										echo '<pre>';
-										var_dump($cart_item['data']);
-										echo '</pre>';
-									}
+									
 								?>
 									<span class="name-wrapper"><?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?></span>
 									<div><?php echo 'Price per unit: '.WC()->cart->get_product_subtotal($_product, 1); ?></div>
