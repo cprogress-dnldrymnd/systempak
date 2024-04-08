@@ -141,9 +141,7 @@ function select_product_ajax()
         //$woocommerce->cart->add_to_cart($product_id,);
     }
 
-    var_dump(json_decode($products));
-
-    echo $products;
+ 
 
     die();
 }
