@@ -39,7 +39,7 @@ defined('ABSPATH') || exit;
 							<div>
 								<div class="name mb-4">
 									<?php
-									if(current_user_can('administrator')) {
+									if(get_current_user_id()==3) {
 										echo '<pre>';
 										var_dump($cart_item['data']);
 										echo '</pre>';
