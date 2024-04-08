@@ -3,7 +3,7 @@ jQuery(document).ready(function () {
     steps();
     apply_coupon_custom();
     ajax_products_form();
-    ajax_products();
+    //ajax_products();
     ajax_select_product_trigger();
     select_products();
     //custom_shipping_ajax();
