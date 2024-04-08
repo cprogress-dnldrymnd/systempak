@@ -90,10 +90,3 @@ $old_user = user_switching::get_old_user();
 
 
 <?php get_footer() ?>
-
-<script>
-    jQuery(document).ready(function () {
-        jQuery('input[name="coupon_code"]').val('xsxsxxs');
-        jQuery('.woocommerce-form-coupon').submit();
-    });
-</script>
