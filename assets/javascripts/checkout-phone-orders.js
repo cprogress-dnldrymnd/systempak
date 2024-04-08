@@ -340,6 +340,7 @@ function custom_shipping_ajax() {
                 'custom_shipping_cost': custom_shipping_cost_val,
             },
             success: function (result) {
+                console.log(result);
                 jQuery('body').trigger('update_checkout');
             }
         });
