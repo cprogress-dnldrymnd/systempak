@@ -104,7 +104,7 @@ function search_ajax_products()
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
                                 <p><strong>STOCK: </strong> <?= $stock ?> </p>
-                                <p class="custom-price"><input type="number" name="custom_price" placeholder="Enter custom price" > </p>
+                                <p class="custom-price"><input type="number" name="custom_price" placeholder="Enter custom price"> </p>
 
                             </div>
 
@@ -140,8 +140,10 @@ function select_product_ajax()
     foreach ($products as $product_id) {
         //$woocommerce->cart->add_to_cart($product_id,);
     }
-    
+
     var_dump(json_decode($products));
+
+    echo $products;
 
     die();
 }
@@ -177,8 +179,6 @@ function add_custom_extra_fee($cart)
         }
         $cart->fees_api()->set_fees($fees);
     }
-
-   
 }
 
 

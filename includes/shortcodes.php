@@ -64,7 +64,7 @@ function term_description_sc()
 add_shortcode('term_description', 'term_description_sc');
 
 
-function custom_breadcrumbs()
+function cu                                     m_breadcrumbs()
 {
 
     if (is_singular()) {
