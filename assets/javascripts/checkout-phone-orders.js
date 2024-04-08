@@ -306,7 +306,7 @@ function ajax_select_product($this) {
 
     });
 
-    console.log($product_ids);
+    //console.log($product_ids);
 
     jQuery.ajax({
 
