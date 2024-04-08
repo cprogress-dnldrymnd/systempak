@@ -144,7 +144,7 @@ function coupon_ajax() {
                     jQuery(document.body).on('updated_checkout', function () {
                         jQuery('.coupon-message').html(response);
                     });
-                }, 1000);
+                }, 2000);
             },
             error: function (e) {
                 console.log(e);
