@@ -146,8 +146,10 @@ function select_product_ajax()
     foreach($products_data as $product) {
         echo $product['product_id'];
         echo $product['custom_price'];
+        echo 'x';
     }
 
+    echo 'x2';
     die();
 }
 //add custom shipping
