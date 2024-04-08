@@ -602,3 +602,18 @@ function add_toolbar_items($admin_bar)
         ),
     ));
 }
+
+
+add_action( 'woocommerce_before_calculate_totals', 'custom_cart_item_price', 30, 1 );
+function custom_cart_item_price( $cart ) {
+
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) )
+        return;
+
+    foreach ( $cart->get_cart() as $cart_item ) {
+        if ( isset( $cart_item['margin'] ) && ! empty( $cart_item['margin'] ) ) {
+            $final_price = $cart_item['custom_price'];
+            $cart_item['data']->set_price( $final_price );
+        }
+    }
+}
