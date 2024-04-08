@@ -130,16 +130,16 @@ function search_ajax_products()
 }
 
 
-add_action('wp_ajax_nopriv_woocommerce_add_to_cart_validation ', 'select_product_ajax'); // for not logged in users
-add_action('wp_ajax_woocommerce_add_to_cart_validation', 'select_product_ajax');
+add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for not logged in users
+add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
 function select_product_ajax()
 {
     $products = $_POST['products'];
     global $woocommerce;
 
 
-    foreach($products as $product) {
-        $woocommerce->cart->add_to_cart( $product['product_id'], 1, 0, array(), array( 'custom_price' => $product['custom_price'] ) );
+    foreach ($products as $product) {
+        $woocommerce->cart->add_to_cart($product['product_id'], 1, 0, array(), array('custom_price' => $product['custom_price']));
     }
 
     die();
@@ -604,17 +604,17 @@ function add_toolbar_items($admin_bar)
 }
 
 
-add_action( 'woocommerce_before_calculate_totals', 'custom_cart_item_price', 999, 1 );
-function custom_cart_item_price( $cart ) {
+add_action('woocommerce_before_calculate_totals', 'custom_cart_item_price', 999, 1);
+function custom_cart_item_price($cart)
+{
 
-    if ( is_admin() && ! defined( 'DOING_AJAX' ) )
+    if (is_admin() && !defined('DOING_AJAX'))
         return;
 
-    foreach ( $cart->get_cart() as $cart_item ) {
-        if ( isset( $cart_item['custom_price'] ) && ! empty( $cart_item['custom_price'] ) ) {
+    foreach ($cart->get_cart() as $cart_item) {
+        if (isset($cart_item['custom_price']) && !empty($cart_item['custom_price'])) {
             $final_price = $cart_item['custom_price'];
+            $cart_item['data']->set_price($final_price);
         }
-
     }
-    
 }
