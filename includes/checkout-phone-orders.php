@@ -658,3 +658,10 @@ add_action('init', 'customer_capabilities');
 
 add_filter('woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_available_in_zone', 9999, 2);
 
+function bbloomer_unset_shipping_when_free_is_available_in_zone($rates, $package)
+{
+    foreach ($rates as $key => $rate) {
+        unset($rates[$key]);
+    }
+    return $rates;
+}
