@@ -660,4 +660,4 @@ add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_
 
 
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-add_action( 'woocommerce_after_checkout_form', 'woocommerce_checkout_coupon_form' );
+add_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_coupon_form' );
