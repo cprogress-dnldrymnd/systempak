@@ -84,19 +84,6 @@ defined('ABSPATH') || exit;
 				<?php do_action('custom_coupon_form'); ?>
 			</td>
 		</tr>
-		<tr class="coupon custom-forms">
-			<td colspan="2" class="td-coupon">
-				<div class="checkout_coupon_custom">
-					<p class="form-row form-row-first">
-						<input type="text" name="coupon_code_custom" class="input-text" placeholder="Coupon code" id="coupon_code_custom">
-					</p>
-					<p class="form-row form-row-last">
-						<a class="button apply_coupon_custom">Apply coupon</a>
-					</p>
-				</div>
-				<div class="coupon-message"></div>
-			</td>
-		</tr>
 
 		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
 			<td colspan="2" class="td-coupon">
