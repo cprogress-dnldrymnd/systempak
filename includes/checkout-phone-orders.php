@@ -138,7 +138,7 @@ function select_product_ajax()
     global $woocommerce;
 
     foreach ($product_ids as $product_id) {
-        $woocommerce->cart->add_to_cart($product_id);
+        $woocommerce->cart->add_to_cart($product_id,);
     }
 
     die();

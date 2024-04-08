@@ -123,6 +123,8 @@
     margin-bottom: 0; }
 .search-section-products.search-section-products .results-holder .custom-price {
   display: none !important; }
+  .search-section-products.search-section-products .results-holder .custom-price input {
+    border-radius: 5px; }
 
 #add-to-order {
   padding-left: 10px;

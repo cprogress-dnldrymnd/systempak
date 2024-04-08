@@ -179,6 +179,9 @@
     .results-holder {
         .custom-price {
             display: none !important;
+            input {
+                border-radius: 5px;
+            }
         }
     }
 }
