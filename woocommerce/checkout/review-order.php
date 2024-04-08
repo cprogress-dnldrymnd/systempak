@@ -38,6 +38,7 @@ defined('ABSPATH') || exit;
 							</div>
 							<div>
 								<div class="name mb-4">
+									<?= $cart_item['data']['custom_price'] ?>
 									<span class="name-wrapper"><?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?></span>
 									<div><?php echo 'Price per unit: '.WC()->cart->get_product_subtotal($_product, 1); ?></div>
 								</div>
