@@ -141,15 +141,13 @@ function select_product_ajax()
         //$woocommerce->cart->add_to_cart($product_id,);
     }
 
-    $products_data = json_decode($products);
 
-    foreach($products_data as $product) {
+    foreach($products as $product) {
         echo $product['product_id'];
         echo $product['custom_price'];
         echo 'x';
     }
 
-    echo 'x2';
     die();
 }
 //add custom shipping
