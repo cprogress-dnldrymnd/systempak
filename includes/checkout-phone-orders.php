@@ -134,14 +134,14 @@ add_action('wp_ajax_nopriv_select_product_ajax', 'select_product_ajax'); // for 
 add_action('wp_ajax_select_product_ajax', 'select_product_ajax');
 function select_product_ajax()
 {
-    $product_ids = $_POST['product_ids'];
+    $products = $_POST['products'];
     global $woocommerce;
 
-    foreach ($product_ids as $product_id) {
+    foreach ($products as $product_id) {
         //$woocommerce->cart->add_to_cart($product_id,);
     }
     
-    var_dump($product_ids);
+    var_dump(json_decode($products));
 
     die();
 }

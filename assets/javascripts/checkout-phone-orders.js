@@ -306,6 +306,9 @@ function ajax_select_product($this) {
 
     });
 
+    $products = JSON.stringify(product_ids);
+
+
     //console.log($product_ids);
 
     jQuery.ajax({
@@ -318,7 +321,7 @@ function ajax_select_product($this) {
 
             action: 'select_product_ajax',
 
-            product_ids: $product_ids,
+            products: $products,
 
         },
 
