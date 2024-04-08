@@ -163,15 +163,12 @@ function add_custom_extra_fee($cart)
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
     if ($custom_shipping_cost != 'false') {
-        $cart->add_fee(__('Custom Shipping Cost', 'text-domain'), $custom_shipping_cost, true, 'standard');
+        $cart->add_fee(__'Custom Shipping Cost', $custom_shipping_cost, true, 'standard');
     } else {
         $fees = $cart->get_fees();
         foreach ($fees as $key => $fee) {
             // unset that specific fee from the array
             if ($fees[$key]->name === __("Custom Shipping Cost")) {
-                unset($fees[$key]);
-            }
-            if ($fees[$key]->name === __("Custom")) {
                 unset($fees[$key]);
             }
         }
