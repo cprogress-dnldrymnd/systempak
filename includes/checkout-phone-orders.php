@@ -647,8 +647,13 @@ function customer_capabilities()
 
 add_action('init', 'customer_capabilities');
 
-function disable_shipping_calc_on_cart( $show_shipping ) {
-
-    return false;
+function disable_shipping_calc_on_cart($show_shipping)
+{
+    $old_user = user_switching::get_old_user();
+    if ($old_user) {
+        return false;
+    } else {
+        return $show_shipping;
+    }
 }
-add_filter( 'woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99 );
+add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
