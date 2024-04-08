@@ -309,7 +309,7 @@ function ajax_select_product($this) {
 
     });
 
-    $products = JSON.stringify(product_ids);
+    $products = JSON.stringify($product_ids);
 
 
     console.log($products);
