@@ -641,7 +641,7 @@ function action_woocommerce_product_tabs($tabs)
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
         );
-        $tabs['tech_sheet']['priority'] = 47;
+        $tabs['tech_sheet']['priority'] = 45;
     }
 
     $tabs['bulk_order'] = array(
@@ -650,11 +650,14 @@ function action_woocommerce_product_tabs($tabs)
         'callback' => 'bulk_order_content', // TAB CONTENT CALLBACK
     );
 
+    $tabs['bulk_order']['priority'] = 41;
+
     $tabs['free_sample'] = array(
         'title' => __('Free Sample', 'woocommerce'), // TAB TITLE
         'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
         'callback' => 'free_sample_content', // TAB CONTENT CALLBACK
     );
+    $tabs['bulk_order']['priority'] = 43;
 
     unset($tabs['reviews']);
 
