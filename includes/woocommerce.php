@@ -801,6 +801,11 @@ function hide_conditionally_product_variation($is_visible, $variation_id, $produ
         } else {
             return false;
         }
+    } else {
+        if ($variation->get_meta($field_key) == 'no') {
+            return false;
+        } else {
+            return true;
+        }
     }
-    return $is_visible;
 }
