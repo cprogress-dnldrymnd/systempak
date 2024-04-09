@@ -650,7 +650,5 @@ function customer_capabilities()
 add_action('init', 'customer_capabilities');
 
 
-
-
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
