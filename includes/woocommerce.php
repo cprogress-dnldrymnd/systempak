@@ -579,7 +579,7 @@ function action_custom_tabs_meta_box()
  * @community     https://businessbloomer.com/club/
  */
 
-add_filter('woocommerce_product_tabs', 'action_woocommerce_product_tabs', 9999);
+add_filter('woocommerce_product_tabs', 'action_woocommerce_product_tabs', 98);
 
 function action_woocommerce_product_tabs($tabs)
 {
@@ -601,7 +601,7 @@ function action_woocommerce_product_tabs($tabs)
         }
 
         if ($custom_tab_title1 == 'Print') {
-            $tabs[$custom_tab_title1]['priority'] = 44;
+            $tabs[$custom_tab_title1]['priority'] = 80;
         }
     }
 
@@ -616,7 +616,7 @@ function action_woocommerce_product_tabs($tabs)
         }
 
         if ($custom_tab_title2 == 'Print') {
-            $tabs[$custom_tab_title2]['priority'] = 44;
+            $tabs[$custom_tab_title2]['priority'] = 80;
         }
     }
 
@@ -632,7 +632,7 @@ function action_woocommerce_product_tabs($tabs)
         }
 
         if ($custom_tab_title3 == 'Print') {
-            $tabs[$custom_tab_title3]['priority'] = 44;
+            $tabs[$custom_tab_title3]['priority'] = 80;
         }
     }
     if ($tech_sheets) {
