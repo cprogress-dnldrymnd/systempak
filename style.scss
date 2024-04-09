@@ -1310,13 +1310,11 @@ label[for="payment_method_square_credit_card"] {
     .accordion-item {
         #tab-title-free_sample {
             background-color: var(--secondary-color);
-            padding: 10px 20px;
-            border-radius: 10px;
+            padding: 20px;
 
             & + .accordion-body {
                 background-color: var(--secondary-color);
-                padding: 10px 20px;
-                border-radius: 10px;
+                padding: 10px 20px 30px;
             }
 
             border: none !important;
