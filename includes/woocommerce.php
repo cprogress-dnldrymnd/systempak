@@ -783,3 +783,29 @@ function action_woocommerce_save_product_variation($variation_id, $i)
     }
 }
 add_action('woocommerce_save_product_variation', 'action_woocommerce_save_product_variation', 10, 2);
+
+
+/**
+ * @snippet       Hide Products With Custom Field Value @ Shop
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 7
+ * @community     https://businessbloomer.com/club/
+ */
+
+add_action('woocommerce_product_query', 'bbloomer_hide_product_if_cf_query', 9999, 2);
+
+function bbloomer_hide_product_if_cf_query($q, $query)
+{
+    if (is_admin()) return;
+    $meta_query = $q->get('meta_query');
+    $meta_query[] = array(
+        'relation' => 'OR',
+        array(
+            'key'       => '_enabled',
+            'value'     => false,
+            'compare'   => '!=',
+        ),
+    );
+    $q->set('meta_query', $meta_query);
+}
