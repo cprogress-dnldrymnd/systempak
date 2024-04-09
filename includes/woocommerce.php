@@ -802,3 +802,15 @@ function hide_conditionally_product_variation($is_visible, $variation_id, $produ
         }
     }
 }
+
+function hide_default_enabled_button() {
+    ?>
+    <style>
+        .form-row-full .options label:first-child {
+            display: none !important;
+        }
+    </style>
+    <?php
+}
+
+add_action('admin_head', 'hide_default_enabled_button');
