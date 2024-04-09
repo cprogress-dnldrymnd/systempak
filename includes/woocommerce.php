@@ -601,7 +601,7 @@ function action_woocommerce_product_tabs($tabs)
         }
 
         if ($custom_tab_title1 == 'Print') {
-            $tabs[$custom_tab_title1]['priority'] = 80;
+            $tabs[$custom_tab_title1]['priority'] = 44;
         }
     }
 
@@ -616,7 +616,7 @@ function action_woocommerce_product_tabs($tabs)
         }
 
         if ($custom_tab_title2 == 'Print') {
-            $tabs[$custom_tab_title2]['priority'] = 80;
+            $tabs[$custom_tab_title2]['priority'] = 44;
         }
     }
 
@@ -632,7 +632,7 @@ function action_woocommerce_product_tabs($tabs)
         }
 
         if ($custom_tab_title3 == 'Print') {
-            $tabs[$custom_tab_title3]['priority'] = 80;
+            $tabs[$custom_tab_title3]['priority'] = 44;
         }
     }
     if ($tech_sheets) {
