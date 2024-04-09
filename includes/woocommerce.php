@@ -746,3 +746,33 @@ function misha_default_catalog_orderby($sort_by)
 {
     return 'capacity-asc';
 }
+
+
+// Add checkbox
+function action_woocommerce_variation_options( $loop, $variation_data, $variation ) {
+    $is_checked = get_post_meta( $variation->ID, '_enabled', true );
+
+    if ( $is_checked == 'yes' ) {
+        $is_checked = 'checked';
+    } else {
+        $is_checked = '';     
+    }
+
+    ?>
+    <label class="tips" data-tip="<?php esc_attr_e( 'This is my data tip', 'woocommerce' ); ?>">
+        <?php esc_html_e( 'Enabled?', 'woocommerce' ); ?>
+        <input type="checkbox" class="checkbox variable_checkbox" name="_enabled[<?php echo esc_attr( $loop ); ?>]"<?php echo $is_checked; ?>/>
+    </label>
+    <?php
+}
+add_action( 'woocommerce_variation_options', 'action_woocommerce_variation_options', 10, 3);
+
+// Save checkbox
+function action_woocommerce_save_product_variation( $variation_id, $i ) {
+    if ( ! empty( $_POST['_enabled'] ) && ! empty( $_POST['_enabled'][$i] ) ) {
+        update_post_meta( $variation_id, '_enabled', 'yes' );
+    } else {
+        update_post_meta( $variation_id, '_enabled', 'no' ); 
+    }       
+}
+add_action( 'woocommerce_save_product_variation', 'action_woocommerce_save_product_variation', 10, 2 );
