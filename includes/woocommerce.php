@@ -590,27 +590,50 @@ function action_woocommerce_product_tabs($tabs)
     $tech_sheets = carbon_get_post_meta($post->ID, 'tech_sheets');
 
     if ($custom_tab_title1) {
-        $tabs['custom_tab_1'] = array(
+        $tabs[$custom_tab_title1] = array(
             'title' => __($custom_tab_title1, 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'custom_tab_1_content', // TAB CONTENT CALLBACK
         );
+
+        if ($custom_tab_title1 == 'Quantities') {
+            $tabs[$custom_tab_title1]['priority'] = 40;
+        }
+
+        if ($custom_tab_title1 == 'Print') {
+            $tabs[$custom_tab_title1]['priority'] = 44;
+        }
     }
 
     if ($custom_tab_title2) {
-        $tabs['custom_tab_2'] = array(
+        $tabs[$custom_tab_title2] = array(
             'title' => __($custom_tab_title2, 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'custom_tab_2_content', // TAB CONTENT CALLBACK
         );
+        if ($custom_tab_title2 == 'Quantities') {
+            $tabs[$custom_tab_title2]['priority'] = 40;
+        }
+
+        if ($custom_tab_title2 == 'Print') {
+            $tabs[$custom_tab_title2]['priority'] = 44;
+        }
     }
 
     if ($custom_tab_title3 && $custom_tab_title3 != 'Tech Sheet') {
-        $tabs['custom_tab_3'] = array(
+        $tabs[$custom_tab_title3] = array(
             'title' => __($custom_tab_title3, 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
+
+        if ($custom_tab_title3 == 'Quantities') {
+            $tabs[$custom_tab_title3]['priority'] = 40;
+        }
+
+        if ($custom_tab_title3 == 'Print') {
+            $tabs[$custom_tab_title3]['priority'] = 44;
+        }
     }
     if ($tech_sheets) {
         $tabs['tech_sheet'] = array(
@@ -631,6 +654,11 @@ function action_woocommerce_product_tabs($tabs)
         'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
         'callback' => 'free_sample_content', // TAB CONTENT CALLBACK
     );
+
+    unset($tabs('reviews'));
+
+
+
     return $tabs;
 }
 
@@ -803,14 +831,15 @@ function hide_conditionally_product_variation($is_visible, $variation_id, $produ
     }
 }
 
-function hide_default_enabled_button() {
-    ?>
+function hide_default_enabled_button()
+{
+?>
     <style>
         .form-row-full.options label:first-child {
             display: none !important;
         }
     </style>
-    <?php
+<?php
 }
 
 add_action('admin_head', 'hide_default_enabled_button');
