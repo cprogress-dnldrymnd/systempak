@@ -642,7 +642,6 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
         );
         $tabs['tech_sheet']['priority'] = 47;
-
     }
 
     $tabs['bulk_order'] = array(
@@ -657,7 +656,7 @@ function action_woocommerce_product_tabs($tabs)
         'callback' => 'free_sample_content', // TAB CONTENT CALLBACK
     );
 
-    unset($tabs('reviews'));
+    unset($tabs['reviews']);
 
 
 
