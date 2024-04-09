@@ -112,12 +112,9 @@ defined('ABSPATH') || exit;
 				<td><?php wc_cart_totals_coupon_html($coupon); ?></td>
 			</tr>
 		<?php endforeach; ?>
-		<?php
-		$old_user = user_switching::get_old_user();
 
-		?>
 
-		<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping() && !$old_user) : ?>
+		<?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()) : ?>
 
 			<?php do_action('woocommerce_review_order_before_shipping'); ?>
 
