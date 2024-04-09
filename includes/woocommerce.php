@@ -651,24 +651,24 @@ function action_woocommerce_product_tabs($tabs)
 
     if ($custom_tab_title3 == 'Quantities') {
         $tabs[$custom_tab_title3]['priority'] = 40;
-    }
 
 
     $tabs['bulk_order']['priority'] = 41;
 
-    $tabs['bulk_order']['priority'] = 43;
+    $tabs['free_sample']['priority'] = 42;
+
 
     if ($custom_tab_title1 == 'Print') {
-        $tabs[$custom_tab_title1]['priority'] = 44;
+        $tabs[$custom_tab_title1]['priority'] = 43;
     }
     if ($custom_tab_title2 == 'Print') {
-        $tabs[$custom_tab_title2]['priority'] = 44;
+        $tabs[$custom_tab_title2]['priority'] = 43;
     }
     if ($custom_tab_title3 == 'Print') {
-        $tabs[$custom_tab_title3]['priority'] = 44;
+        $tabs[$custom_tab_title3]['priority'] = 43;
     }
 
-    $tabs['tech_sheet']['priority'] = 45;
+    $tabs['tech_sheet']['priority'] = 44;
 
     return $tabs;
 }
