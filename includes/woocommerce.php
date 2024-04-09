@@ -791,7 +791,7 @@ function hide_conditionally_product_variation($is_visible, $variation_id, $produ
 {
     $field_key = '_enabled';
 
-    if (!$variation->get_meta($field_key)) {
+    if ($variation->get_meta($field_key) == 'no') {
         return false;
     }
     return $is_visible;
