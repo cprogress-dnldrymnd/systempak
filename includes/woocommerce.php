@@ -793,9 +793,6 @@ function hide_conditionally_product_variation($is_visible, $variation_id, $produ
     $old_user = user_switching::get_old_user();
 
     if ($old_user) {
-    }
-
-    if ($old_user) {
         return true;
     } else {
         if ($variation->get_meta($field_key) == 'no') {
