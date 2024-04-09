@@ -785,3 +785,14 @@ function action_woocommerce_save_product_variation($variation_id, $i)
 add_action('woocommerce_save_product_variation', 'action_woocommerce_save_product_variation', 10, 2);
 
 
+// Hide variation based on user role and custom field
+add_filter('woocommerce_variation_is_visible', 'hide_conditionally_product_variation', 10, 4);
+function hide_conditionally_product_variation($is_visible, $variation_id, $product_id, $variation)
+{
+    $field_key = '_enabled';
+
+    if (!$variation->get_meta($field_key)) {
+        return false;
+    }
+    return $is_visible;
+}
