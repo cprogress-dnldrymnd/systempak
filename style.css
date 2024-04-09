@@ -988,4 +988,7 @@ section.select-user-form table td {
 .custom-forms.custom-forms.custom-forms button {
   min-height: 53px !important; }
 
+body:not(.page-template-page-phone-orders) .fee {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */

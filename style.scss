@@ -1405,3 +1405,8 @@ section.select-user-form {
         min-height: 53px !important;
     }
 }
+body:not(.page-template-page-phone-orders) {
+    .fee {
+        display: none !important;
+    }
+}
