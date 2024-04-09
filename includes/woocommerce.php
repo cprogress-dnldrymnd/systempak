@@ -637,6 +637,7 @@ function action_woocommerce_product_tabs($tabs)
     }
 
 
+    unset($tabs['reviews']);
 
 
     if ($custom_tab_title1 == 'Quantities') {
