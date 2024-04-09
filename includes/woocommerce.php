@@ -759,8 +759,8 @@ function action_woocommerce_variation_options( $loop, $variation_data, $variatio
     }
 
     ?>
-    <label class="tips" data-tip="<?php esc_attr_e( 'This is my data tip', 'woocommerce' ); ?>">
-        <?php esc_html_e( 'Enabled?', 'woocommerce' ); ?>
+    <label class="tips" data-tip="<?php esc_attr_e( 'Uncheck to hide product on the listing', 'woocommerce' ); ?>">
+        <?php esc_html_e( 'Enabled', 'woocommerce' ); ?>
         <input type="checkbox" class="checkbox variable_checkbox" name="_enabled[<?php echo esc_attr( $loop ); ?>]"<?php echo $is_checked; ?>/>
     </label>
     <?php
