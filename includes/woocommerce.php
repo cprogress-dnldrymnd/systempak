@@ -789,10 +789,9 @@ add_action('woocommerce_save_product_variation', 'action_woocommerce_save_produc
 add_filter('woocommerce_variation_is_visible', 'hide_conditionally_product_variation', 10, 4);
 function hide_conditionally_product_variation($is_visible, $variation_id, $product_id, $variation)
 {
-    $field_key = '_enabled';
-
-    if ($variation->get_meta($field_key) == 'no') {
-        return false;
+    $old_user = user_switching::get_old_user();
+    if ($old_user) {
+        return true;
     }
     return $is_visible;
 }
