@@ -595,14 +595,6 @@ function action_woocommerce_product_tabs($tabs)
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'custom_tab_1_content', // TAB CONTENT CALLBACK
         );
-
-        if ($custom_tab_title1 == 'Quantities') {
-            $tabs[$custom_tab_title1]['priority'] = 40;
-        }
-
-        if ($custom_tab_title1 == 'Print') {
-            $tabs[$custom_tab_title1]['priority'] = 44;
-        }
     }
 
     if ($custom_tab_title2) {
@@ -611,13 +603,6 @@ function action_woocommerce_product_tabs($tabs)
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'custom_tab_2_content', // TAB CONTENT CALLBACK
         );
-        if ($custom_tab_title2 == 'Quantities') {
-            $tabs[$custom_tab_title2]['priority'] = 40;
-        }
-
-        if ($custom_tab_title2 == 'Print') {
-            $tabs[$custom_tab_title2]['priority'] = 44;
-        }
     }
 
     if ($custom_tab_title3 && $custom_tab_title3 != 'Tech Sheet') {
@@ -626,23 +611,8 @@ function action_woocommerce_product_tabs($tabs)
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
-
-        if ($custom_tab_title3 == 'Quantities') {
-            $tabs[$custom_tab_title3]['priority'] = 40;
-        }
-
-        if ($custom_tab_title3 == 'Print') {
-            $tabs[$custom_tab_title3]['priority'] = 44;
-        }
     }
-    if ($tech_sheets) {
-        $tabs['tech_sheet'] = array(
-            'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
-            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
-            'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
-        );
-        $tabs['tech_sheet']['priority'] = 45;
-    }
+
 
     $tabs['bulk_order'] = array(
         'title' => __('Bulk Order Request Form', 'woocommerce'), // TAB TITLE
@@ -650,18 +620,55 @@ function action_woocommerce_product_tabs($tabs)
         'callback' => 'bulk_order_content', // TAB CONTENT CALLBACK
     );
 
-    $tabs['bulk_order']['priority'] = 41;
 
     $tabs['free_sample'] = array(
         'title' => __('Free Sample', 'woocommerce'), // TAB TITLE
         'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
         'callback' => 'free_sample_content', // TAB CONTENT CALLBACK
     );
-    $tabs['bulk_order']['priority'] = 43;
+
+
+    if ($tech_sheets) {
+        $tabs['tech_sheet'] = array(
+            'title' => __('Tech Sheet', 'woocommerce'), // TAB TITLE
+            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+            'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
+        );
+    }
 
     unset($tabs['reviews']);
 
 
+
+    if ($custom_tab_title1 == 'Quantities') {
+        $tabs[$custom_tab_title1]['priority'] = 40;
+    }
+
+    if ($custom_tab_title2 == 'Quantities') {
+        $tabs[$custom_tab_title2]['priority'] = 40;
+    }
+
+
+    if ($custom_tab_title3 == 'Quantities') {
+        $tabs[$custom_tab_title3]['priority'] = 40;
+    }
+
+
+    $tabs['bulk_order']['priority'] = 41;
+
+    $tabs['bulk_order']['priority'] = 43;
+
+    if ($custom_tab_title1 == 'Print') {
+        $tabs[$custom_tab_title1]['priority'] = 44;
+    }
+    if ($custom_tab_title2 == 'Print') {
+        $tabs[$custom_tab_title2]['priority'] = 44;
+    }
+    if ($custom_tab_title3 == 'Print') {
+        $tabs[$custom_tab_title3]['priority'] = 44;
+    }
+
+    $tabs['tech_sheet']['priority'] = 45;
 
     return $tabs;
 }
