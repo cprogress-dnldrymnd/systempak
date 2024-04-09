@@ -924,18 +924,19 @@ label[for="payment_method_square_credit_card"] {
       background-color: transparent;
       color: var(--white-color); }
 
-.woocommerce-tabs .accordion-item:last-child {
+.woocommerce-tabs .accordion-item #tab-title-free_sample {
   background-color: var(--secondary-color);
   padding: 10px 20px;
-  border-radius: 10px; }
-  .woocommerce-tabs .accordion-item:last-child .accordion-head {
-    border: none !important; }
-    .woocommerce-tabs .accordion-item:last-child .accordion-head:before, .woocommerce-tabs .accordion-item:last-child .accordion-head:after {
-      background-color: var(--white-color) !important; }
-    .woocommerce-tabs .accordion-item:last-child .accordion-head .accordion-title {
-      color: var(--white-color) !important; }
-.woocommerce-tabs .accordion-item:nth-last-child(2) .accordion-head {
+  border-radius: 10px;
   border: none !important; }
+  .woocommerce-tabs .accordion-item #tab-title-free_sample + .accordion-body {
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 10px; }
+  .woocommerce-tabs .accordion-item #tab-title-free_sample:before, .woocommerce-tabs .accordion-item #tab-title-free_sample:after {
+    background-color: var(--white-color) !important; }
+  .woocommerce-tabs .accordion-item #tab-title-free_sample .accordion-title {
+    color: var(--white-color) !important; }
 
 .switch-back-admin-bar.switch-back-admin-bar {
   font-size: 0 !important; }

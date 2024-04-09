@@ -1308,27 +1308,27 @@ label[for="payment_method_square_credit_card"] {
 
 .woocommerce-tabs {
     .accordion-item {
-        &:last-child {
+        #tab-title-free_sample {
             background-color: var(--secondary-color);
             padding: 10px 20px;
             border-radius: 10px;
 
-            .accordion-head {
-                border: none !important;
-                &:before,
-                &:after {
-                    background-color: var(--white-color) !important;
-                }
-                .accordion-title {
-                    color: var(--white-color) !important;
-                }
+            & + .accordion-body {
+                background-color: var(--secondary-color);
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
+
+            border: none !important;
+            &:before,
+            &:after {
+                background-color: var(--white-color) !important;
+            }
+            .accordion-title {
+                color: var(--white-color) !important;
             }
         }
-        &:nth-last-child(2) {
-            .accordion-head {
-                border: none !important;
-            }
-        }
+      
     }
 }
 
