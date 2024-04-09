@@ -641,6 +641,8 @@ function action_woocommerce_product_tabs($tabs)
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
             'callback' => 'tech_sheet_content', // TAB CONTENT CALLBACK
         );
+        $tabs['tech_sheet']['priority'] = 47;
+
     }
 
     $tabs['bulk_order'] = array(
