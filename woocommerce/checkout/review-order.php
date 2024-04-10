@@ -101,7 +101,7 @@ defined('ABSPATH') || exit;
 						<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost" value="<?= $custom_shipping_cost ?>">
 					</p>
 					<p class="form-row form-row-last">
-						<button type="submit" class="button"><?=  != '' ? 'Remove Cost' : 'Set Cost' ?></button>
+						<button type="submit" class="button"><?=  $has_shipping ? 'Remove Cost' : 'Set Cost' ?></button>
 					</p>
 				</form>
 				<div class="custom-shipping-message"></div>
