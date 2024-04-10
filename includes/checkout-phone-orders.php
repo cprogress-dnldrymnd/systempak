@@ -149,8 +149,13 @@ add_action('wp_ajax_custom_shipping_ajax', 'custom_shipping_ajax');
 add_action('wp_ajax_nopriv_custom_shipping_ajax', 'custom_shipping_ajax');
 function custom_shipping_ajax()
 {
-    $custom_shipping_cost = $_POST['custom_shipping_cost'];
-    WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+    global $wp_session;
+    if (isset($_POST['custom_shipping_cost'])) {
+        $custom_shipping_cost = $_POST['custom_shipping_cost'];
+        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+
+        $wp_session['custom_shipping_cost'] = $_POST['custom_shipping_cost'];
+    }
     die(); // Alway at the end (to avoid server error 500)
 }
 // Calculate and add extra fee based on radio button selection
