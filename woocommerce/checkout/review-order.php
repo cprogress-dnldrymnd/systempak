@@ -130,7 +130,12 @@ defined('ABSPATH') || exit;
 		<?php foreach (WC()->cart->get_fees() as $fee) : ?>
 			<tr class="fee">
 				<th><?php echo esc_html($fee->name); ?></th>
-				<td><?php wc_cart_totals_fee_html($fee); ?></td>
+				<td>
+					<?php wc_cart_totals_fee_html($fee); ?>
+					<?php if ($fee->name == 'Custom Shipping Cost') { ?>
+						<a class="woocommerce-remove-coupon remove-custom-shipping" data-coupon="custom_shipping" >[Remove]</a>
+					<?php } ?>
+				</td>
 			</tr>
 		<?php endforeach; ?>
 
