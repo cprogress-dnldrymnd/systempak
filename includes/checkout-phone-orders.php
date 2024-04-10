@@ -487,7 +487,7 @@ function action_custom_checkout()
             }
         });
 
-        jQuery('.apply_custom_shipping_cost').click(function (e) { 
+        jQuery('.apply_custom_shipping_cost').click(function(e) {
             var custom_shipping_cost = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val();
             console.log(custom_shipping_cost);
             jQuery.ajax({
@@ -498,15 +498,21 @@ function action_custom_checkout()
                     'custom_shipping_cost': custom_shipping_cost,
                 },
                 success: function(result) {
-                    setTimeout(function() {
-                        jQuery('body').trigger('update_checkout');
-                    }, 1000);
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: "/wp-admin/admin-ajax.php",
+                        data: {
+                            'action': 'custom_shipping_ajax',
+                            'custom_shipping_cost': custom_shipping_cost,
+                        },
+                        success: function(result) {
+                            jQuery('body').trigger('update_checkout');
+                        }
+                    });
                 }
             });
-            
-        });
 
-           
+        });
     </script>
     <?php
 }
@@ -657,4 +663,3 @@ add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
-
