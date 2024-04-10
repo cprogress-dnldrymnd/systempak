@@ -11,7 +11,6 @@ if (isset($_GET['custom_shipping_cost'])) {
     wp_redirect(get_the_permalink(8978));
     exit;
 }
-echo WC()->session->get('custom_shipping_cost');
 ?>
 <?php if (current_user_can('administrator')) { ?>
     <?php
