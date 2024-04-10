@@ -491,20 +491,12 @@ function action_custom_checkout()
 
 
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
-            var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
-
-            if (custom_shipping_cost && custom_shipping_cost != '') {
-                custom_shipping_cost_val = custom_shipping_cost;
-            } else {
-                custom_shipping_cost_val = 'false';
-            }
-            console.log(custom_shipping_cost_val);
             jQuery.ajax({
                 type: 'POST',
                 url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'custom_shipping_ajax',
-                    'custom_shipping_cost': custom_shipping_cost_val,
+                    'custom_shipping_cost': custom_shipping_cost,
                 },
                 success: function(result) {
                     setTimeout(function() {
