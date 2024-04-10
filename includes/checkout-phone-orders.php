@@ -163,7 +163,7 @@ function add_custom_extra_fee($cart)
         return;
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
-    if ($custom_shipping_cost != 'false') {
+    if ($custom_shipping_cost) {
         $cart->add_fee('Custom Shipping Cost', $custom_shipping_cost, true, 'standard');
     } else {
         $fees = $cart->get_fees();
@@ -491,20 +491,14 @@ function action_custom_checkout()
 
 
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
-            var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
+            var custom_shipping_cost = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val();
 
-            if (custom_shipping_cost && custom_shipping_cost != '') {
-                custom_shipping_cost_val = custom_shipping_cost;
-            } else {
-                custom_shipping_cost_val = 'false';
-            }
-            console.log(custom_shipping_cost_val);
             jQuery.ajax({
                 type: 'POST',
                 url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'custom_shipping_ajax',
-                    'custom_shipping_cost': custom_shipping_cost_val,
+                    'custom_shipping_cost': custom_shipping_cost,
                 },
                 success: function(result) {
                     jQuery.ajax({
@@ -512,7 +506,7 @@ function action_custom_checkout()
                         url: "/wp-admin/admin-ajax.php",
                         data: {
                             'action': 'custom_shipping_ajax',
-                            'custom_shipping_cost': custom_shipping_cost_val,
+                            'custom_shipping_cost': custom_shipping_cost,
                         },
                         success: function(result) {
                             jQuery('body').trigger('update_checkout');
