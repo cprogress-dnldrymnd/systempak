@@ -144,7 +144,7 @@ function select_product_ajax()
     die();
 }
 //add custom shipping
-
+/*
 add_action('wp_ajax_custom_shipping_ajax', 'custom_shipping_ajax');
 add_action('wp_ajax_nopriv_custom_shipping_ajax', 'custom_shipping_ajax');
 function custom_shipping_ajax()
@@ -156,7 +156,9 @@ function custom_shipping_ajax()
     die(); // Alway at the end (to avoid server error 500)
 }
 // Calculate and add extra fee based on radio button selection
+*/
 add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
+
 function add_custom_extra_fee($cart)
 {
     if (is_admin() && !defined('DOING_AJAX')) {
@@ -489,7 +491,7 @@ function action_custom_checkout()
         });
 
 
-
+        /*
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
             var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
 
@@ -512,7 +514,7 @@ function action_custom_checkout()
                     }, 1000);
                 }
             });
-        });
+        });*/
     </script>
     <?php
 }
