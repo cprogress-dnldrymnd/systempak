@@ -7,9 +7,7 @@
 <?php
 $old_user = user_switching::get_old_user();
 
-$cart =  WC()->cart;
-
-$cart->add_fee('Custom Shipping Cost', 100, true, 'standard');
+WC()->session->set('custom_shipping_cost', 200);
 
 ?>
 <?php if (current_user_can('administrator')) { ?>
