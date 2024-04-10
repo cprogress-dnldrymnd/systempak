@@ -517,6 +517,35 @@ function action_custom_checkout()
                 }
             });
         });
+
+
+        
+        jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {
+            jQuery('.blockUICustomShipping').removeClass('d-none');
+            jQuery.ajax({
+                type: 'POST',
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    'action': 'custom_shipping_ajax',
+                    'custom_shipping_cost': 0,
+                },
+                success: function(result) {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: "/wp-admin/admin-ajax.php",
+                        data: {
+                            'action': 'custom_shipping_ajax',
+                            'custom_shipping_cost': 0,
+                        },
+                        success: function(result) {
+                            jQuery('.blockUICustomShipping').addClass('d-none');
+                            jQuery('body').trigger('update_checkout');
+
+                        }
+                    });
+                }
+            });
+        });
     </script>
     <?php
 }
