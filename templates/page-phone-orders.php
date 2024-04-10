@@ -6,6 +6,7 @@
 <?php get_header() ?>
 <?php
 $old_user = user_switching::get_old_user();
+echo WC()->session->get('custom_shipping_cost');
 ?>
 <?php if (current_user_can('administrator')) { ?>
     <?php
