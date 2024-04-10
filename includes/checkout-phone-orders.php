@@ -657,3 +657,23 @@ add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
+
+
+function custom_fee() {
+    ?>
+	<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
+			<td colspan="2" class="td-coupon">
+				<div class="checkout_coupon_custom">
+					<p class="form-row form-row-first not-hide">
+						<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost">
+					</p>
+					<p class="form-row form-row-last">
+						<a class="button apply_custom_shipping_cost">Set Cost</a>
+					</p>
+				</div>
+				<div class="custom-shipping-message"></div>
+			</td>
+		</tr>
+    <?php
+}
+add_action('woocommerce_review_order_before_cart_contents', 'custom_fee');
