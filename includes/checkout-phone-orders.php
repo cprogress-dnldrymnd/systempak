@@ -491,6 +491,12 @@ function action_custom_checkout()
         });
 
 
+
+        jQuery(document).on('click', '.remove-cost', function(e) {
+            
+           e.preventDefault();
+        });
+
         /*
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
             var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
