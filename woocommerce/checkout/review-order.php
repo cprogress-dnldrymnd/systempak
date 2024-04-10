@@ -92,7 +92,7 @@ defined('ABSPATH') || exit;
 						<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost">
 					</p>
 					<p class="form-row form-row-last">
-						<a class="button apply_custom_shipping_cost">Set Cost</a>
+						<button type="submit" class="button">Set Cost</button>
 					</p>
 				</form>
 				<div class="custom-shipping-message"></div>
