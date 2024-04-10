@@ -156,7 +156,7 @@ function custom_shipping_ajax()
     die(); // Alway at the end (to avoid server error 500)
 }
 // Calculate and add extra fee based on radio button selection
-add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', -1, 1);
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
 function add_custom_extra_fee($cart)
 {
     if (is_admin() && !defined('DOING_AJAX')) {
@@ -578,7 +578,7 @@ function user_search_ajax()
                 <h3>No customer found</h3>
             </td>
         </tr>
-    <?php
+<?php
     }
 
     die();
@@ -657,7 +657,6 @@ add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
-
 
 function custom_fee()
 {
