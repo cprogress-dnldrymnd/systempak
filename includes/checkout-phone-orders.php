@@ -492,7 +492,7 @@ function action_custom_checkout()
 
         jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
             var custom_shipping_cost = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val();
-
+            jQuery('.blockUICustomShipping').removeClass('d-none');
             jQuery.ajax({
                 type: 'POST',
                 url: "/wp-admin/admin-ajax.php",
@@ -509,7 +509,9 @@ function action_custom_checkout()
                             'custom_shipping_cost': custom_shipping_cost,
                         },
                         success: function(result) {
+                            jQuery('.blockUICustomShipping').addClass('d-none');
                             jQuery('body').trigger('update_checkout');
+
                         }
                     });
                 }
