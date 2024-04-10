@@ -156,7 +156,7 @@ function custom_shipping_ajax()
     die(); // Alway at the end (to avoid server error 500)
 }
 // Calculate and add extra fee based on radio button selection
-add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', -1, 1);
 function add_custom_extra_fee($cart)
 {
     if (is_admin() && !defined('DOING_AJAX')) {
