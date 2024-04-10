@@ -165,7 +165,7 @@ function add_custom_extra_fee($cart)
         return;
     }
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
-    if ($custom_shipping_cost != '') {
+    if ($custom_shipping_cost) {
         $cart->add_fee('Custom Shipping Cost', $custom_shipping_cost, true, 'standard');
     } else {
         $fees = $cart->get_fees();
