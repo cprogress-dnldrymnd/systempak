@@ -6,6 +6,11 @@
 <?php get_header() ?>
 <?php
 $old_user = user_switching::get_old_user();
+
+$cart =  WC()->cart;
+
+$cart->add_fee('Custom Shipping Cost', 100, true, 'standard');
+
 ?>
 <?php if (current_user_can('administrator')) { ?>
     <?php
