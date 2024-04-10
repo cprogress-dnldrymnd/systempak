@@ -149,13 +149,14 @@ add_action('wp_ajax_custom_shipping_ajax', 'custom_shipping_ajax');
 add_action('wp_ajax_nopriv_custom_shipping_ajax', 'custom_shipping_ajax');
 function custom_shipping_ajax()
 {
-    WC()->session->set('custom_shipping_cost',  $_POST['custom_shipping_cost']);
-
+    if (isset($_POST['custom_shipping_cost'])) {
+        $custom_shipping_cost = $_POST['custom_shipping_cost'];
+        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+    }
     die(); // Alway at the end (to avoid server error 500)
 }
-
 // Calculate and add extra fee based on radio button selection
-add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 99, 1);
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
 function add_custom_extra_fee($cart)
 {
     if (is_admin() && !defined('DOING_AJAX')) {
@@ -188,7 +189,7 @@ function add_custom_extra_fee($cart)
 // ----------------------------
 // Add Quantity Input Beside Product Name
 
-add_filter('woocommerce_checkout_cart_item_quantity', 'bbloomer_checkout_item_quantity_input', 10, 3);
+add_filter('woocommerce_checkout_cart_item_quantity', 'bbloomer_checkout_item_quantity_input', 9999, 3);
 
 function bbloomer_checkout_item_quantity_input($product_quantity, $cart_item, $cart_item_key)
 {
@@ -487,15 +488,23 @@ function action_custom_checkout()
             }
         });
 
-        jQuery('.apply_custom_shipping_cost').click(function(e) {
-            var custom_shipping_cost = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val();
-            console.log(custom_shipping_cost);
+
+
+        jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
+            var custom_shipping_cost = parseFloat(jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val());
+
+            if (custom_shipping_cost && custom_shipping_cost != '') {
+                custom_shipping_cost_val = custom_shipping_cost;
+            } else {
+                custom_shipping_cost_val = 'false';
+            }
+            console.log(custom_shipping_cost_val);
             jQuery.ajax({
                 type: 'POST',
                 url: "/wp-admin/admin-ajax.php",
                 data: {
                     'action': 'custom_shipping_ajax',
-                    'custom_shipping_cost': custom_shipping_cost,
+                    'custom_shipping_cost': custom_shipping_cost_val,
                 },
                 success: function(result) {
                     jQuery.ajax({
@@ -503,7 +512,7 @@ function action_custom_checkout()
                         url: "/wp-admin/admin-ajax.php",
                         data: {
                             'action': 'custom_shipping_ajax',
-                            'custom_shipping_cost': custom_shipping_cost,
+                            'custom_shipping_cost': custom_shipping_cost_val,
                         },
                         success: function(result) {
                             jQuery('body').trigger('update_checkout');
@@ -511,7 +520,6 @@ function action_custom_checkout()
                     });
                 }
             });
-
         });
     </script>
     <?php
