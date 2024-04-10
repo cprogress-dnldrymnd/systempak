@@ -152,8 +152,7 @@ function custom_shipping_ajax()
     if (isset($_POST['custom_shipping_cost'])) {
         $custom_shipping_cost = $_POST['custom_shipping_cost'];
         WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
-        WC()->session->set('custom_shipping_costx', 'mama mo');
-        echo WC()->session->get('custom_shipping_cost');
+        WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
     }
     die(); // Alway at the end (to avoid server error 500)
 }
