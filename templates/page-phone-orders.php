@@ -9,6 +9,21 @@ $old_user = user_switching::get_old_user();
 echo '<br><br>';
 echo WC()->session->get('custom_shipping_cost');
 ?>
+  <table class="table">
+        <tr class="custom-shipping custom-forms" id="custom-shipping-cost">
+            <td colspan="2">
+                <div class="checkout_coupon_custom">
+                    <p class="form-row form-row-first not-hide">
+                        <input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost">
+                    </p>
+                    <p class="form-row form-row-last">
+                        <a class="button apply_custom_shipping_cost">Set Cost</a>
+                    </p>
+                </div>
+                <div class="custom-shipping-message"></div>
+            </td>
+        </tr>
+    </table>
 <?php if (current_user_can('administrator')) { ?>
     <?php
     $args = array(
