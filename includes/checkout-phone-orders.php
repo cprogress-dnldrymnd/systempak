@@ -149,7 +149,7 @@ add_action('wp_ajax_custom_shipping_ajax', 'custom_shipping_ajax');
 add_action('wp_ajax_nopriv_custom_shipping_ajax', 'custom_shipping_ajax');
 function custom_shipping_ajax()
 {
-    WC()->session->set('custom_shipping_cost', 122221);
+    WC()->session->set('custom_shipping_cost',  $_POST['custom_shipping_cost']);
 
     die(); // Alway at the end (to avoid server error 500)
 }
