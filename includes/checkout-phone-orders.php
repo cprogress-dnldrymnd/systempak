@@ -491,7 +491,7 @@ function action_custom_checkout()
 
 
 
-        jQuery('div.woocommerce').on('click', '.apply_custom_shipping_cost', function() {
+        jQuery('#custom-shipping-cost').on('click', '.apply_custom_shipping_cost', function() {
             var custom_shipping_cost = jQuery('#custom-shipping-cost input[name="custom_shipping_cost"]').val();
             console.log(custom_shipping_cost);
             jQuery.ajax({
