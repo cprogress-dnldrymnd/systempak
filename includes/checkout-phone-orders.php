@@ -145,8 +145,8 @@ function select_product_ajax()
 }
 
 // Calculate and add extra fee based on radio button selection
-add_action('wp_ajax_woocommerce_cart_calculate_fees', 'custom_shipping_ajax', 20, 1);
-add_action('wp_ajax_woocommerce_cart_calculate_fees', 'custom_shipping_ajax', 20, 1);
+add_action('wp_ajax_woocommerce_cart_calculate_fees', 'custom_shipping_ajax');
+add_action('wp_ajax_woocommerce_cart_calculate_fees', 'custom_shipping_ajax');
 function custom_shipping_ajax($cart)
 {
     if (is_admin() && !defined('DOING_AJAX')) {
