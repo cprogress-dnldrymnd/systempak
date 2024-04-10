@@ -676,4 +676,4 @@ function custom_fee() {
 		</tr>
     <?php
 }
-add_action('woocommerce_review_order_before_cart_contents', 'custom_fee');
+add_action('woocommerce_checkout_before_order_review_heading', 'custom_fee');
