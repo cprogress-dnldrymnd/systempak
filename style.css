@@ -990,4 +990,7 @@ section.select-user-form table td {
 body:not(.page-template-page-phone-orders) .fee {
   display: none !important; }
 
+.fee .remove-custom-shipping {
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */
