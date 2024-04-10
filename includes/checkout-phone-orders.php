@@ -149,12 +149,10 @@ add_action('wp_ajax_custom_shipping_ajax', 'custom_shipping_ajax');
 add_action('wp_ajax_nopriv_custom_shipping_ajax', 'custom_shipping_ajax');
 function custom_shipping_ajax()
 {
-    global $wp_session;
     if (isset($_POST['custom_shipping_cost'])) {
         $custom_shipping_cost = $_POST['custom_shipping_cost'];
         WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
-
-        $wp_session['custom_shipping_cost'] = $_POST['custom_shipping_cost'];
+        echo WC()->session->get('custom_shipping_cost');
     }
     die(); // Alway at the end (to avoid server error 500)
 }
@@ -510,9 +508,8 @@ function action_custom_checkout()
                     'custom_shipping_cost': custom_shipping_cost_val,
                 },
                 success: function(result) {
-                    setTimeout(function() {
-                        jQuery('body').trigger('update_checkout');
-                    }, 1000);
+                    console.log(result);
+                    jQuery('body').trigger('update_checkout');
                 }
             });
         });
