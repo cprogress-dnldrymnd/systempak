@@ -6,10 +6,9 @@
 <?php get_header() ?>
 <?php
 $old_user = user_switching::get_old_user();
-global $wp_session;
 echo '<br><br><br>';
-echo  $wp_session['custom_shipping_cost'];
 echo WC()->session->get('custom_shipping_cost');
+echo WC()->session->get('custom_shipping_costx');
 ?>
 <?php if (current_user_can('administrator')) { ?>
     <?php

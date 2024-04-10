@@ -152,13 +152,35 @@ function custom_shipping_ajax()
     if (isset($_POST['custom_shipping_cost'])) {
         $custom_shipping_cost = $_POST['custom_shipping_cost'];
         WC()->session->set('custom_shipping_cost', $custom_shipping_cost);
+        WC()->session->set('custom_shipping_costx', 'mama mo');
         echo WC()->session->get('custom_shipping_cost');
     }
     die(); // Alway at the end (to avoid server error 500)
 }
+// Calculate and add extra fee based on radio button selection
+/*
+add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
+function add_custom_extra_fee($cart)
+{
+    if (is_admin() && !defined('DOING_AJAX')) {
+        return;
+    }
+    $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
+    if ($custom_shipping_cost != 'false') {
+        $cart->add_fee('Custom Shipping Cost', $custom_shipping_cost, true, 'standard');
+    } else {
+        $fees = $cart->get_fees();
+        foreach ($fees as $key => $fee) {
+            // unset that specific fee from the array
+            if ($fees[$key]->name === __("Custom Shipping Cost")) {
+                unset($fees[$key]);
+            }
+        }
+        $cart->fees_api()->set_fees($fees);
+    }
+}
 
-
-
+*/
 /**
  * @snippet       Item Quantity Inputs @ WooCommerce Checkout
  * @how-to        Get CustomizeWoo.com FREE
