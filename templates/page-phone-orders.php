@@ -9,6 +9,7 @@ $old_user = user_switching::get_old_user();
 if (isset($_GET['custom_shipping_cost'])) {
     WC()->session->set('custom_shipping_cost', $_GET['custom_shipping_cost']);
 }
+echo WC()->session->get('custom_shipping_cost');
 
 ?>
 <?php if (current_user_can('administrator')) { ?>
