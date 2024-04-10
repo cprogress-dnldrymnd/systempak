@@ -87,6 +87,11 @@ defined('ABSPATH') || exit;
 
 		<?php
 		$custom_shipping_cost = WC()->session->get('custom_shipping_cost');
+		if($custom_shipping_cost && $custom_shipping_cost != 0 && $custom_shipping_cost) {
+			$has_shipping = true;
+		} else {
+			$has_shipping = false;
+		}
 		?>
 
 		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
@@ -96,7 +101,7 @@ defined('ABSPATH') || exit;
 						<input type="number" name="custom_shipping_cost" class="input-text" placeholder="Custom Shipping Cost" id="custom_shipping_cost" value="<?= $custom_shipping_cost ?>">
 					</p>
 					<p class="form-row form-row-last">
-						<button type="submit" class="button"><?= $custom_shipping_cost && $custom_shipping_cost != 0 && $custom_shipping_cost != '' ? 'Remove Cost' : 'Set Cost' ?></button>
+						<button type="submit" class="button"><?=  != '' ? 'Remove Cost' : 'Set Cost' ?></button>
 					</p>
 				</form>
 				<div class="custom-shipping-message"></div>
