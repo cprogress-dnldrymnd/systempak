@@ -548,7 +548,7 @@ function action_custom_checkout()
         });
     </script>
 
-    
+
     <?php
 }
 
@@ -619,7 +619,7 @@ function user_search_ajax()
                 <h3>No customer found</h3>
             </td>
         </tr>
-<?php
+    <?php
     }
 
     die();
@@ -717,14 +717,31 @@ function refresh_shipping_methods( $post_data ){
 }*/
 
 
-function admin_menu() {
+function admin_menu()
+{
     ?>
     <script>
-        jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(3)');
         });
     </script>
-    <?php
+<?php
 }
 
 add_action('admin_head', 'admin_menu');
+
+
+
+// Redirect WooCommerce checkout page to a custom thank you page
+add_action('woocommerce_thankyou', 'avada_redirect_woo_checkout');
+function pfwp_redirect_woo_checkout($order_id)
+{
+    $order = wc_get_order($order_id);
+    $old_user = user_switching::get_old_user();
+
+    $url = esc_url(user_switching::switch_back_url($old_user));
+    if (!$order->has_status('failed') && $url) {
+        wp_safe_redirect($url);
+        exit;
+    }
+}
