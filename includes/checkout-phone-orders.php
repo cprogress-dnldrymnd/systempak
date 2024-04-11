@@ -738,11 +738,10 @@ function redirect_admin_on_phone_orders($order_id)
 {
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
-    $redirect = 'https://systempak.net/wp-admin/post.php?post=' . $order_id . '&action=edit';
     $url = htmlspecialchars_decode(esc_url(user_switching::switch_back_url($old_user)));
 
     if (!$order->has_status('failed') && $old_user) {
-        wp_safe_redirect($url . '&redirect_to=' . $redirect);
+        wp_safe_redirect($url . '&redirect_to=' . $order_id);
         exit;
     }
 }
