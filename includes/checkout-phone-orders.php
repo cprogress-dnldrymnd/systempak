@@ -742,7 +742,7 @@ function redirect_admin_on_phone_orders($order_id)
     if (!$order->has_status('failed') && $old_user) {
     ?>
         <script>
-            window.location.href(<?= $url ?>);
+            window.location.href(<?= htmlspecialchars_decode($url) ?>);
         </script>
 <?php
     }
