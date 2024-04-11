@@ -1008,5 +1008,9 @@ body:not(.page-template-page-phone-orders) .fee {
     text-align: left; }
   .term-description:not(.active) > *:nth-child(n + 3) {
     display: none; }
+  .term-description .read-more-term-desc button {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important; }
 
 /*# sourceMappingURL=style.css.map */
