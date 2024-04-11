@@ -171,9 +171,13 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
             $length = jQuery('.elementor-widget-container > .term-description > *').length;
 
             if ($length > 2) {
-                $read_more = jQuery('');
- 
+                jQuery('.read-more-term-desc').addClass('show');
             }
+            jQuery('.read-more-term-desc').click(function(e) {
+                jQuery('.elementor-widget-container > .term-description').addClass('active');
+                jQuery('.read-more-term-desc').removeClass('show');
+                e.preventDefault();
+            });
         }
     });
 </script>

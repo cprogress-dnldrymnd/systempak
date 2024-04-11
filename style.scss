@@ -1437,7 +1437,10 @@ body:not(.page-template-page-phone-orders) {
             }
         }
     }
-    .read-more-term-desc {
+    .term-desc-read-more {
+        &.show {
+            display: block !important;
+        }
         button {
             padding: 0 !important;
             background: transparent !important;
