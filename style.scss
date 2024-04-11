@@ -1326,7 +1326,6 @@ label[for="payment_method_square_credit_card"] {
                 color: var(--white-color) !important;
             }
         }
-      
     }
 }
 
@@ -1425,6 +1424,11 @@ body:not(.page-template-page-phone-orders) {
 }
 
 .term-description {
+    > * {
+        &:nth-child(n + 3) {
+            display: none;
+        }
+    }
     ul {
         text-align: left;
     }
