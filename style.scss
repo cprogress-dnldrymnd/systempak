@@ -1424,6 +1424,9 @@ body:not(.page-template-page-phone-orders) {
 }
 
 .term-description {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
     ul {
         text-align: left;
     }
