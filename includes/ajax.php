@@ -64,13 +64,11 @@ function search_ajax()
         if ($the_query->have_posts()) {
             while ($the_query->have_posts()) {
 
-                if ($post_type == 'product') {
-                    $product = wc_get_product(get_the_ID());
-
-
-                    $permalink = get_permalink();
+                if (get_post_type() == 'product_variation') {
+                    $variation = wc_get_product(get_the_ID());
+                    $permalink = get_the_permalink($variation->get_parent_id());
                 } else {
-                    $permalink = get_permalink();
+                    $permalink = get_the_permalink();
                 }
                 $the_query->the_post();
         ?>
