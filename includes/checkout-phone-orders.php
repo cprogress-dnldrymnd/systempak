@@ -519,7 +519,7 @@ function action_custom_checkout()
         });
 
 
-        
+
         jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {
             jQuery('.blockUICustomShipping').removeClass('d-none');
             jQuery.ajax({
@@ -713,3 +713,17 @@ function refresh_shipping_methods( $post_data ){
     }
     WC()->cart->calculate_shipping();
 }*/
+
+
+add_action('admin_menu', 'phone_orders_admin_menu');
+
+function phone_orders_admin_menu()
+{
+    add_submenu_page(
+        'edit.php?post_type=product',
+        'Phone Orders',
+        'Phone Orders',
+        'manage_woocommerce',
+        'custom_wc_menu'
+    );
+}
