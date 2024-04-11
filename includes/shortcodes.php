@@ -58,7 +58,7 @@ add_shortcode('term_name', 'term_name');
 
 function term_description_sc()
 {
-    return '<div class="term-description">'.wpautop(get_queried_object()->description);.'</div>';
+    return '<div class="term-description">'.wpautop(get_queried_object()->description).'</div>';
 }
 
 add_shortcode('term_description', 'term_description_sc');
