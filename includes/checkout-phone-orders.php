@@ -547,6 +547,8 @@ function action_custom_checkout()
             });
         });
     </script>
+
+    
     <?php
 }
 
@@ -715,15 +717,14 @@ function refresh_shipping_methods( $post_data ){
 }*/
 
 
-add_action('admin_menu', 'phone_orders_admin_menu');
-
-function phone_orders_admin_menu()
-{
-    add_submenu_page(
-        'edit.php?post_type=product',
-        'Phone Orders',
-        'Phone Orders',
-        'manage_woocommerce',
-        'custom_wc_menu'
-    );
+function admin_menu() {
+    ?>
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(2)');
+        });
+    </script>
+    <?php
 }
+
+add_action('admin_head', 'admin_menu');
