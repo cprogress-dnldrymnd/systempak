@@ -519,7 +519,7 @@ function action_custom_checkout()
         });
 
 
-        
+
         jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {
             jQuery('.blockUICustomShipping').removeClass('d-none');
             jQuery.ajax({
@@ -682,6 +682,7 @@ function customer_capabilities()
 
 add_action('init', 'customer_capabilities');
 
+/*
 function disable_shipping_calc_on_cart($show_shipping)
 {
     $old_user = user_switching::get_old_user();
@@ -692,7 +693,25 @@ function disable_shipping_calc_on_cart($show_shipping)
     }
 }
 add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
-
+*/
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
+
+
+
+// Enabling, disabling and refreshing session shipping methods data
+add_action('woocommerce_checkout_update_order_review', 'refresh_shipping_methods', 10, 1);
+function refresh_shipping_methods($post_data)
+{
+    $bool = true;
+    if (WC()->session->get('custom_shipping_cost')) {
+        $bool = false;
+    }
+
+    // Mandatory to make it work with shipping methods
+    foreach (WC()->cart->get_shipping_packages() as $package_key => $package) {
+        WC()->session->set('shipping_for_package_' . $package_key, $bool);
+    }
+    WC()->cart->calculate_shipping();
+}

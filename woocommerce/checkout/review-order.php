@@ -57,11 +57,21 @@ defined('ABSPATH') || exit;
 							<?php
 							$product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
 							?>
-							<a class="remove-item mb-3" target="shipping_method_qty_<?= $product_id ?>">
-								<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none">
-									<path d="M9 1L1 9M9 9L1 1" stroke="#16110E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-							</a>
+							<?php
+							echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								'woocommerce_cart_item_remove_link',
+								sprintf(
+									'<a href="%s" class="remove-item mb-3" aria-label="%s" data-product_id="%s" data-product_sku="%s"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none"> <path d="M9 1L1 9M9 9L1 1" stroke="#16110E" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" /> </svg></a>',
+									esc_url(wc_get_cart_remove_url($cart_item_key)),
+									/* translators: %s is the product name */
+									esc_attr(sprintf(__('Remove %s from cart', 'woocommerce'), wp_strip_all_tags($product_name))),
+									esc_attr($product_id),
+									esc_attr($_product->get_sku())
+								),
+								$cart_item_key
+							);
+							?>
+						
 							<?php
 							if (!$cart_item['custom_price']) {
 								echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
@@ -133,7 +143,7 @@ defined('ABSPATH') || exit;
 				<td>
 					<?php wc_cart_totals_fee_html($fee); ?>
 					<?php if ($fee->name == 'Custom Shipping Cost') { ?>
-						<a class="woocommerce-remove-coupon remove-custom-shipping" data-coupon="custom_shipping" >[Remove]</a>
+						<a class="woocommerce-remove-coupon remove-custom-shipping" data-coupon="custom_shipping">[Remove]</a>
 					<?php } ?>
 				</td>
 			</tr>
