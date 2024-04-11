@@ -997,4 +997,7 @@ body:not(.page-template-page-phone-orders) .fee {
   padding: 2rem;
   border-radius: 10px; }
 
+.single-product #wc-square-google-pay {
+  margin-bottom: 2rem; }
+
 /*# sourceMappingURL=style.css.map */
