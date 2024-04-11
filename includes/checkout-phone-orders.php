@@ -739,7 +739,9 @@ function redirect_admin_on_phone_orders($order_id)
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
 
-    $url = htmlspecialchars_decode(esc_url(user_switching::switch_back_url($old_user)));
+    $redirect = 'https://systempak.net/wp-admin/post.php?post=' . $order_id . '&action=edit';
+
+    $url = htmlspecialchars_decode(esc_url(user_switching::switch_back_url($old_user))) . '?redirect_to=' . $redirect;
 
 
     if (!$order->has_status('failed') && $old_user) {
@@ -747,12 +749,3 @@ function redirect_admin_on_phone_orders($order_id)
         exit;
     }
 }
-
-
-function add_view_order_capability()
-{
-    $role = get_role('administrator');
-    // add the 'view_order' capability
-    $role->add_cap('view_order', true);
-}
-add_action('init', 'add_view_order_capability', 99);
