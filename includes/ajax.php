@@ -67,8 +67,10 @@ function search_ajax()
                 if (get_post_type() == 'product_variation') {
                     $variation = wc_get_product(get_the_ID());
                     $permalink = get_the_permalink($variation->get_parent_id());
+                    $button_text = 'Product';
                 } else {
                     $permalink = get_the_permalink();
+                    $button_text = get_post_type();
                 }
                 $the_query->the_post();
         ?>
@@ -90,7 +92,7 @@ function search_ajax()
                                 <?php the_excerpt() ?>
                             </div>
                             <div class="more-link-wrap">
-                                <a class="more-link" href="<?= $permalink ?>">View <?= get_post_type() ?></a>
+                                <a class="more-link" href="<?= $permalink ?>">View <?= $button_text ?></a>
                             </div>
                         </div>
                     </div>
