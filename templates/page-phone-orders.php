@@ -8,7 +8,6 @@
 $old_user = user_switching::get_old_user();
 echo '<br><br>';
 ?>
-
 <?php if (current_user_can('administrator')) { ?>
     <?php
     $args = array(
@@ -17,10 +16,8 @@ echo '<br><br>';
     );
     $user_query = new WP_User_Query($args);
     ?>
-
     <section class="select-user-form py-5">
         <div class="container">
-
             <div id="userSearchForm">
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
@@ -74,7 +71,6 @@ echo '<br><br>';
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 <?php } else { ?>
@@ -86,9 +82,5 @@ echo '<br><br>';
             </div>
         </section>                                                          
     <?php } ?>
-
-
 <?php } ?>
-
-
 <?php get_footer() ?>
