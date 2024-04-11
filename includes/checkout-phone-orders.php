@@ -745,5 +745,3 @@ function redirect_admin_on_phone_orders($order_id)
         exit;
     }
 }
-
-function admin_init()
