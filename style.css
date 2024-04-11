@@ -627,7 +627,7 @@ body.search .site-header-search {
           display: block; }
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(1):before {
             font-weight: bold;
-            content: "Quantity: "; }
+            content: "Boxes: "; }
           .tiered-pricing-table.tiered-pricing-table tr td:nth-child(2):before {
             font-weight: bold;
             content: "Discount(%): "; }
