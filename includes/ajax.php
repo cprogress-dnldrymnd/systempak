@@ -18,6 +18,8 @@ function search_ajax()
         $args['s'] = $s;
     }
 
+    $args['post_status'] = array('publish');
+
     $args['posts_per_page'] = $posts_per_page;
 
     if ($post_type == 'product') {
