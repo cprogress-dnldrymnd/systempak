@@ -173,7 +173,7 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
             if ($length > 2) {
                 $read_more = jQuery('<div class="term-desc-read-more"><button class="read-more-term-desc"> Read More </button></div>');
  
-                $read_more.appendTo('..elementor-widget-container > .term-descriptio');
+                $read_more.appendTo('.elementor-widget-container > .term-descriptio');
             }
         }
     });
