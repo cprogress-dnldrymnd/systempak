@@ -994,6 +994,7 @@ body:not(.page-template-page-phone-orders) .fee {
   cursor: pointer; }
 
 .free-sample-sidebar {
-  padding: 2rem; }
+  padding: 2rem;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
