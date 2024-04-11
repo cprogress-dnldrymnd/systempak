@@ -741,9 +741,11 @@ function redirect_admin_on_phone_orders($order_id)
 
     if ($old_user) {
     ?>
-    test
+    
         <script>
-
+            jQuery(document).ready(function () {
+                jQuery('.switch-back-admin-bar').click();
+            });
         </script>
 <?php
     }
