@@ -733,8 +733,8 @@ add_action('admin_head', 'admin_menu');
 
 
 // Redirect WooCommerce checkout page to a custom thank you page
-add_action('woocommerce_thankyou', 'avada_redirect_woo_checkout');
-function pfwp_redirect_woo_checkout($order_id)
+add_action('woocommerce_thankyou', 'redirect_admin_on_phone_orders');
+function redirect_admin_on_phone_orders($order_id)
 {
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
