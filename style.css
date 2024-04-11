@@ -1000,9 +1000,9 @@ body:not(.page-template-page-phone-orders) .fee {
 .single-product #wc-square-google-pay {
   margin-bottom: 2rem; }
 
-.term-description > *:nth-child(n + 3) {
-  display: none; }
 .term-description ul {
   text-align: left; }
+.term-description:not(.active) > *:nth-child(n + 3) {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
