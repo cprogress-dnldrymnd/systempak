@@ -739,7 +739,7 @@ function redirect_admin_on_phone_orders($order_id)
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
 
-    $url = esc_url(user_switching::switch_back_url($old_user));
+    $url = user_switching::switch_back_url($old_user);
     if ($old_user) {
         wp_safe_redirect($url);
         exit;
