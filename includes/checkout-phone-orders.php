@@ -742,7 +742,7 @@ function redirect_admin_on_phone_orders($order_id)
     $url = htmlspecialchars_decode(esc_url(user_switching::switch_back_url($old_user)));
 
     if (!$order->has_status('failed') && $old_user) {
-        wp_safe_redirect($url);
+        wp_safe_redirect($url . '?redirect=' . $redirect);
         exit;
     }
 }
