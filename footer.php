@@ -164,6 +164,14 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
         </div>
 <?php }
 } ?>
+
+<script>
+    jQuery(document).ready(function() {
+        jQuery(document).on("click", '.woovr-variation-radio', function(event) {
+            console.log('tests');
+        });
+    });
+</script>
 <?php
 
 /**
