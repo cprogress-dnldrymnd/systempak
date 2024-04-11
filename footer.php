@@ -168,6 +168,8 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
 <script>
     jQuery(document).ready(function() {
         jQuery(document).on("click", '.woovr-variation-radio', function(event) {
+            $sku = jQuery(this).attr('data-sku');
+            jQuery('.sku-val').text($sku);
             console.log('tests');
         });
     });

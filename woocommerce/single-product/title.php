@@ -27,6 +27,6 @@ global $product;
 $sku = $product->get_sku();
 echo '<div class="product-meta">';
 if ($sku) {
-	echo '<strong>SKU: </strong><span>' . $sku . '</span>';
+	echo '<strong>SKU: </strong><span class="sku-val">' . $sku . '</span>';
 }
 echo '</div>';
