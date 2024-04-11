@@ -740,6 +740,6 @@ function redirect_admin_on_phone_orders($order_id)
     $old_user = user_switching::get_old_user();
 
     if (!$order->has_status('failed') && $old_user) {
-        echo '<div dd="'.user_switching::switch_back_url($old_user)'">';
+        echo '<div dd="'.user_switching::switch_back_url($old_user).'">';
     }
 }
