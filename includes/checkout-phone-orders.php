@@ -721,7 +721,7 @@ function admin_menu() {
     ?>
     <script>
         jQuery(document).ready(function () {
-            jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(3)');
+            jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(4)');
         });
     </script>
     <?php
