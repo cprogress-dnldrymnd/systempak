@@ -993,4 +993,7 @@ body:not(.page-template-page-phone-orders) .fee {
 .fee .remove-custom-shipping {
   cursor: pointer; }
 
+.free-sample-sidebar {
+  padding: 2rem; }
+
 /*# sourceMappingURL=style.css.map */

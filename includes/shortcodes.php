@@ -484,11 +484,20 @@ function faqs()
 add_shortcode('faqs', 'faqs');
 
 
-function free_sample()
+function free_sample($atts)
 {
     ob_start();
+
+    extract(
+        shortcode_atts(
+            array(
+                'class' => '',
+            ),
+            $atts
+        )
+    );
 ?>
-    <div class="free-sample">
+    <div class="free-sample <?= $class ?>">
         <div class="heading-box">
             <h3>Claim Your Free Sample Today!</h3>
         </div>
