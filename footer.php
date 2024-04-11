@@ -168,7 +168,7 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
 <script>
     jQuery(document).ready(function() {
         if (jQuery('.term-description').length > 0) {
-            console.log(jQuery('.term-description').siblings().length);
+            console.log(jQuery('.term-description > *').length);
         }
     });
 </script>
