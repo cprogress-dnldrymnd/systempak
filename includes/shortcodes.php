@@ -198,7 +198,7 @@ function search_products()
     </div>
 
 
-<?php
+    <?php
     return ob_get_clean();
 }
 
@@ -482,3 +482,29 @@ function faqs()
 }
 
 add_shortcode('faqs', 'faqs');
+
+
+function free_sample()
+{
+    ob_start();
+?>
+    <div class="free-sample">
+        <div class="heading-box">
+            <h3>Claim Your Free Sample Today!</h3>
+        </div>
+        <div class="description-box">
+            <p>
+                See the quality for yourself. Our samples are free. You’ll just need to cover the postage.
+            </p>
+        </div>
+        <div class="button-box">
+            <a href="https://systempak.net/claim-your-free-sample/" class="button">
+                Claim Your Sample
+            </a>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+
+add_shortcode('free_sample', 'free_sample');

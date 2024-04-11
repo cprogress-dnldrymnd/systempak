@@ -685,23 +685,7 @@ function bulk_order_content()
 
 function free_sample_content()
 {
-?>
-    <div class="free-sample">
-        <div class="heading-box">
-            <h3>Claim Your Free Sample Today!</h3>
-        </div>
-        <div class="description-box">
-            <p>
-                See the quality for yourself. Our samples are free. You’ll just need to cover the postage.
-            </p>
-        </div>
-        <div class="button-box">
-            <a href="https://systempak.net/claim-your-free-sample/" class="button">
-                Claim Your Sample
-            </a>
-        </div>
-    </div>
-<?php
+    echo do_shortcode('[free_sample]');
 }
 
 function tech_sheet_content()
@@ -857,4 +841,4 @@ function hide_default_enabled_button()
 add_action('admin_head', 'hide_default_enabled_button');
 
 
-add_filter( 'wc_product_has_unique_sku', '__return_false', PHP_INT_MAX );
+add_filter('wc_product_has_unique_sku', '__return_false', PHP_INT_MAX);
