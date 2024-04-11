@@ -725,7 +725,7 @@ function admin_menu()
             jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(3)');
         });
     </script>
-    <?php
+<?php
 }
 
 add_action('admin_head', 'admin_menu');
@@ -739,14 +739,8 @@ function redirect_admin_on_phone_orders($order_id)
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
 
-    if ($old_user) {
-    ?>
-    
-        <script>
-            jQuery(document).ready(function () {
-                jQuery('.switch-back-admin-bar').click();
-            });
-        </script>
-<?php
+    if (!$order->has_status('failed') && $old_user) {
+        wp_redirect(esc_url(user_switching::switch_back_url($old_user)));
+        exit;
     }
 }
