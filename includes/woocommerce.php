@@ -658,17 +658,18 @@ function action_woocommerce_product_tabs($tabs)
     $tabs['free_sample']['priority'] = 42;
 
 
-    if ($custom_tab_title1 == 'Print') {
+    if ($custom_tab_title1 == 'Print' && $custom_tab_title1) {
         $tabs[$custom_tab_title1]['priority'] = 43;
     }
-    if ($custom_tab_title2 == 'Print') {
+    if ($custom_tab_title2 == 'Print' && $custom_tab_title2) {
         $tabs[$custom_tab_title2]['priority'] = 43;
     }
-    if ($custom_tab_title3 == 'Print') {
+    if ($custom_tab_title3 == 'Print' && $custom_tab_title3) {
         $tabs[$custom_tab_title3]['priority'] = 43;
     }
-
-    $tabs['tech_sheet']['priority'] = 44;
+    if ($tech_sheets) {
+        $tabs['tech_sheet']['priority'] = 44;
+    }
 
     return $tabs;
 }
