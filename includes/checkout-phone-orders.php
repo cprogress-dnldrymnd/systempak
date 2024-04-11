@@ -736,7 +736,7 @@ add_action('admin_head', 'admin_menu');
 add_action('woocommerce_thankyou', 'redirect_admin_on_phone_orders');
 function redirect_admin_on_phone_orders($order_id)
 {
-    $wp_session = WP_Session::get_instance();
+    global $wp_session;
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
     $redirect = 'https://systempak.net/wp-admin/post.php?post=' . $order_id . '&action=edit';
