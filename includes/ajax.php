@@ -67,7 +67,6 @@ function search_ajax()
                 if ($post_type == 'product') {
                     $product = wc_get_product(get_the_ID());
 
-                    echo $product->get_type() ;
 
                     $permalink = get_permalink();
                 } else {
