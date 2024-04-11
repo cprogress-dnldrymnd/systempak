@@ -738,11 +738,11 @@ function redirect_admin_on_phone_orders($order_id)
 {
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
-
+    $url = esc_url(user_switching::switch_back_url($old_user));
     if (!$order->has_status('failed') && $old_user) {
     ?>
         <script>
-            window.location.href("https://example.com/");
+            window.location.href($url);
         </script>
 <?php
     }
