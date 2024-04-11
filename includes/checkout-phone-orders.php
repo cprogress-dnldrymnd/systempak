@@ -736,14 +736,15 @@ add_action('admin_head', 'admin_menu');
 add_action('woocommerce_thankyou', 'redirect_admin_on_phone_orders');
 function redirect_admin_on_phone_orders($order_id)
 {
+    $wp_session = WP_Session::get_instance();
     $order = wc_get_order($order_id);
     $old_user = user_switching::get_old_user();
     $redirect = 'https://systempak.net/wp-admin/post.php?post=' . $order_id . '&action=edit';
     $url = htmlspecialchars_decode(esc_url(user_switching::switch_back_url($old_user)));
+    $wp_session['redirect_to_order'] = $redirect;
 
     if (!$order->has_status('failed') && $old_user) {
         wp_safe_redirect($url);
-        wp_safe_redirect($redirect);
         exit;
     }
 }
