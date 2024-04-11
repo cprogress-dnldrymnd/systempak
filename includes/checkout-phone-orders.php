@@ -519,7 +519,7 @@ function action_custom_checkout()
         });
 
 
-
+        
         jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {
             jQuery('.blockUICustomShipping').removeClass('d-none');
             jQuery.ajax({
@@ -600,7 +600,7 @@ function user_search_ajax()
                         <a class="btn btn-link me-3" href="<?= $link ?>&redirect_to=https://systempak.net/my-account/orders/">
                             View Orders
                         </a>
-                        <a class="btn btn-link" href="<?= get_the_permalink(8978) ?>?user_id=<?= $user->ID ?> ">
+                        <a class="btn btn-link" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
                             Select Customer
                         </a>
                     </div>
