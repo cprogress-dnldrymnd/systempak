@@ -20,7 +20,7 @@ function search_ajax()
 
     $args['posts_per_page'] = $posts_per_page;
 
-    if($post_type == 'product') {
+    if ($post_type == 'product') {
         $args['post_type'] = array('product', 'product_variation');
     } else {
         $args['post_type'] = $post_type;
@@ -63,7 +63,12 @@ function search_ajax()
         <?php
         if ($the_query->have_posts()) {
             while ($the_query->have_posts()) {
-                if($post_type == 'product') {
+
+                if ($post_type == 'product') {
+                    $product = wc_get_product(get_the_ID());
+
+                    echo $product->get_type() ;
+
                     $permalink = get_permalink();
                 } else {
                     $permalink = get_permalink();
