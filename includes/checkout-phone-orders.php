@@ -747,3 +747,12 @@ function redirect_admin_on_phone_orders($order_id)
         exit;
     }
 }
+
+
+function add_view_order_capability()
+{
+    $role = get_role('administrator');
+    // add the 'view_order' capability
+    $role->add_cap('view_order', true);
+}
+add_action('init', 'add_view_order_capability', 11);
