@@ -686,8 +686,8 @@ function disable_shipping_calc_on_cart($show_shipping)
 {
     $old_user = user_switching::get_old_user();
     $custom_shipping_cost = WC()->session->get('custom_shipping_cost');
-    
-    if ($custom_shipping_cost) {
+
+    if ($custom_shipping_cost && $old_user) {
         return false;
     } else {
         return $show_shipping;
