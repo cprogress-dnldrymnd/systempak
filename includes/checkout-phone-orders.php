@@ -725,7 +725,7 @@ function admin_menu()
             jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(3)');
         });
     </script>
-<?php
+    <?php
 }
 
 add_action('admin_head', 'admin_menu');
@@ -740,6 +740,10 @@ function redirect_admin_on_phone_orders($order_id)
     $old_user = user_switching::get_old_user();
 
     if (!$order->has_status('failed') && $old_user) {
-        echo '<div dd="'.user_switching::switch_back_url($old_user).'">';
+    ?>
+        <script>
+            window.location.href("https://example.com/");
+        </script>
+<?php
     }
 }
