@@ -171,11 +171,11 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
             $length = jQuery('.elementor-widget-container > .term-description > *').length;
 
             if ($length > 2) {
-                jQuery('.read-more-term-desc').addClass('show');
+                jQuery('.term-desc-read-more').addClass('show');
             }
-            jQuery('.read-more-term-desc').click(function(e) {
+            jQuery('.term-desc-read-more').click(function(e) {
                 jQuery('.elementor-widget-container > .term-description').addClass('active');
-                jQuery('.read-more-term-desc').removeClass('show');
+                jQuery('.term-desc-read-more').removeClass('show');
                 e.preventDefault();
             });
         }
