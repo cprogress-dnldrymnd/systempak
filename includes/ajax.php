@@ -20,7 +20,12 @@ function search_ajax()
 
     $args['posts_per_page'] = $posts_per_page;
 
-    $args['post_type'] = $post_type;
+    if($post_type == 'product') {
+        $post_type = array('product', 'product_variation');
+    } else {
+        $args['post_type'] = $post_type;
+    }
+
 
     $args['tax_query'] = array(
         array(
@@ -58,6 +63,11 @@ function search_ajax()
         <?php
         if ($the_query->have_posts()) {
             while ($the_query->have_posts()) {
+                if($post_type == 'product') {
+                    $permalink = get_permalink();
+                } else {
+                    $permalink = get_permalink();
+                }
                 $the_query->the_post();
         ?>
                 <div class="post-item">
@@ -78,7 +88,7 @@ function search_ajax()
                                 <?php the_excerpt() ?>
                             </div>
                             <div class="more-link-wrap">
-                                <a class="more-link" href="<?php the_permalink() ?>">View <?= get_post_type() ?></a>
+                                <a class="more-link" href="<?= $permalink ?>">View <?= get_post_type() ?></a>
                             </div>
                         </div>
                     </div>
