@@ -25,8 +25,13 @@ the_title('<h1 class="product_title entry-title">', '</h1>');
 global $product;
 
 $sku = $product->get_sku();
+$gtin = get_post_meta('_wpm_gtin_code');
 echo '<div class="product-meta">';
 if ($sku) {
-	echo '<strong>SKU: </strong><span class="sku-val">' . $sku . '</span>';
+	echo '<p><strong>SKU: </strong><span class="sku-val">' . $sku . '</span></p>';
+}
+
+if($gtin) {
+	echo '<p><strong>GTIN: </strong><span class="sku-val">' . $gtin . '</span></p>';
 }
 echo '</div>';
