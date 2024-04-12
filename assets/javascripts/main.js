@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
     load_more_button_listener();
     ajax_form();
     product_sidebar_category();
-    sku()
+    sku();
 });
 
 function sku() {
