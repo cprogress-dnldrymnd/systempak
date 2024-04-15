@@ -115,9 +115,9 @@ function search_ajax()
                             <img src="<?= $url  ?>" alt="<?= get_the_title($post_id) ?>">
                         </div>
                         <div class="col-content">
-                            <h2><?= get_the_title($post_id) ?></h2>
+                            <h2><?php get_the_title($post_id) ?></h2>
                             <div class="excerpt">
-                                <?= _get_the_excerpt($post_id)() ?>
+                                <?php get_the_excerpt($post_id) ?>
                             </div>
                             <div class="more-link-wrap">
                                 <a class="more-link" href="<?= $permalink ?>">View <?= $button_text ?></a>
