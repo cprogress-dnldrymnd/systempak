@@ -1,4 +1,12 @@
 <?php
+function _get_the_excerpt($post_id) {
+    global $post;  
+    $save_post = $post;
+    $post = get_post($post_id);
+    $output = get_the_excerpt();
+    $post = $save_post;
+    return $output;
+  }
 add_action('wp_ajax_nopriv_search_ajax', 'search_ajax'); // for not logged in users
 add_action('wp_ajax_search_ajax', 'search_ajax');
 function search_ajax()
@@ -107,9 +115,9 @@ function search_ajax()
                             <img src="<?= $url  ?>" alt="<?= get_the_title($post_id) ?>">
                         </div>
                         <div class="col-content">
-                            <h2><?php get_the_title($post_id) ?></h2>
+                            <h2><?= get_the_title($post_id) ?></h2>
                             <div class="excerpt">
-                                <?php get_the_excerpt($post_id)() ?>
+                                <?= _get_the_excerpt($post_id)() ?>
                             </div>
                             <div class="more-link-wrap">
                                 <a class="more-link" href="<?= $permalink ?>">View <?= $button_text ?></a>
