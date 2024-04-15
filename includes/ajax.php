@@ -44,6 +44,7 @@ function search_ajax()
     $post_ids = array();
     if ($the_query_args->have_posts()) {
         while ($the_query_args->have_posts()) {
+            $the_query_args->the_post();
             $post_ids[] = get_the_ID();
         }
         wp_reset_postdata();
@@ -68,6 +69,7 @@ function search_ajax()
 
     if ($the_query->have_posts() && $post_type == 'product' && $s != '') {
         while ($the_query->have_posts()) {
+            $the_query->the_post();
             $post_ids[] = get_the_ID();
         }
         wp_reset_postdata();
