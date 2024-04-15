@@ -194,18 +194,17 @@ add_filter('woocommerce_checkout_cart_item_quantity', 'bbloomer_checkout_item_qu
 function bbloomer_checkout_item_quantity_input($product_quantity, $cart_item, $cart_item_key)
 {
     $product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
-    $product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
     if (!$product->is_sold_individually()) {
         $product_quantity = '<div class="quantity-parent">';
-        $product_quantity .= '<button type="button" class="minus" target="shipping_method_qty_' . $product_id . '">-</button>';
+        $product_quantity .= '<button type="button" class="minus" target="shipping_method_qty_' . $product->get_id() . '">-</button>';
         $product_quantity .= woocommerce_quantity_input(array(
-            'input_name'  => 'shipping_method_qty_' . $product_id,
+            'input_name'  => 'shipping_method_qty_' . $product->get_id(),
             'input_value' => $cart_item['quantity'],
             'max_value'   => $product->get_max_purchase_quantity(),
             'min_value'   => '0',
         ), $product, false);
-        $product_quantity .= '<input type="hidden" name="product_key_' . $product_id . '" value="' . $cart_item_key . '">';
-        $product_quantity .= '<button type="button" class="plus" target="shipping_method_qty_' . $product_id . '">+</button>';
+        $product_quantity .= '<input type="hidden" name="product_key_' . $product->get_id() . '" value="' . $cart_item_key . '">';
+        $product_quantity .= '<button type="button" class="plus" target="shipping_method_qty_' . $product->get_id() . '">+</button>';
         $product_quantity .= '</div>';
     }
     return $product_quantity;
