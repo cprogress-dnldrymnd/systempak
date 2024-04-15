@@ -1,12 +1,13 @@
 <?php
-function _get_the_excerpt($post_id) {
-    global $post;  
+function _get_the_excerpt($post_id)
+{
+    global $post;
     $save_post = $post;
     $post = get_post($post_id);
     $output = get_the_excerpt();
     $post = $save_post;
     return $output;
-  }
+}
 add_action('wp_ajax_nopriv_search_ajax', 'search_ajax'); // for not logged in users
 add_action('wp_ajax_search_ajax', 'search_ajax');
 function search_ajax()
@@ -97,6 +98,10 @@ function search_ajax()
                     $variation = wc_get_product($post_id);
                     $permalink = get_the_permalink($variation->get_parent_id());
                     $button_text = 'Product';
+                    $sku = $variation->get_sku();
+                } else if (get_post_type($post_id) == 'product') {
+                    $variation = wc_get_product($post_id);
+                    $sku = $variation->get_sku();
                 } else {
                     $permalink = get_the_permalink($post_id);
                     $button_text = get_post_type($post_id);
@@ -116,6 +121,11 @@ function search_ajax()
                         </div>
                         <div class="col-content">
                             <h2><?= get_the_title($post_id) ?></h2>
+                            <?php if ($sku) { ?>
+                                <div class="meta-data">
+                                    <strong>SKU: </strong> <?= $sku ?>
+                                </div>
+                            <?php } ?>
                             <div class="excerpt">
                                 <?= get_the_excerpt($post_id) ?>
                             </div>
