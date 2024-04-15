@@ -93,7 +93,6 @@ function search_ajax()
         <?php
         if ($post_ids) {
             foreach ($post_ids as $post_id) {
-
                 if (get_post_type($post_id) == 'product_variation') {
                     $variation = wc_get_product($post_id);
                     $permalink = get_the_permalink($variation->get_parent_id());
