@@ -40,58 +40,74 @@ function search_ajax()
 
     $the_query_args = new WP_Query($args);
 
-    $found_posts = $the_query_args->found_posts;
 
-
-    if (!$found_posts && $post_type == 'product' && $s != '') {
-        $args['meta_query'] = array(
-            array(
-                'key' => '_sku',
-                'value' => $s,
-                'compare' => 'LIKE',
-            ),
-        );
-        unset($args['s']);
+    $post_ids = array();
+    if ($the_query_args->have_posts()) {
+        while ($the_query_args->have_posts()) {
+            $post_ids[] = get_the_ID();
+        }
+        wp_reset_postdata();
     }
+
+    // $found_posts = $the_query_args->found_posts;
+
+
+    $args['meta_query'] = array(
+        array(
+            'key' => '_sku',
+            'value' => $s,
+            'compare' => 'LIKE',
+        ),
+    );
+    unset($args['s']);
+
+    $args['post__not_in'] = $post_ids;
 
     $the_query = new WP_Query($args);
 
 
-    $count = $the_query->found_posts;
+    if ($the_query->have_posts()) {
+        while ($the_query->have_posts()) {
+            $post_ids[] = get_the_ID();
+        }
+        wp_reset_postdata();
+    }
+
+
+    $count = count($post_ids);
     echo hide_load_more($count, $offset, $posts_per_page);
 
 ?>
     <div class="post-item-holder">
         <?php
-        if ($the_query->have_posts()) {
-            while ($the_query->have_posts()) {
-                $the_query->the_post();
+        if ($post_ids) {
+            foreach ($post_ids as $post_id) {
 
-                if (get_post_type() == 'product_variation') {
-                    $variation = wc_get_product(get_the_ID());
+                if (get_post_type($post_id) == 'product_variation') {
+                    $variation = wc_get_product($post_id);
                     $permalink = get_the_permalink($variation->get_parent_id());
                     $button_text = 'Product';
                 } else {
-                    $permalink = get_the_permalink();
-                    $button_text = get_post_type();
+                    $permalink = get_the_permalink($post_id);
+                    $button_text = get_post_type($post_id);
                 }
         ?>
                 <div class="post-item">
                     <div class="row">
                         <?php
-                        if (get_the_post_thumbnail_url(get_the_ID())) {
-                            $url = get_the_post_thumbnail_url(get_the_ID());
+                        if (get_the_post_thumbnail_url($post_id)) {
+                            $url = get_the_post_thumbnail_url($post_id);
                         } else {
                             $url = wc_placeholder_img_src();
                         }
                         ?>
                         <div class="col-image">
-                            <img src="<?= $url  ?>" alt="<?php the_title() ?>">
+                            <img src="<?= $url  ?>" alt="<?= get_the_title($post_id) ?>">
                         </div>
                         <div class="col-content">
-                            <h2><?php the_title() ?></h2>
+                            <h2><?php get_the_title($post_id) ?></h2>
                             <div class="excerpt">
-                                <?php the_excerpt() ?>
+                                <?php get_the_excerpt($post_id)() ?>
                             </div>
                             <div class="more-link-wrap">
                                 <a class="more-link" href="<?= $permalink ?>">View <?= $button_text ?></a>
@@ -105,7 +121,6 @@ function search_ajax()
             <h2>No Results Found</h2>
         <?php
         }
-        wp_reset_postdata();
         ?>
     </div>
 
