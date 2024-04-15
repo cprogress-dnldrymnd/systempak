@@ -66,7 +66,7 @@ function search_ajax()
     $the_query = new WP_Query($args);
 
 
-    if ($the_query->have_posts()) {
+    if ($the_query->have_posts() && $post_type == 'product' && $s != '') {
         while ($the_query->have_posts()) {
             $post_ids[] = get_the_ID();
         }
