@@ -28,10 +28,10 @@ $sku = $product->get_sku();
 $gtin = get_post_meta('_wpm_gtin_code');
 echo '<div class="product-meta">';
 if ($sku) {
-	echo '<p><strong>SKU: </strong><span class="sku-val">' . $sku . '</span></p>';
+	echo '<p class="sku-meta"><strong>SKU: </strong><span class="sku-val">' . $sku . '</span></p>';
 }
 
 if($gtin) {
-	echo '<p><strong>GTIN: </strong><span class="sku-val">' . $gtin . '</span></p>';
+	echo '<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val">' . $gtin . '</span></p>';
 }
 echo '</div>';

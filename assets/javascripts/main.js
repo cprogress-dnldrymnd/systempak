@@ -10,8 +10,18 @@ function sku() {
         $sku = jQuery(this).attr('data-sku');
         $id = 'p_' + jQuery(this).attr('data-id');
         $gtin = gtin[$id];
-        console.log($gtin);
-        console.log($id);
+
+        if ($gtin) {
+            $gtin_html = jQuery('<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val"> ' + $gtin + ' </span></p>');
+
+            if (jQuery('.gtin-meta').length != 0) {
+                jQuery('.gtin-val').text($gtin);
+            } else {
+                $gtin_html.appendTo('.product-meta');
+            }
+        }
+
+
         jQuery('.sku-val').text($sku);
     });
 }
