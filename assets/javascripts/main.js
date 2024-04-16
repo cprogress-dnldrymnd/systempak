@@ -8,8 +8,8 @@ jQuery(document).ready(function ($) {
 function sku() {
     jQuery(document).on("click", '.woovr-variation-radio', function (event) {
         $sku = jQuery(this).attr('data-sku');
-        $id = jQuery(this).attr('data-pid');
-        $gtin = gtin.p_ + $id;
+        $id = 'p_' + jQuery(this).attr('data-pid');
+        $gtin = gtin[$id];
         console.log($gtin);
         jQuery('.sku-val').text($sku);
     });
