@@ -26,9 +26,23 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
 
+	if (is_product()) {
+		$product = wc_get_product(get_the_ID());
+		if ($product->get_type() == 'variable') {
+			$gtin = array();
+			$available_variations = $product->get_available_variations();
+			foreach ($available_variations as $key => $value) {
+				$gtin_val = get_post_meta($value['variation_id'],'_wpm_gtin_code', true);
+				$gtin[$value['variation_id']] = $gtin_val;
+			}
+		}
+	}
 
-	
 	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.6);
+
+	wp_localize_script('systempak-main', 'gtin', $gtin);
+
+	wp_enqueue_script('systempak-main');
 }
 
 /*-----------------------------------------------------------------------------------*/

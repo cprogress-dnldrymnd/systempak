@@ -183,17 +183,7 @@ if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('or
         }
     });
 </script>
-<?php
-if (is_product()) {
-    $product = wc_get_product(get_the_ID());
-    if ($product->get_type() == 'variable') {
-        $available_variations = $product->get_available_variations();
-        foreach ($available_variations as $key => $value) {
-            echo $value['variation_id'];
-        }
-    }
-}
-?>
+
 <?php
 
 /**
