@@ -20,7 +20,7 @@ function sku() {
                 $gtin_html.appendTo('.product-meta');
             }
         } else {
-            jQuery('.gtin-meta').hide();
+            jQuery('.gtin-meta').remove();
         }
 
 
