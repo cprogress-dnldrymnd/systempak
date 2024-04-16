@@ -189,7 +189,7 @@ if (is_product()) {
     if ($product->get_type() == 'variable') {
         $available_variations = $product->get_available_variations();
         foreach ($available_variations as $key => $value) {
-            echo $value;
+            echo $key;
         }
     }
 }
