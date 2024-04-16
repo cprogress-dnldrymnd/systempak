@@ -32,8 +32,8 @@ function priotech_child_enqueue_styles()
 			$gtin = array();
 			$available_variations = $product->get_available_variations();
 			foreach ($available_variations as $key => $value) {
-				$gtin_val = get_post_meta($value['variation_id'],'_wpm_gtin_code', true);
-				$gtin[$value['variation_id']] = $gtin_val;
+				$gtin_val = get_post_meta($value['variation_id'], '_wpm_gtin_code', true);
+				$gtin['p_' . $value['variation_id']] = $gtin_val;
 			}
 		}
 	}

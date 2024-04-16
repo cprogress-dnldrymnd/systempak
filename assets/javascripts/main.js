@@ -3,12 +3,16 @@ jQuery(document).ready(function ($) {
     ajax_form();
     product_sidebar_category();
     sku();
-    console.log(gtin);
+    console.log(gtin.10842);
 });
 
 function sku() {
     jQuery(document).on("click", '.woovr-variation-radio', function (event) {
         $sku = jQuery(this).attr('data-sku');
+
+
+
+        $gtn = gtin
         jQuery('.sku-val').text($sku);
     });
 }
