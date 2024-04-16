@@ -39,12 +39,6 @@ if (!defined('WPINC')) {
 							<span class="nobr"><strong><?php echo esc_attr(sanitize_text_field($settings['quantity_column_title'])); ?></strong></span>
 						</th>
 
-						<?php if ($settings['show_discount_column']) : ?>
-							<th>
-								<span class="nobr"><strong><?php echo esc_attr(sanitize_text_field($settings['discount_column_title'])); ?></strong></span>
-							</th>
-						<?php endif; ?>
-
 						<th>
 							<span class="nobr"><strong><?php echo esc_attr(sanitize_text_field($settings['price_column_title'])); ?></strong></span>
 						</th>
