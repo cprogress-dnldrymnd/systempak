@@ -32,7 +32,7 @@ function search_ajax()
     $args['posts_per_page'] = $posts_per_page;
 
     if ($post_type == 'product') {
-        $args['post_type'] = array('product', 'product_variation');
+        $args['post_type'] = array('product');
     } else {
         $args['post_type'] = $post_type;
     }
