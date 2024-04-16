@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
     ajax_form();
     product_sidebar_category();
     sku();
+    console.log(gtin);
 });
 
 function sku() {
