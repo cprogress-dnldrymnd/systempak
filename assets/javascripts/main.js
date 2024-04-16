@@ -19,6 +19,8 @@ function sku() {
             } else {
                 $gtin_html.appendTo('.product-meta');
             }
+        } else {
+            jQuery('.gtin-meta').hide();
         }
 
 
