@@ -9,7 +9,7 @@ function sku() {
     jQuery(document).on("click", '.woovr-variation-radio', function (event) {
         $sku = jQuery(this).attr('data-sku');
         $id = 'p_' + jQuery(this).attr('data-pid');
-        $gtin = gtin[$id];
+        $gtin = gtin['p_10842'];
         console.log($gtin);
         jQuery('.sku-val').text($sku);
     });
