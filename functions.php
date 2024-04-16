@@ -26,6 +26,8 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
 
+
+	
 	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.6);
 }
 
@@ -99,4 +101,3 @@ add_filter('get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
-
