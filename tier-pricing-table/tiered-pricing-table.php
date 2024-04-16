@@ -86,11 +86,7 @@ if (!defined('WPINC')) {
 							<?php echo esc_attr(' ' . $settings['quantity_measurement_plural']); ?>
 						<?php endif; ?>
 					</td>
-					<?php if ($settings['show_discount_column']) : ?>
-						<td>
-							—
-						</td>
-					<?php endif; ?>
+				
 					<td>
 						<?php
 						echo wp_kses_post(wc_price(wc_get_price_to_display(
@@ -180,11 +176,7 @@ if (!defined('WPINC')) {
 						<td>
 							<span><?php echo esc_attr($quantity); ?></span>
 						</td>
-						<?php if ($settings['show_discount_column']) : ?>
-							<td>
-								<span><?php echo esc_attr(round($discountAmount, 2)); ?> %</span>
-							</td>
-						<?php endif; ?>
+					
 						<td>
 							<?php
 
