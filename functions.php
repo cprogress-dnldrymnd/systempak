@@ -38,7 +38,7 @@ function priotech_child_enqueue_styles()
 		}
 	}
 
-	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.7);
+	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.8);
 
 	wp_localize_script('systempak-main', 'gtin', $gtin);
 
