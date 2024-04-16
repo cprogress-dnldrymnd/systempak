@@ -1438,6 +1438,7 @@ body:not(.page-template-page-phone-orders) {
         }
     }
     .term-desc-read-more {
+        display: none !important;
         &.show {
             display: block !important;
         }
