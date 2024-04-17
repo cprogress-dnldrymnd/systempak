@@ -94,12 +94,13 @@ function search_ajax()
         if ($post_ids) {
             foreach ($post_ids as $post_id) {
                 if (get_post_type($post_id) == 'product') {
-                    $variation = wc_get_product($post_id);
                     $sku = $variation->get_sku();
+                    $button_text = 'Product';
                 } else {
-                    $permalink = get_the_permalink($post_id);
                     $button_text = get_post_type($post_id);
                 }
+                $permalink = get_the_permalink($post_id);
+
         ?>
                 <div class="post-item">
                     <div class="row">
