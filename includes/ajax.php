@@ -94,7 +94,8 @@ function search_ajax()
         if ($post_ids) {
             foreach ($post_ids as $post_id) {
                 if (get_post_type($post_id) == 'product') {
-                    $sku = $variation->get_sku();
+                    $product = wc_get_product($post_id);
+                    $sku = $product->get_sku();
                     $button_text = 'Product';
                 } else {
                     $button_text = get_post_type($post_id);
