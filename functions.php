@@ -13,7 +13,7 @@ function add_wc_gallery_lightbox()
 add_action('wp_enqueue_scripts', 'priotech_child_enqueue_styles');
 function priotech_child_enqueue_styles()
 {
-	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', NULL, 6.1);
+	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', NULL, 7);
 	if (is_product_category()) {
 		wp_enqueue_style('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.css');
 		wp_enqueue_script('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.js');
@@ -38,7 +38,7 @@ function priotech_child_enqueue_styles()
 		}
 	}
 
-	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 2.8);
+	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3);
 
 	wp_localize_script('systempak-main', 'gtin', $gtin);
 
