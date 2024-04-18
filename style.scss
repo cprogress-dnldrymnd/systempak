@@ -1462,9 +1462,12 @@ body:not(.page-template-page-phone-orders) {
             border-radius: 20px;
             font-size: 0;
             margin-left: 10px;
+            margin-right: 0 !important;
             &:before {
-                content: 'On Backorder';
-                font-size: 14px;
+                content: "On Backorder";
+                font-size: 13px;
+                font-family: "Century Gothic";
+                margin: 0;
             }
         }
     }

@@ -1027,9 +1027,12 @@ body:not(.page-template-page-phone-orders) .fee {
     padding: 5px;
     border-radius: 20px;
     font-size: 0;
-    margin-left: 10px; }
+    margin-left: 10px;
+    margin-right: 0 !important; }
     .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
-      content: 'On Backorder';
-      font-size: 14px; }
+      content: "On Backorder";
+      font-size: 13px;
+      font-family: "Century Gothic";
+      margin: 0; }
 
 /*# sourceMappingURL=style.css.map */
