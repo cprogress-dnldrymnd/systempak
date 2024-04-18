@@ -397,8 +397,6 @@ a:hover {
       border-radius: 50px;
       margin: 0;
       margin-bottom: 1rem; }
-      .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio .woovr-variation-availability {
-        display: none !important; }
       .woovr-variations.woovr-variations.woovr-variations-default .woovr-variation-radio:not(:last-child) {
         margin-right: 1rem; }
 
@@ -1016,5 +1014,17 @@ body:not(.page-template-page-phone-orders) .fee {
     transform: rotate(180deg); }
   .dropdown-toggle.dropdown-toggle:after {
     content: none !important; }
+
+.woovr-variation-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; }
+  .woovr-variation-info .woovr-variation-availability .stock.out-of-stock {
+    display: flex;
+    align-items: center;
+    background-color: #e2401c;
+    color: var(--white-color);
+    padding: 5px;
+    border-radius: 20px; }
 
 /*# sourceMappingURL=style.css.map */
