@@ -1449,6 +1449,17 @@ body:not(.page-template-page-phone-orders) {
     }
 }
 .woovr-variation-info {
-    .stock.out-of-stock {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .woovr-variation-availability {
+        .stock.out-of-stock {
+            display: flex;
+            align-items: center;
+            background-color: #e2401c;
+            color: var(--white-color);
+            padding: 5px;
+            border-radius: 20px;
+        }
     }
 }
