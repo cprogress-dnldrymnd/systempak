@@ -10,6 +10,7 @@ function sku() {
         $sku = jQuery(this).attr('data-sku');
         $id = 'p_' + jQuery(this).attr('data-id');
         $gtin = gtin[$id];
+        $stock_status = gtin[$id];
 
         if ($gtin) {
             $gtin_html = jQuery('<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val"> ' + $gtin + ' </span></p>');
@@ -21,6 +22,16 @@ function sku() {
             }
         } else {
             jQuery('.gtin-meta').remove();
+        }
+
+
+        if ($stock_status == 'outofstock') {
+            $stock_html = jQuery('<p class="stock-status-meta"><strong>GTIN: </strong><span class="gtin-val"> ON BACKORDER </span></p>');
+            if (jQuery('.stock-status-meta').length == 0) {
+                $stock_html.appendTo('.product-meta');
+            }
+        } else {
+            jQuery('.stock-status-meta').remove();
         }
 
 
