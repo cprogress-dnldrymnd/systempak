@@ -34,14 +34,14 @@ function priotech_child_enqueue_styles()
 			$available_variations = $product->get_available_variations();
 			foreach ($available_variations as $key => $value) {
 				$product_var = wc_get_product($value['variation_id']);
-				$stock_status = $product_var->get_stock_status();
+				$stock_status_val = $product_var->get_stock_status();
 				$gtin_val = get_post_meta($value['variation_id'], '_wpm_gtin_code', true);
 
 				$gtin['p_' . $value['variation_id']] = $gtin_val;
 				if($stock_status) {
-					$stock_status['p_' . $value['variation_id']] = $stock_status;
-
+					
 				}
+				$stock_status['p_' . $value['variation_id']] = $stock_status_val;
 			}
 		}
 	}
