@@ -1453,6 +1453,8 @@ body:not(.page-template-page-phone-orders) {
     align-items: center;
     flex-wrap: wrap;
     .woovr-variation-availability {
+        margin-right: 0 !important;
+
         .stock.out-of-stock {
             display: flex;
             align-items: center;
@@ -1462,7 +1464,6 @@ body:not(.page-template-page-phone-orders) {
             border-radius: 20px;
             font-size: 0;
             margin-left: 10px;
-            margin-right: 0 !important;
             &:before {
                 content: "On Backorder";
                 font-size: 13px;
