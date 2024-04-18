@@ -10,7 +10,7 @@ function sku() {
         $sku = jQuery(this).attr('data-sku');
         $id = 'p_' + jQuery(this).attr('data-id');
         $gtin = gtin[$id];
-        $stock_status = gtin[$id];
+        $stock_status = stock_status[$id];
 
         if ($gtin) {
             $gtin_html = jQuery('<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val"> ' + $gtin + ' </span></p>');
