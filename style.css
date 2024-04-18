@@ -1026,9 +1026,10 @@ body:not(.page-template-page-phone-orders) .fee {
     color: var(--white-color);
     padding: 5px;
     border-radius: 20px;
-    font-size: 0; }
+    font-size: 0;
+    margin-left: 10px; }
     .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
       content: 'On Backorder';
-      font-size: 13px; }
+      font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map */

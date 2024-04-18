@@ -1461,9 +1461,10 @@ body:not(.page-template-page-phone-orders) {
             padding: 5px;
             border-radius: 20px;
             font-size: 0;
+            margin-left: 10px;
             &:before {
                 content: 'On Backorder';
-                font-size: 13px;
+                font-size: 14px;
             }
         }
     }
