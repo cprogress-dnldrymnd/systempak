@@ -1035,5 +1035,7 @@ body:not(.page-template-page-phone-orders) .fee {
         font-size: 13px;
         font-family: "Century Gothic";
         margin: 0; }
+    .woovr-variation-info .woovr-variation-availability .stock:not(.out-of-stock) {
+      display: none; }
 
 /*# sourceMappingURL=style.css.map */
