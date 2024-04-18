@@ -30,17 +30,28 @@ function priotech_child_enqueue_styles()
 		$product = wc_get_product(get_the_ID());
 		if ($product->get_type() == 'variable') {
 			$gtin = array();
+			$stock_status = array();
 			$available_variations = $product->get_available_variations();
 			foreach ($available_variations as $key => $value) {
+				$product_var = wc_get_product($value['variation_id']);
+				$stock_status = $product_var->get_stock_status();
 				$gtin_val = get_post_meta($value['variation_id'], '_wpm_gtin_code', true);
+
 				$gtin['p_' . $value['variation_id']] = $gtin_val;
+				if($stock_status) {
+					$stock_status['p_' . $value['variation_id']] = $stock_status;
+
+				}
 			}
 		}
 	}
 
-	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3);
+	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3.2);
 
 	wp_localize_script('systempak-main', 'gtin', $gtin);
+
+	wp_localize_script('systempak-main', 'stock_status', $stock_status);
+
 
 	wp_enqueue_script('systempak-main');
 }
