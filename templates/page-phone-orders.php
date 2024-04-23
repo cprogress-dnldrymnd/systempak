@@ -43,6 +43,12 @@ echo '<br><br>';
                         </div>
                     </form>
                 </div>
+            <?php } else { ?>
+
+                <?php
+
+                ?>
+
             <?php } ?>
             <div id="userSearchForm" class="form-wrapper">
                 <div class="form-holder">
