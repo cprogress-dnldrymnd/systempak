@@ -25,27 +25,41 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_script('systempak-checkout', assets_dir . 'javascripts/checkout-phone-orders.js', array('jquery'), checkout_version);
 		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
+	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3.2);
 
 	if (is_product()) {
 		$product = wc_get_product(get_the_ID());
 		if ($product->get_type() == 'variable') {
 			$gtin = array();
-			$stock_status = array();
+			$price_per_unit = array();
 			$available_variations = $product->get_available_variations();
 			foreach ($available_variations as $key => $value) {
+				$product_var = wc_get_product(get_the_ID());
 				$gtin_val = get_post_meta($value['variation_id'], '_wpm_gtin_code', true);
-
 				$gtin['p_' . $value['variation_id']] = $gtin_val;
-				if($stock_status) {
-					
+
+
+				$quantity_per_box = get_post_meta($value['variation_id'], 'quantity_per_box', true);
+
+				if ($quantity_per_box) {
+					$price_num =  wc_get_price_to_display(
+						wc_get_product($value['variation_id']),
+						array('price' => $product_var->get_price())
+					);
+					$price_per_unit['p_' . $value['variation_id']] = '£' . round($price_num / $quantity_per_box, 3);
+				} else {
+					$price_per_unit['p_' . $value['variation_id']] = wp_kses_post(wc_price(wc_get_price_to_display(
+						wc_get_product($value['variation_id']),
+						array('price' => $product_var->get_price())
+					)));
 				}
 			}
+
+			wp_localize_script('systempak-main', 'gtin', $gtin);
+			wp_localize_script('systempak-main', 'price_per_unit', $price_per_unit);
 		}
 	}
 
-	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3.2);
-
-	wp_localize_script('systempak-main', 'gtin', $gtin);
 
 
 
@@ -124,4 +138,4 @@ add_filter('get_the_archive_title', function ($title) {
 });
 
 
-add_filter( 'woocommerce_apply_base_tax_for_local_pickup', '__return_false' );
+add_filter('woocommerce_apply_base_tax_for_local_pickup', '__return_false');
