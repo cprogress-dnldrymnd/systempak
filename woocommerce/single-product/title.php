@@ -31,6 +31,12 @@ if ($sku) {
 	echo '<p class="sku-meta"><strong>SKU: </strong><span class="sku-val">' . $sku . '</span></p>';
 }
 
+if(current_user_can('administrator')) {
+	echo '<pre>';
+	var_dump(get_post_meta(11091));
+	echo '</pre>';
+}
+
 if($gtin) {
 	echo '<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val">' . $gtin . '</span></p>';
 }
