@@ -20,7 +20,7 @@ echo '<br><br>';
 
     <section class="select-user-form py-5">
         <div class="container">
-            <div id="addNewCustomer">
+            <div id="addNewCustomer" class="form-wrapper">
                 <form action="<?= get_permalink() ?>" method="POST">
                     <div class="form-holder">
                         <h3>Add Customer Form</h3>
@@ -35,7 +35,7 @@ echo '<br><br>';
                     </div>
                 </form>
             </div>
-            <div id="userSearchForm">
+            <div id="userSearchForm" class="form-wrapper">
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
 
