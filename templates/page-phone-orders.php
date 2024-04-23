@@ -103,7 +103,6 @@ echo '<br><br>';
                                         array(
                                             'type'       => 'select',
                                             'class'      => array('chzn-drop'),
-                                            'label'      => __('Select a country'),
                                             'placeholder'    => __('Country'),
                                             'options'    => $countries,
                                             'required' => true,
