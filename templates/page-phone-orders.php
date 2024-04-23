@@ -96,7 +96,7 @@ echo '<br><br>';
                     }
                     ?>
                     <?php if ($errors || empty($_POST)) { ?>
-                        <form action="<?= get_permalink() ?>" method="POST">
+                        <form action="<?= get_permalink() ?>?action=create_customer" method="POST">
                             <div class="form-holder">
                                 <h3>Add Customer Form</h3>
 
