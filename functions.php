@@ -25,7 +25,7 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_script('systempak-checkout', assets_dir . 'javascripts/checkout-phone-orders.js', array('jquery'), checkout_version);
 		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
-	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3.7);
+	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3.6);
 
 	if (is_product()) {
 		$product = wc_get_product(get_the_ID());
@@ -40,7 +40,7 @@ function priotech_child_enqueue_styles()
 
 				$pricingRule = \TierPricingTable\PriceManager::getPricingRule($value['variation_id']);
 
-				if ($pricingRule->getRules()) {
+				if (!$pricingRule->getRules()) {
 					$quantity_per_box = get_post_meta($value['variation_id'], 'quantity_per_box', true);
 
 					if ($quantity_per_box) {
