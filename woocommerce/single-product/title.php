@@ -31,13 +31,7 @@ if ($sku) {
 	echo '<p class="sku-meta"><strong>SKU: </strong><span class="sku-val">' . $sku . '</span></p>';
 }
 
-if(current_user_can('administrator')) {
-	echo '<pre>';
-	$pricingRule = \TierPricingTable\PriceManager::getPricingRule(10630);
 
-	var_dump($pricingRule->getRules());
-	echo '</pre>';
-}
 
 if($gtin) {
 	echo '<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val">' . $gtin . '</span></p>';
