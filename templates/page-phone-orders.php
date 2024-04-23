@@ -65,7 +65,7 @@ echo '<br><br>';
                         update_user_meta($user_id, "billing_company", $company_name);
                         update_user_meta($user_id, "billing_country", $country);
                         update_user_meta($user_id, "billing_address_1", $address_1);
-                        update_user_meta($user_id, "billing_address_2", $billing_address_2);
+                        update_user_meta($user_id, "billing_address_2", $address_2);
                         update_user_meta($user_id, "billing_city", $city);
                         update_user_meta($user_id, "billing_state", $state);
                         update_user_meta($user_id, "billing_postcode", $postcode);
