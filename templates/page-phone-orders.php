@@ -22,168 +22,170 @@ echo '<br><br>';
 
     <section class="select-user-form py-5">
         <div class="container">
-            <?php
-            $errors = '';
-            if (!empty($_POST)) {
-                $email = $_POST['email'];
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-                $first_name = $_POST['first_name'];
-                $last_name = $_POST['last_name'];
-                $company_name = $_POST['company_name'];
-                $country = $_POST['country'];
-                $address_1 = $_POST['address_1'];
-                $address_2 = $_POST['address_2'];
-                $city = $_POST['city'];
-                $state = $_POST['state'];
-                $postcode = $_POST['postcode'];
-                $phone = $_POST['phone'];
-
-
-                if (email_exists($email)) {
-                    $errors = '<p>An account is already registered with your email address.</p>';
-                }
-
-                if (empty($username) || !validate_username($username)) {
-                    $errors .= '<p>Please enter a valid account username.</p>';
-                }
-
-                if (username_exists($username)) {
-                    $errors .= '<p>An account is already registered with that username. Please choose another.</p>';
-                }
-            }
-            ?>
-
-            <div class="form-wrapper text-end">
-                <a href="<?= get_permalink() . '?action=create_customer' ?>" class="btn btn-primary" style="border-radius: 5px !important;">Add Customer</a>
-            </div>
-            <div id="addNewCustomer" class="form-wrapper">
+            <?php if ($_GET['action'] == 'create_customer') { ?>
                 <?php
-                if ($errors == '') {
-                    $user_id = wc_create_new_customer($email, $username, $password);
-
-                    update_user_meta($user_id, "billing_first_name", $first_name);
-                    update_user_meta($user_id, "billing_last_name", $last_name);
-                    update_user_meta($user_id, "billing_company", $company_name);
-                    update_user_meta($user_id, "billing_country", $country);
-                    update_user_meta($user_id, "billing_address_1", $address_1);
-                    update_user_meta($user_id, "billing_address_2", $billing_address_2);
-                    update_user_meta($user_id, "billing_city", $city);
-                    update_user_meta($user_id, "billing_state", $state);
-                    update_user_meta($user_id, "billing_postcode", $postcode);
-                    update_user_meta($user_id, "billing_phone", $phone);
-
-                    update_user_meta($user_id, "shipping_first_name", $first_name);
-                    update_user_meta($user_id, "shipping_last_name", $last_name);
-                    update_user_meta($user_id, "shipping_company", $company_name);
-                    update_user_meta($user_id, "shipping_country", $country);
-                    update_user_meta($user_id, "shipping_address_1", $address_1);
-                    update_user_meta($user_id, "shipping_address_2", $shipping_address_2);
-                    update_user_meta($user_id, "shipping_city", $city);
-                    update_user_meta($user_id, "shipping_state", $state);
-                    update_user_meta($user_id, "shipping_postcode", $postcode);
-                    update_user_meta($user_id, "shipping_phone", $phone);
+                $errors = '';
+                if (!empty($_POST)) {
+                    $email = $_POST['email'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    $first_name = $_POST['first_name'];
+                    $last_name = $_POST['last_name'];
+                    $company_name = $_POST['company_name'];
+                    $country = $_POST['country'];
+                    $address_1 = $_POST['address_1'];
+                    $address_2 = $_POST['address_2'];
+                    $city = $_POST['city'];
+                    $state = $_POST['state'];
+                    $postcode = $_POST['postcode'];
+                    $phone = $_POST['phone'];
 
 
-                    $user = get_user_by('id', $user_id);
-                    if ($user) {
-                        wp_redirect($link);
-                        $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
-                        $link_final = str_replace('&amp;', '&', $link);
-                        wp_redirect($link_final);
-                        exit;
+                    if (email_exists($email)) {
+                        $errors = '<p>An account is already registered with your email address.</p>';
                     }
-                } else {
-                    echo $errors;
+
+                    if (empty($username) || !validate_username($username)) {
+                        $errors .= '<p>Please enter a valid account username.</p>';
+                    }
+
+                    if (username_exists($username)) {
+                        $errors .= '<p>An account is already registered with that username. Please choose another.</p>';
+                    }
                 }
                 ?>
-                <?php if ($errors || empty($_POST)) { ?>
-                    <form action="<?= get_permalink() ?>" method="POST">
-                        <div class="form-holder">
-                            <h3>Add Customer Form</h3>
 
-                            <div class="row g-3 m-0">
+                <div id="addNewCustomer" class="form-wrapper">
+                    <?php
+                    if ($errors == '') {
+                        $user_id = wc_create_new_customer($email, $username, $password);
 
-                                <div class="col-6">
-                                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Customer First Name" value="<?= $first_name ?>" required>
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Customer Last Name" value="<?= $last_name ?>" required>
-                                </div>
+                        update_user_meta($user_id, "billing_first_name", $first_name);
+                        update_user_meta($user_id, "billing_last_name", $last_name);
+                        update_user_meta($user_id, "billing_company", $company_name);
+                        update_user_meta($user_id, "billing_country", $country);
+                        update_user_meta($user_id, "billing_address_1", $address_1);
+                        update_user_meta($user_id, "billing_address_2", $billing_address_2);
+                        update_user_meta($user_id, "billing_city", $city);
+                        update_user_meta($user_id, "billing_state", $state);
+                        update_user_meta($user_id, "billing_postcode", $postcode);
+                        update_user_meta($user_id, "billing_phone", $phone);
 
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Customer Company Name" value="<?= $company_name ?>">
-                                </div>
-
-                                <div class="col-12">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" value="<?= $email ?>" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" value="<?= $username ?>" required>
-                                </div>
-                                <div class=" col-12">
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
-                                </div>
-                                <div class=" col-12">
-                                    <?php
-                                    global $woocommerce;
-                                    $countries_obj   = new WC_Countries();
-                                    $countries   = $countries_obj->__get('countries');
-
-                                    if (isset($country)) {
-                                        $default = $country;
-                                    } else {
-                                        $default = 'GB';
-                                    }
-                                    woocommerce_form_field(
-                                        'country',
-                                        array(
-                                            'type'       => 'select',
-                                            'class'      => array('chzn-drop'),
-                                            'placeholder'    => __('Select a Country'),
-                                            'options'    => $countries,
-                                            'required' => true,
-                                            'default' => $default
-                                        )
-                                    );
-                                    ?>
-                                </div>
-
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="address_1" id="address_1" placeholder="Customer Street Address" value="<?= $address_1 ?>" required>
-                                </div>
-
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="address_2" id="address_2" placeholder="Customer Flat, suite, unit, etc. (optional)" value="<?= $address_2 ?>">
-                                </div>
-
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="city" id="city" placeholder="Customer Town/City" value="<?= $city ?>" required>
-                                </div>
-
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="state" id="state" placeholder="Customer State/County" value="<?= $state ?>" required>
-                                </div>
+                        update_user_meta($user_id, "shipping_first_name", $first_name);
+                        update_user_meta($user_id, "shipping_last_name", $last_name);
+                        update_user_meta($user_id, "shipping_company", $company_name);
+                        update_user_meta($user_id, "shipping_country", $country);
+                        update_user_meta($user_id, "shipping_address_1", $address_1);
+                        update_user_meta($user_id, "shipping_address_2", $shipping_address_2);
+                        update_user_meta($user_id, "shipping_city", $city);
+                        update_user_meta($user_id, "shipping_state", $state);
+                        update_user_meta($user_id, "shipping_postcode", $postcode);
+                        update_user_meta($user_id, "shipping_phone", $phone);
 
 
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Customer Postcode" value="<?= $postcode ?>" required>
-                                </div>
+                        $user = get_user_by('id', $user_id);
+                        if ($user) {
+                            wp_redirect($link);
+                            $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
+                            $link_final = str_replace('&amp;', '&', $link);
+                            wp_redirect($link_final);
+                            exit;
+                        }
+                    } else {
+                        echo $errors;
+                    }
+                    ?>
+                    <?php if ($errors || empty($_POST)) { ?>
+                        <form action="<?= get_permalink() ?>" method="POST">
+                            <div class="form-holder">
+                                <h3>Add Customer Form</h3>
 
-                                <div class="col-12">
-                                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Customer Phone" value="<?= $phone ?>" required>
-                                </div>
+                                <div class="row g-3 m-0">
 
-                                <div class=" col-12">
-                                    <button type="submit" class="btn btn-primary w-100" style="border-radius: 5px !important;">Create Customer and Create Order</button>
-                                </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Customer First Name" value="<?= $first_name ?>" required>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Customer Last Name" value="<?= $last_name ?>" required>
+                                    </div>
 
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Customer Company Name" value="<?= $company_name ?>">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" value="<?= $email ?>" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" value="<?= $username ?>" required>
+                                    </div>
+                                    <div class=" col-12">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
+                                    </div>
+                                    <div class=" col-12">
+                                        <?php
+                                        global $woocommerce;
+                                        $countries_obj   = new WC_Countries();
+                                        $countries   = $countries_obj->__get('countries');
+
+                                        if (isset($country)) {
+                                            $default = $country;
+                                        } else {
+                                            $default = 'GB';
+                                        }
+                                        woocommerce_form_field(
+                                            'country',
+                                            array(
+                                                'type'       => 'select',
+                                                'class'      => array('chzn-drop'),
+                                                'placeholder'    => __('Select a Country'),
+                                                'options'    => $countries,
+                                                'required' => true,
+                                                'default' => $default
+                                            )
+                                        );
+                                        ?>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="address_1" id="address_1" placeholder="Customer Street Address" value="<?= $address_1 ?>" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="address_2" id="address_2" placeholder="Customer Flat, suite, unit, etc. (optional)" value="<?= $address_2 ?>">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="city" id="city" placeholder="Customer Town/City" value="<?= $city ?>" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="state" id="state" placeholder="Customer State/County" value="<?= $state ?>" required>
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Customer Postcode" value="<?= $postcode ?>" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Customer Phone" value="<?= $phone ?>" required>
+                                    </div>
+
+                                    <div class=" col-12">
+                                        <button type="submit" class="btn btn-primary w-100" style="border-radius: 5px !important;">Create Customer and Create Order</button>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                <?php } ?>
-            </div>
-
+                        </form>
+                    <?php } ?>
+                </div>
+            <?php } else { ?>
+                <div class="form-wrapper text-end">
+                    <a href="<?= get_permalink() . '?action=create_customer' ?>" class="btn btn-primary" style="border-radius: 5px !important;">Add Customer</a>
+                </div>
+            <?php } ?>
             <div id="userSearchForm" class="form-wrapper">
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
