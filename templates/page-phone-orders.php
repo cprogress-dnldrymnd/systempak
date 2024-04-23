@@ -25,11 +25,18 @@ echo '<br><br>';
                     <div class="form-holder">
                         <h3>Add Customer Form</h3>
 
-                        <div class="row g-0 m-0">
+                        <div class="row g-3 m-0">
                             <div class="col">
                                 <input type="text" class="form-control" name="email" id="email" placeholder="Customer Email Address">
+                            </div>
+                            <div class="col">
                                 <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username">
+                            </div>
+                            <div class="col">
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password">
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Create Customer and Create Order</button>
                             </div>
                         </div>
                     </div>
