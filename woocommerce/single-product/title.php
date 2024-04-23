@@ -33,7 +33,7 @@ if ($sku) {
 
 if(current_user_can('administrator')) {
 	echo '<pre>';
-	var_dump(get_post_meta(11091));
+	var_dump(get_post_meta(10977));
 	echo '</pre>';
 }
 
