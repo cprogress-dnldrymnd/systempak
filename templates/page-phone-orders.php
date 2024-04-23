@@ -109,7 +109,7 @@ echo '<br><br>';
                                     <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Customer Last Name" value="<?= $last_name ?>" required>
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-12">
                                     <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Customer Company Name" value="<?= $company_name ?>">
                                 </div>
 
