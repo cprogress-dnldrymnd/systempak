@@ -46,7 +46,10 @@ echo '<br><br>';
             <?php } else { ?>
 
                 <?php
-
+                $email = $_POST['email'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $user_id = wc_create_new_customer($email, $username, $password);
                 ?>
 
             <?php } ?>
