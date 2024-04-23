@@ -123,28 +123,46 @@ echo '<br><br>';
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
                                     </div>
                                     <div class=" col-12">
-                                        <?php
-                                        global $woocommerce;
-                                        $countries_obj   = new WC_Countries();
-                                        $countries   = $countries_obj->__get('countries');
-
-                                        if (isset($country)) {
-                                            $default = $country;
-                                        } else {
-                                            $default = 'GB';
-                                        }
-                                        woocommerce_form_field(
-                                            'country',
-                                            array(
-                                                'type'       => 'select',
-                                                'class'      => array('chzn-drop'),
-                                                'placeholder'    => __('Select a Country'),
-                                                'options'    => $countries,
-                                                'required' => true,
-                                                'default' => $default
-                                            )
-                                        );
-                                        ?>
+                                        <select name="country" id="country" required>
+                                            <option value="">Select a country / region…</option>
+                                            <option value="AT">Austria</option>
+                                            <option value="BE">Belgium</option>
+                                            <option value="BG">Bulgaria</option>
+                                            <option value="CN">China</option>
+                                            <option value="HR">Croatia</option>
+                                            <option value="CY">Cyprus</option>
+                                            <option value="CZ">Czech Republic</option>
+                                            <option value="DK">Denmark</option>
+                                            <option value="EE">Estonia</option>
+                                            <option value="FI">Finland</option>
+                                            <option value="FR">France</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="GI">Gibraltar</option>
+                                            <option value="GR">Greece</option>
+                                            <option value="GG">Guernsey</option>
+                                            <option value="HU">Hungary</option>
+                                            <option value="IE">Ireland</option>
+                                            <option value="IM">Isle of Man</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="JE">Jersey</option>
+                                            <option value="LU">Luxembourg</option>
+                                            <option value="MT">Malta</option>
+                                            <option value="MD">Moldova</option>
+                                            <option value="NL">Netherlands</option>
+                                            <option value="NO">Norway</option>
+                                            <option value="PL">Poland</option>
+                                            <option value="PT">Portugal</option>
+                                            <option value="RO">Romania</option>
+                                            <option value="RS">Serbia</option>
+                                            <option value="SK">Slovakia</option>
+                                            <option value="SI">Slovenia</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="SE">Sweden</option>
+                                            <option value="CH">Switzerland</option>
+                                            <option value="UA">Ukraine</option>
+                                            <option value="GB" selected="selected">United Kingdom (UK)</option>
+                                            <option value="US">United States (US)</option>
+                                        </select>
                                     </div>
 
                                     <div class="col-12">
