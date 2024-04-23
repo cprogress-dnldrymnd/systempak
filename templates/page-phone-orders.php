@@ -28,6 +28,10 @@ echo '<br><br>';
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
+                $first_name = $_POST['first_name'];
+                $last_name = $_POST['last_name'];
+
+
                 if (email_exists($email)) {
                     $errors = '<p>An account is already registered with your email address.</p>';
                 }
@@ -47,6 +51,11 @@ echo '<br><br>';
                 <?php
                 if ($errors == '') {
                     $user_id = wc_create_new_customer($email, $username, $password);
+
+                    update_user_meta($user_id, "billing_first_name", 'God');
+                    update_user_meta($user_id, "billing_last_name", 'Almighty');
+
+
                     $user = get_user_by('id', $user_id);
                     if ($user) {
                         wp_redirect($link);
@@ -65,6 +74,14 @@ echo '<br><br>';
                             <h3>Add Customer Form</h3>
 
                             <div class="row g-3 m-0">
+
+                                <div class="col-6">
+                                    <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Customer First Name" value="<?= $first_name ?>" required>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Customer Last Name" value="<?= $last_name ?>" required>
+                                </div>
+
                                 <div class="col-12">
                                     <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" value="<?= $email ?>" required>
                                 </div>
@@ -74,9 +91,31 @@ echo '<br><br>';
                                 <div class=" col-12">
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
                                 </div>
+
+                                <?php
+
+                                global $woocommerce;
+                                $countries_obj   = new WC_Countries();
+                                $countries   = $countries_obj->__get('countries');
+                                echo '<div id="my_custom_countries_field"><h2>' . __('Countries') . '</h2>';
+
+                                woocommerce_form_field(
+                                    'my_country_field',
+                                    array(
+                                        'type'       => 'select',
+                                        'class'      => array('chzn-drop'),
+                                        'label'      => __('Select a country'),
+                                        'placeholder'    => __('Enter something'),
+                                        'options'    => $countries
+                                    )
+                                );
+                                echo '</div>';
+                                ?>
+
                                 <div class=" col-12">
                                     <button type="submit" class="btn btn-primary w-100" style="border-radius: 5px !important;">Create Customer and Create Order</button>
                                 </div>
+
                             </div>
                         </div>
                     </form>
