@@ -23,6 +23,8 @@ echo '<br><br>';
             <div id="addNewCustomer">
                 <form action="<?= get_permalink() ?>" method="POST">
                     <div class="form-holder">
+                        <h3>Add Customer Form</h3>
+
                         <div class="row g-0 m-0">
                             <div class="col">
                                 <input type="text" class="form-control" name="email" id="email" placeholder="Customer Email Address">
