@@ -50,6 +50,8 @@ echo '<br><br>';
                         $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
                         echo $link;
                     }
+                } else {
+                    echo $errors;
                 }
                 ?>
                 <?php if ($errors || empty($_POST)) { ?>
