@@ -22,7 +22,7 @@ echo '<br><br>';
         <div class="container">
             <?php if (empty($_POST)) { ?>
                 <div id="addNewCustomer" class="form-wrapper">
-                    <form action="<?= get_permalink() ?>" method="GET">
+                    <form action="<?= get_permalink() ?>" method="POST">
                         <div class="form-holder">
                             <h3>Add Customer Form</h3>
 
