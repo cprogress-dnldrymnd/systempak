@@ -45,7 +45,10 @@ echo '<br><br>';
                 </div>
             <?php } else { ?>
 
+
+
                 <?php
+                do_action('woocommerce_registration_errors');
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
