@@ -36,7 +36,7 @@ echo '<br><br>';
                                 <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" required>
                             </div>
                             <div class="col">
-                                <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Create Customer and Create Order</button>
+                                <button type="submit" class="btn btn-primary">Create Customer and Create Order</button>
                             </div>
                         </div>
                     </div>
