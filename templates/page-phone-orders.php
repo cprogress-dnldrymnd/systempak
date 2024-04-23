@@ -27,16 +27,16 @@ echo '<br><br>';
                             <h3>Add Customer Form</h3>
 
                             <div class="row g-3 m-0">
-                                <div class="col">
+                                <div class="col-12">
                                     <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" required>
                                 </div>
-                                <div class="col">
+                                <div class="col-12">
                                     <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" required>
                                 </div>
-                                <div class="col">
+                                <div class="col-12">
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" required>
                                 </div>
-                                <div class="col">
+                                <div class="col-12">
                                     <button type="submit" class="btn btn-primary">Create Customer and Create Order</button>
                                 </div>
                             </div>
