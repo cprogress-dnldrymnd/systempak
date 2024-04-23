@@ -46,8 +46,10 @@ echo '<br><br>';
                 if ($errors == '') {
                     $user_id = wc_create_new_customer($email, $username, $password);
                     $user = get_user_by('id', $user_id);
-                    $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
-                    echo $link;
+                    if ($user) {
+                        $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
+                        echo $link;
+                    }
                 }
                 ?>
                 <?php if ($errors) { ?>
