@@ -939,7 +939,7 @@ section.select-user-form .form-holder {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 3rem; }
-  section.select-user-form .form-holder input[type="text"] {
+  section.select-user-form .form-holder input {
     border-radius: 5px 0 0 5px; }
   section.select-user-form .form-holder button {
     height: 43px;
