@@ -20,7 +20,7 @@ echo '<br><br>';
 
     <section class="select-user-form py-5">
         <div class="container">
-            <?php if (!empty($_GET)) { ?>
+            <?php if (empty($_POST)) { ?>
                 <div id="addNewCustomer" class="form-wrapper">
                     <form action="<?= get_permalink() ?>" method="GET">
                         <div class="form-holder">
