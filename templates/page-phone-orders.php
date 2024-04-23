@@ -106,6 +106,7 @@ echo '<br><br>';
                                             'placeholder'    => __('Select a Country'),
                                             'options'    => $countries,
                                             'required' => true,
+                                            'value' => 'GB'
                                         )
                                     );
                                     ?>
