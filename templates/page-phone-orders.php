@@ -50,6 +50,7 @@ echo '<br><br>';
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $user_id = wc_create_new_customer($email, $username, $password);
+                echo $user_id;
                 ?>
 
             <?php } ?>
