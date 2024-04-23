@@ -1038,4 +1038,13 @@ body:not(.page-template-page-phone-orders) .fee {
     .woovr-variation-info .woovr-variation-availability .stock:not(.out-of-stock) {
       display: none; }
 
+.woocommerce-form-coupon-toggle.woocommerce-form-coupon-toggle {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--light-gray-color);
+  margin-bottom: 30px; }
+  .woocommerce-form-coupon-toggle.woocommerce-form-coupon-toggle .woocommerce-info {
+    margin-bottom: 0 !important; }
+
 /*# sourceMappingURL=style.css.map */

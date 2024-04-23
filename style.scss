@@ -1478,3 +1478,14 @@ body:not(.page-template-page-phone-orders) {
         }
     }
 }
+
+.woocommerce-form-coupon-toggle.woocommerce-form-coupon-toggle {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--light-gray-color);
+    margin-bottom: 30px;
+    .woocommerce-info {
+        margin-bottom: 0 !important;
+    }
+}
