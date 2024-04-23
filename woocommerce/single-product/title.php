@@ -33,7 +33,9 @@ if ($sku) {
 
 if(current_user_can('administrator')) {
 	echo '<pre>';
-	var_dump(get_post_meta(10977));
+	$pricingRule = \TierPricingTable\PriceManager::getPricingRule(10977);
+
+	var_dump($pricingRule);
 	echo '</pre>';
 }
 
