@@ -39,21 +39,19 @@ function priotech_child_enqueue_styles()
 				$gtin['p_' . $value['variation_id']] = $gtin_val;
 
 				$pricingRule = \TierPricingTable\PriceManager::getPricingRule($value['variation_id']);
-				if (!$pricingRule) {
-					$quantity_per_box = get_post_meta($value['variation_id'], 'quantity_per_box', true);
+				$quantity_per_box = get_post_meta($value['variation_id'], 'quantity_per_box', true);
 
-					if ($quantity_per_box) {
-						$price_num =  wc_get_price_to_display(
-							wc_get_product($value['variation_id']),
-							array('price' => $product_var->get_price())
-						);
-						$price_per_unit['p_' . $value['variation_id']] = '£' . round($price_num / $quantity_per_box, 3);
-					} else {
-						$price_per_unit['p_' . $value['variation_id']] = wp_kses_post(wc_price(wc_get_price_to_display(
-							wc_get_product($value['variation_id']),
-							array('price' => $product_var->get_price())
-						)));
-					}
+				if ($quantity_per_box) {
+					$price_num =  wc_get_price_to_display(
+						wc_get_product($value['variation_id']),
+						array('price' => $product_var->get_price())
+					);
+					$price_per_unit['p_' . $value['variation_id']] = '£' . round($price_num / $quantity_per_box, 3);
+				} else {
+					$price_per_unit['p_' . $value['variation_id']] = wp_kses_post(wc_price(wc_get_price_to_display(
+						wc_get_product($value['variation_id']),
+						array('price' => $product_var->get_price())
+					)));
 				}
 			}
 
