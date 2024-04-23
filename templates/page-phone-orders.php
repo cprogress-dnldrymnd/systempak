@@ -14,7 +14,8 @@ echo '<br><br>';
     $args = array(
         'role' => array('customer'),
         'number' => 10,
-        'orderby' => 'registered'
+        'orderby' => 'registered',
+        'order' => 'DESC'
     );
     $user_query = new WP_User_Query($args);
     ?>
