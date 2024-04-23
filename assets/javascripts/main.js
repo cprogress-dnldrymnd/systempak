@@ -11,7 +11,7 @@ function sku() {
         $id = 'p_' + jQuery(this).attr('data-id');
         $gtin = gtin[$id];
         $stock_status = stock_status[$id];
-
+        console.log(price_per_unit);
         if ($gtin) {
             $gtin_html = jQuery('<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val"> ' + $gtin + ' </span></p>');
 
