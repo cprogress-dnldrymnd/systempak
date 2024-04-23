@@ -11,7 +11,6 @@ function sku() {
         $id = 'p_' + jQuery(this).attr('data-id');
         $gtin = gtin[$id];
         $price_per_unit = price_per_unit[$id];
-        console.log(price_per_unit);
         if ($gtin) {
             $gtin_html = jQuery('<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val"> ' + $gtin + ' </span></p>');
 
@@ -27,8 +26,8 @@ function sku() {
         if ($price_per_unit) {
             $price_per_unit_html = jQuery('<p class="price-per-unit-meta"><strong>Price Per Unit: </strong><span class="price-per-unit-val"> ' + $price_per_unit + ' </span></p>');
 
-            if (jQuery('.gtin-meta').length != 0) {
-                jQuery('.price-per-unit-val').text($gtin);
+            if (jQuery('.price-per-unit-meta').length != 0) {
+                jQuery('.price-per-unit-val').text($price_per_unit);
             } else {
                 $price_per_unit_html.appendTo('.product-meta');
             }
