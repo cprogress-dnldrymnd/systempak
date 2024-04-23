@@ -52,7 +52,22 @@ echo '<br><br>';
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
+
+                if (email_exists($email)) {
+                    echo apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce'), $email);
+                }
+
+                if (empty($username) || !validate_username($username)) {
+                    echo 'Please enter a valid account username.';
+                }
+
+                if (username_exists($username)) {
+                    echo 'An account is already registered with that username. Please choose another.';
+                }
+
+
                 $user_id = wc_create_new_customer($email, $username, $password);
+
                 if ($user_id) {
                     $user = get_user_by('id', $user_id);
                     $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
