@@ -32,8 +32,14 @@ echo '<br><br>';
                 $last_name = $_POST['last_name'];
                 $company_name = $_POST['company_name'];
                 $country = $_POST['country'];
+                $address_1 = $_POST['address_1'];
+                $address_2 = $_POST['address_2'];
+                $city = $_POST['city'];
+                $state = $_POST['state'];
+                $postcode = $_POST['postcode'];
+                $phone = $_POST['phone'];
                 
-
+                
                 if (email_exists($email)) {
                     $errors = '<p>An account is already registered with your email address.</p>';
                 }
@@ -144,7 +150,7 @@ echo '<br><br>';
                                 </div>
 
                                 <div class="col-12">
-                                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Customer Phone" value="<?= $postcode ?>" required>
+                                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Customer Phone" value="<?= $phone ?>" required>
                                 </div>
 
                                 <div class=" col-12">
