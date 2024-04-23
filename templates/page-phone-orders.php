@@ -82,6 +82,10 @@ echo '<br><br>';
                                     <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Customer Last Name" value="<?= $last_name ?>" required>
                                 </div>
 
+                                <div class="col-6">
+                                    <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Customer Company Name" value="<?= $company_name ?>">
+                                </div>
+
                                 <div class="col-12">
                                     <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" value="<?= $email ?>" required>
                                 </div>
@@ -92,9 +96,7 @@ echo '<br><br>';
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
                                 </div>
                                 <div class=" col-12">
-
                                     <?php
-
                                     global $woocommerce;
                                     $countries_obj   = new WC_Countries();
                                     $countries   = $countries_obj->__get('countries');
