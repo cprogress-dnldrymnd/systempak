@@ -24,16 +24,6 @@ function sku() {
         }
 
 
-        if ($stock_status == 'outofstock') {
-            $stock_html = jQuery('<p class="stock-status-meta"><strong>STOCK STATUS: </strong><span class="gtin-val"> ON BACKORDER </span></p>');
-            if (jQuery('.stock-status-meta').length == 0) {
-                $stock_html.appendTo('.product-meta');
-            }
-        } else {
-            jQuery('.stock-status-meta').remove();
-        }
-
-
         jQuery('.sku-val').text($sku);
     });
 }
