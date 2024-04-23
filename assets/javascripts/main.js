@@ -10,7 +10,9 @@ function sku() {
         $sku = jQuery(this).attr('data-sku');
         $id = 'p_' + jQuery(this).attr('data-id');
         $gtin = gtin[$id];
+        $price_per_unit = price_per_unit[$id];
         console.log(price_per_unit);
+        console.log($price_per_unit);
         if ($gtin) {
             $gtin_html = jQuery('<p class="gtin-meta"><strong>GTIN: </strong><span class="gtin-val"> ' + $gtin + ' </span></p>');
 
