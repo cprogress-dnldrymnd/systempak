@@ -51,7 +51,8 @@ echo '<br><br>';
                     if ($user) {
                         wp_redirect($link);
                         $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
-                        wp_redirect($link);
+                        $link_final = str_replace('&amp;', '&', $link);
+                        wp_redirect($link_final);
                         exit;
                     }
                 } else {
