@@ -20,28 +20,30 @@ echo '<br><br>';
 
     <section class="select-user-form py-5">
         <div class="container">
-            <div id="addNewCustomer" class="form-wrapper">
-                <form action="<?= get_permalink() ?>" method="POST">
-                    <div class="form-holder">
-                        <h3>Add Customer Form</h3>
+            <?php if (!empty($_POST)) { ?>
+                <div id="addNewCustomer" class="form-wrapper">
+                    <form action="<?= get_permalink() ?>" method="POST">
+                        <div class="form-holder">
+                            <h3>Add Customer Form</h3>
 
-                        <div class="row g-3 m-0">
-                            <div class="col">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" required>
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" required>
-                            </div>
-                            <div class="col">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" required>
-                            </div>
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Create Customer and Create Order</button>
+                            <div class="row g-3 m-0">
+                                <div class="col">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" required>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" required>
+                                </div>
+                                <div class="col">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" required>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Create Customer and Create Order</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
+            <?php } ?>
             <div id="userSearchForm" class="form-wrapper">
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
