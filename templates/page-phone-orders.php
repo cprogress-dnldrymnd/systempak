@@ -54,7 +54,9 @@ echo '<br><br>';
             }
             ?>
 
-
+            <div class="form-wrapper text-end">
+                <a href="<?= get_permalink() . '?action=create_customer' ?>" class="btn btn-primary" style="border-radius: 5px !important;">Add Customer</a>
+            </div>
             <div id="addNewCustomer" class="form-wrapper">
                 <?php
                 if ($errors == '') {
