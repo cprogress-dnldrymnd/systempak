@@ -20,59 +20,60 @@ echo '<br><br>';
 
     <section class="select-user-form py-5">
         <div class="container">
-            <?php if (empty($_POST)) { ?>
-                <div id="addNewCustomer" class="form-wrapper">
+            <?php
+            $errors = '';
+            if (!empty($_POST)) {
+                $email = $_POST['email'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                if (email_exists($email)) {
+                    $errors = '<p>An account is already registered with your email address.</p>';
+                }
+
+                if (empty($username) || !validate_username($username)) {
+                    $errors .= '<p>Please enter a valid account username.</p>';
+                }
+
+                if (username_exists($username)) {
+                    $errors .= '<p>An account is already registered with that username. Please choose another.</p>';
+                }
+            }
+            ?>
+
+
+            <div id="addNewCustomer" class="form-wrapper">
+                <?php
+                if ($errors == '') {
+                    $user_id = wc_create_new_customer($email, $username, $password);
+                    $user = get_user_by('id', $user_id);
+                    $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
+                    echo $link;
+                }
+                ?>
+                <?php if ($errors) { ?>
                     <form action="<?= get_permalink() ?>" method="POST">
                         <div class="form-holder">
                             <h3>Add Customer Form</h3>
 
                             <div class="row g-3 m-0">
                                 <div class="col-12">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" required>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" value="<?= $email ?>" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" required>
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" value="<?= $username ?>" required>
                                 </div>
-                                <div class="col-12">
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" required>
+                                <div class=" col-12">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
                                 </div>
-                                <div class="col-12">
+                                <div class=" col-12">
                                     <button type="submit" class="btn btn-primary w-100" style="border-radius: 5px !important;">Create Customer and Create Order</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                </div>
-            <?php } else { ?>
+                <?php } ?>
+            </div>
 
-                <div id="addNewCustomer" class="form-wrapper">
-
-                    <?php
-                    $email = $_POST['email'];
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-
-                    if (email_exists($email)) {
-                        echo '<p>An account is already registered with your email address.</p>';
-                    }
-
-                    if (empty($username) || !validate_username($username)) {
-                        echo '<p>Please enter a valid account username.</p>';
-                    }
-
-                    if (username_exists($username)) {
-                        echo '<p>An account is already registered with that username. Please choose another.</p>';
-                    }
-
-                    if (!email_exists($email) && validate_username($username) && !username_exists($username)) {
-                        $user_id = wc_create_new_customer($email, $username, $password);
-                        $user = get_user_by('id', $user_id);
-                        $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
-                        echo $link;
-                    }
-                    ?>
-                </div>
-            <?php } ?>
             <div id="userSearchForm" class="form-wrapper">
                 <div class="form-holder">
                     <h3>Customer Search Form</h3>
