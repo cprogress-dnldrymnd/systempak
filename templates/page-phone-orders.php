@@ -91,26 +91,26 @@ echo '<br><br>';
                                 <div class=" col-12">
                                     <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" value="<?= $password ?>" required>
                                 </div>
+                                <div class=" col-12">
 
-                                <?php
+                                    <?php
 
-                                global $woocommerce;
-                                $countries_obj   = new WC_Countries();
-                                $countries   = $countries_obj->__get('countries');
-                                echo '<div id="my_custom_countries_field"><h2>' . __('Countries') . '</h2>';
-
-                                woocommerce_form_field(
-                                    'my_country_field',
-                                    array(
-                                        'type'       => 'select',
-                                        'class'      => array('chzn-drop'),
-                                        'label'      => __('Select a country'),
-                                        'placeholder'    => __('Enter something'),
-                                        'options'    => $countries
-                                    )
-                                );
-                                echo '</div>';
-                                ?>
+                                    global $woocommerce;
+                                    $countries_obj   = new WC_Countries();
+                                    $countries   = $countries_obj->__get('countries');
+                                    woocommerce_form_field(
+                                        'country',
+                                        array(
+                                            'type'       => 'select',
+                                            'class'      => array('chzn-drop'),
+                                            'label'      => __('Select a country'),
+                                            'placeholder'    => __('Enter something'),
+                                            'options'    => $countries,
+                                            'required' => true,
+                                        )
+                                    );
+                                    ?>
+                                </div>
 
                                 <div class=" col-12">
                                     <button type="submit" class="btn btn-primary w-100" style="border-radius: 5px !important;">Create Customer and Create Order</button>
