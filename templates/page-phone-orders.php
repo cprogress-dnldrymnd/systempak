@@ -27,13 +27,13 @@ echo '<br><br>';
 
                         <div class="row g-3 m-0">
                             <div class="col">
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Customer Email Address">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Customer Email Address" required>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username">
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Customer Username" required>
                             </div>
                             <div class="col">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Customer Password" required>
                             </div>
                             <div class="col">
                                 <button type="submit" class="btn btn-primary" id="userSearchFormTrigger">Create Customer and Create Order</button>
