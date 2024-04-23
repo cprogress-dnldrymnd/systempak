@@ -69,8 +69,7 @@ echo '<br><br>';
                     $user_id = wc_create_new_customer($email, $username, $password);
                     $user = get_user_by('id', $user_id);
                     $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
-                    wp_redirect($link);
-                    exit;
+                    echo $link;
                 }
                 ?>
 
