@@ -89,11 +89,7 @@ defined('ABSPATH') || exit;
 
 		?>
 
-		<tr class="coupon custom-forms">
-			<td colspan="2">
-				<?php do_action('custom_coupon_form'); ?>
-			</td>
-		</tr>
+
 
 		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
 			<td colspan="2" class="td-coupon">

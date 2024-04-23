@@ -231,61 +231,6 @@ function bbloomer_update_item_quantity_checkout($post_data)
 
 
 
-function ajax_apply_coupon_cart()
-{
-    if (!isset($_POST['coupon_code']) || empty($_POST['coupon_code'])) {
-        wp_send_json(['success' => false, 'data' => ['message' => 'No coupon code provided']], 200);
-        // return; // <== Not needed as wp_send_json() throws die();
-    }
-    $coupon_code = sanitize_text_field($_POST['coupon_code']);
-
-    if (!WC()->cart->has_discount($coupon_code)) {
-        $coupon_id = wc_get_coupon_id_by_code($coupon_code);
-
-        if (!$coupon_id) {
-            wp_send_json(['success' => false, 'data' => ['message' => sprintf(__('Coupon  does not exist!', 'woocommerce'), $coupon_code)]], 200);
-            // return; // <== Not needed as wp_send_json() throws die();
-        }
-
-        $result = WC()->cart->apply_coupon($coupon_code); // Apply coupon
-
-        if ($result) {
-            WC()->cart->calculate_totals(); // <=== Refresh totals (Missing)
-
-            wp_send_json_success(['message' => sprintf(__('Coupon  applied successfully.', 'woocommerce'), $coupon_code)], 200);
-        }
-    } else {
-        wp_send_json_error(['message' => sprintf(__('Coupon  is already applied!', 'woocommerce'), $coupon_code)], 200);
-    }
-}
-
-
-
-add_action('wp_ajax_nopriv_coupon_ajax', 'coupon_ajax'); // for not logged in users
-add_action('wp_ajax_coupon_ajax', 'coupon_ajax');
-function coupon_ajax()
-{
-    $coupon_code = $_POST['coupon_code'];
-    if ($coupon_code) {
-        if (!WC()->cart->has_discount($coupon_code)) {
-
-            if (wc_get_coupon_id_by_code($coupon_code)) {
-                WC()->cart->apply_coupon($coupon_code);
-                echo 'Coupon code applied successfully.';
-            } else {
-                echo '<span class="failed">Please enter a valid coupon code.</span>';
-            }
-        } else {
-
-
-            echo '<span class="failed">Coupon code is already applied.</span>';
-        }
-    } else {
-        echo '<span class="failed">Please enter a valid coupon code.</span>';
-    }
-
-    die();
-}
 
 /**
  * @snippet       Avoid Empty Cart Redirect @ WooCommerce Checkout
@@ -697,8 +642,6 @@ function disable_shipping_calc_on_cart($show_shipping)
 add_filter('woocommerce_cart_ready_to_calc_shipping', 'disable_shipping_calc_on_cart', 99);
 
 
-remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
-add_action('custom_coupon_form', 'woocommerce_checkout_coupon_form');
 
 
 /*
