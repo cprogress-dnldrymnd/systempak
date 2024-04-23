@@ -35,7 +35,7 @@ if(current_user_can('administrator')) {
 	echo '<pre>';
 	$pricingRule = \TierPricingTable\PriceManager::getPricingRule(10977);
 
-	var_dump($pricingRule);
+	var_dump($pricingRule->getRules());
 	echo '</pre>';
 }
 
