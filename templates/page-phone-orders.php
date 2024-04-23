@@ -54,15 +54,15 @@ echo '<br><br>';
                 $password = $_POST['password'];
 
                 if (email_exists($email)) {
-                    echo apply_filters('woocommerce_registration_error_email_exists', __('An account is already registered with your email address. <a href="#" class="showlogin">Please log in.</a>', 'woocommerce'), $email);
+                    echo '<p>An account is already registered with your email address.</p>';
                 }
 
                 if (empty($username) || !validate_username($username)) {
-                    echo 'Please enter a valid account username.';
+                    echo '<p>Please enter a valid account username.</p>';
                 }
 
                 if (username_exists($username)) {
-                    echo 'An account is already registered with that username. Please choose another.';
+                    echo '<p>An account is already registered with that username. Please choose another.</p>';
                 }
 
                 if (!email_exists($email) && validate_username($username) && !username_exists($username)) {
