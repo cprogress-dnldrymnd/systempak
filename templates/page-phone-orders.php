@@ -30,7 +30,9 @@ echo '<br><br>';
                 $password = $_POST['password'];
                 $first_name = $_POST['first_name'];
                 $last_name = $_POST['last_name'];
-
+                $company_name = $_POST['company_name'];
+                $country = $_POST['country'];
+                
 
                 if (email_exists($email)) {
                     $errors = '<p>An account is already registered with your email address.</p>';
@@ -100,6 +102,12 @@ echo '<br><br>';
                                     global $woocommerce;
                                     $countries_obj   = new WC_Countries();
                                     $countries   = $countries_obj->__get('countries');
+
+                                    if(isset($country)) {
+                                        $default = $country;
+                                    } else {
+                                        $default = 'GB';
+                                    }
                                     woocommerce_form_field(
                                         'country',
                                         array(
@@ -108,10 +116,35 @@ echo '<br><br>';
                                             'placeholder'    => __('Select a Country'),
                                             'options'    => $countries,
                                             'required' => true,
-                                            'default' => 'GB'
+                                            'default' => $default
                                         )
                                     );
                                     ?>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="address_1" id="address_1" placeholder="Customer Street Address" value="<?= $address_1 ?>" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="address_2" id="address_2" placeholder="Customer Flat, suite, unit, etc. (optional)" value="<?= $address_2 ?>">
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="city" id="city" placeholder="Customer Town/City" value="<?= $city ?>" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="state" id="state" placeholder="Customer State/County" value="<?= $state ?>" required>
+                                </div>
+
+                                
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Customer Postcode" value="<?= $postcode ?>" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Customer Phone" value="<?= $postcode ?>" required>
                                 </div>
 
                                 <div class=" col-12">
