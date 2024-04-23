@@ -45,33 +45,33 @@ echo '<br><br>';
                 </div>
             <?php } else { ?>
 
+                <div id="addNewCustomer" class="form-wrapper">
 
+                    <?php
+                    $email = $_POST['email'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
 
-                <?php
-                $email = $_POST['email'];
-                $username = $_POST['username'];
-                $password = $_POST['password'];
+                    if (email_exists($email)) {
+                        echo '<p>An account is already registered with your email address.</p>';
+                    }
 
-                if (email_exists($email)) {
-                    echo '<p>An account is already registered with your email address.</p>';
-                }
+                    if (empty($username) || !validate_username($username)) {
+                        echo '<p>Please enter a valid account username.</p>';
+                    }
 
-                if (empty($username) || !validate_username($username)) {
-                    echo '<p>Please enter a valid account username.</p>';
-                }
+                    if (username_exists($username)) {
+                        echo '<p>An account is already registered with that username. Please choose another.</p>';
+                    }
 
-                if (username_exists($username)) {
-                    echo '<p>An account is already registered with that username. Please choose another.</p>';
-                }
-
-                if (!email_exists($email) && validate_username($username) && !username_exists($username)) {
-                    $user_id = wc_create_new_customer($email, $username, $password);
-                    $user = get_user_by('id', $user_id);
-                    $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
-                    echo $link;
-                }
-                ?>
-
+                    if (!email_exists($email) && validate_username($username) && !username_exists($username)) {
+                        $user_id = wc_create_new_customer($email, $username, $password);
+                        $user = get_user_by('id', $user_id);
+                        $link = user_switching::maybe_switch_url($user) . '&redirect_to=https://systempak.net/phone-orders/';
+                        echo $link;
+                    }
+                    ?>
+                </div>
             <?php } ?>
             <div id="userSearchForm" class="form-wrapper">
                 <div class="form-holder">
