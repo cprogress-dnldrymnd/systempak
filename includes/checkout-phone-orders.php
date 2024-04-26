@@ -155,6 +155,20 @@ function custom_shipping_ajax()
     }
     die(); // Alway at the end (to avoid server error 500)
 }
+
+add_action('wp_ajax_custom_coupon_ajax', 'custom_coupon_ajax');
+add_action('wp_ajax_nopriv_custom_coupon_ajax', 'custom_coupon_ajax');
+function custom_coupon_ajax()
+{
+    if (isset($_POST['custom_coupon'])) {
+        WC()->cart->apply_coupon($_POST['custom_coupon']);
+    }
+    die(); // Alway at the end (to avoid server error 500)
+}
+
+
+
+
 // Calculate and add extra fee based on radio button selection
 add_action('woocommerce_cart_calculate_fees', 'add_custom_extra_fee', 20, 1);
 function add_custom_extra_fee($cart)
@@ -461,7 +475,34 @@ function action_custom_checkout()
                 }
             });
         });
-        
+
+        jQuery('div.woocommerce').on('click', '.apply_custom_coupon', function() {
+            var custom_coupon = jQuery('#custom-coupon input[name="custom_coupon"]').val();
+            jQuery('.blockUICustomShipping').removeClass('d-none');
+            jQuery.ajax({
+                type: 'POST',
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    'action': 'custom_coupon_ajax',
+                    'custom_coupon': custom_coupon,
+                },
+                success: function(result) {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: "/wp-admin/admin-ajax.php",
+                        data: {
+                            'action': 'custom_coupon_ajax',
+                            'custom_coupon': custom_coupon,
+                        },
+                        success: function(result) {
+                            jQuery('.blockUICustomShipping').addClass('d-none');
+                            jQuery('body').trigger('update_checkout');
+
+                        }
+                    });
+                }
+            });
+        });
 
 
 
