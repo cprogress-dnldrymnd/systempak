@@ -842,3 +842,12 @@ add_action('admin_head', 'hide_default_enabled_button');
 
 
 add_filter('wc_product_has_unique_sku', '__return_false', PHP_INT_MAX);
+
+
+add_filter( 'woocommerce_email_order_items_args', 'custom_email_order_items_args', 10, 1 );
+function custom_email_order_items_args( $args ) {
+    $args['show_image'] = true;
+    $args['show_sku'] = true;
+	$args['image_size'] = array( 57, 57 );
+    return $args;
+}
