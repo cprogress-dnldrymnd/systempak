@@ -462,6 +462,34 @@ function action_custom_checkout()
             });
         });
 
+        jQuery('div.woocommerce').on('click', '.apply_custom_coupon', function() {
+            var custom_shipping_cost = jQuery('#custom-coupon input[name="custom_coupon"]').val();
+            jQuery('.blockUICustomShipping').removeClass('d-none');
+            jQuery.ajax({
+                type: 'POST',
+                url: "/wp-admin/admin-ajax.php",
+                data: {
+                    'action': 'custom_coupon',
+                    'custom_coupon': custom_coupon,
+                },
+                success: function(result) {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: "/wp-admin/admin-ajax.php",
+                        data: {
+                            'action': 'custom_coupon',
+                            'custom_shipping_cost': custom_shipping_cost,
+                        },
+                        success: function(result) {
+                            jQuery('.blockUICustomShipping').addClass('d-none');
+                            jQuery('body').trigger('update_checkout');
+
+                        }
+                    });
+                }
+            });
+        });
+
 
 
         jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {

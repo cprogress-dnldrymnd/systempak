@@ -98,8 +98,6 @@ defined('ABSPATH') || exit;
 					<p class="form-row form-row-last">
 						<a class="button apply_custom_coupon">APPLY</a>
 					</p>
-
-					<div class="blockUI blockUICustomShipping  blockOverlay d-none" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background: rgb(255, 255, 255); opacity: 0.6; cursor: default; position: absolute;"></div>
 				</div>
 				<div class="custom-shipping-message"></div>
 			</td>
