@@ -851,3 +851,4 @@ function custom_email_order_items_args( $args ) {
 	$args['image_size'] = array( 57, 57 );
     return $args;
 }
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
