@@ -33,10 +33,11 @@ function search_ajax_products()
         array(
             'taxonomy' => 'product_type',
             'field'    => 'slug',
-            'terms'    => array('variable'),
+            'terms'    => array('variable', 'simple'),
             'operator' => 'NOT IN'
         ),
     );
+
     $found_posts = $the_query_args->found_posts;
 
     if (!$found_posts  && $s != '') {
