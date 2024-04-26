@@ -27,8 +27,6 @@ function search_ajax_products()
 
     $args['post__not_in'] = get_cart_product_ids();
 
-    $the_query_args = new WP_Query($args);
-
     $args['tax_query'] = array(
         array(
             'taxonomy' => 'product_type',
@@ -37,6 +35,8 @@ function search_ajax_products()
             'operator' => 'NOT IN'
         ),
     );
+
+    $the_query_args = new WP_Query($args);
 
     $found_posts = $the_query_args->found_posts;
 
