@@ -71,7 +71,7 @@ defined('ABSPATH') || exit;
 								$cart_item_key
 							);
 							?>
-						
+
 							<?php
 							if (!$cart_item['custom_price']) {
 								echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
@@ -89,7 +89,21 @@ defined('ABSPATH') || exit;
 
 		?>
 
+		<tr class="custom-coupon custom-forms" id="custom-coupon">
+			<td colspan="2" class="td-coupon">
+				<div class="checkout_coupon_custom">
+					<p class="form-row form-row-first not-hide">
+						<input type="number" name="custom_coupon" class="input-text" placeholder="Coupon Code" id="custom_coupon">
+					</p>
+					<p class="form-row form-row-last">
+						<a class="button apply_custom_coupon">Set Cost</a>
+					</p>
 
+					<div class="blockUI blockUICustomShipping  blockOverlay d-none" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background: rgb(255, 255, 255); opacity: 0.6; cursor: default; position: absolute;"></div>
+				</div>
+				<div class="custom-shipping-message"></div>
+			</td>
+		</tr>
 
 		<tr class="custom-shipping custom-forms" id="custom-shipping-cost">
 			<td colspan="2" class="td-coupon">

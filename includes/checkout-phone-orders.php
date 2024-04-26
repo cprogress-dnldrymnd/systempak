@@ -137,7 +137,6 @@ function select_product_ajax()
     $products = $_POST['products'];
     global $woocommerce;
 
-
     foreach ($products as $product) {
         $woocommerce->cart->add_to_cart($product['product_id'], 1, 0, array(), array('custom_price' => $product['custom_price']));
     }
