@@ -96,7 +96,7 @@ defined('ABSPATH') || exit;
 						<input type="number" name="custom_coupon" class="input-text" placeholder="Coupon Code" id="custom_coupon">
 					</p>
 					<p class="form-row form-row-last">
-						<a class="button apply_custom_coupon">Set Cost</a>
+						<a class="button apply_custom_coupon">APPLY</a>
 					</p>
 
 					<div class="blockUI blockUICustomShipping  blockOverlay d-none" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background: rgb(255, 255, 255); opacity: 0.6; cursor: default; position: absolute;"></div>
