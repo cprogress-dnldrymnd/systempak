@@ -93,7 +93,7 @@ defined('ABSPATH') || exit;
 			<td colspan="2" class="td-coupon">
 				<div class="checkout_coupon_custom">
 					<p class="form-row form-row-first not-hide">
-						<input type="number" name="custom_coupon" class="input-text" placeholder="Coupon Code" id="custom_coupon">
+						<input type="text" name="custom_coupon" class="input-text" placeholder="Coupon Code" id="custom_coupon">
 					</p>
 					<p class="form-row form-row-last">
 						<a class="button apply_custom_coupon">APPLY</a>
