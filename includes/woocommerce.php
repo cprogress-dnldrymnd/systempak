@@ -844,11 +844,23 @@ add_action('admin_head', 'hide_default_enabled_button');
 add_filter('wc_product_has_unique_sku', '__return_false', PHP_INT_MAX);
 
 
-add_filter( 'woocommerce_email_order_items_args', 'custom_email_order_items_args', 10, 1 );
-function custom_email_order_items_args( $args ) {
+add_filter('woocommerce_email_order_items_args', 'custom_email_order_items_args', 10, 1);
+function custom_email_order_items_args($args)
+{
     $args['show_image'] = true;
     $args['show_sku'] = true;
-	$args['image_size'] = array( 57, 57 );
+    $args['image_size'] = array(57, 57);
     return $args;
 }
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+
+
+/**
+ * Disable messages about the mobile apps in WooCommerce emails.
+ * https://wordpress.org/support/topic/remove-process-your-orders-on-the-go-get-the-app/
+ */
+function mtp_disable_mobile_messaging($mailer)
+{
+    remove_action('woocommerce_email_footer', array($mailer()->emails['WC_Email_New_Order'], 'mobile_messaging'), 9);
+}
+add_action('woocommerce_email', 'mtp_disable_mobile_messaging');
