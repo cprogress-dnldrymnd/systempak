@@ -853,19 +853,3 @@ function custom_email_order_items_args($args)
     return $args;
 }
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
-
-
-/**
- * @snippet       Hide "Get the app" Ads @ WooCommerce Emails
- * @how-to        Get CustomizeWoo.com FREE
- * @author        Rodolfo Melogli
- * @compatible    WooCommerce 8
- * @community     https://businessbloomer.com/club/
- */
- 
- add_action( 'woocommerce_email_footer', 'bbloomer_remove_get_the_app_ad', 99 );
- 
- function bbloomer_remove_get_the_app_ad() {
-    $object = WC()->mailer();
-    remove_action( 'woocommerce_email_footer', array( $object, 'mobile_messaging' ), 99 );
- }
