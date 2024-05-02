@@ -867,5 +867,5 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
  
  function bbloomer_remove_get_the_app_ad() {
     $object = WC()->mailer();
-    remove_action( 'woocommerce_email_footer', array( $object, 'mobile_messaging' ), 9 );
+    remove_action( 'woocommerce_email_footer', array( $object, 'mobile_messaging' ), 99 );
  }
