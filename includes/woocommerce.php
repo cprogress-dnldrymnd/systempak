@@ -863,7 +863,7 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
  * @community     https://businessbloomer.com/club/
  */
  
- add_action( 'woocommerce_email_footer', 'bbloomer_remove_get_the_app_ad', 8 );
+ add_action( 'woocommerce_email_footer', 'bbloomer_remove_get_the_app_ad', 99 );
  
  function bbloomer_remove_get_the_app_ad() {
     $object = WC()->mailer();
