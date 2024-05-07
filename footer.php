@@ -41,6 +41,15 @@ if (!$old_user) {
                     var $shipping_phone = jQuery('input[name="shipping_phone"]');
 
                     get_billing_info($billing_first_name, $shipping_first_name);
+                    get_billing_info($billing_last_name, $shipping_last_name);
+                    get_billing_info($billing_company, $shipping_company);
+                    get_billing_info($billing_country, $shipping_country);
+                    get_billing_info($billing_address_1, $shipping_address_1);
+                    get_billing_info($billing_address_2, $shipping_address_2);
+                    get_billing_info($billing_city, $shipping_city);
+                    get_billing_info($billing_state, $shipping_state);
+                    get_billing_info($billing_postcode, $shipping_postcode);
+                    get_billing_info($billing_phone, $shipping_phone);
                 } 
                 e.preventDefault();
             });
