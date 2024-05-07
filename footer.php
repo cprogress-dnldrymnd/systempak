@@ -18,7 +18,7 @@ if (!$old_user) {
 
             jQuery('#ship-to-different-address-checkbox').change(function(e) {
                 if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
-                    var $billing_first_name = jQuery('input[name="billing_first_name"]').val();
+                    var $billing_first_name = jQuery('input[name="billing_first_name"]');
                     var $billing_last_name = jQuery('input[name="billing_last_name"]');
                     var $billing_company = jQuery('input[name="billing_company"]');
                     var $billing_country = jQuery('input[name="billing_country"]');
