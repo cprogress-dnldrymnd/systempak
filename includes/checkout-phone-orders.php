@@ -4,7 +4,7 @@ add_action('wp_ajax_nopriv_search_ajax_products', 'search_ajax_products'); // fo
 add_action('wp_ajax_search_ajax_products', 'search_ajax_products');
 function search_ajax_products()
 {
-    $posts_per_page_val = -1;
+    $posts_per_page_val = 10;
     $s = $_POST['s'];
     $post_type = array('product', 'product_variation');
     $posts_per_page = $posts_per_page_val ? $posts_per_page_val : get_option('posts_per_page');
