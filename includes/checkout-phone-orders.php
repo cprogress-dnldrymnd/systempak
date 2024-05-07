@@ -44,7 +44,7 @@ function search_ajax_products()
         $args['meta_query'] = array(
             array(
                 'key' => '_sku',
-                'value' => '*' . $s . '*',
+                'value' => $s,
                 'compare' => 'LIKE',
             ),
         );
