@@ -853,3 +853,7 @@ function custom_email_order_items_args($args)
     return $args;
 }
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+
+
+add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
+
