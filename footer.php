@@ -41,9 +41,7 @@ if (!$old_user) {
                     var $shipping_phone = jQuery('input[name="shipping_phone"]');
 
                     get_billing_info($billing_first_name, $shipping_first_name);
-                } else {
-
-                }
+                } 
                 e.preventDefault();
             });
 
