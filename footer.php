@@ -17,7 +17,7 @@ if (!$old_user) {
             jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
 
             jQuery('#ship-to-different-address-checkbox').change(function(e) {
-                if (jQuery('input#ship-to-different-address-checkbox:checked')) {
+                if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
                     console.log('check');
                 } else {
                     console.log('uncheck');
