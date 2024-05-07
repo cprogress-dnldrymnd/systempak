@@ -18,12 +18,41 @@ if (!$old_user) {
 
             jQuery('#ship-to-different-address-checkbox').change(function(e) {
                 if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
-                    console.log('check');
+                    var $billing_first_name = jQuery('input[name="billing_first_name"]').val();
+                    var $billing_last_name = jQuery('input[name="billing_last_name"]');
+                    var $billing_company = jQuery('input[name="billing_company"]');
+                    var $billing_country = jQuery('input[name="billing_country"]');
+                    var $billing_address_1 = jQuery('input[name="billing_address_1"]');
+                    var $billing_address_2 = jQuery('input[name="billing_address_2"]');
+                    var $billing_city = jQuery('input[name="billing_city"]');
+                    var $billing_state = jQuery('input[name="billing_state"]');
+                    var $billing_postcode = jQuery('input[name="billing_postcode"]');
+                    var $billing_phone = jQuery('input[name="billing_phone"]');
+
+                    var $shipping_first_name = jQuery('input[name="shipping_first_name"]');
+                    var $shipping_last_name = jQuery('input[name="shipping_last_name"]');
+                    var $shipping_company = jQuery('input[name="shipping_company"]');
+                    var $shipping_country = jQuery('input[name="shipping_country"]');
+                    var $shipping_address_1 = jQuery('input[name="shipping_address_1"]');
+                    var $shipping_address_2 = jQuery('input[name="shipping_address_2"]');
+                    var $shipping_city = jQuery('input[name="shipping_city"]');
+                    var $shipping_state = jQuery('input[name="shipping_state"]');
+                    var $shipping_postcode = jQuery('input[name="shipping_postcode"]');
+                    var $shipping_phone = jQuery('input[name="shipping_phone"]');
+
+                    get_billing_info($billing_first_name, $shipping_first_name);
                 } else {
-                    console.log('uncheck');
+
                 }
                 e.preventDefault();
             });
+
+            function get_billing_info($billing, $shipping) {
+                $billing_val = $billing.val();
+                if ($shipping.val() == '') {
+                    $shipping.val($billing_val);
+                }
+            }
         });
 
         jQuery('#search-input').keypress(function(e) {
