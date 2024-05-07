@@ -15,6 +15,8 @@ if (!$old_user) {
         jQuery(document).ready(function() {
             jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
             jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
+
+            jQuery('#ship-to-different-address-checkbox').prop('checked', false); // Unchecks it
         });
 
         jQuery('#search-input').keypress(function(e) {
