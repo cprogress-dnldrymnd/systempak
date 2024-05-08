@@ -1490,9 +1490,9 @@ body:not(.page-template-page-phone-orders) {
     }
 }
 
-.woocommerce-shipping-fields {
+.woocommerce-shipping-fields.woocommerce-shipping-fields.woocommerce-shipping-fields {
     display: none !important;
-    &.woocommerce-shipping-fields {
+    &.show-shipping {
         display: block !important;
     }
 }
