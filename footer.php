@@ -12,6 +12,9 @@ if (!$old_user) {
         <?= do_shortcode('[search]') ?>
     </div>
     <script>
+        jQuery(document.body).on('updated_checkout', function() {
+            jQuery('.woocommerce-shipping-fields').addClass('show-shipping');
+        });
         jQuery(document).ready(function() {
             jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
             jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
@@ -20,7 +23,6 @@ if (!$old_user) {
 
             jQuery('#ship-to-different-address-checkbox').change(function(e) {
                 if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
-                    jQuery('.woocommerce-shipping-fields').addClass('show-shipping');
 
                     var $billing_first_name = jQuery('input[name="billing_first_name"]');
                     var $billing_last_name = jQuery('input[name="billing_last_name"]');
@@ -54,8 +56,7 @@ if (!$old_user) {
                     get_billing_info($billing_state, $shipping_state);
                     get_billing_info($billing_postcode, $shipping_postcode);
                     get_billing_info($billing_phone, $shipping_phone);
-                } 
-
+                }
 
                 e.preventDefault();
             });
