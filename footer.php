@@ -52,9 +52,14 @@ if (!$old_user) {
                     get_billing_info($billing_state, $shipping_state);
                     get_billing_info($billing_postcode, $shipping_postcode);
                     get_billing_info($billing_phone, $shipping_phone);
-                } 
+                }
                 e.preventDefault();
             });
+
+
+            setTimeout(function() {
+                jQuery('.woocommerce-shipping-fields').addClass('show-shipping');
+            }, 2000);
 
             function get_billing_info($billing, $shipping) {
                 $billing_val = $billing.val();

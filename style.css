@@ -1049,5 +1049,7 @@ body:not(.page-template-page-phone-orders) .fee {
 
 .woocommerce-shipping-fields {
   display: none !important; }
+  .woocommerce-shipping-fields.woocommerce-shipping-fields {
+    display: block !important; }
 
 /*# sourceMappingURL=style.css.map */

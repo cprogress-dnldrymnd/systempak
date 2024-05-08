@@ -1492,4 +1492,7 @@ body:not(.page-template-page-phone-orders) {
 
 .woocommerce-shipping-fields {
     display: none !important;
+    &.woocommerce-shipping-fields {
+        display: block !important;
+    }
 }
