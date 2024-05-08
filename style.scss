@@ -1489,3 +1489,7 @@ body:not(.page-template-page-phone-orders) {
         margin-bottom: 0 !important;
     }
 }
+
+.woocommerce-shipping-fields {
+    display: none !important;
+}

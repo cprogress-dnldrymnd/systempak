@@ -1047,4 +1047,7 @@ body:not(.page-template-page-phone-orders) .fee {
   .woocommerce-form-coupon-toggle.woocommerce-form-coupon-toggle .woocommerce-info {
     margin-bottom: 0 !important; }
 
+.woocommerce-shipping-fields {
+  display: none !important; }
+
 /*# sourceMappingURL=style.css.map */
