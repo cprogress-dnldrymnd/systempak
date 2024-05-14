@@ -853,3 +853,14 @@ function custom_email_order_items_args($args)
     return $args;
 }
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
+
+add_filter( 'woocommerce_display_product_attributes', 'custom_product_additional_information', 10, 2 );
+function custom_product_additional_information( $product_attributes, $product ) {
+    // First row
+    $product_attributes[ 'attribute_' . 'brand' ] = array(
+        'label' => __('Brand'),
+        'value' => __('SystemPAK'),
+    );
+ 
+    return $product_attributes;
+}
