@@ -28,6 +28,7 @@ Container::make('post_meta', 'Tech Sheets')
 Container::make('term_meta', __('Category Properties'))
 	->where('term_taxonomy', '=', 'product_cat')
 	->add_fields(array(
+		Field::make('text', 'subcategory_heading', __('Subcategory Heading')),
 		Field::make('checkbox', 'hide_featured_section', __('Hide Featured Section')),
 		Field::make('complex', 'featured_section', __('Featured Section Left'))
 			->add_fields(array(
