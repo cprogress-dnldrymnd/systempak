@@ -93,7 +93,6 @@ function action_wp_footer()
 		<script>
 			var mySwiperProductCategory = new Swiper(".mySwiper-ProductCategory", {
 				loop: true,
-				speed: 3000,
 				autoplay: true,
 				spaceBetween: 30,
 				breakpoints: {
@@ -105,9 +104,18 @@ function action_wp_footer()
 						slidesPerView: 3,
 					},
 
+					1024: {
+						slidesPerView: 4,
+					},
+
 
 					1200: {
-						slidesPerView: 4,
+						slidesPerView: 5,
+					},
+
+					
+					1300: {
+						slidesPerView: 6,
 					},
 
 				},
