@@ -271,6 +271,9 @@ strong {
       right: 0;
       bottom: 0;
       z-index: 2; }
+    @media (max-width: 575px) {
+      .product-category-slider .swiper-slide .term-name h4 {
+        font-size: 18px !important; } }
     .product-category-slider .swiper-slide .image-box {
       display: flex;
       align-items: center;
@@ -279,6 +282,9 @@ strong {
       z-index: 1; }
     .product-category-slider .swiper-slide .product-counts {
       margin-bottom: 120px; }
+    @media (max-width: 575px) {
+      .product-category-slider .swiper-slide {
+        padding: 20px; } }
   .product-category-slider .swiper-pagination.swiper-pagination {
     position: static;
     margin-top: 70px; }
