@@ -373,6 +373,8 @@ strong {
 }
 
 .product-category-slider {
+    margin-top: 50px;
+    margin-bottom: 50px;
     .swiper-slide {
         background-color: var(--light-gray-color);
         padding: 50px;
@@ -409,22 +411,8 @@ strong {
         .product-counts {
             margin-bottom: 120px;
         }
-        .circle-icon {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            right: 30px;
-            bottom: 30px;
-            background-color: var(--white-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            svg {
-                width: 30px;
-                height: 30px;
-            }
-        }
+
+      
     }
     .swiper-pagination.swiper-pagination {
         position: static;
