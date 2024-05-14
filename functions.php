@@ -113,10 +113,7 @@ function action_wp_footer()
 						slidesPerView: 5,
 					},
 
-					
-					1300: {
-						slidesPerView: 6,
-					},
+				
 
 				},
 				pagination: {
