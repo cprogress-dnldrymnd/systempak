@@ -272,7 +272,10 @@ strong {
     height: auto;
     border-radius: 30px;
     text-align: center;
-    position: relative; }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
     .product-category-slider.product-category-slider .swiper-slide a {
       position: absolute;
       left: 0;
