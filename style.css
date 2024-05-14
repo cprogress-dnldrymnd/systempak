@@ -251,8 +251,8 @@ strong {
   color: var(--accent-color); }
 
 .product-category-slider {
-  margin-top: 50px;
-  margin-bottom: 50px; }
+  padding-top: 50px;
+  padding-bottom: 50px; }
   .product-category-slider .swiper-slide {
     background-color: var(--light-gray-color);
     padding: 50px;

@@ -22,9 +22,7 @@ function product_category_subcategory()
                             <div class="term-name">
                                 <h4><?= $term->name ?></h4>
                             </div>
-                            <div class="product-counts">
-                                <span>4 Products</span>
-                            </div>
+                            
                             <div class="image-box">
                                 <img src="<?= wp_get_attachment_url($thumbnail_id, 'large') ?>" alt="<?= $term->name ?>">
                             </div>
