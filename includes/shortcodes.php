@@ -4,6 +4,7 @@ function product_category_subcategory()
     ob_start();
     if (current_user_can('administrator')) {
         $current = get_queried_object();
+        $subcategory_heading = carbon_get_term_meta($current->term_id, 'subcategory_heading');
         $terms = get_terms(array(
             'taxonomy' => 'product_cat',
             'parent'   => $current->term_id
@@ -11,6 +12,9 @@ function product_category_subcategory()
 
 ?>
         <div class="product-category-slider">
+            <div class="heading-box text-center mb-4">
+                <h2><?=$subcategory_heading?></h2>
+            </div>
             <div class="swiper mySwiper-ProductCategory">
                 <div class="swiper-wrapper">
                     <?php foreach ($terms as $term) { ?>
