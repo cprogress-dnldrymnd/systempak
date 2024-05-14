@@ -255,7 +255,8 @@ strong {
   padding-bottom: 50px;
   background-color: var(--light-gray-color);
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  margin-top: 50px; }
   .product-category-slider .swiper-slide {
     background-color: var(--white-color);
     padding: 50px;
