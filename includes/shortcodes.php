@@ -5,40 +5,45 @@ function product_category_subcategory()
     if (current_user_can('administrator')) {
         $current = get_queried_object();
         $subcategory_heading = carbon_get_term_meta($current->term_id, 'subcategory_heading');
-        $terms = get_terms(array(
-            'taxonomy' => 'product_cat',
-            'parent'   => $current->term_id
-        ));
+        $display_subcategory_slider = carbon_get_term_meta($current->term_id, 'display_subcategory_slider');
+
+        if ($display_subcategory_slider) {
+
+            $terms = get_terms(array(
+                'taxonomy' => 'product_cat',
+                'parent'   => $current->term_id
+            ));
 
 ?>
-        <div class="product-category-slider">
-            <div class="heading-box text-center mb-4">
-                <h2><?= $subcategory_heading ?></h2>
-            </div>
-            <div class="swiper mySwiper-ProductCategory">
-                <div class="swiper-wrapper">
-                    <?php foreach ($terms as $term) { ?>
-                        <?php
-                        $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
-                        ?>
-                        <div class="swiper-slide">
-                            <a href="<?= get_term_link($term->term_id) ?>"></a>
-                            <div class="term-name">
-                                <h4><?= $term->name ?></h4>
-                            </div>
-                            <?php if ($thumbnail_id) { ?>
-                                <div class="image-box">
-                                    <img src="<?= wp_get_attachment_url($thumbnail_id, 'large') ?>" alt="<?= $term->name ?>">
-                                </div>
-                            <?php } ?>
-                        </div>
-                    <?php } ?>
+            <div class="product-category-slider">
+                <div class="heading-box text-center mb-4">
+                    <h2><?= $subcategory_heading ?></h2>
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper mySwiper-ProductCategory">
+                    <div class="swiper-wrapper">
+                        <?php foreach ($terms as $term) { ?>
+                            <?php
+                            $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
+                            ?>
+                            <div class="swiper-slide">
+                                <a href="<?= get_term_link($term->term_id) ?>"></a>
+                                <div class="term-name">
+                                    <h4><?= $term->name ?></h4>
+                                </div>
+                                <?php if ($thumbnail_id) { ?>
+                                    <div class="image-box">
+                                        <img src="<?= wp_get_attachment_url($thumbnail_id, 'large') ?>" alt="<?= $term->name ?>">
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
-        </div>
     <?php
-        return ob_get_clean();
+            return ob_get_clean();
+        }
     }
 }
 
