@@ -13,7 +13,7 @@ function product_category_subcategory()
 ?>
         <div class="product-category-slider">
             <div class="heading-box text-center mb-4">
-                <h2><?=$subcategory_heading?></h2>
+                <h2><?= $subcategory_heading ?></h2>
             </div>
             <div class="swiper mySwiper-ProductCategory">
                 <div class="swiper-wrapper">
@@ -26,10 +26,11 @@ function product_category_subcategory()
                             <div class="term-name">
                                 <h4><?= $term->name ?></h4>
                             </div>
-                            
-                            <div class="image-box">
-                                <img src="<?= wp_get_attachment_url($thumbnail_id, 'large') ?>" alt="<?= $term->name ?>">
-                            </div>
+                            <?php if ($thumbnail_id) { ?>
+                                <div class="image-box">
+                                    <img src="<?= wp_get_attachment_url($thumbnail_id, 'large') ?>" alt="<?= $term->name ?>">
+                                </div>
+                            <?php } ?>
                         </div>
                     <?php } ?>
                 </div>
