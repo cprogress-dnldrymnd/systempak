@@ -375,8 +375,11 @@ strong {
 .product-category-slider {
     padding-top: 50px;
     padding-bottom: 50px;
+    background-color: var(--light-gray-color);
+    padding-left: 15px;
+    padding-right: 15px;
     .swiper-slide {
-        background-color: var(--light-gray-color);
+        background-color: var(--white-color);
         padding: 50px;
         height: auto;
         border-radius: 30px;
@@ -411,8 +414,6 @@ strong {
         .product-counts {
             margin-bottom: 120px;
         }
-
-      
     }
     .swiper-pagination.swiper-pagination {
         position: static;
