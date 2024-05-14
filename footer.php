@@ -74,6 +74,9 @@ do_action('priotech_after_footer');
 $old_user = user_switching::get_old_user();
 ?>
 <script>
+    jQuery(document.body).on('updated_checkout', function() {
+        jQuery('.woocommerce-shipping-fields').addClass('show-shipping');
+    });
     jQuery(document).ready(function() {
         jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
         jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
