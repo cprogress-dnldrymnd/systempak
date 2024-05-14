@@ -11,71 +11,7 @@ if (!$old_user) {
     <div class="search-header d-none">
         <?= do_shortcode('[search]') ?>
     </div>
-    <script>
-        jQuery(document.body).on('updated_checkout', function() {
-            jQuery('.woocommerce-shipping-fields').addClass('show-shipping');
-        });
-        jQuery(document).ready(function() {
-            jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
-            jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
 
-            jQuery('#ship-to-different-address-checkbox').prop('checked', false);
-
-            jQuery('#ship-to-different-address-checkbox').change(function(e) {
-                if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
-
-                    var $billing_first_name = jQuery('input[name="billing_first_name"]');
-                    var $billing_last_name = jQuery('input[name="billing_last_name"]');
-                    var $billing_company = jQuery('input[name="billing_company"]');
-                    var $billing_country = jQuery('input[name="billing_country"]');
-                    var $billing_address_1 = jQuery('input[name="billing_address_1"]');
-                    var $billing_address_2 = jQuery('input[name="billing_address_2"]');
-                    var $billing_city = jQuery('input[name="billing_city"]');
-                    var $billing_state = jQuery('input[name="billing_state"]');
-                    var $billing_postcode = jQuery('input[name="billing_postcode"]');
-                    var $billing_phone = jQuery('input[name="billing_phone"]');
-
-                    var $shipping_first_name = jQuery('input[name="shipping_first_name"]');
-                    var $shipping_last_name = jQuery('input[name="shipping_last_name"]');
-                    var $shipping_company = jQuery('input[name="shipping_company"]');
-                    var $shipping_country = jQuery('input[name="shipping_country"]');
-                    var $shipping_address_1 = jQuery('input[name="shipping_address_1"]');
-                    var $shipping_address_2 = jQuery('input[name="shipping_address_2"]');
-                    var $shipping_city = jQuery('input[name="shipping_city"]');
-                    var $shipping_state = jQuery('input[name="shipping_state"]');
-                    var $shipping_postcode = jQuery('input[name="shipping_postcode"]');
-                    var $shipping_phone = jQuery('input[name="shipping_phone"]');
-
-                    get_billing_info($billing_first_name, $shipping_first_name);
-                    get_billing_info($billing_last_name, $shipping_last_name);
-                    get_billing_info($billing_company, $shipping_company);
-                    get_billing_info($billing_country, $shipping_country);
-                    get_billing_info($billing_address_1, $shipping_address_1);
-                    get_billing_info($billing_address_2, $shipping_address_2);
-                    get_billing_info($billing_city, $shipping_city);
-                    get_billing_info($billing_state, $shipping_state);
-                    get_billing_info($billing_postcode, $shipping_postcode);
-                    get_billing_info($billing_phone, $shipping_phone);
-                }
-
-                e.preventDefault();
-            });
-
-
-
-            function get_billing_info($billing, $shipping) {
-                $billing_val = $billing.val();
-                if ($shipping.val() == '') {
-                    $shipping.val($billing_val);
-                }
-            }
-        });
-
-        jQuery('#search-input').keypress(function(e) {
-            if (e.which == 13) return false;
-
-        });
-    </script>
 
 
     <?php if (is_page(8978)) { ?>
@@ -137,7 +73,68 @@ do_action('priotech_after_footer');
 <?php
 $old_user = user_switching::get_old_user();
 ?>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.site-search-popup .site-search-popup-wrap .site-search').remove();
+        jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
 
+        jQuery('#ship-to-different-address-checkbox').prop('checked', false);
+
+        jQuery('#ship-to-different-address-checkbox').change(function(e) {
+            if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
+
+                var $billing_first_name = jQuery('input[name="billing_first_name"]');
+                var $billing_last_name = jQuery('input[name="billing_last_name"]');
+                var $billing_company = jQuery('input[name="billing_company"]');
+                var $billing_country = jQuery('input[name="billing_country"]');
+                var $billing_address_1 = jQuery('input[name="billing_address_1"]');
+                var $billing_address_2 = jQuery('input[name="billing_address_2"]');
+                var $billing_city = jQuery('input[name="billing_city"]');
+                var $billing_state = jQuery('input[name="billing_state"]');
+                var $billing_postcode = jQuery('input[name="billing_postcode"]');
+                var $billing_phone = jQuery('input[name="billing_phone"]');
+
+                var $shipping_first_name = jQuery('input[name="shipping_first_name"]');
+                var $shipping_last_name = jQuery('input[name="shipping_last_name"]');
+                var $shipping_company = jQuery('input[name="shipping_company"]');
+                var $shipping_country = jQuery('input[name="shipping_country"]');
+                var $shipping_address_1 = jQuery('input[name="shipping_address_1"]');
+                var $shipping_address_2 = jQuery('input[name="shipping_address_2"]');
+                var $shipping_city = jQuery('input[name="shipping_city"]');
+                var $shipping_state = jQuery('input[name="shipping_state"]');
+                var $shipping_postcode = jQuery('input[name="shipping_postcode"]');
+                var $shipping_phone = jQuery('input[name="shipping_phone"]');
+
+                get_billing_info($billing_first_name, $shipping_first_name);
+                get_billing_info($billing_last_name, $shipping_last_name);
+                get_billing_info($billing_company, $shipping_company);
+                get_billing_info($billing_country, $shipping_country);
+                get_billing_info($billing_address_1, $shipping_address_1);
+                get_billing_info($billing_address_2, $shipping_address_2);
+                get_billing_info($billing_city, $shipping_city);
+                get_billing_info($billing_state, $shipping_state);
+                get_billing_info($billing_postcode, $shipping_postcode);
+                get_billing_info($billing_phone, $shipping_phone);
+            }
+
+            e.preventDefault();
+        });
+
+
+
+        function get_billing_info($billing, $shipping) {
+            $billing_val = $billing.val();
+            if ($shipping.val() == '') {
+                $shipping.val($billing_val);
+            }
+        }
+    });
+
+    jQuery('#search-input').keypress(function(e) {
+        if (e.which == 13) return false;
+
+    });
+</script>
 <?php
 if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('order-received'))) {
     if (is_user_logged_in() && $old_user) { ?>
