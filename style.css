@@ -250,21 +250,30 @@ strong {
 .color-accent {
   color: var(--accent-color); }
 
-.product-category-slider {
+.product-category-slider.product-category-slider {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: var(--light-gray-color);
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 50px; }
-  .product-category-slider .swiper-slide {
+  @media (max-width: 991px) {
+    .product-category-slider.product-category-slider h2 {
+      font-size: 45px; } }
+  @media (max-width: 767px) {
+    .product-category-slider.product-category-slider h2 {
+      font-size: 40px; } }
+  @media (max-width: 575px) {
+    .product-category-slider.product-category-slider h2 {
+      font-size: 35px; } }
+  .product-category-slider.product-category-slider .swiper-slide {
     background-color: var(--white-color);
     padding: 30px;
     height: auto;
     border-radius: 30px;
     text-align: center;
     position: relative; }
-    .product-category-slider .swiper-slide a {
+    .product-category-slider.product-category-slider .swiper-slide a {
       position: absolute;
       left: 0;
       top: 0;
@@ -272,20 +281,20 @@ strong {
       bottom: 0;
       z-index: 2; }
     @media (max-width: 575px) {
-      .product-category-slider .swiper-slide .term-name h4 {
+      .product-category-slider.product-category-slider .swiper-slide .term-name h4 {
         font-size: 18px !important; } }
-    .product-category-slider .swiper-slide .image-box {
+    .product-category-slider.product-category-slider .swiper-slide .image-box {
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       z-index: 1; }
-    .product-category-slider .swiper-slide .product-counts {
+    .product-category-slider.product-category-slider .swiper-slide .product-counts {
       margin-bottom: 120px; }
     @media (max-width: 575px) {
-      .product-category-slider .swiper-slide {
+      .product-category-slider.product-category-slider .swiper-slide {
         padding: 20px; } }
-  .product-category-slider .swiper-pagination.swiper-pagination {
+  .product-category-slider.product-category-slider .swiper-pagination.swiper-pagination {
     position: static;
     margin-top: 70px; }
 
