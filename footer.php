@@ -82,7 +82,7 @@ $old_user = user_switching::get_old_user();
         jQuery('.search-header').appendTo('.site-search-popup .site-search-popup-wrap');
 
         jQuery('#ship-to-different-address-checkbox').prop('checked', false);
-
+        /*
         jQuery('#ship-to-different-address-checkbox').change(function(e) {
             if (jQuery('input#ship-to-different-address-checkbox').is(":checked")) {
 
@@ -122,7 +122,7 @@ $old_user = user_switching::get_old_user();
 
             e.preventDefault();
         });
-
+            */
 
 
         function get_billing_info($billing, $shipping) {
