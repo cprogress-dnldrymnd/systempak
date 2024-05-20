@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 								<td align="center" valign="top">
 									<!-- Footer -->
 									<table border="0" cellpadding="10" cellspacing="0" width="100%" id="template_footer">
-									<tr>
+										<tr>
 											<td style="padding-left: 38px; padding-right: 38px">
 												<table class="bank-details"  border="0" cellpadding="10" cellspacing="0" width="100%">
 													<tr>
