@@ -1493,10 +1493,3 @@ body:not(.page-template-page-phone-orders) {
         margin-bottom: 0 !important;
     }
 }
-
-.woocommerce-shipping-fields.woocommerce-shipping-fields.woocommerce-shipping-fields {
-    display: none !important;
-    &.show-shipping {
-        display: block !important;
-    }
-}
