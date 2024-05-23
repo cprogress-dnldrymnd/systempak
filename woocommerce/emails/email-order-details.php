@@ -51,7 +51,7 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
         }
     }
     if(trim($tracking)){
-		$trackingex[0]
+		$trackingex[0];
         echo "<b>Shipping Tracking Number : </b>".$tracking.'<br /><br />';    
     }
 ?>
