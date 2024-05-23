@@ -20,7 +20,54 @@ defined( 'ABSPATH' ) || exit;
 $text_align = is_rtl() ? 'right' : 'left';
 
 do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
+<?php
+    global $wpdb;
 
+    $table_perfixed = $wpdb->prefix . 'comments';
+    $order_id = $order->get_id();
+    //echo "SELECT * FROM $table_perfixed WHERE  `comment_post_ID` = $order_id AND  `comment_type` LIKE  'order_note'";
+    //exit;
+    $results = $wpdb->get_results("
+        SELECT *
+        FROM $table_perfixed
+        WHERE  `comment_post_ID` = $order_id
+        AND  `comment_type` LIKE  'order_note'
+    ");
+    $tracking = '';
+    foreach($results as $note){
+        if(strpos($note->comment_content, 'Tracking Code') !== false){
+            $order_note[]  = array(
+                'note_id'      => $note->comment_ID,
+                'note_date'    => $note->comment_date,
+                'note_author'  => $note->comment_author,
+                'note_content' => $note->comment_content,
+            );
+            $trackingex = explode('Tracking Code', $note->comment_content);
+            if(isset($trackingex[1])){
+                //echo "<pre>"; print_r($trackingex); echo "</prE>";
+                //echo "<br />".trim(str_replace(':', '', $trackingex[1]));                
+                $tracking = trim(str_replace(':', '', $trackingex[1]));
+            }
+        }
+    }
+    if(trim($tracking)){
+		$trackingex[0]
+        echo "<b>Shipping Tracking Number : </b>".$tracking.'<br /><br />';    
+    }
+?>
+<h2>
+	<?php
+	if ( $sent_to_admin ) {
+		$before = '<a class="link" href="' . esc_url( $order->get_edit_order_url() ) . '">';
+		$after  = '</a>';
+	} else {
+		$before = '';
+		$after  = '';
+	}
+	/* translators: %s: Order ID. */
+	echo wp_kses_post( $before . sprintf( __( '[Order #%s]', 'woocommerce' ) . $after . ' (<time datetime="%s">%s</time>)', $order->get_order_number(), $order->get_date_created()->format( 'c' ), wc_format_datetime( $order->get_date_created() ) ) );
+	?>
+</h2>
 <div class="wc-email-table-holder" style="margin-bottom: 40px;">
 	<h5 style="font-weight: bold; font-size:14px; margin-bottom: 15px; margin-top: 0">
 		ORDER SUMMARY
