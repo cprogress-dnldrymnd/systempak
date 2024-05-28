@@ -369,7 +369,7 @@ function update_checkout_cart_item_ajax()
         $cart->set_quantity( $cart_item_key, $new_quantity );
     }
 
-    wp_die();
+    die();
 }
 
 
