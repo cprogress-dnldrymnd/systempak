@@ -89,7 +89,7 @@ defined('ABSPATH') || exit;
 
 		?>
 
-		<tr id="update-cart">
+		<tr id="update-cart" class="d-none">
 			<td colspan="2" class="td-coupon">
 				<a class="button update_cart_button d-inline-block">UPDATE CART</a>
 			</td>

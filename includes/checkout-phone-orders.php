@@ -507,6 +507,26 @@ function action_custom_checkout()
         });
 
 
+        jQuery(document).on('change', 'input.qty', function() {
+            var $thisbutton = $(this);
+            var item_hash = $(this).attr('name').replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
+            var item_quantity = $(this).val();
+            var currentVal = parseFloat(item_quantity);
+            $.ajax({
+                type: 'POST',
+                url: cart_qty_ajax.ajax_url,
+                data: {
+                    action: 'my_cart_qty',
+                    hash: item_hash,
+                    quantity: currentVal
+                },
+                success: function(response) {
+                    jQuery(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
+                    //jQuery(document.body).trigger('update_checkout');
+                }
+            });
+        });
+
 
         jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {
             jQuery('.blockUICustomShipping').removeClass('d-none');
