@@ -360,17 +360,7 @@ add_action('wp_ajax_update_checkout_cart_item', 'update_checkout_cart_item_ajax'
 add_action('wp_ajax_nopriv_update_checkout_cart_item', 'update_checkout_cart_item_ajax');
 function update_checkout_cart_item_ajax()
 {
-    if (isset($_POST['item_key']) && isset($_POST['quantity'])) {
-        $cart = WC()->cart;
-        $cart_item_key = sanitize_text_field($_POST['item_key']);
-        $new_quantity = (int) $_POST['quantity'];
-
-        if ($cart->set_quantity($cart_item_key, $new_quantity)) {
-            WC_AJAX::get_refreshed_fragments(); // Update totals and other checkout info
-        }
-    }
-
-    wp_die();
+    
 }
 
 
