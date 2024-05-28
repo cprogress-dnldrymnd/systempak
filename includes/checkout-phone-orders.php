@@ -204,7 +204,7 @@ function add_custom_extra_fee($cart)
 // ----------------------------
 // Add Quantity Input Beside Product Name
 
-add_filter('woocommerce_checkout_cart_item_quantity', 'bbloomer_checkout_item_quantity_input', 9999, 3);
+//add_filter('woocommerce_checkout_cart_item_quantity', 'bbloomer_checkout_item_quantity_input', 9999, 3);
 
 function bbloomer_checkout_item_quantity_input($product_quantity, $cart_item, $cart_item_key)
 {
