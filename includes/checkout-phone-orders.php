@@ -538,7 +538,7 @@ function action_custom_checkout()
                     quantity: new_quantity,
                 },
                 success: function(response) {
-                    jQuery('body').trigger('update_checkout');
+                    //jQuery('body').trigger('update_checkout');
                 }
             });
         });
