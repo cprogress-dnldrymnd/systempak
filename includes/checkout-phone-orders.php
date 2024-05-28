@@ -227,7 +227,7 @@ function bbloomer_checkout_item_quantity_input($product_quantity, $cart_item, $c
 // ----------------------------
 // Detect Quantity Change and Recalculate Totals
 
-add_action('woocommerce_checkout_update_order_review', 'bbloomer_update_item_quantity_checkout');
+//add_action('woocommerce_checkout_update_order_review', 'bbloomer_update_item_quantity_checkout');
 
 function bbloomer_update_item_quantity_checkout($post_data)
 {
@@ -354,6 +354,22 @@ function custom_product_ajax()
 
 
     die(); // Alway at the end (to avoid server error 500)
+}
+
+add_action( 'wp_ajax_update_checkout_cart_item', 'update_checkout_cart_item_ajax' );
+add_action( 'wp_ajax_nopriv_update_checkout_cart_item', 'update_checkout_cart_item_ajax' );
+function update_checkout_cart_item_ajax() {
+    if ( isset( $_POST['item_key'] ) && isset( $_POST['quantity'] ) ) {
+        $cart = WC()->cart;
+        $cart_item_key = sanitize_text_field( $_POST['item_key'] );
+        $new_quantity = (int) $_POST['quantity'];
+
+        if ( $cart->set_quantity( $cart_item_key, $new_quantity ) ) {
+            WC_AJAX::get_refreshed_fragments(); // Update totals and other checkout info
+        } 
+    }
+
+    wp_die();
 }
 
 
@@ -507,22 +523,20 @@ function action_custom_checkout()
         });
 
 
-        jQuery(document).on('change', 'input.qty', function() {
-            var $thisbutton = $(this);
-            var item_hash = $(this).attr('name').replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
-            var item_quantity = $(this).val();
-            var currentVal = parseFloat(item_quantity);
-            $.ajax({
+        jQuery(document.body).on('change', 'input.qty', function() {
+            var item_key = jQuery(this).attr('name').replace(/cart\[(.*?)\]\[qty\]/, '$1');
+            var new_quantity = jQuery(this).val();
+
+            jQuery.ajax({
+                url: '<?php echo admin_url('admin-ajax.php'); ?>',
                 type: 'POST',
-                url: cart_qty_ajax.ajax_url,
                 data: {
-                    action: 'my_cart_qty',
-                    hash: item_hash,
-                    quantity: currentVal
+                    action: 'update_checkout_cart_item',
+                    item_key: item_key,
+                    quantity: new_quantity,
                 },
                 success: function(response) {
-                    jQuery(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
-                    //jQuery(document.body).trigger('update_checkout');
+                    jQuery('body').trigger('update_checkout');
                 }
             });
         });
