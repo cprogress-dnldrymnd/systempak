@@ -527,7 +527,8 @@ function action_custom_checkout()
         jQuery(document.body).on('change', 'input.qty', function() {
             var item_key = jQuery(this).parents('.quantity-parent').attr('item_key');
             var new_quantity = jQuery(this).val();
-
+            console.log(item_key);
+            console.log(new_quantity);
             jQuery.ajax({
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
                 type: 'POST',
