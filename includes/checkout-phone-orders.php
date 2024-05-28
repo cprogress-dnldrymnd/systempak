@@ -365,6 +365,7 @@ function update_checkout_cart_item_ajax()
         $cart_item_key = sanitize_text_field( $_POST['item_key'] );
         $new_quantity = (int) $_POST['quantity'];
         $cart->set_quantity( $cart_item_key, $new_quantity );
+        $cart->set_quantity( $cart_item_key, $new_quantity );
     }
 
     wp_die();
