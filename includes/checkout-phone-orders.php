@@ -242,7 +242,6 @@ function bbloomer_update_item_quantity_checkout($post_data)
     }
     if ($updated_qty) {
         WC()->cart->calculate_totals();
-        WC()->cart->calculate_totals();
     }
 }
 
