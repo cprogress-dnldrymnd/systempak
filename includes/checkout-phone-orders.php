@@ -538,7 +538,18 @@ function action_custom_checkout()
                     quantity: new_quantity,
                 },
                 success: function(response) {
-                    jQuery('body').trigger('update_checkout');
+                    jQuery.ajax({
+                        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                        type: 'POST',
+                        data: {
+                            action: 'update_checkout_cart_item',
+                            item_key: item_key,
+                            quantity: new_quantity,
+                        },
+                        success: function(response) {
+                            jQuery('body').trigger('update_checkout');
+                        }
+                    });
                 }
             });
         });
