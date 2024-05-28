@@ -365,10 +365,8 @@ function update_checkout_cart_item_ajax()
         $cart_item_key = sanitize_text_field($_POST['item_key']);
         $new_quantity = (int) $_POST['quantity'];
 
-        if ($cart->set_quantity($cart_item_key, $new_quantity)) {
-            WC_AJAX::get_refreshed_fragments(); // Update totals and other checkout info
-            WC_AJAX::get_refreshed_fragments(); // Update totals and other checkout info
-        }
+        $cart->set_quantity($cart_item_key, $new_quantity);
+        $cart->set_quantity($cart_item_key, $new_quantity);
     }
 
     wp_die();
