@@ -360,7 +360,7 @@ add_action('wp_ajax_update_checkout_cart_item', 'update_checkout_cart_item_ajax'
 add_action('wp_ajax_nopriv_update_checkout_cart_item', 'update_checkout_cart_item_ajax');
 function update_checkout_cart_item_ajax()
 {
-   
+   echo 'test';
 
     wp_die();
 }
@@ -531,6 +531,7 @@ function action_custom_checkout()
                 },
                 success: function(response) {
                     //jQuery('body').trigger('update_checkout');
+                    console.log(response);
                 }
             });
         });
