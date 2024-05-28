@@ -365,7 +365,9 @@ function update_checkout_cart_item_ajax()
         $cart_item_key = sanitize_text_field($_POST['item_key']);
         $new_quantity = (int) $_POST['quantity'];
 
-        $cart->set_quantity($cart_item_key, $new_quantity);
+        if ($cart->set_quantity($cart_item_key, $new_quantity)) {
+            WC_AJAX::get_refreshed_fragments(); // Update totals and other checkout info
+        }
     }
 
     wp_die();
@@ -536,18 +538,7 @@ function action_custom_checkout()
                     quantity: new_quantity,
                 },
                 success: function(response) {
-                    jQuery.ajax({
-                        url: '<?php echo admin_url('admin-ajax.php'); ?>',
-                        type: 'POST',
-                        data: {
-                            action: 'update_checkout_cart_item',
-                            item_key: item_key,
-                            quantity: new_quantity,
-                        },
-                        success: function(response) {
-                            jQuery('body').trigger('update_checkout');
-                        }
-                    });
+                    //jQuery('body').trigger('update_checkout');
                 }
             });
         });
