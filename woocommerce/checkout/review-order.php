@@ -89,6 +89,12 @@ defined('ABSPATH') || exit;
 
 		?>
 
+		<tr id="update-cart">
+			<td colspan="2" class="td-coupon">
+				<a class="button update_cart_button">UPDATE CART</a>
+			</td>
+		</tr>
+
 		<tr class="custom-coupon custom-forms" id="custom-coupon">
 			<td colspan="2" class="td-coupon">
 				<div class="checkout_coupon_custom">
