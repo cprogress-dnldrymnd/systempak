@@ -35,9 +35,7 @@ function quantity_plus_minus() {
             }
         }
 
-        qty.change();
-
-        qty.change();
+       // qty.change();
 
     });
 
