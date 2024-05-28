@@ -3,7 +3,7 @@ define('theme_dir', get_stylesheet_directory_uri() . '/');
 define('assets_dir', theme_dir . 'assets/');
 define('image_dir', assets_dir . 'images/');
 define('vendor_dir', assets_dir . 'vendors/');
-define('checkout_version', 9.5);
+define('checkout_version', 9.6);
 add_action('after_setup_theme', 'add_wc_gallery_lightbox', 100);
 
 function add_wc_gallery_lightbox()
