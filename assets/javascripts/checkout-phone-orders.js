@@ -293,10 +293,12 @@ function ajax_select_product($this) {
 
     $post_item.each(function (index, element) {
         $custom_price = jQuery(this).find('input[name="custom_price"]').val();
+        $custom_quantity = jQuery(this).find('input[name="custom_quantity"]').val();
         $product_id = jQuery(this).attr('product-id');
         $data = {
             'product_id': $product_id,
-            'custom_price': $custom_price
+            'custom_price': $custom_price,
+            'custom_quantity': $custom_quantity
         };
         $product_ids.push($data);
 
