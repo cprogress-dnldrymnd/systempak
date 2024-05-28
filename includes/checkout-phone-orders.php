@@ -209,7 +209,7 @@ function bbloomer_checkout_item_quantity_input($product_quantity, $cart_item, $c
 {
     $product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
     if (!$product->is_sold_individually()) {
-        $product_quantity = '<div class="quantity-parent">';
+        $product_quantity = '<div class="quantity-parent" item_key="' . $cart_item_key . '">';
         $product_quantity .= '<button type="button" class="minus" target="shipping_method_qty_' . $product->get_id() . '">-</button>';
         $product_quantity .= woocommerce_quantity_input(array(
             'input_name'  => 'shipping_method_qty_' . $product->get_id(),
@@ -356,17 +356,18 @@ function custom_product_ajax()
     die(); // Alway at the end (to avoid server error 500)
 }
 
-add_action( 'wp_ajax_update_checkout_cart_item', 'update_checkout_cart_item_ajax' );
-add_action( 'wp_ajax_nopriv_update_checkout_cart_item', 'update_checkout_cart_item_ajax' );
-function update_checkout_cart_item_ajax() {
-    if ( isset( $_POST['item_key'] ) && isset( $_POST['quantity'] ) ) {
+add_action('wp_ajax_update_checkout_cart_item', 'update_checkout_cart_item_ajax');
+add_action('wp_ajax_nopriv_update_checkout_cart_item', 'update_checkout_cart_item_ajax');
+function update_checkout_cart_item_ajax()
+{
+    if (isset($_POST['item_key']) && isset($_POST['quantity'])) {
         $cart = WC()->cart;
-        $cart_item_key = sanitize_text_field( $_POST['item_key'] );
+        $cart_item_key = sanitize_text_field($_POST['item_key']);
         $new_quantity = (int) $_POST['quantity'];
 
-        if ( $cart->set_quantity( $cart_item_key, $new_quantity ) ) {
+        if ($cart->set_quantity($cart_item_key, $new_quantity)) {
             WC_AJAX::get_refreshed_fragments(); // Update totals and other checkout info
-        } 
+        }
     }
 
     wp_die();
