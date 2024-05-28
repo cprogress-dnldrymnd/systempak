@@ -525,7 +525,7 @@ function action_custom_checkout()
 
 
         jQuery(document.body).on('change', 'input.qty', function() {
-            var item_key = jQuery(this).parent().attr('item_key');
+            var item_key = jQuery(this).parents('.quantity-parent').attr('item_key');
             var new_quantity = jQuery(this).val();
 
             jQuery.ajax({
