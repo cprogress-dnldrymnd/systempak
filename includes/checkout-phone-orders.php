@@ -104,6 +104,7 @@ function search_ajax_products()
                                 <p><strong><?php the_title() ?></strong></p>
                                 <p><strong>SKU: </strong> <?= $product->get_sku() ?> </p>
                                 <p><strong>STOCK: </strong> <?= $stock ?> </p>
+                                <p class="custom-quantity"> <input type="number" name="custom_quantity" placeholder="Enter quantity"> </p>
                                 <p class="custom-price"><input type="number" name="custom_price" placeholder="Enter custom price"> </p>
 
                             </div>
