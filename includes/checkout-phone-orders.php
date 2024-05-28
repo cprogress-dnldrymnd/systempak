@@ -227,7 +227,7 @@ function bbloomer_checkout_item_quantity_input($product_quantity, $cart_item, $c
 // ----------------------------
 // Detect Quantity Change and Recalculate Totals
 
-//add_action('woocommerce_checkout_update_order_review', 'bbloomer_update_item_quantity_checkout');
+/*add_action('woocommerce_checkout_update_order_review', 'bbloomer_update_item_quantity_checkout');
 
 function bbloomer_update_item_quantity_checkout($post_data)
 {
@@ -246,7 +246,7 @@ function bbloomer_update_item_quantity_checkout($post_data)
 }
 
 
-
+*/
 
 /**
  * @snippet       Avoid Empty Cart Redirect @ WooCommerce Checkout
