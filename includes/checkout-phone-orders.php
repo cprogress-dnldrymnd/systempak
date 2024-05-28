@@ -240,7 +240,10 @@ function bbloomer_update_item_quantity_checkout($post_data)
             $updated_qty = true;
         }
     }
-    if ($updated_qty) WC()->cart->calculate_totals();
+    if ($updated_qty) {
+        WC()->cart->calculate_totals();
+        WC()->cart->calculate_totals();
+    }
 }
 
 
