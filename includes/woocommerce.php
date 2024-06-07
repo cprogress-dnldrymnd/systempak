@@ -871,10 +871,15 @@ function action_modify_stocks()
     global $product;
     if ($product->get_type() == 'variable') {
         if (current_user_can('administrator')) {
+            $children = $product->get_children();
 
-            echo '<pre>';
-            var_dump($product->get_children());
-            echo '</pre>';
+            foreach($children as $child) {
+                $is_checked = get_post_meta($child, '_enabled', true);
+                if($is_checked) {
+                    echo get_the_title($child);
+                    echo '<br>';
+                }
+            }
         }
     }
 }
