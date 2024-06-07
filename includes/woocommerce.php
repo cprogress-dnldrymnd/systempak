@@ -864,3 +864,12 @@ function custom_product_additional_information( $product_attributes, $product ) 
  
     return $product_attributes;
 }
+
+function action_modify_stocks() {
+    global $product;
+    if(current_user_can('administrator')) {
+        echo 'test';
+    }
+}
+
+add_action('woocommerce_single_product_summary');
