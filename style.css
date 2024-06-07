@@ -103,6 +103,8 @@ p:last-child {
     font-size: 17px;
     font-weight: 400;
     text-transform: none; }
+    .single-product.single-product .summary .inventory_status.out-stock {
+      color: var(--white-color); }
 .single-product.single-product .woocommerce-product-gallery__image {
   background-color: #f6f6f6;
   border-radius: 22px; }

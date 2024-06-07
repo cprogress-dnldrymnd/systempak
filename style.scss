@@ -173,6 +173,9 @@ p {
             font-size: 17px;
             font-weight: 400;
             text-transform: none;
+            &.out-stock {
+                color: var(--white-color);
+            }
         }
     }
     .woocommerce-product-gallery__image {
