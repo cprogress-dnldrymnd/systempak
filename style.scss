@@ -1486,6 +1486,10 @@ body:not(.page-template-page-phone-orders) {
                 }
             }
 
+            &.in-stock {
+                display: none;
+            }
+
         }
     }
 }

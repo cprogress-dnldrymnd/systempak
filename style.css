@@ -1043,6 +1043,8 @@ body:not(.page-template-page-phone-orders) .fee {
         background-color: #e2401c; }
         .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
           content: "Out of Stock"; }
+      .woovr-variation-info .woovr-variation-availability .stock.in-stock {
+        display: none; }
 
 .woocommerce-form-coupon-toggle.woocommerce-form-coupon-toggle {
   border: 1px solid lightgray;
