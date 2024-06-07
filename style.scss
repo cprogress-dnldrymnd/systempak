@@ -1485,14 +1485,12 @@ body:not(.page-template-page-phone-orders) {
                 background-color: #e2401c;
                 &:before {
                     content: "Out of Stock";
-
                 }
             }
 
             &.in-stock {
                 display: none;
             }
-
         }
     }
 }
@@ -1505,5 +1503,28 @@ body:not(.page-template-page-phone-orders) {
     margin-bottom: 30px;
     .woocommerce-info {
         margin-bottom: 0 !important;
+    }
+}
+
+.custom-stock-status {
+    color: var(--text-color);
+    text-transform: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    &.stock-status-instock {
+        background-color: var(--accent-color);
+    }
+
+    &.stock-status-onbackorder,
+    &.stock-status-outofstock {
+        background-color: #e2401c;
+        color: var(--white-color);
+    }
+    & + .left {
+        .inventory_status {
+            display: noen !important;
+        }
     }
 }
