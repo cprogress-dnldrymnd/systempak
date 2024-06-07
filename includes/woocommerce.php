@@ -872,14 +872,25 @@ function action_modify_stocks()
     if ($product->get_type() == 'variable') {
         if (current_user_can('administrator')) {
             $children = $product->get_children();
-
+            $stock_status_array = array();
             foreach ($children as $child) {
                 $_enabled = get_post_meta($child, '_enabled', true);
                 if ($_enabled == 'yes') {
                     $child_p = wc_get_product($child);
-                    $stock_status = $child_p->get_stock_status();
-                    echo $stock_status;
-                    echo '<br>';
+                    $stock_status_array[] = $child_p->get_stock_status();
+                    if (in_array('instock', $stock_status_array)) {
+                        echo '<span class="custom-stock-status stock-status-instock">';
+                        echo 'In stock';
+                        echo '</span>';
+                    } else if (in_array('onbackorder', $stock_status_array)) {
+                        echo '<span class="custom-stock-status stock-status-onbackorder">';
+                        echo 'On backorder';
+                        echo '</span>';
+                    } else if (in_array('outofstock', $stock_status_array)) {
+                        echo '<span class="custom-stock-status stock-status-outofstock">';
+                        echo 'Out of stock';
+                        echo '</span>';
+                    }
                 }
             }
         }
