@@ -1022,36 +1022,27 @@ body:not(.page-template-page-phone-orders) .fee {
   flex-wrap: wrap; }
   .woovr-variation-info .woovr-variation-availability {
     margin-right: 0 !important; }
-    .woovr-variation-info .woovr-variation-availability .stock.out-of-stock {
+    .woovr-variation-info .woovr-variation-availability .stock {
       display: flex;
       align-items: center;
-      background-color: #e2401c;
       color: var(--white-color);
       padding: 5px;
       border-radius: 20px;
       font-size: 0;
       margin-left: 10px; }
-      .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
+      .woovr-variation-info .woovr-variation-availability .stock:before {
         content: "On Backorder";
         font-size: 13px;
-        font-family: "Century Gothic";
-        margin: 0; }
-    .woovr-variation-info .woovr-variation-availability .stock.out-of-stock {
-      display: flex;
-      align-items: center;
-      background-color: #e2401c;
-      color: var(--white-color);
-      padding: 5px;
-      border-radius: 20px;
-      font-size: 0;
-      margin-left: 10px; }
-      .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
-        content: "Out of Stock";
-        font-size: 13px;
-        font-family: "Century Gothic";
-        margin: 0; }
-    .woovr-variation-info .woovr-variation-availability .stock:not(.out-of-stock) {
-      display: none; }
+        margin: 0;
+        font-family: "Century Gothic"; }
+      .woovr-variation-info .woovr-variation-availability .stock.available-on-backorder {
+        background-color: #e2401c; }
+        .woovr-variation-info .woovr-variation-availability .stock.available-on-backorder:before {
+          content: "On Backorder"; }
+      .woovr-variation-info .woovr-variation-availability .stock.out-of-stock {
+        background-color: #e2401c; }
+        .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
+          content: "Out of Stock"; }
 
 .woocommerce-form-coupon-toggle.woocommerce-form-coupon-toggle {
   border: 1px solid lightgray;
