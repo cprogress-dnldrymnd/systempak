@@ -876,7 +876,9 @@ function action_modify_stocks()
             foreach($children as $child) {
                 $is_checked = get_post_meta($child, '_enabled', true);
                 if($is_checked) {
-                    echo get_the_title($child);
+                    $child_p = wc_get_product( $child );
+                    $stock_status = $child_p->get_stock_status();
+                    echo $stock_status;
                     echo '<br>';
                 }
             }
