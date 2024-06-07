@@ -873,10 +873,10 @@ function action_modify_stocks()
         if (current_user_can('administrator')) {
             $children = $product->get_children();
 
-            foreach($children as $child) {
-                $is_checked = get_post_meta($child, '_enabled', true);
-                if($is_checked) {
-                    $child_p = wc_get_product( $child );
+            foreach ($children as $child) {
+                $_enabled = get_post_meta($child, '_enabled', true);
+                if ($_enabled == 'yes') {
+                    $child_p = wc_get_product($child);
                     $stock_status = $child_p->get_stock_status();
                     echo $stock_status;
                     echo '<br>';
