@@ -170,11 +170,14 @@ p {
         .inventory_status {
             background-color: var(--accent-color);
             color: var(--text-color);
-            font-size: 17px;
-            font-weight: 400;
             text-transform: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 15px;
             &.out-stock {
-                color: var(--white-color);
+                background-color: #e2401c !important;
+                color: var(--white-color) !important;
             }
         }
     }
