@@ -872,4 +872,4 @@ function action_modify_stocks() {
     }
 }
 
-add_action('woocommerce_single_product_summary');
+add_action('woocommerce_single_product_summary', 'action_modify_stocks');
