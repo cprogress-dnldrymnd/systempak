@@ -871,7 +871,10 @@ function action_modify_stocks()
     global $product;
     if ($product->get_type() == 'variable') {
         if (current_user_can('administrator')) {
-            echo 'test';
+
+            echo '<pre>';
+            var_dump($product->get_children());
+            echo '</pre>';
         }
     }
 }
