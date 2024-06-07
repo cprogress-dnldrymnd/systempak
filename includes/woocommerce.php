@@ -878,24 +878,21 @@ function action_modify_stocks()
                 if ($_enabled == 'yes') {
                     $child_p = wc_get_product($child);
                     $stock_status_array[] = $child_p->get_stock_status();
-                    if (in_array('instock', $stock_status_array)) {
-                        echo '<span class="custom-stock-status stock-status-instock">';
-                        echo 'In stock';
-                        echo '</span>';
-                    } else {
-                        if (in_array('onbackorder', $stock_status_array)) {
-                            echo '<span class="custom-stock-status stock-status-onbackorder">';
-                            echo 'On backorder';
-                            echo '</span>';
-                        } else {
-                            if (in_array('outofstock', $stock_status_array)) {
-                                echo '<span class="custom-stock-status stock-status-outofstock">';
-                                echo 'Out of stock';
-                                echo '</span>';
-                            }
-                        }
-                    }
                 }
+            }
+
+            if (in_array('instock', $stock_status_array)) {
+                echo '<span class="custom-stock-status stock-status-instock">';
+                echo 'In stock';
+                echo '</span>';
+            } else if (in_array('onbackorder', $stock_status_array)) {
+                echo '<span class="custom-stock-status stock-status-onbackorder">';
+                echo 'On backorder';
+                echo '</span>';
+            } else if (in_array('outofstock', $stock_status_array)) {
+                echo '<span class="custom-stock-status stock-status-outofstock">';
+                echo 'Out of stock';
+                echo '</span>';
             }
         }
     }
