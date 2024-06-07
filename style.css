@@ -1063,13 +1063,14 @@ body:not(.page-template-page-phone-orders) .fee {
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 15px; }
+  font-size: 15px;
+  display: inline-block; }
   .custom-stock-status.stock-status-instock {
     background-color: var(--accent-color); }
   .custom-stock-status.stock-status-onbackorder, .custom-stock-status.stock-status-outofstock {
     background-color: #e2401c;
     color: var(--white-color); }
   .custom-stock-status + .left .inventory_status {
-    display: noen !important; }
+    display: none !important; }
 
 /*# sourceMappingURL=style.css.map */

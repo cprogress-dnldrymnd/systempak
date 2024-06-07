@@ -1513,6 +1513,7 @@ body:not(.page-template-page-phone-orders) {
     border-radius: 5px;
     font-weight: bold;
     font-size: 15px;
+    display: inline-block;
     &.stock-status-instock {
         background-color: var(--accent-color);
     }
@@ -1524,7 +1525,7 @@ body:not(.page-template-page-phone-orders) {
     }
     & + .left {
         .inventory_status {
-            display: noen !important;
+            display: none !important;
         }
     }
 }
