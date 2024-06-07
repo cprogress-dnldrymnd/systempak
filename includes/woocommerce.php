@@ -854,21 +854,25 @@ function custom_email_order_items_args($args)
 }
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 
-add_filter( 'woocommerce_display_product_attributes', 'custom_product_additional_information', 10, 2 );
-function custom_product_additional_information( $product_attributes, $product ) {
+add_filter('woocommerce_display_product_attributes', 'custom_product_additional_information', 10, 2);
+function custom_product_additional_information($product_attributes, $product)
+{
     // First row
-    $product_attributes[ 'attribute_' . 'brand' ] = array(
+    $product_attributes['attribute_' . 'brand'] = array(
         'label' => __('Brand'),
         'value' => __('SystemPAK'),
     );
- 
+
     return $product_attributes;
 }
 
-function action_modify_stocks() {
+function action_modify_stocks()
+{
     global $product;
-    if(current_user_can('administrator')) {
-        echo 'test';
+    if ($product->get_type() == 'variable') {
+        if (current_user_can('administrator')) {
+            echo 'test';
+        }
     }
 }
 
