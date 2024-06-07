@@ -887,10 +887,12 @@ function action_modify_stocks()
                             echo '<span class="custom-stock-status stock-status-onbackorder">';
                             echo 'On backorder';
                             echo '</span>';
-                        } else if (in_array('outofstock', $stock_status_array)) {
-                            echo '<span class="custom-stock-status stock-status-outofstock">';
-                            echo 'Out of stock';
-                            echo '</span>';
+                        } else {
+                            if (in_array('outofstock', $stock_status_array)) {
+                                echo '<span class="custom-stock-status stock-status-outofstock">';
+                                echo 'Out of stock';
+                                echo '</span>';
+                            }
                         }
                     }
                 }
