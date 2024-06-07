@@ -1036,6 +1036,20 @@ body:not(.page-template-page-phone-orders) .fee {
         font-size: 13px;
         font-family: "Century Gothic";
         margin: 0; }
+    .woovr-variation-info .woovr-variation-availability .stock.out-of-stock {
+      display: flex;
+      align-items: center;
+      background-color: #e2401c;
+      color: var(--white-color);
+      padding: 5px;
+      border-radius: 20px;
+      font-size: 0;
+      margin-left: 10px; }
+      .woovr-variation-info .woovr-variation-availability .stock.out-of-stock:before {
+        content: "Out of Stock";
+        font-size: 13px;
+        font-family: "Century Gothic";
+        margin: 0; }
     .woovr-variation-info .woovr-variation-availability .stock:not(.out-of-stock) {
       display: none; }
 

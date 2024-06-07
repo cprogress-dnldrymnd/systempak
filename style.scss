@@ -1476,6 +1476,23 @@ body:not(.page-template-page-phone-orders) {
                 }
             }
 
+            &.out-of-stock {
+                display: flex;
+                align-items: center;
+                background-color: #e2401c;
+                color: var(--white-color);
+                padding: 5px;
+                border-radius: 20px;
+                font-size: 0;
+                margin-left: 10px;
+                &:before {
+                    content: "Out of Stock";
+                    font-size: 13px;
+                    font-family: "Century Gothic";
+                    margin: 0;
+                }
+            }
+
             &:not(.out-of-stock) {
                 display: none;
             }
