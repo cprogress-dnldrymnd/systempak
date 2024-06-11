@@ -362,10 +362,10 @@ function phone_orders_header()
                     ?>
                 </li>
                 <li>
-                    <a class="ab-item" href="/my-account/"> | Logged-in as <?= $current_user->user_email ?></a>
+                    <a class="ab-item" href="<?= get_permalink(get_option('woocommerce_myaccount_page_id')); ?>"> | Logged-in as <?= $current_user->user_email ?></a>
                 </li>
                 <li>
-                    <a class="ab-item view-orders" href="/my-account/orders/">View Orders</a>
+                    <a class="ab-item view-orders" href="<?= get_permalink(get_option('woocommerce_myaccount_page_id')); ?>/orders/">View Orders</a>
                 </li>
                 <?php if (!is_page(8978)) { ?>
                     <li>
