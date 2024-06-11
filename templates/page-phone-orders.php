@@ -4,6 +4,7 @@
 /*-----------------------------------------------------------------------------------*/
 ?>
 <?php get_header() ?>
+<link rel="stylesheet" href="https://systempak.net/wp-includes/css/admin-bar.min.css">
 <?php
 $old_user = user_switching::get_old_user();
 echo '<br><br>';
