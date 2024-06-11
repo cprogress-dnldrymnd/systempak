@@ -243,7 +243,6 @@ function ajax_select_product($this) {
 
     });
 
-    console.log(ajax_object.ajax_url);
 
     jQuery.ajax({
 
