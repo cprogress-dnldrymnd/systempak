@@ -1,14 +1,9 @@
 jQuery(document).ready(function () {
     quantity_plus_minus();
     steps();
-    //apply_coupon_custom();
     ajax_products_form();
-    //ajax_products();
     ajax_select_product_trigger();
     select_products();
-    //custom_shipping_ajax();
-    //custom_product_ajax();
-    //load_more_button_listener();
 });
 
 
@@ -104,21 +99,6 @@ function previous_step($step) {
     }
 }
 
-function apply_coupon_custom() {
-
-    jQuery(document).on('click', '.apply_coupon_custom', function () {
-        coupon_ajax();
-    });
-
-    jQuery(document).on('click', '.woocommerce-remove-coupon', function () {
-
-        jQuery(document.body).on('updated_checkout', function () {
-            jQuery('.coupon-message').html('<span>Coupon has been removed.</span>');
-
-        });
-    });
-
-}
 
 
 function coupon_ajax() {
@@ -155,36 +135,6 @@ function coupon_ajax() {
 
     }
 }
-
-
-function ajax_products_form() {
-    var typingTimer;
-    var doneTypingInterval = 500;
-
-    jQuery('.search-section-products #search-input-product').on('keyup', function () {
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(doneTyping, doneTypingInterval);
-    });
-
-    jQuery('.search-section-products #search-input-product').on('keydown', function () {
-        clearTimeout(typingTimer);
-    });
-
-    function doneTyping() {
-        ajax_products();
-    }
-}
-/*
-
-function load_more_button_listener($) {
-    jQuery(document).on("click", '.search-section-products #load-more', function (event) {
-        event.preventDefault();
-        var offset = jQuery('.post-item').length;
-        ajax_products(offset, 'append');
-    });
-
-}*/
-
 
 
 
@@ -336,57 +286,5 @@ function ajax_select_product($this) {
             console.log(e);
         }
 
-    });
-}
-
-
-
-function custom_product_ajax() {
-    jQuery(document).on('click', '#add-custom-product', function () {
-
-        var title = jQuery('#addCustomProduct input[name="title"]').val();
-        var sku = jQuery('#addCustomProduct input[name="sku"]').val();
-        var quantity = parseFloat(jQuery('#addCustomProduct input[name="quantity"]').val());
-        var price = parseFloat(jQuery('#addCustomProduct input[name="price"]').val());
-        var weight = parseFloat(jQuery('#addCustomProduct input[name="weight"]').val());
-        var length = parseFloat(jQuery('#addCustomProduct input[name="length"]').val());
-        var width = parseFloat(jQuery('#addCustomProduct input[name="width"]').val());
-        var height = parseFloat(jQuery('#addCustomProduct input[name="height"]').val());
-        var tax_status = jQuery('#addCustomProduct select[name="tax_status"]').val();
-        var tax_class = jQuery('#addCustomProduct select[name="tax_class"]').val();
-
-        jQuery('#addCustomProduct .loading').removeClass('d-none');
-
-        jQuery.ajax({
-            type: 'POST',
-            url: "/wp-admin/admin-ajax.php",
-            data: {
-                'action': 'custom_product_ajax',
-                'title': title,
-                'sku': sku,
-                'quantity': quantity,
-                'price': price,
-                'weight': weight,
-                'length': length,
-                'width': width,
-                'height': height,
-                'tax_status': tax_status,
-                'tax_class': tax_class,
-            },
-            success: function (result) {
-                jQuery('#addCustomProduct .loading').addClass('d-none');
-                jQuery('body').trigger('update_checkout');
-                jQuery('button[data-bs-dismiss="modal"]')
-
-                jQuery('.cart-product-' + result).addClass('highlight');
-
-                setTimeout(function () {
-
-                    jQuery('.cart-product-' + result).removeClass('highlight');
-
-                }, 1000);
-
-            }
-        });
     });
 }
