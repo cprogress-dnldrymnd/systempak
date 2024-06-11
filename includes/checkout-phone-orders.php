@@ -374,11 +374,48 @@ function update_checkout_cart_item_ajax()
     wp_die();
 }
 
-
 function action_custom_checkout()
 {
-    if (is_page(8978)) {
+    if (is_page(8978) || is_checkout()) {
 
+    ?>
+        <script>
+            jQuery('div.woocommerce').on('click', '.apply_custom_coupon', function() {
+                var custom_coupon = jQuery('#custom-coupon input[name="custom_coupon"]').val();
+                jQuery('.blockUICustomShipping').removeClass('d-none');
+                jQuery.ajax({
+                    type: 'POST',
+                    url: "<?= admin_url('admin-ajax.php') ?>",
+                    data: {
+                        'action': 'custom_coupon_ajax',
+                        'custom_coupon': custom_coupon,
+                    },
+                    success: function(result) {
+                        jQuery.ajax({
+                            type: 'POST',
+                            url: "<?= admin_url('admin-ajax.php') ?>",
+                            data: {
+                                'action': 'custom_coupon_ajax',
+                                'custom_coupon': custom_coupon,
+                            },
+                            success: function(result) {
+                                jQuery('.blockUICustomShipping').addClass('d-none');
+                                jQuery('body').trigger('update_checkout');
+
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+    <?php
+    }
+}
+add_action('wp_footer', 'action_custom_checkout');
+
+function action_custom_checkout_phone_orders()
+{
+    if (is_page(8978)) {
     ?>
         <script>
             jQuery(document).on('click', '#add-custom-product', function() {
@@ -498,35 +535,8 @@ function action_custom_checkout()
                 });
             });
 
-            jQuery('div.woocommerce').on('click', '.apply_custom_coupon', function() {
-                var custom_coupon = jQuery('#custom-coupon input[name="custom_coupon"]').val();
-                jQuery('.blockUICustomShipping').removeClass('d-none');
-                jQuery.ajax({
-                    type: 'POST',
-                    url: "<?= admin_url('admin-ajax.php') ?>",
-                    data: {
-                        'action': 'custom_coupon_ajax',
-                        'custom_coupon': custom_coupon,
-                    },
-                    success: function(result) {
-                        jQuery.ajax({
-                            type: 'POST',
-                            url: "<?= admin_url('admin-ajax.php') ?>",
-                            data: {
-                                'action': 'custom_coupon_ajax',
-                                'custom_coupon': custom_coupon,
-                            },
-                            success: function(result) {
-                                jQuery('.blockUICustomShipping').addClass('d-none');
-                                jQuery('body').trigger('update_checkout');
 
-                            }
-                        });
-                    }
-                });
-            });
-
-
+            /*
             jQuery(document.body).on('change', 'input.qty', function() {
                 var item_key = jQuery(this).parents('.quantity-parent').attr('item_key');
                 var new_quantity = jQuery(this).val();
@@ -544,7 +554,7 @@ function action_custom_checkout()
                         jQuery('body').trigger('update_checkout');
                     }
                 });
-            });
+            });*/
 
 
             jQuery('div.woocommerce').on('click', '.remove-custom-shipping', function() {
@@ -580,7 +590,7 @@ function action_custom_checkout()
     }
 }
 
-add_action('wp_footer', 'action_custom_checkout');
+add_action('wp_footer', 'action_custom_checkout_phone_orders');
 
 
 add_action('woocommerce_thankyou', 'action_delete_custom_products');
