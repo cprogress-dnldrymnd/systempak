@@ -137,6 +137,26 @@ function coupon_ajax() {
 }
 
 
+function ajax_products_form() {
+    var typingTimer;
+    var doneTypingInterval = 500;
+
+    jQuery('.search-section-products #search-input-product').on('keyup', function () {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(doneTyping, doneTypingInterval);
+    });
+
+    jQuery('.search-section-products #search-input-product').on('keydown', function () {
+        clearTimeout(typingTimer);
+    });
+
+    function doneTyping() {
+        ajax_products();
+    }
+}
+
+
+
 
 function ajax_products($offset, $event_type = 'html') {
 

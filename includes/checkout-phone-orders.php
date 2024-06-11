@@ -398,7 +398,7 @@ function action_custom_checkout()
                     jQuery('#addCustomProduct .loading').removeClass('d-none');
                     jQuery.ajax({
                         type: 'POST',
-                        url: "/wp-admin/admin-ajax.php",
+                        url: "<?= admin_url('admin-ajax.php') ?>",
                         data: {
                             'action': 'custom_product_ajax',
                             'title': title,
@@ -452,7 +452,7 @@ function action_custom_checkout()
                     jQuery('#user-results .results-holder').html('');
                     jQuery.ajax({
                         type: 'POST',
-                        url: "/wp-admin/admin-ajax.php",
+                        url: "<?= admin_url('admin-ajax.php') ?>",
                         data: {
                             'action': 'user_search_ajax',
                             'search': search,
@@ -475,7 +475,7 @@ function action_custom_checkout()
                 jQuery('.blockUICustomShipping').removeClass('d-none');
                 jQuery.ajax({
                     type: 'POST',
-                    url: "/wp-admin/admin-ajax.php",
+                    url: "<?= admin_url('admin-ajax.php') ?>",
                     data: {
                         'action': 'custom_shipping_ajax',
                         'custom_shipping_cost': custom_shipping_cost,
@@ -483,7 +483,7 @@ function action_custom_checkout()
                     success: function(result) {
                         jQuery.ajax({
                             type: 'POST',
-                            url: "/wp-admin/admin-ajax.php",
+                            url: "<?= admin_url('admin-ajax.php') ?>",
                             data: {
                                 'action': 'custom_shipping_ajax',
                                 'custom_shipping_cost': custom_shipping_cost,
@@ -503,7 +503,7 @@ function action_custom_checkout()
                 jQuery('.blockUICustomShipping').removeClass('d-none');
                 jQuery.ajax({
                     type: 'POST',
-                    url: "/wp-admin/admin-ajax.php",
+                    url: "<?= admin_url('admin-ajax.php') ?>",
                     data: {
                         'action': 'custom_coupon_ajax',
                         'custom_coupon': custom_coupon,
@@ -511,7 +511,7 @@ function action_custom_checkout()
                     success: function(result) {
                         jQuery.ajax({
                             type: 'POST',
-                            url: "/wp-admin/admin-ajax.php",
+                            url: "<?= admin_url('admin-ajax.php') ?>",
                             data: {
                                 'action': 'custom_coupon_ajax',
                                 'custom_coupon': custom_coupon,
@@ -551,7 +551,7 @@ function action_custom_checkout()
                 jQuery('.blockUICustomShipping').removeClass('d-none');
                 jQuery.ajax({
                     type: 'POST',
-                    url: "/wp-admin/admin-ajax.php",
+                    url: "<?= admin_url('admin-ajax.php') ?>",
                     data: {
                         'action': 'custom_shipping_ajax',
                         'custom_shipping_cost': 0,
@@ -559,7 +559,7 @@ function action_custom_checkout()
                     success: function(result) {
                         jQuery.ajax({
                             type: 'POST',
-                            url: "/wp-admin/admin-ajax.php",
+                            url: "<?= admin_url('admin-ajax.php') ?>",
                             data: {
                                 'action': 'custom_shipping_ajax',
                                 'custom_shipping_cost': 0,
