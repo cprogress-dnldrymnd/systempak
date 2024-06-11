@@ -18,10 +18,12 @@ function priotech_child_enqueue_styles()
 		wp_enqueue_style('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.css');
 		wp_enqueue_script('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.js');
 	}
-
-	if (is_page(8978)) {
+	if (is_page(8978) || is_checkout()) {
 		wp_enqueue_style('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 		wp_enqueue_script('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
+	}
+	if (is_page(8978)) {
+
 		wp_enqueue_script('systempak-checkout', assets_dir . 'javascripts/checkout-phone-orders.js', array('jquery'), checkout_version);
 		// in JavaScript, object properties are accessed as ajax_object.ajax_url
 		wp_localize_script(
