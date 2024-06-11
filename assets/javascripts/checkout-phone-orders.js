@@ -101,41 +101,6 @@ function previous_step($step) {
 
 
 
-function coupon_ajax() {
-    $coupon_code = jQuery('input[name="coupon_code_custom"]').val();
-    console.log($coupon_code);
-    if ($coupon_code) {
-        jQuery.ajax({
-            type: "POST",
-
-
-            url: "/wp-admin/admin-ajax.php",
-
-            data: {
-                action: 'coupon_ajax',
-                coupon_code: $coupon_code,
-            },
-
-            success: function (response) {
-                setTimeout(function () {
-                    jQuery('body').trigger('update_checkout');
-                    jQuery(document.body).on('updated_checkout', function () {
-                        jQuery('.coupon-message').html(response);
-                    });
-                }, 1000);
-            },
-            error: function (e) {
-                console.log(e);
-            }
-
-        });
-
-    } else {
-        jQuery('.coupon-message').html('<span class="failed">Please enter a valid coupon code.</span>');
-
-    }
-}
-
 
 function ajax_products_form() {
     var typingTimer;
@@ -185,7 +150,7 @@ function ajax_products($offset, $event_type = 'html') {
 
         type: "POST",
 
-        url: "/wp-admin/admin-ajax.php",
+        url: ajax_object.ajax_url,
 
         data: {
 
@@ -225,7 +190,6 @@ function ajax_select_product_trigger() {
         ajax_select_product(jQuery(this));
     });
 }
-
 
 
 function select_products() {
@@ -281,13 +245,12 @@ function ajax_select_product($this) {
 
 
 
-    console.log($product_ids);
 
     jQuery.ajax({
 
         type: "POST",
 
-        url: "/wp-admin/admin-ajax.php",
+        url: ajax_object.ajax_url,
 
         data: {
 
