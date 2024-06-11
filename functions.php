@@ -21,6 +21,7 @@ function priotech_child_enqueue_styles()
 	if (is_page(8978) || is_checkout()) {
 		wp_enqueue_style('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 		wp_enqueue_script('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
+		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
 	if (is_page(8978)) {
 
@@ -33,7 +34,6 @@ function priotech_child_enqueue_styles()
 				'ajax_url' => admin_url('admin-ajax.php')
 			)
 		);
-		wp_enqueue_style('systempak-checkout', assets_dir . 'stylesheets/checkout/checkout.css', NULL, checkout_version);
 	}
 	wp_enqueue_script('systempak-main', assets_dir . 'javascripts/main.js', array('jquery'), 3.8);
 
