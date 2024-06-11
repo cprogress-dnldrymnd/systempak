@@ -73,10 +73,13 @@ function priotech_child_enqueue_styles()
 		}
 	}
 
-
-
-
 	wp_enqueue_script('systempak-main');
+
+	$old_user = user_switching::get_old_user();
+	if($old_user) {
+		wp_enqueue_style('admin-bar');
+	}
+
 }
 
 /*-----------------------------------------------------------------------------------*/
