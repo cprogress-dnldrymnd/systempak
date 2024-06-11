@@ -140,7 +140,7 @@ $old_user = user_switching::get_old_user();
     });
 </script>
 <?php
-if (is_checkout() && !(is_wc_endpoint_url('order-pay') || is_wc_endpoint_url('order-received'))) {
+if (is_page(8978)) {
     if (is_user_logged_in() && $old_user) { ?>
         <!-- Modal -->
         <div class="modal fade form-style-1" id="addCustomProduct" tabindex="-1" aria-labelledby="addCustomProductLabel" aria-hidden="true">
