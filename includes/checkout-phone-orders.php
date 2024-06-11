@@ -379,6 +379,7 @@ function action_custom_checkout()
 {
     ?>
     <script>
+        console.log('xxxxxx')
         jQuery(document).on('click', '#add-custom-product', function() {
             var title = jQuery('#addCustomProduct input[name="title"]').val();
             var sku = jQuery('#addCustomProduct input[name="sku"]').val();
