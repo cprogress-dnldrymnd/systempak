@@ -238,10 +238,10 @@ echo '<br><br>';
                                         <td><?= $user->user_email ?></td>
                                         <td class="text-end">
                                             <div class="d-inline-flex">
-                                                <a class="btn btn-link me-3" href="<?= $link ?>&redirect_to=https://systempak.net/my-account/orders/">
+                                                <a class="btn btn-link me-3" href="<?= $link ?>&redirect_to=<?= get_permalink(get_option('woocommerce_myaccount_page_id')); ?>/orders/">
                                                     View Orders
                                                 </a>
-                                                <a class="btn btn-link" href="<?= $link ?>&redirect_to=https://systempak.net/phone-orders/">
+                                                <a class="btn btn-link" href="<?= $link ?>&redirect_to=<?= get_permalink(8978) ?>">
                                                     Select Customer
                                                 </a>
                                             </div>

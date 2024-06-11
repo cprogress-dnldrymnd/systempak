@@ -660,7 +660,7 @@ function add_toolbar_items($admin_bar)
     $admin_bar->add_menu(array(
         'id'    => 'phone-orders',
         'title' => 'Phone Orders',
-        'href'  => 'https://systempak.net/phone-orders/',
+        'href'  => get_permalink(8978),
         'meta'  => array(
             'title' => __('Phone Orders'),
         ),
