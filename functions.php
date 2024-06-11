@@ -82,7 +82,15 @@ require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
 require_once('includes/ajax.php');
 require_once('includes/post-types.php');
-require_once('includes/checkout-phone-orders.php');
+
+
+function action_checkout() {
+	if(is_page(8978)) {
+		require_once('includes/checkout-phone-orders.php');
+	}
+}
+
+add_action('init', 'action_checkout');
 
 
 function action_wp_footer()
