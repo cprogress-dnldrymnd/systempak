@@ -1076,4 +1076,7 @@ body:not(.page-template-page-phone-orders) .fee {
   .custom-stock-status + .left .inventory_status {
     display: none !important; }
 
+.term-description-no-found {
+  margin-bottom: 70px; }
+
 /*# sourceMappingURL=style.css.map */
