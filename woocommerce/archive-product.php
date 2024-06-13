@@ -94,7 +94,7 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked wc_no_products_found - 10
 	 */
 	?>
-	<div class="term-description">
+	<div class="term-description-no-found">
 		<?= wpautop(get_queried_object()->description)?>
 	</div>
 	<?php
