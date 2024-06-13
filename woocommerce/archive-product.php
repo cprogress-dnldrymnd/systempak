@@ -93,6 +93,7 @@ if ( woocommerce_product_loop() ) {
 	 *
 	 * @hooked wc_no_products_found - 10
 	 */
+	echo 'xsxsxs';
 	do_action( 'woocommerce_no_products_found' );
 }
 
