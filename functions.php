@@ -164,3 +164,5 @@ add_filter('get_the_archive_title', function ($title) {
 
 
 add_filter('woocommerce_apply_base_tax_for_local_pickup', '__return_false');
+
+add_filter( 'term_description', 'do_shortcode' );
