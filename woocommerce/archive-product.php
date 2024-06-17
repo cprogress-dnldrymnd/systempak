@@ -95,7 +95,7 @@ if ( woocommerce_product_loop() ) {
 	 */
 	?>
 	<div class="term-description-no-found">
-		<?= wpautop(get_queried_object()->description)?>
+		<?= do_shortcode(wpautop(get_queried_object()->description))?>
 	</div>
 	<?php
 	do_action( 'woocommerce_no_products_found' );
