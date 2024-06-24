@@ -95,7 +95,7 @@ require_once('includes/shortcodes.php');
 require_once('includes/woocommerce.php');
 require_once('includes/ajax.php');
 require_once('includes/post-types.php');
-require_once('includes/checkout-phone-orders.php');
+//require_once('includes/checkout-phone-orders.php');
 
 
 function action_wp_footer()
