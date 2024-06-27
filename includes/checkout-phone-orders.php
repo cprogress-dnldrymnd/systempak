@@ -760,7 +760,6 @@ function admin_menu()
     <script>
         jQuery(document).ready(function() {
             jQuery('#wp-admin-bar-phone-orders').insertAfter('#toplevel_page_woocommerce .wp-submenu li:nth-child(3)');
-            console.log('dsdsds');
             console.log('<?= $wp_session['redirect_to_order'] ?>');
         });
     </script>
