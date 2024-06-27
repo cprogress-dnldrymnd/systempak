@@ -259,83 +259,85 @@ add_shortcode('category_image', 'category_image');
 function product_category_features()
 {
     ob_start();
-    $term = get_queried_object();
-    $parent = $term->parent;
-    $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
+    if (is_product_category()) {
+        $term = get_queried_object();
+        $parent = $term->parent;
+        $hide_featured_section = carbon_get_term_meta($term->term_id, 'hide_featured_section');
 
 
-    if (!$parent) {
-        $term_id = $term->term_id;
-        $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
-        $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
-    } else {
-        $term_id = $parent;
-        $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
-        $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
-        if ($featured_section_left || $featured_section_right) {
+        if (!$parent) {
+            $term_id = $term->term_id;
             $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
             $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
         } else {
-            $featured_section_left = carbon_get_term_meta($term_id, 'featured_section');
-            $featured_section_right = carbon_get_term_meta($term_id, 'featured_section_right');
-        }
-    }
-
-
-    if (!$hide_featured_section) {
-        if ($featured_section_left || $featured_section_right) {
-            $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
-            $image = wp_get_attachment_url($thumbnail_id);
-
-            if ($thumbnail_id) {
-                $class = '';
-                $class2 = 'col-lg-4';
+            $term_id = $parent;
+            $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
+            $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
+            if ($featured_section_left || $featured_section_right) {
+                $featured_section_left = carbon_get_term_meta($term->term_id, 'featured_section');
+                $featured_section_right = carbon_get_term_meta($term->term_id, 'featured_section_right');
             } else {
-                $class2 = 'col-lg-6';
-                $class = 'no-image';
+                $featured_section_left = carbon_get_term_meta($term_id, 'featured_section');
+                $featured_section_right = carbon_get_term_meta($term_id, 'featured_section_right');
             }
+        }
+
+
+        if (!$hide_featured_section) {
+            if ($featured_section_left || $featured_section_right) {
+                $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
+                $image = wp_get_attachment_url($thumbnail_id);
+
+                if ($thumbnail_id) {
+                    $class = '';
+                    $class2 = 'col-lg-4';
+                } else {
+                    $class2 = 'col-lg-6';
+                    $class = 'no-image';
+                }
     ?>
-            <div class="featured-section <?= $class ?>">
-                <div class="row">
-                    <div class="<?= $class2 ?>">
-                        <?php foreach ($featured_section_left as $featured_section) { ?>
-                            <div class="icon-box d-flex">
-                                <div class="icon">
-                                    <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
+                <div class="featured-section <?= $class ?>">
+                    <div class="row">
+                        <div class="<?= $class2 ?>">
+                            <?php foreach ($featured_section_left as $featured_section) { ?>
+                                <div class="icon-box d-flex">
+                                    <div class="icon">
+                                        <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
+                                    </div>
+                                    <div class="content">
+                                        <h3><?= $featured_section['heading'] ?></h3>
+                                        <?= wpautop($featured_section['description']) ?>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <h3><?= $featured_section['heading'] ?></h3>
-                                    <?= wpautop($featured_section['description']) ?>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </div>
-                    <?php if ($thumbnail_id) { ?>
-                        <div class="col-lg-4">
-                            <div class="category-image">
-                                <img src="<?= $image ?>" alt="<?= $term->name ?>">
-                            </div>
+                            <?php } ?>
                         </div>
-                    <?php } ?>
-                    <div class="<?= $class2 ?>">
-                        <?php foreach ($featured_section_right as $featured_section) { ?>
-                            <div class="icon-box d-flex">
-                                <div class="icon">
-                                    <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
-                                </div>
-                                <div class="content">
-                                    <h3><?= $featured_section['heading'] ?></h3>
-                                    <?= wpautop($featured_section['description']) ?>
+                        <?php if ($thumbnail_id) { ?>
+                            <div class="col-lg-4">
+                                <div class="category-image">
+                                    <img src="<?= $image ?>" alt="<?= $term->name ?>">
                                 </div>
                             </div>
                         <?php } ?>
+                        <div class="<?= $class2 ?>">
+                            <?php foreach ($featured_section_right as $featured_section) { ?>
+                                <div class="icon-box d-flex">
+                                    <div class="icon">
+                                        <img src="<?= wp_get_attachment_image_url($featured_section['image'], 'medium') ?>" alt="<?= $featured_section['heading'] ?>">
+                                    </div>
+                                    <div class="content">
+                                        <h3><?= $featured_section['heading'] ?></h3>
+                                        <?= wpautop($featured_section['description']) ?>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
     <?php
+            }
         }
+        return ob_get_clean();
     }
-    return ob_get_clean();
 }
 
 add_shortcode('product_category_features', 'product_category_features');
