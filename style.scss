@@ -1536,3 +1536,10 @@ body:not(.page-template-page-phone-orders) {
 .term-description-no-found {
     margin-bottom: 70px;
 }
+
+.posted-on.posted-on {
+    font-size: 0;
+    &:before {
+        font-size: 11px;
+    }
+}
