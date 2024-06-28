@@ -177,7 +177,7 @@ function blog_date_fixed()
 	$posts = get_posts($args);
 	echo '<style>';
 	foreach ($posts as $post) {
-		echo '#post-' . $post->ID . ':before {  content: "'.$post->post_date.'" }';
+		echo '#post-' . $post->ID . ' .posted-on:before {  content: "'.$post->post_date.'" }';
 	}
 	echo '</style>';
 };
