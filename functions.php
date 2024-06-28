@@ -76,10 +76,9 @@ function priotech_child_enqueue_styles()
 	wp_enqueue_script('systempak-main');
 
 	$old_user = user_switching::get_old_user();
-	if($old_user) {
+	if ($old_user) {
 		wp_enqueue_style('admin-bar');
 	}
-
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -165,4 +164,22 @@ add_filter('get_the_archive_title', function ($title) {
 
 add_filter('woocommerce_apply_base_tax_for_local_pickup', '__return_false');
 
-add_filter( 'term_description', 'do_shortcode' );
+add_filter('term_description', 'do_shortcode');
+
+
+function blog_date_fixed()
+{
+	$args = array(
+		'post_type' => 'post',
+		'numberposts' => -1,
+	);
+
+	$posts = get_posts($args);
+	echo '<style>';
+	foreach ($posts as $post) {
+		echo '#post-' . $post->ID . ':before {  content: "'.$post->post_date.'" }';
+	}
+	echo '</style>';
+};
+
+add_action('wp_head', 'blog_date_fixed');
