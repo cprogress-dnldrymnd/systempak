@@ -11,7 +11,7 @@ function swiper_hero() {
         loop: true,
         spaceBetween: 0,
         speed: 2000,
-        effect: "fade",
+        
         autoplay: {
             delay: 10000,
             disableOnInteraction: false,
