@@ -14,10 +14,8 @@ add_action('wp_enqueue_scripts', 'priotech_child_enqueue_styles');
 function priotech_child_enqueue_styles()
 {
 	wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', NULL, 9.2);
-	if (is_product_category()) {
-		wp_enqueue_style('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.css');
-		wp_enqueue_script('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.js');
-	}
+	wp_enqueue_style('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.css');
+	wp_enqueue_script('systempak-swiper', vendor_dir . 'swiper/swiper-bundle.min.js');
 	if (is_page(8978) || is_checkout()) {
 		wp_enqueue_style('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 		wp_enqueue_script('systempak-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
@@ -177,7 +175,7 @@ function blog_date_fixed()
 	$posts = get_posts($args);
 	echo '<style id="date-style">';
 	foreach ($posts as $post) {
-		echo '#post-' . $post->ID . ' .posted-on.posted-on a:before {  content: "'.get_the_date('', $post->ID).'" !important }';
+		echo '#post-' . $post->ID . ' .posted-on.posted-on a:before {  content: "' . get_the_date('', $post->ID) . '" !important }';
 	}
 	echo '</style>';
 };
