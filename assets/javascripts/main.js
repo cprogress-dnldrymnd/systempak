@@ -10,7 +10,7 @@ function swiper_hero() {
     var swiper_hero = new Swiper('.swiper-hero', {
         loop: true,
         spaceBetween: 0,
-        speed: 2000,
+        speed: 1000,
         
         autoplay: {
             delay: 10000,
