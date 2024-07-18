@@ -15,9 +15,12 @@ function swiper_hero() {
             autoplay: false,
             slidesPerView: 1,
             navigation: {
-                nextEl: "#swiper-next-" + $id,
-                prevEl: "#swiper-prev-" + $id
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
             },
+            pagination: {
+                el: ".swiper-pagination",
+              },
         });
 
     });
