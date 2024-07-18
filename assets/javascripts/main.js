@@ -12,7 +12,7 @@ function swiper_hero() {
         spaceBetween: 0,
         speed: 3000,
         autoplay: {
-            delay: 8000,
+            delay: 10000,
             disableOnInteraction: false,
           },
         slidesPerView: 1,
