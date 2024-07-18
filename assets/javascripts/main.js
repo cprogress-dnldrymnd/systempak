@@ -13,7 +13,7 @@ function swiper_hero() {
             loop: true,
             spaceBetween: 0,
             autoplay: false,
-            slidesPerView: 2,
+            slidesPerView: 1,
             navigation: {
                 nextEl: "#swiper-next-" + $id,
                 prevEl: "#swiper-prev-" + $id
