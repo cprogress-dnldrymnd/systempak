@@ -3,7 +3,25 @@ jQuery(document).ready(function ($) {
     ajax_form();
     product_sidebar_category();
     sku();
+    swiper_hero();
 });
+
+function swiper_hero() {
+    jQuery('.swiper-hero').each(function (index, element) {
+        $id = jQuery(this).attr('id');
+        var swiper_linked_products = new Swiper('#' + $id, {
+            loop: true,
+            spaceBetween: 0,
+            autoplay: false,
+            slidesPerView: 2,
+            navigation: {
+                nextEl: "#swiper-next-" + $id,
+                prevEl: "#swiper-prev-" + $id
+            },
+        });
+
+    });
+}
 
 function sku() {
     jQuery(document).on("click", '.woovr-variation-radio', function (event) {
