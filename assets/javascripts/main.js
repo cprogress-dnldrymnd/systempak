@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
 function swiper_hero() {
     jQuery('.swiper-hero').each(function (index, element) {
         $id = jQuery(this).attr('id');
-        var swiper_linked_products = new Swiper('#' + $id, {
+        var swiper_hero = new Swiper('#' + $id, {
             loop: true,
             spaceBetween: 0,
             autoplay: false,
