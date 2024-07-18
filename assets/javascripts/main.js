@@ -10,7 +10,10 @@ function swiper_hero() {
     var swiper_hero = new Swiper('.swiper-hero', {
         loop: true,
         spaceBetween: 0,
-        autoplay: false,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
         slidesPerView: 1,
         pagination: {
             el: ".swiper-pagination-hero",
