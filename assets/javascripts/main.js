@@ -7,22 +7,14 @@ jQuery(document).ready(function ($) {
 });
 
 function swiper_hero() {
-    jQuery('.swiper-hero').each(function (index, element) {
-        $id = jQuery(this).attr('id');
-        var swiper_hero = new Swiper('#' + $id, {
-            loop: true,
-            spaceBetween: 0,
-            autoplay: false,
-            slidesPerView: 1,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
-            pagination: {
-                el: ".swiper-pagination",
-              },
-        });
-
+    var swiper_hero = new Swiper('.swiper-hero', {
+        loop: true,
+        spaceBetween: 0,
+        autoplay: false,
+        slidesPerView: 1,
+        pagination: {
+            el: ".swiper-pagination-hero",
+        },
     });
 }
 
