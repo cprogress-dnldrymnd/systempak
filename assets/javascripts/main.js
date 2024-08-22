@@ -46,7 +46,7 @@ function sku() {
             $price_per_unit_html = jQuery('<p class="price-per-unit-meta"><strong>Price Per Unit: </strong><span class="price-per-unit-val"> ' + $price_per_unit + ' </span></p>');
 
             if (jQuery('.price-per-unit-meta').length != 0) {
-                jQuery('.price-per-unit-val').text($price_per_unit);
+                jQuery('.price-per-unit-val').html($price_per_unit);
             } else {
                 $price_per_unit_html.appendTo('.product-meta');
             }
