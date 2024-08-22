@@ -55,6 +55,7 @@ function sku() {
         }
 
         jQuery('.sku-val').text($sku);
+        jQuery('.sku-meta').removeClass('sku-meta-hidden');
     });
 }
 
