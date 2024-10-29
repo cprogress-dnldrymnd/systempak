@@ -614,11 +614,7 @@ function action_woocommerce_product_tabs($tabs)
         );
     }
     
-    $tabs['top_seal'] = array(
-        'title' => __('Looking to take your business to the next level?', 'woocommerce'), // TAB TITLE
-        'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
-        'callback' => 'top_seal_content', // TAB CONTENT CALLBACK
-    );
+
     $tabs['bulk_order'] = array(
         'title' => __('Bulk Order Request Form', 'woocommerce'), // TAB TITLE
         'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
