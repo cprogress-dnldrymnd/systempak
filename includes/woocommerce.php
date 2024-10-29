@@ -613,21 +613,18 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
     }
-    if (has_term('top-seal-containers', 'product_cat', $post->ID)) {
-        $tabs['top_seal'] = array(
-            'title' => __('Looking to take your business to the next level?', 'woocommerce'), // TAB TITLE
-            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
-            'callback' => 'top_seal_content', // TAB CONTENT CALLBACK
-        );
-    } else {
-        $tabs['bulk_order'] = array(
-            'title' => __('Bulk Order Request Form', 'woocommerce'), // TAB TITLE
-            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
-            'callback' => 'bulk_order_content', // TAB CONTENT CALLBACK
-        );
-    }
-
-
+    
+    $tabs['top_seal'] = array(
+        'title' => __('Looking to take your business to the next level?', 'woocommerce'), // TAB TITLE
+        'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+        'callback' => 'top_seal_content', // TAB CONTENT CALLBACK
+    );
+    $tabs['bulk_order'] = array(
+        'title' => __('Bulk Order Request Form', 'woocommerce'), // TAB TITLE
+        'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+        'callback' => 'bulk_order_content', // TAB CONTENT CALLBACK
+    );
+}
 
     $tabs['free_sample'] = array(
         'title' => __('Do you need a free sample to try?', 'woocommerce'), // TAB TITLE
