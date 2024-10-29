@@ -699,7 +699,7 @@ function top_seal_content()
         <p>
             Let us help you seal the deal with our innovative and cost-effective packaging solutions!
         </p>
-        <?= do_shortcode('[gravityform id="17" title="false" ajax="true"]') ?>
+        <?= do_shortcode('[gravityform id="17" title="false" ajax="true" description="false" ]') ?>
     </div>
 <?php
 }
