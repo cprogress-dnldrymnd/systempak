@@ -913,3 +913,14 @@ function action_modify_stocks()
 }
 
 add_action('woocommerce_single_product_summary', 'action_modify_stocks', 2);
+
+add_filter('body_class', 'custom_class');
+function custom_class($classes)
+{
+    if (has_term('top-seal-containers', 'product_cat', get_the_ID())) {
+        $classes[] = 'top-seal-form';
+    } else {
+        $classes[] = 'bulk-order-form';
+    }
+    return $classes;
+}
