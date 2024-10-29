@@ -465,7 +465,6 @@ add_action('woocommerce_process_product_meta', 'woocommerce_product_custom_field
 function woocommerce_product_custom_fields_save($post_id)
 {
 
-
     $capacity = $_POST['capacity'];
     update_post_meta($post_id, 'capacity', esc_attr($capacity));
 
@@ -613,16 +612,13 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
     }
-    if (has_term('top-seal-containers', 'product_cat', get_the_ID())) {
-      
-    } else {
-        $tabs['bulk_order'] = array(
-            'title' => __('Bulk Order Request Form', 'woocommerce'), // TAB TITLE
-            'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
-            'callback' => 'bulk_order_content', // TAB CONTENT CALLBACK
-        );
-    }
 
+
+    $tabs['bulk_order'] = array(
+        'title' => __('Bulk Order Request Form', 'woocommerce'), // TAB TITLE
+        'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
+        'callback' => 'bulk_order_content', // TAB CONTENT CALLBACK
+    );
 
 
     $tabs['free_sample'] = array(
@@ -658,7 +654,6 @@ function action_woocommerce_product_tabs($tabs)
     }
 
     $tabs['bulk_order']['priority'] = 41;
-    $tabs['top_seal']['priority'] = 41;
 
     $tabs['free_sample']['priority'] = 42;
 
@@ -684,15 +679,6 @@ function bulk_order_content()
 ?>
     <div class="bulk-order-form">
         <?= do_shortcode('[gravityform id="2" title="false" ajax="true"]') ?>
-    </div>
-<?php
-}
-
-function top_seal_content()
-{
-?>
-    <div class="bulk-order-form">
-        <?= do_shortcode('[gravityform id="17" title="false" ajax="true"]') ?>
     </div>
 <?php
 }
