@@ -1543,3 +1543,14 @@ body:not(.page-template-page-phone-orders) {
         font-size: 11px;
     }
 }
+
+.top-seal-form {
+    #tab-title-bulk_order {
+        display: none !important;
+    }
+}
+.bulk-order-form {
+    #tab-title-top_seal {
+        display: none !important;
+    }
+}
