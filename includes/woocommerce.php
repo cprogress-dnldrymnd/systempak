@@ -613,7 +613,7 @@ function action_woocommerce_product_tabs($tabs)
             'callback' => 'custom_tab_3_content', // TAB CONTENT CALLBACK
         );
     }
-    if (has_term('top-seal-containers', 'product_cat')) {
+    if (has_term('top-seal-containers', 'product_cat', get_the_ID())) {
         $tabs['top_seal'] = array(
             'title' => __('Looking to take your business to the next level?', 'woocommerce'), // TAB TITLE
             'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
