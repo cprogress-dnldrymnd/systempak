@@ -615,7 +615,7 @@ function action_woocommerce_product_tabs($tabs)
     }
 
     $tabs['top_seal'] = array(
-        'title' => __('Looking to take your business to the next level?', 'woocommerce'), // TAB TITLE
+        'title' => __('Machine Bundle Request Form', 'woocommerce'), // TAB TITLE
         'priority' => 50, // TAB SORTING (DESC 10, ADD INFO 20, REVIEWS 30)
         'callback' => 'top_seal_content', // TAB CONTENT CALLBACK
     );
@@ -692,6 +692,9 @@ function top_seal_content()
 {
 ?>
     <div class="bulk-order-form">
+        <p>
+            <strong>Looking to take your business to the next level?</strong>
+        </p>
         <p>
             Our Startup Bundles are the perfect solution! Whether you're just starting out or scaling up, our top-seal packaging systems ensure your products are securely sealed, fresh, and ready for the market. With our bundles, you'll get everything you need to optimize your packaging process, boost efficiency, and impress your customers with professional results.
 
