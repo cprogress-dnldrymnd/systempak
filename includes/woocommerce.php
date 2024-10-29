@@ -692,6 +692,13 @@ function top_seal_content()
 {
 ?>
     <div class="bulk-order-form">
+        <p>
+            Our Startup Bundles are the perfect solution! Whether you're just starting out or scaling up, our top-seal packaging systems ensure your products are securely sealed, fresh, and ready for the market. With our bundles, you'll get everything you need to optimize your packaging process, boost efficiency, and impress your customers with professional results.
+
+        </p>
+        <p>
+            Let us help you seal the deal with our innovative and cost-effective packaging solutions!
+        </p>
         <?= do_shortcode('[gravityform id="17" title="false" ajax="true"]') ?>
     </div>
 <?php
