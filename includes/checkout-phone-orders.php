@@ -621,7 +621,7 @@ function user_search_ajax()
         'number' => 10, ''
     );
     $args['role'] = array('customer');
-    $args['number'] = 10;
+    $args['number'] = 100;
     if (isset($search)) {
         $args['search'] = '*' . $search . '*';
     }
