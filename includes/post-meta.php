@@ -18,6 +18,7 @@ Container::make('post_meta', 'Tech Sheets')
 				->add_fields(array(
 					Field::make('text', 'tech_sheet_heading', __('Tech Sheet Heading')),
 					Field::make('file', 'tech_sheet_file', __('Tech Sheet File')),
+					Field::make('checkbox', 'display_enquire', __('Hide Variation and Display Enquire')),
 				))
 				->set_layout('tabbed-horizontal')
 		)
