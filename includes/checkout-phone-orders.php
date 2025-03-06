@@ -27,6 +27,9 @@ function search_ajax_products()
 
     $args['post__not_in'] = get_cart_product_ids();
 
+    $args['post__not_in'] = get_cart_product_ids();
+
+
     $args['tax_query'] = array(
         array(
             'taxonomy' => 'product_type',
@@ -37,22 +40,30 @@ function search_ajax_products()
     );
 
     $the_query_args = new WP_Query($args);
-
-    $found_posts = $the_query_args->found_posts;
-
-    if (!$found_posts  && $s != '') {
-        $args['meta_query'] = array(
-            array(
-                'key' => '_sku',
-                'value' => $s,
-                'compare' => 'LIKE',
-            ),
-        );
-        unset($args['s']);
+    $posts_ids = [];
+    while ($the_query_args->have_posts()) {
+        $the_query_args->the_post();
+        $posts_ids[] = get_the_ID();
     }
 
 
 
+    $args['meta_query'] = array(
+        array(
+            'key' => '_sku',
+            'value' => $s,
+            'compare' => 'LIKE',
+        ),
+    );
+    unset($args['s']);
+
+    $the_query_args_sku = new WP_Query($args);
+    while ($the_query_args_sku->have_posts()) {
+        $the_query_args_sku->the_post();
+        $posts_ids[] = get_the_ID();
+    }
+
+    $args['post__in'] = $posts_ids;
 
     $the_query = new WP_Query($args);
 
@@ -618,7 +629,8 @@ function user_search_ajax()
     $search = $_POST['search'];
     $args = array(
         'role' => array('customer'),
-        'number' => 10, ''
+        'number' => 10,
+        ''
     );
     $args['role'] = array('customer');
     $args['number'] = 100;
