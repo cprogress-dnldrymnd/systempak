@@ -47,6 +47,8 @@ function search_ajax_products()
     }
 
 
+    $args['post__not_in'] = $posts_ids;
+
 
     $args['meta_query'] = array(
         array(
