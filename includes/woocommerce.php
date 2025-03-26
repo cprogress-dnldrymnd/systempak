@@ -934,3 +934,53 @@ function custom_class($classes)
     }
     return $classes;
 }
+
+
+/**
+ * Make WooCommerce billing_wooccm11 field not required if country is UK.
+ *
+ * @param array $fields Array of checkout fields.
+ * @return array Modified checkout fields.
+ */
+function custom_conditional_wooccm11_required( $fields ) {
+    if ( WC()->customer->get_shipping_country() === 'GB' || WC()->customer->get_billing_country() === 'GB' ) {
+        if ( isset( $fields['billing']['billing_wooccm11'] ) ) {
+            $fields['billing']['billing_wooccm11']['required'] = false;
+        }
+    }
+
+    return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'custom_conditional_wooccm11_required' );
+
+/**
+ * Update checkout on country change.
+ */
+function update_checkout_wooccm11_country_change() {
+    ?>
+    <script type="text/javascript">
+        jQuery( function( $ ) {
+            $( 'form.checkout' ).on( 'change', '#billing_country, #shipping_country', function() {
+                $( document.body ).trigger( 'update_checkout' );
+            });
+        });
+    </script>
+    <?php
+}
+add_action( 'wp_footer', 'update_checkout_wooccm11_country_change' );
+
+/**
+ * Force update checkout to trigger the function on initial page load if country is UK.
+ */
+function force_initial_update_wooccm11_checkout() {
+    ?>
+    <script type="text/javascript">
+        jQuery(function($){
+            if($('#billing_country').val() === 'GB' || $('#shipping_country').val() === 'GB'){
+                $(document.body).trigger('update_checkout');
+            }
+        });
+    </script>
+    <?php
+}
+add_action('wp_footer','force_initial_update_wooccm11_checkout');
